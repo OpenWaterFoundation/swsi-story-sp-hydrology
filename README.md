@@ -1,2 +1,4 @@
-# swsi-story-sp-hydrology
-South Platte Basin story to provide context for hydrology and need for storage
+# swsi-story-sp-hydrology #
+
+This story provides a summary of South Platte and Metro Basin hydrology in order to provide background for understanding 
+water resources issues in the Basin, including the need for storage. 
