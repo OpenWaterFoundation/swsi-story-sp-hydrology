@@ -63,7 +63,8 @@
     <script src="js/jBox-0.4.9.min.js"></script>
 
   	<!-- Data Files -->
-  	<script src="data/statemod-node-network.geojson"></script>	
+  	<script src="data/statemod-node-network.geojson"></script>
+  	<script src="data/cdss-mapviewer-active-streamgages.geojson"></script>	
   	<!-- Boundary Files -->	
   	<script src="data/Colorado-IBCC-Basins-WGS84.geojson"></script>	
 	
@@ -156,8 +157,14 @@
 			  directly from the soil surface as it dries or be transpired by growing plants. It may percolate through the soil to ground water reservoirs 
 			  (aquifers) to be stored or it may flow to wells or springs or back to streams by seepage. The cycle for water may be short or it may take millions 
 			  of years.</p>
-			  <p><i>~ Adapted from the <a href="https://water.usgs.gov/edu/hydrology.html" target="_blank">USGS Water Science School</a>.</i></p>
-			  <p><i>Include more here about the hydrologic cycle specific to Colorado -- snowmelt runoff peaking in May/June.</i></p>
+			  <p><i>~ From the <a href="https://water.usgs.gov/edu/hydrology.html" target="_blank">USGS Water Science School</a>.</i></p>
+			  <p>In Colorado, average annual statewide precipitation is 16 inches, with most regions receiving 12-16 inches.  The mountainous areas of the state 
+			  receive more water.  Most areas above 10,000 feet in elevation receive 25 inches or more annually, mostly in the form of snow.  The snowpack typically 
+			  builds up in the early spring from storms originating in the Pacific Ocean that move eastward.  The snowpack begins to melt in April and feeds 
+			  into the State’s rivers.  Peak runoff from snowmelt occurs in May and June.  According to the Natural Resources Conservation Service (NRCS), 
+			  approximately 80% of river runoff comes from snowmelt.  The remainder comes from rainfall and infiltration from groundwater (
+			  <a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-where-your-water-comes-from/" 
+			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.4-6).</p>
 			  <p>Hydraulics, a related field, is the study of the conveyance of water or other liquids through pipes or channels.  Hydraulic 
 			  concepts include pipe flow, dam design, turbines, hydropower, flow measurement and river channel erosion.  Free surface hydraulics is the branch 
 			  of hydraulics dealing with flows that occur in rivers, canals and lakes (<a href="https://en.wikipedia.org/wiki/Hydraulics" target="_blank">Wikipedia</a>).</p>
@@ -182,8 +189,9 @@
 			  </ul>
 			  <p>The complexity of water resources systems is illustrated by “straight line diagrams” that combine physical and legal information to help 
 			  people understand water resources systems.  The diagrams are graphical linear representations of structures and/or water rights for a given stream 
-			  system that allows a large amount of complex information to be observed at a glance.  This straight line diagram of water district 04 can also be viewed 
-			  <a href="https://dnrweblink.state.co.us/dwr/0/doc/2083919/Page1.aspx?searchid=fd2f4d5d-003a-48dc-bb41-b937f8afa88f" target="_blank">here</a>.</p>
+			  system that allows a large amount of complex information to be observed at a glance.  This straight line diagram of water district 04 (Big Thompson 
+			  River) can also be viewed <a href="https://dnrweblink.state.co.us/dwr/0/doc/2083919/Page1.aspx?searchid=fd2f4d5d-003a-48dc-bb41-b937f8afa88f" 
+			  target="_blank">here</a>.</p>
               </div>			
 		    <div class="col-lg-8 side-content">
               <img class="image-centered" style="margin-top:15vh;" src="images/straight-line-diagram.png" frameborder="0"></img>
@@ -217,10 +225,9 @@
         </div> 
       </div>   
   <!-- Stream Gages and Measuring Flows Page -->
-      <div class="section">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
+     <div class="section">
+         <div class="row">
+            <div class="col-lg-4 text-left-custom custom-scroll">  
               <h2>Hydrology Concepts - Stream Gages and Measuring Flows</h2>			  
 			  <p>In order to manage the water resources of Colorado it is necessary to measure the surface water flow in natural streams and water distribution 
 			  infrastructure.  Measuring flow, also called discharge, is a fairly complex process that can be prone to error, especially when stream gages are 
@@ -238,10 +245,10 @@
 			  data formats can present challenges to finding and using data.</p>
 			  <p><i>Map of both USGS and DWR stream gages.  Popup can have URL link to gage's website and/or data.  Or embed a website that already has this.</i></p>
               </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
-            </div>				
-          </div>
+		    <div class="col-lg-8">
+              <div id="mapbox1" class="map-right"></div>
+				<script src="js/map-files/cdss-active-streamgages-map.js"></script>
+            </div>	
         </div> 
       </div>  
   <!-- Diversion Headgates and Measuring Diversions Page -->

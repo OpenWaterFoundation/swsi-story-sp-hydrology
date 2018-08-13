@@ -1,0 +1,18 @@
+# Active Stream Gages from CDSS Map Viewer
+# Filter gages to include South Platte Basin only and
+# conversion into GeoJSON format to be used for map
+#
+# Read table downloaded from CDSS's Map Viewer.  "Active Gage-Stream" was selected from the 
+# Surface Water Current Conditions layer.  All gages were selected in the state and then 
+# exported in CSV format.
+ReadTableFromDelimitedFile(TableID="streamgages-orig",InputFile="..\..\..\Users\kms\southplattedataplatform\git-repos\swsi-story-sp-hydrology\site\data\cdss-mapviewer-active-streamgages.csv",HeaderLines="1")
+#
+# Copy table to rename columns and select columns of interest; filter to Division 1 (South Platte) only
+CopyTable(TableID="streamgages-orig",NewTableID="streamgages-v1",IncludeColumns="statname,datasource,dwrabbrev,usgsstatid,wdid,div,wd,county,latdecdeg,longdecdeg,moreinfo",ColumnMap="statname:Station_Name,wdid:WDID,moreinfo:Website,div:Division,wd:Water_District,latdecdeg:Latitude,longdecdeg:Longitude,county:County,datasource:Data_Source",ColumnFilters="div:1")
+#
+# Remove "Data Provider" from USGS in Data_Source column
+ManipulateTableString(TableID="streamgages-v1",InputColumn1="Data_Source",Operator="Remove",InputValue2=" (Data Provider)",OutputColumn="Data_Source")
+#
+# Export table to GeoJSON format
+WriteTableToGeoJSON(TableID="streamgages-v1",OutputFile="..\..\..\Users\kms\southplattedataplatform\git-repos\swsi-story-sp-hydrology\site\data\cdss-mapviewer-active-streamgages.geojson",LongitudeColumn="Latitude",LatitudeColumn="Longitude",JavaScriptVar="streamgages")
+#
