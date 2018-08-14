@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>South Platte Basin Annual Natural Flows</title>
+    <!-- Javascript -->
+  <script src="javascript/highcharts.js"></script>
+  <script src="javascript/heatmap.js"></script>
+  <script src="javascript/exporting.js"></script>
+  <script src="javascript/data.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="container" style="width:100%; height:900px;"></div>
+<script>
+  $.get("natural-flows-annual-duration-selectlocations.csv",function(csv) {
+
+    var lines = csv.split('\n');
+    var dates = new Array();
+    var series = {
+      turboThreshold: 0,
+      data: [],
+      // rowsize: 24 * 36e5
+    };
+
+    $.each(lines, function(lineNo,line){
+      if(lineNo > 0)
+      {
+        var items = line.split(',');
+        if(!dates.includes(items[0]))
+        {
+          dates.push(items[0]);
+        }
+      }
+    });
+
+    $.each(lines, function(lineNo,line){
+      if(lineNo > 0)
+      {
+        var items = line.split(',');
+        series.data.push([parseFloat(items[1]),parseFloat(getIndex(items[0])),parseFloat(items[2])]);
+      }
+    });
+
+
+    function getIndex(date)
+    {
+      for(var index = 0; index < dates.length; index++)
+      {
+        if(date == dates[index])
+        {
+          return index;
+        }
+      }
+    }
+
+  Highcharts.chart('container', {
+
+    chart: {
+      type: 'heatmap',
+    },
+
+    title: {
+      text: 'South Platte Basin Annual Natural Flows - Percentiles'
+    },
+
+    yAxis: {
+      categories: dates,
+	  reversed: true,
+      title: {
+        text: 'Date'
+      }
+    },
+
+    xAxis: {
+      categories: ["CACHE LA POUDRE RIVER NE", "LITTLE THOMPSON RIVER AT", "FISH CREEK NEAR ESTES PA", "BIG THOMPSON RIVER AT MO", "LEFT HAND CREEK NEAR BOU", 
+				   "COAL CREEK NEAR PLAINVIE", "SOUTH BOULDER CREEK NEAR", "FOURMILE CREEK AT ORODEL", "MIDDLE BOULDER CREEK AT", "BOULDER CREEK AT MOUTH N", "ST. VRAIN CREEK AT MOUTH", "BIG DRY CREEK AT WESTMIN", 
+				   "PLUM CREEK AT TITAN ROAD", "NORTH FORK SOUTH PLATTE", "NORTH FORK SOUTH PLATTE", "ROCK CREEK ABOVE CONFLUE", "SOUTH PLATTE RIVER BELOW", "S PLATTE RIV AB 11-MILE", "SOUTH PLATTE RIVER NEAR", 
+				   "SOUTH PLATTE RIVER BELOW", "SOUTH PLATTE RIVER AT SO", "SOUTH PLATTE RIVER AT WA", "BEAR CREEK AT SHERIDAN", "SOUTH PLATTE RIVER AT EN", "CHERRY CREEK AT DENVER", 
+				   "SOUTH PLATTE RIVER AT DE", "CLEAR CREEK AT DERBY", "SOUTH PLATTE RIVER AT HE", "SOUTH PLATTE RIVER AT FO", "SOUTH PLATTE RIVER NEAR", "SOUTH PLATTE RIVER NEAR", "SOUTH PLATTE RIVER AT CO",
+				   "SOUTH PLATTE RIVER AT JU"],
+      reversed: false,
+	  opposite: true,
+	  labels:
+		{rotation: -90
+		},
+      minPadding: 0,
+      maxPadding: 0,
+     },
+
+     colorAxis: {
+          dataClasses: [{
+            to: (5), color:"#b30000", name:"Drought"
+        }, {  
+				from: (5.01),
+				to: (25), color:"#fcae91", name:"Dry"
+                }, {
+				from: (25.01),
+				to: (75), color:"#edf8fb", name:"Average"
+				},{
+				from: (75.01),
+				to: (95), color:"#6baed6", name:"Wet"
+				},{
+				from: (95.01),
+				to: (100), color:"#08519c", name:"Flood"
+				}],
+          labels: {
+              format: '{value} %'
+          }
+      },
+
+      legend: {
+          align: 'center',
+          layout: 'horizontal',
+          margin: 0,
+          verticalAlign: 'bottom',
+          y: 25,
+          symbolHeight: 10,
+          symbolRadius: 0
+      },
+
+      tooltip: {  // control what the tooltip will display when a user hovers over a point on the heatmap
+        headerFormat: 'Percentile<br>',
+        formatter: function()
+        {
+          return 'Percentile<br>' + this.series.yAxis.categories[this.point.y] + ': ' + this.point.value + ' %';
+        }
+      },
+
+      series: [series]
+  });
+});
+</script>
+
+</body>
+</html>

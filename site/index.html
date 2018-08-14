@@ -61,6 +61,8 @@
     <script src="js/papaparse.min-4.4.0.js"></script>
     <!-- jBox for tooltips -->
     <script src="js/jBox-0.4.9.min.js"></script>
+    <!-- Plotly Javascript File -->	
+	<script src="js/plotly.min.js"></script>	
 
   	<!-- Data Files -->
   	<script src="data/statemod-node-network.geojson"></script>
@@ -158,13 +160,6 @@
 			  (aquifers) to be stored or it may flow to wells or springs or back to streams by seepage. The cycle for water may be short or it may take millions 
 			  of years.</p>
 			  <p><i>~ From the <a href="https://water.usgs.gov/edu/hydrology.html" target="_blank">USGS Water Science School</a>.</i></p>
-			  <p>In Colorado, average annual statewide precipitation is 16 inches, with most regions receiving 12-16 inches.  The mountainous areas of the state 
-			  receive more water.  Most areas above 10,000 feet in elevation receive 25 inches or more annually, mostly in the form of snow.  The snowpack typically 
-			  builds up in the early spring from storms originating in the Pacific Ocean that move eastward.  The snowpack begins to melt in April and feeds 
-			  into the State’s rivers.  Peak runoff from snowmelt occurs in May and June.  According to the Natural Resources Conservation Service (NRCS), 
-			  approximately 80% of river runoff comes from snowmelt.  The remainder comes from rainfall and infiltration from groundwater (
-			  <a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-where-your-water-comes-from/" 
-			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.4-6).</p>
 			  <p>Hydraulics, a related field, is the study of the conveyance of water or other liquids through pipes or channels.  Hydraulic 
 			  concepts include pipe flow, dam design, turbines, hydropower, flow measurement and river channel erosion.  Free surface hydraulics is the branch 
 			  of hydraulics dealing with flows that occur in rivers, canals and lakes (<a href="https://en.wikipedia.org/wiki/Hydraulics" target="_blank">Wikipedia</a>).</p>
@@ -175,6 +170,32 @@
           </div>
         </div> 
       </div>
+  <!-- Hydrographs Page -->
+      <div class="section">
+	    <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-4 text-left-custom custom-scroll">
+              <h2>Hydrology Concepts - Hydrographs</h2>			  
+			  <p>In Colorado, average annual statewide precipitation is 16 inches, with most regions receiving 12-16 inches.  The mountainous areas of the state 
+			  receive more water.  Most areas above 10,000 feet in elevation receive 25 inches or more annually, mostly in the form of snow.  The snowpack typically 
+			  builds up in the early spring from storms originating in the Pacific Ocean that move eastward.  The snowpack begins to melt in April and feeds 
+			  into the State’s rivers.  Peak runoff from snowmelt occurs in May and June.  According to the Natural Resources Conservation Service (NRCS), 
+			  approximately 80% of river runoff comes from snowmelt.  The remainder comes from rainfall and infiltration from groundwater (
+			  <a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-where-your-water-comes-from/" 
+			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.4-6).</p>
+			  <p>The amount of snow and rain that feeds into rivers varies within a single year and also from year to year.  Hydrographs summarize river flows 
+			  over a period of time.  More specifically, hydrographs show the rate of flow (discharge) versus time past a specific point in a river, 
+			  typically a streamgage (discussed in a later section).  The rate of flow is typically expressed in cubic feet per second (cfs).  The graphic at 
+			  right shows five annual hydrographs from a streamgage on Boulder Creek.  Each line represents a year of flow and shows the variability that can 
+			  occur from year to year.</p>
+			  <p><i>Screenshot of hydrograph for now; will be interactive graphic using Plotly.  Will describe hydrographs in more detail once viz is completed.</i></p>
+              </div>			
+		    <div class="col-lg-8 side-content">
+              <img class="image-centered" style="margin-top:15vh;" src="images/hydrograph.png" frameborder="0"></img>
+            </div>				
+          </div>
+        </div> 
+      </div>  
   <!-- Water Resources System Page -->
       <div class="section">
         <div class="container-fluid">
@@ -228,14 +249,14 @@
      <div class="section">
          <div class="row">
             <div class="col-lg-4 text-left-custom custom-scroll">  
-              <h2>Hydrology Concepts - Stream Gages and Measuring Flows</h2>			  
+              <h2>Hydrology Concepts - Streamgages and Measuring Flows</h2>			  
 			  <p>In order to manage the water resources of Colorado it is necessary to measure the surface water flow in natural streams and water distribution 
-			  infrastructure.  Measuring flow, also called discharge, is a fairly complex process that can be prone to error, especially when stream gages are 
+			  infrastructure.  Measuring flow, also called discharge, is a fairly complex process that can be prone to error, especially when streamgages are 
 			  not maintained or are impacted by events such as floods and sedimentation.  Streamflow in Colorado is measured by the <a href="https://waterdata.usgs.gov/nwis/sw" 
-			  target="_blank">U.S. Geological Survey</a>, <a href="http://www.dwr.state.co.us/Surfacewater/default.aspx" target="_blank">State of Colorado</a>, 
-			  local water utilities and other entities that need to know flow amounts for reporting and operations.  Sensors and data loggers (also called 
-			  data collection units (DCUs) or stage discharge recorders (SDRs)) may record measurements frequently, which are referred to as instantaneous 
-			  measurements and can be triggered by changing values.  Data are often reported at 15-minute intervals, representing average conditions over that 
+			  target="_blank">U.S. Geological Survey (USGS)</a>, <a href="http://www.dwr.state.co.us/Surfacewater/default.aspx" target="_blank">Colorado Division of 
+			  Water Resources (DWR)</a>, local water utilities and other entities that need to know flow amounts for reporting and operations.  Sensors and 
+			  data loggers (also called data collection units (DCUs) or stage discharge recorders (SDRs)) may record measurements frequently, which are referred 
+			  to as instantaneous measurements and can be triggered by changing values.  Data are often reported at 15-minute intervals, representing average conditions over that 
 			  time.  These values are then aggregated to other intervals including hour and day.  Average values are often suitable for water supply management 
 			  operations, whereas instantaneous values may be used for peak flows or other critical conditions.</p>  
 			  <p>It is important to recognize that a daily average flow, such as reported by USGS or DWR, does not mean that the flow was the same from midnight 
@@ -243,7 +264,8 @@
 			  variation.</p>  
 			  <p>Each organization that collects data assigns a station identifier and name to the station.  Multiple data sources, identifier conventions and 
 			  data formats can present challenges to finding and using data.</p>
-			  <p><i>Map of both USGS and DWR stream gages.  Popup can have URL link to gage's website and/or data.  Or embed a website that already has this.</i></p>
+			  <p>This map shows active streamgages operated by DWR, USGS or other entities such as a municipal utility.  Click on a circle for more information, 
+			  including links to the website for each gage, which shows current flow conditions measured by the gage.</p>
               </div>			
 		    <div class="col-lg-8">
               <div id="mapbox1" class="map-right"></div>
@@ -537,13 +559,13 @@
       $(document).ready(function() {
         $('#fullpage').fullpage({
           licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
-          anchors:['top', 'hydrologiccycle', 'waterresourcessystems', 'swrf', 'streamgages', 'headgates', 'groundwater', 'naturalflows', 'pointflowmodels', 'statemod', 
+          anchors:['top', 'hydrologiccycle', 'hydrographs', 'waterresourcessystems', 'swrf', 'streamgages', 'headgates', 'groundwater', 'naturalflows', 'pointflowmodels', 'statemod', 
 		  'variabilitydrought', 'variabilityclimatechange','demandag', 'demandmunic', 'demandeandr', 'storagesnowpack', 'storagegroundwater', 'storagereservoirs', 'resources', 'sources'],
-          sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf',
+          sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf',
 		  '#c3c5bf','#c3c5bf','#c3c5bf', '#386981', '#386981'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Water Resources System', 'Surface Water Stream Nework', 'Measuring Flows', 
+          navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Water Resources System', 'Surface Water Stream Nework', 'Measuring Flows', 
 		  'Measuring Diversions', 'Measuring Groundwater Levels', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Variability & Drought', 'Variability & Climate Change', 
 		  'Ag Demand', 'Municipal Demand', 'Envr & Rec Demand', 'Snowpack Storage', 'Groundwater Storage', 'Reservoir Storage', 'Resources', 'Sources'],
           recordHistory:false,

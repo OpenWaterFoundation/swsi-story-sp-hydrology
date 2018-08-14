@@ -5,7 +5,7 @@
 # Read table downloaded from CDSS's Map Viewer.  "Active Gage-Stream" was selected from the 
 # Surface Water Current Conditions layer.  All gages were selected in the state and then 
 # exported in CSV format.
-ReadTableFromDelimitedFile(TableID="streamgages-orig",InputFile="..\..\..\Users\kms\southplattedataplatform\git-repos\swsi-story-sp-hydrology\site\data\cdss-mapviewer-active-streamgages.csv",HeaderLines="1")
+ReadTableFromDelimitedFile(TableID="streamgages-orig",InputFile="..\site\data\cdss-mapviewer-active-streamgages.csv",HeaderLines="1",DoubleColumns="latdecdeg,longdecdeg",TextColumns="moreinfo,statname,dwrabbrev,wdid,usgsstatid")
 #
 # Copy table to rename columns and select columns of interest; filter to Division 1 (South Platte) only
 CopyTable(TableID="streamgages-orig",NewTableID="streamgages-v1",IncludeColumns="statname,datasource,dwrabbrev,usgsstatid,wdid,div,wd,county,latdecdeg,longdecdeg,moreinfo",ColumnMap="statname:Station_Name,wdid:WDID,moreinfo:Website,div:Division,wd:Water_District,latdecdeg:Latitude,longdecdeg:Longitude,county:County,datasource:Data_Source",ColumnFilters="div:1")
@@ -14,5 +14,41 @@ CopyTable(TableID="streamgages-orig",NewTableID="streamgages-v1",IncludeColumns=
 ManipulateTableString(TableID="streamgages-v1",InputColumn1="Data_Source",Operator="Remove",InputValue2=" (Data Provider)",OutputColumn="Data_Source")
 #
 # Export table to GeoJSON format
-WriteTableToGeoJSON(TableID="streamgages-v1",OutputFile="..\..\..\Users\kms\southplattedataplatform\git-repos\swsi-story-sp-hydrology\site\data\cdss-mapviewer-active-streamgages.geojson",LongitudeColumn="Latitude",LatitudeColumn="Longitude",JavaScriptVar="streamgages")
+WriteTableToGeoJSON(TableID="streamgages-v1",OutputFile="..\site\data\cdss-mapviewer-active-streamgages.geojson",LongitudeColumn="Longitude",LatitudeColumn="Latitude",JavaScriptVar="streamgages")
+#
+####################################################################################################
+# Use daily data from a sample gage to show the hydrologic variability within a year and from year 
+# to year.  For the Boulder Creek gage, the following years will be used:  2002 (drought), 2006 (dry),
+# 2010 (average), 2011 (wet) and 1995 (flood)
+#
+# 06730500 - BOULDER CREEK AT MOUTH NEAR LONGMONT, CO
+06730500.USGS.Streamflow.Day~HydroBase
+# 2002 - drought
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="06730500.USGS.Streamflow.Day",TableID="bouldercreek-2002",DateTimeColumn="Date",ValueColumn="Discharge_2002",OutputStart="2002-01-01",OutputEnd="2002-12-31",IfTableNotFound="Create")
+FormatTableDateTime(TableID="bouldercreek-2002",InputColumn="Date",DateTimeFormat="%m-%d",OutputColumn="Date-noyear")
+#
+# 2006 - dry
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="06730500.USGS.Streamflow.Day",TableID="bouldercreek-2006",DateTimeColumn="Date",ValueColumn="Discharge_2006",OutputStart="2006-01-01",OutputEnd="2006-12-31",IfTableNotFound="Create")
+FormatTableDateTime(TableID="bouldercreek-2006",InputColumn="Date",DateTimeFormat="%m-%d",OutputColumn="Date-noyear")
+#
+# 2010 - average
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="06730500.USGS.Streamflow.Day",TableID="bouldercreek-2010",DateTimeColumn="Date",ValueColumn="Discharge_2010",OutputStart="2010-01-01",OutputEnd="2010-12-31",IfTableNotFound="Create")
+FormatTableDateTime(TableID="bouldercreek-2010",InputColumn="Date",DateTimeFormat="%m-%d",OutputColumn="Date-noyear")
+#
+# 2011 - wet
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="06730500.USGS.Streamflow.Day",TableID="bouldercreek-2011",DateTimeColumn="Date",ValueColumn="Discharge_2011",OutputStart="2011-01-01",OutputEnd="2011-12-31",IfTableNotFound="Create")
+FormatTableDateTime(TableID="bouldercreek-2011",InputColumn="Date",DateTimeFormat="%m-%d",OutputColumn="Date-noyear")
+#
+# 1995 - flood
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="06730500.USGS.Streamflow.Day",TableID="bouldercreek-1995",DateTimeColumn="Date",ValueColumn="Discharge_1995",OutputStart="1995-01-01",OutputEnd="1995-12-31",IfTableNotFound="Create")
+FormatTableDateTime(TableID="bouldercreek-1995",InputColumn="Date",DateTimeFormat="%m-%d",OutputColumn="Date-noyear")
+#
+# Merge tables together to get a sample of various discharges
+CopyTable(TableID="bouldercreek-2002",NewTableID="bouldercreek-sampleflows",IncludeColumns="Date-noyear,Discharge_2002",ColumnMap="Date-noyear:Date")
+JoinTables(TableID="bouldercreek-sampleflows",TableToJoinID="bouldercreek-2006",JoinColumns="Date:Date-noyear",IncludeColumns="Discharge_2006",JoinMethod=JoinIfInBoth)
+JoinTables(TableID="bouldercreek-sampleflows",TableToJoinID="bouldercreek-2010",JoinColumns="Date:Date-noyear",IncludeColumns="Discharge_2010",JoinMethod=JoinIfInBoth)
+JoinTables(TableID="bouldercreek-sampleflows",TableToJoinID="bouldercreek-2011",JoinColumns="Date:Date-noyear",IncludeColumns="Discharge_2011",JoinMethod=JoinIfInBoth)
+JoinTables(TableID="bouldercreek-sampleflows",TableToJoinID="bouldercreek-1995",JoinColumns="Date:Date-noyear",IncludeColumns="Discharge_1995",JoinMethod=JoinIfInBoth)
+#
+TableToTimeSeries(TableID="bouldercreek-sampleflows",DateTimeFormat="%m-%d",DateColumn="Date",LocationID="TC[2:6]",LocationType="06730500",ValueColumn="TC[2:6]",DataSource="USGS",DataType="Discharge",Interval=Day,Alias="%A")
 #
