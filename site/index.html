@@ -30,6 +30,8 @@
     <link href="css/county-population-forecast-map.css" rel="stylesheet" />
     <!-- Style for jBox library -->
     <link href="css/jBox-0.4.9.css" rel="stylesheet">
+    <!-- Style for StoryMapJS -->
+    <link href="css/storymap-0.6.7.css" rel="stylesheet">	
 
     <!-- JavaScript Files -->
     <!-- Include d3 to make a simple scale for slider -->
@@ -62,11 +64,14 @@
     <!-- jBox for tooltips -->
     <script src="js/jBox-0.4.9.min.js"></script>
     <!-- Plotly Javascript File -->	
-	<script src="js/plotly.min.js"></script>	
-
+	<script src="js/plotly.min.js"></script>
+    <!-- StoryMapJS Javascript File -->		
+	<script type="text/javascript" src="js/storymap-0.6.7-min.js"></script>
+	
   	<!-- Data Files -->
   	<script src="data/statemod-node-network.geojson"></script>
-  	<script src="data/cdss-mapviewer-active-streamgages.geojson"></script>	
+  	<script src="data/cdss-mapviewer-active-streamgages.geojson"></script>
+  	<script src="data/story.json"></script>	
   	<!-- Boundary Files -->	
   	<script src="data/Colorado-IBCC-Basins-WGS84.geojson"></script>	
 	
@@ -106,16 +111,16 @@
             </li>		  
             <li class="nav-item">
               <a class="nav-link" href="#pointflowmodels">Modeling</a>
-            </li>
-           <li class="nav-item">
-              <a class="nav-link" href="#variabilitydrought">Variability</a>
             </li>			
            <li class="nav-item">
               <a class="nav-link" href="#demandag">Demand</a>
             </li>
            <li class="nav-item">
               <a class="nav-link" href="#storagesnowpack">Storage</a>
-            </li>								
+            </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#toolsswrf">Tools</a>
+            </li>			
             <li class="nav-item">
               <a class="nav-link" href="#resources">Resources</a>
             </li>						
@@ -185,17 +190,43 @@
 			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.4-6).</p>
 			  <p>The amount of snow and rain that feeds into rivers varies within a single year and also from year to year.  Hydrographs summarize river flows 
 			  over a period of time.  More specifically, hydrographs show the rate of flow (discharge) versus time past a specific point in a river, 
-			  typically a streamgage (discussed in a later section).  The rate of flow is typically expressed in cubic feet per second (cfs).  The graphic at 
-			  right shows five annual hydrographs from a streamgage on Boulder Creek.  Each line represents a year of flow and shows the variability that can 
+			  typically a streamgage (discussed in a later section).  The rate of flow is typically expressed in cubic feet per second (cfs).  This graphic 
+			  shows five annual hydrographs from a streamgage on Boulder Creek.  Each line represents a year of flow and shows the variability that can 
 			  occur from year to year.</p>
 			  <p><i>Screenshot of hydrograph for now; will be interactive graphic using Plotly.  Will describe hydrographs in more detail once viz is completed.</i></p>
+			  <p><i>Point is to show what the hydrologic cycle ends up "looking" like in a river and how this varies from year to year.</i></p>			  
               </div>			
 		    <div class="col-lg-8 side-content">
               <img class="image-centered" style="margin-top:15vh;" src="images/hydrograph.png" frameborder="0"></img>
             </div>				
           </div>
         </div> 
-      </div>  
+      </div> 
+  <!-- Heatmap of Annual Flows for Several Gages Page -->	  
+		<div class="section">
+	      <div class="container-fluid">		
+            <div class="row">
+              <div class="col-lg-5 text-left-custom custom-scroll">
+              <h2>Hydrology Concepts - Variability</h2>
+			  <p>Hydrologic variability occurs across space as well as time.  Within the South Platte Basin, flows can vary between rivers within the same 
+			  year.  This visualization shows average annual flow from 1950 to 2011 for 33 streamgages in the basin, representing the South Platte River and 
+			  many of its tributaries.  Within a streamgage, average annual flows were ranked and placed into percentile categories as follows:</p>
+			  <ul>
+			    <li>Less than 10<sup>th</sup> percentile = Much Below Normal</li>
+			    <li>10<sup>th</sup> - 24<sup>th</sup> percentile = Below Normal</li>
+			    <li>25<sup>th</sup> - 75<sup>th</sup> percentile = Normal</li>
+			    <li>76<sup>th</sup> - 90<sup>th</sup> percentile = Above Normal</li>
+			    <li>Greater than 90<sup>th</sup> percentile = Much Above Normal</li>				
+			  </ul>	
+			  <p><i>Heatmap of gages across the basin.  Screenshot for now; will be interactive graphic.</i></p>
+			  <p><i>Point here is to show that variability also occurs across the basin, not just between years.</i></p>			  
+              </div>
+		      <div class="col-lg-7 side-content">
+              <img class="image-centered" style="margin-top:15vh;" src="images/annual-flow-heatmap.png" frameborder="0"></img>
+              </div>				
+            </div>
+		  </div>	
+        </div>  		
   <!-- Water Resources System Page -->
       <div class="section">
         <div class="container-fluid">
@@ -208,56 +239,33 @@
 			    <li>physical constructs, such as infrastructure that is used to store and convey water</li>
 				<li>operational constructs, such as agreements that control how systems are operated to deliver water to paying customers or shareholders</li>
 			  </ul>
+			  <p>Surface water use in Colorado is administered by the <a href="http://water.state.co.us/Home/Pages/default.aspx" target="_blank">Division of 
+			  Water Resources (DWR)</a>.  DWR is tasked with providing the dependable distribution of water in accordance with statutes, decrees and 
+			  interstate compacts.</p>	
 			  <p>The complexity of water resources systems is illustrated by “straight line diagrams” that combine physical and legal information to help 
 			  people understand water resources systems.  The diagrams are graphical linear representations of structures and/or water rights for a given stream 
 			  system that allows a large amount of complex information to be observed at a glance.  This straight line diagram of water district 04 (Big Thompson 
 			  River) can also be viewed <a href="https://dnrweblink.state.co.us/dwr/0/doc/2083919/Page1.aspx?searchid=fd2f4d5d-003a-48dc-bb41-b937f8afa88f" 
-			  target="_blank">here</a>.</p>
+			  target="_blank">here</a>.</p>		  
               </div>			
 		    <div class="col-lg-8 side-content">
               <img class="image-centered" style="margin-top:15vh;" src="images/straight-line-diagram.png" frameborder="0"></img>
             </div>				
           </div>
         </div> 
-      </div>   
-  <!-- Surface Water Stream Network Page -->
-      <div class="section">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
-              <h2>Hydrology Concepts - Surface Water Stream Network</h2>			  
-			  <p>Surface water use in Colorado is administered by the <a href="http://water.state.co.us/Home/Pages/default.aspx" target="_blank">Division of 
-			  Water Resources (DWR)</a>.  DWR is tasked with providing the dependable distribution of water in accordance with statutes, decrees and 
-			  interstate compacts.</p>
-			  <p>A dataset that has recently been developed by DWR is the Source Water Route Framework (SWRF), which is a spatial data layer representing 
-			  most streams in Colorado, in particular those with water rights or other important features.  SWRF is derived from the U.S. Geological 
-			  Survey's <a href="https://nhd.usgs.gov/NHD_High_Resolution.html" target="_blank">National Hydrography Dataset (NHD)</a>, which is available 
-			  at several scales.  A Geographic Names Information System (GNIS) ID, an 8-digit identifier, is used to uniquely identify most streams in the 
-			  state, rather than using the stream's common name (there are 13 streams named Dry Creek in the South Platte basin alone).</p>
-			  <p>By using the NHD linked to Colorado water data, it is possible to link federal and State datasets.  Datasets such as 
-			  stream gages, diversion structures and instream flow rights can be "referenced" to the SWRF to provide a common framework for analysis; 
-			  such data work is ongoing in order to leverage the SWRF dataset.</p>
-			  <p><i>Map of SWRF will be shown at right.  File size is 25 MB though.</i></p>
-              </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
-            </div>				
-          </div>
-        </div> 
-      </div>   
+      </div>    
   <!-- Stream Gages and Measuring Flows Page -->
      <div class="section">
          <div class="row">
             <div class="col-lg-4 text-left-custom custom-scroll">  
               <h2>Hydrology Concepts - Streamgages and Measuring Flows</h2>			  
 			  <p>In order to manage the water resources of Colorado it is necessary to measure the surface water flow in natural streams and water distribution 
-			  infrastructure.  Measuring flow, also called discharge, is a fairly complex process that can be prone to error, especially when streamgages are 
-			  not maintained or are impacted by events such as floods and sedimentation.  Streamflow in Colorado is measured by the <a href="https://waterdata.usgs.gov/nwis/sw" 
+			  infrastructure.  Streamflow, also called discharge, in Colorado is measured by the <a href="https://waterdata.usgs.gov/nwis/sw" 
 			  target="_blank">U.S. Geological Survey (USGS)</a>, <a href="http://www.dwr.state.co.us/Surfacewater/default.aspx" target="_blank">Colorado Division of 
 			  Water Resources (DWR)</a>, local water utilities and other entities that need to know flow amounts for reporting and operations.  Sensors and 
 			  data loggers (also called data collection units (DCUs) or stage discharge recorders (SDRs)) may record measurements frequently, which are referred 
 			  to as instantaneous measurements and can be triggered by changing values.  Data are often reported at 15-minute intervals, representing average conditions over that 
-			  time.  These values are then aggregated to other intervals including hour and day.  Average values are often suitable for water supply management 
+			  time.  These values are then aggregated to longer intervals including hour and day.  Average values are often suitable for water supply management 
 			  operations, whereas instantaneous values may be used for peak flows or other critical conditions.</p>  
 			  <p>It is important to recognize that a daily average flow, such as reported by USGS or DWR, does not mean that the flow was the same from midnight 
 			  to midnight; in actuality, the flow could have varied significantly during the day and using shorter-interval data is necessary to understand the 
@@ -303,6 +311,8 @@
             <div class="col-lg-5 text-left-custom custom-scroll">
               <h2>Hydrology Concepts - Groundwater and Measuring Water Level</h2>
 			  <p><i>Needs to be filled in.  Possibly reference HB 1278 study; state data for Gilcrest/La Salle, etc.</i></p>
+			  <p><i>Citizen's Guide to Where Your Water Comes From has info about aquifers.  Use this for reference.</i></p>	
+			  <p><i>Not sure about what type of viz to use here.</i></p>			  
               </div>			
 		    <div class="col-lg-7 side-content">
               <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
@@ -318,12 +328,14 @@
               <h2>Hydrology Concepts - Natural vs. Regulated Flows</h2>
 			  <p>Streamflows can represent various conditions.  Natural flow is streamflow absent the impacts of humans (no reservoirs, no diversions, etc.).  
 			  Natural streamflow can only be measured where human impacts are absent, such as headwater basins.  Regulated flow is streamflow that is impacted 
-			  by humans and corresponds to stream gage measurements that are commonly reported.  Natural flow can be estimated from regulated flow by removing 
-			  human impacts.  For example, natural flow can be estimated by subtracting reservoir releases and adding diversions.  The calculations can be more 
-			  complex if all hydrologic inputs are considered, such as agricultural return flows, evaporation from reservoirs, wastewater treatment plan returns, 
-			  etc.</p>  
+			  by humans and corresponds to streamgage measurements that are commonly reported.  In the <a href="#hydrographs">Hydrographs</a> page of this story, 
+			  hydrographs represent the natural hydrologic system (as compared to ditches or canals), but it should be understood that the flows that are measured 
+			  are considered regulated flows.</p>
+			  <p>Natural flow can be estimated from regulated flow by removing human impacts.  For example, natural flow can be estimated by subtracting reservoir 
+			  releases and adding back in diverted flows from ditches and canals.  The calculations can be more complex if all hydrologic inputs are considered, 
+			  such as agricultural return flows, evaporation from reservoirs, wastewater treatment plan returns, etc.</p>
 			  <p>Analyses of water supplies and the effects of climate change on streamflow are just a couple of ways in which it may be necessary to estimate 
-			  natural or regulated flows.  Estimation of natural flows therefore may require utilizing models. Two examples are point flow models and the CDSS 
+			  natural or regulated flows.  Estimation of natural flows typically requires utilizing models. Two examples are point flow models and the CDSS 
 			  StateMod model, which will be discussed in the next section.</p>
 			  <p><i>Graph of natural flow vs. regulated flow at a specific location.</i></p>
               </div>			
@@ -341,7 +353,7 @@
               <h2>Modeling Concepts - Point Flow Models</h2>
 			  <p>A point flow model is a modeling technique for representing the water balance in a hydrologic system, where calculations are performed at a point
 			  in time across all locations in the model.  Relatively simple water balance calculations are used to account for diversions and inflows between known 
-			  flow points, typically stream gages.  Point flow models are appropriate for performing simple basin modeling.  The streamflow at every stream 
+			  flow points, typically streamgages.  Point flow models are appropriate for performing simple basin modeling.  The streamflow at every stream 
 			  gage in the basin is represented in the analysis for a specific point in time.</p>
 			  <p>Point flow models are usually constructed as a system, or network, of nodes and links.  The inputs throughout the basin are used to add and subtract 
 			  flows to perform a water balance.  The data outputs from one timestep are then used as inputs across the basin for the next timestep.</p>
@@ -366,7 +378,7 @@
               <h2>Modeling Concepts - CDSS and StateMod</h2>
 			  <p>Colorado’s Decision Support Systems (CDSS) <a href="http://cdss.state.co.us/Modeling/Pages/SurfaceWaterStateMod.aspx" target="_blank">StateMod</a> model 
 			  is a tool that represents a river basin using constructs that closely match the water rights system in Colorado.  The model represents a river system using 
-			  a network of nodes, called stations (i.e., stream gage, diversion and well stations).  The nodes in the model are associated with other data files, including water 
+			  a network of nodes, called stations (i.e., streamgage, diversion and well stations).  The nodes in the model are associated with other data files, including water 
 			  rights, return flow tables and time series files indicating historical diversions, demands, etc.  StateMod also includes features to represent real-world 
 			  operational constructs such as exchanges, augmentation plans and terms and conditions.</p>
 			  <p>StateMod datasets are created to represent Colorado’s basins to help with planning studies such as evaluating major system changes and climate change.  
@@ -386,36 +398,7 @@
 				<script src="js/map-files/statemod-nodes-map.js"></script>
             </div>				
          </div>
-      </div>
-<!-- Hydrologic Variability Section -->	  
-  <!--  Variability and Drought Page -->
-      <div class="section">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
-              <h2>Hydrologic Variability and Drought</h2>
-			  <p><i>Page will show heatmap of annual flows across the basin and/or show SWSI (index) or other drought indices.  Provide link to drought monitor.</i></p>
-              </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
-            </div>				
-          </div>
-        </div> 
-      </div> 
-  <!--  Variability and Climate Change Page -->
-      <div class="section">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
-              <h2>Hydrologic Variability and Climate Change</h2>
-			  <p><i>Reference CWCB climate change report.</i></p>
-              </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
-            </div>				
-          </div>
-        </div> 
-      </div> 	
+      </div>	
 <!-- Demands Section -->	  
   <!--  Agricultural Demand Page -->
       <div class="section">
@@ -504,7 +487,74 @@
             </div>				
           </div>
         </div> 
-      </div> 	  
+      </div> 
+<!-- Hydrologic Tools Section -->	  
+  <!--  Source Water Route Framework Page -->
+      <div class="section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-5 text-left-custom custom-scroll">
+              <h2>Hydrology Tools - Source Water Route Framework</h2>
+			  <p>A dataset that has recently been developed by DWR is the Source Water Route Framework (SWRF), which is a spatial data layer representing 
+			  most streams in Colorado, in particular those with water rights or other important features.  SWRF is derived from the USGS's 
+			   <a href="https://nhd.usgs.gov/NHD_High_Resolution.html" target="_blank">National Hydrography Dataset (NHD)</a>, which is available 
+			  at several scales.  A Geographic Names Information System (GNIS) ID, an 8-digit identifier, is used to uniquely identify most streams in the 
+			  state, rather than using the stream's common name (there are 13 streams named Dry Creek in the South Platte basin alone).</p>
+			  <p>By using the NHD linked to Colorado water data, it is possible to link federal and State datasets.  Datasets such as 
+			  stream gages, diversion structures and instream flow rights can be "referenced" to the SWRF to provide a common framework for analysis; 
+			  such data work is ongoing in order to leverage the SWRF dataset.</p>
+			  <p>The SWRF can be downloaded <a href="http://cdss.state.co.us/GIS/Pages/AllGISData.aspx" target="_blank">here</a>.</p>
+			  <p><i>Map of SWRF will be shown at right.  <b>File size is 25 MB though.</b></i></p>
+              </div>			
+		    <div class="col-lg-7 side-content">
+              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+            </div>				
+          </div>
+        </div> 
+      </div>   
+  <!--  Drought Monitor Page -->
+      <div class="section">
+          <div class="row">
+            <div class="col-lg-4 text-left-custom custom-scroll">
+              <h2>Hydrology Tools - Drought</h2>
+			  <p>The <a href="http://droughtmonitor.unl.edu/Data/Timeseries.aspx" target="_blank">U.S. Drought Monitor</a> is a weekly map of drought conditions 
+			  produced jointly by the National Oceanic and Atmospheric Administration, the U.S. Department of Agriculture and the National Drought Mitigation 
+			  Center at the University of Nebraska-Lincoln (NDMC-UNL).  The map is based on measurements of climatic, hydrologic and soil conditions as well as 
+			  reported impacts and observations from more than 350 contributors around the country.</p>
+			  <p>Drought severity is <a href="http://droughtmonitor.unl.edu/AboutUSDM/DroughtClassification.aspx" target="_blank">classified</a> as the following:</p>
+			  <ul>
+			    <li>D0 - abnormally dry</li>
+			    <li>D1 - moderate drought</li>
+			    <li>D2 - severe drought</li>
+			    <li>D3 - extreme drought</li>
+			    <li>D4 - exceptional drought</li>				
+			  </ul>	
+			  <p>To view the current status of the South Platte Basin, under "Area type" click "HUC (6 digit)", then under "Area", choose "101900 (South Platte)".</p> 
+			  <p>This map is courtesy of NDMC-UNL.</p>
+            </div>
+			<div class="col-lg-8 side-content">
+                <iframe data-src="http://droughtmonitor.unl.edu/Data/Timeseries.aspx" scrolling="no" frameborder="0"></iframe>
+            </div>
+          </div>
+      </div>
+<!-- Poudre StoryMapJS Page -->	
+      <div class="section">
+		<div class="row" style="margin: 0;">
+	      <div class="vco-container">
+		    <div class="vco-storyjs">
+			  <div id="storymapjs1" style="width: 100%; height: 100vh;"></div>  
+				<script>
+				var storymap_data = 'data/story.json';
+				var storymap_options = {};
+				var storymap = new VCO.StoryMap('storymap', storymap_data, storymap_options);
+				window.onresize = function(event) {
+			    storymap.updateDisplay();
+			}
+				</script>
+		    </div>		
+		  </div>
+	    </div>
+	  </div>	
 <!-- Resources Page -->		  	  
       <div class="section">
           <div class="container text-center blue-bkgd-text">
@@ -559,15 +609,16 @@
       $(document).ready(function() {
         $('#fullpage').fullpage({
           licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
-          anchors:['top', 'hydrologiccycle', 'hydrographs', 'waterresourcessystems', 'swrf', 'streamgages', 'headgates', 'groundwater', 'naturalflows', 'pointflowmodels', 'statemod', 
-		  'variabilitydrought', 'variabilityclimatechange','demandag', 'demandmunic', 'demandeandr', 'storagesnowpack', 'storagegroundwater', 'storagereservoirs', 'resources', 'sources'],
-          sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf',
-		  '#c3c5bf','#c3c5bf','#c3c5bf', '#386981', '#386981'],
+          anchors:['top', 'hydrologiccycle', 'hydrographs', 'heatmap', 'waterresourcessystems', 'streamgages', 'headgates', 'groundwater', 'naturalflows', 'pointflowmodels', 'statemod', 
+		   'demandag', 'demandmunic', 'demandeandr', 'storagesnowpack', 'storagegroundwater', 'storagereservoirs', 'toolsswrf', 'toolsdrought', 'poudrestorymap', 'resources', 'sources'],
+          sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf',
+		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#386981', '#386981'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Water Resources System', 'Surface Water Stream Nework', 'Measuring Flows', 
-		  'Measuring Diversions', 'Measuring Groundwater Levels', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Variability & Drought', 'Variability & Climate Change', 
-		  'Ag Demand', 'Municipal Demand', 'Envr & Rec Demand', 'Snowpack Storage', 'Groundwater Storage', 'Reservoir Storage', 'Resources', 'Sources'],
+          navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Annual Flow Heatmap', 'Water Resources System',
+		  'Measuring Flows', 'Measuring Diversions', 'Measuring Groundwater Levels', 'Natural vs. Regulated Flows', 'Point Flow Models', 
+		  'StateMod Models', 'Ag Demand', 'Municipal Demand', 'Envr & Rec Demand', 
+		  'Snowpack Storage', 'Groundwater Storage', 'Reservoir Storage', 'Source Water Route Framework', 'Drought Tools', 'Poudre Demo', 'Resources', 'Sources'],
           recordHistory:false,
           menu:"#navbarResponsive",
           paddingTop:'75px'
