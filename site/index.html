@@ -32,6 +32,8 @@
     <link href="css/jBox-0.4.9.css" rel="stylesheet">
     <!-- Style for StoryMapJS -->
     <link href="css/storymap-0.6.7.css" rel="stylesheet">	
+    <!-- Style for TimelineJS -->
+    <link href="css/Timelinejs-3.6.0-min.css" rel="stylesheet">		
 
     <!-- JavaScript Files -->
     <!-- Include d3 to make a simple scale for slider -->
@@ -48,6 +50,10 @@
     <script src="https://d3js.org/d3-scale.v2.min.js"></script>
     <!-- Include custom class fileparser -->
     <script src="js/fileparser.js"></script>
+    <!-- StoryMapJS Javascript File -->		
+	<script type="text/javascript" src="js/storymap-0.6.7-min.js"></script>
+    <!-- TimelineJS Javascript File -->		
+	<script type="text/javascript" src="js/Timelinejs-3.6.0-min.js"></script>		
     <!-- MapBox Leaflet -->
     <!--<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>-->
     <script src="js/leaflet-1.3.3.js"></script>
@@ -65,13 +71,13 @@
     <script src="js/jBox-0.4.9.min.js"></script>
     <!-- Plotly Javascript File -->	
 	<script src="js/plotly.min.js"></script>
-    <!-- StoryMapJS Javascript File -->		
-	<script type="text/javascript" src="js/storymap-0.6.7-min.js"></script>
+
 	
   	<!-- Data Files -->
   	<script src="data/statemod-node-network.geojson"></script>
   	<script src="data/cdss-mapviewer-active-streamgages.geojson"></script>
   	<script src="data/story.json"></script>	
+  	<script src="data/timeline.json"></script>		
   	<!-- Boundary Files -->	
   	<script src="data/Colorado-IBCC-Basins-WGS84.geojson"></script>	
 	
@@ -310,8 +316,12 @@
           <div class="row">
             <div class="col-lg-5 text-left-custom custom-scroll">
               <h2>Hydrology Concepts - Groundwater and Measuring Water Level</h2>
-			  <p><i>Needs to be filled in.  Possibly reference HB 1278 study; state data for Gilcrest/La Salle, etc.</i></p>
-			  <p><i>Citizen's Guide to Where Your Water Comes From has info about aquifers.  Use this for reference.</i></p>	
+			  <p>Groundwater is used for city water supplies, industry, irrigation, rural domestic use and livestock watering.  The State Engineer has estimated that 
+			  about 2 million acre-feet of groundwater is pumped and used annually, which amounts to approximately 20% of all water used in Colorado (
+			  <a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-where-your-water-comes-from/" 
+			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.29).
+			  <p><i>Continue to fill in with info from Citizen's Guide to Where Your Water Comes From.</i></p>	
+			  <p><i>Possibly reference HB 1278 study; state data for Gilcrest/La Salle, etc.</i></p>
 			  <p><i>Not sure about what type of viz to use here.</i></p>			  
               </div>			
 		    <div class="col-lg-7 side-content">
@@ -405,9 +415,14 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-5 text-left-custom custom-scroll">
-              <h2>Water Demand for Agriculture</h2>
+              <h2>Water Demands - Agriculture</h2>
+			  <p>To further understand current and future available water supplies, it is necessary to understand the demands that are placed on those supplies.  Various 
+			  entities compete for the Basin's water resources and these entities need water at different times of the year.  Agriculture is the largest user of the Basin's 
+			  water resources (<a href="https://www.colorado.gov/cowaterplan" target="_blank">Colorado Water Plan<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, 
+			  p.3-13).</p>  
+			  <p>Agricultural demand for water is typically from May to October...</p> 
 			  <p><i>Discussion of the amount and timing of agricultural demands and yearly patterns.  Perhaps discuss that different crops need water at different 
-			  times.</i></p>
+			  times.  StateMod outputs for total demand show the May-October cycle for ditches -- could plot a few of these.</i></p>
               </div>			
 		    <div class="col-lg-7 side-content">
               <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
@@ -420,8 +435,11 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-5 text-left-custom custom-scroll">
-              <h2>Water Demand for Municipalities and Industry</h2>
-			  <p><i>Discussion of the amount and timing of M&I demands and yearly patterns, especially indoor and outdoor use.</i></p>
+              <h2>Water Demands - Municipalities and Industry</h2>
+			   <p>Municipalities and industry are a second category of demand placed on the Basin's water resources.  Municipal water demand is fairly constant throughout 
+			   the year for indoor use but greatly increases for outdoor use in the summer months to water landscaping.</p>
+			   <p><i>Find some graphic of the amount and timing of M&I demands and yearly patterns, especially indoor and outdoor use.  Can use StateMod outputs for a few 
+			   cities in the Basin.  These clearly show that water use almost doubles in the summer months.  Use Plotly to make interactive.</i></p>
               </div>			
 		    <div class="col-lg-7 side-content">
               <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
@@ -434,13 +452,13 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-5 text-left-custom custom-scroll">
-              <h2>Water Demand for Environment and Recreation</h2>
+              <h2>Water Demands - Environment and Recreation</h2>
 			  <p><i>Discussion of the amount and timing of E&R demands and yearly patterns.  Include hydrograph of instream flow and 
-			  recreation demand, similar to graphs in BIP.</i></p>
+			  recreation demand, similar to graphs in BIP.  Make this interactive using Plotly.</i></p>
 			  <p>Senior agricultural water rights lower in the Basin benefit instream flows as long as exchanges do not dry up the river.</p>
               </div>			
 		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+              <img class="image-centered" style="margin-top:15vh;" src="images/envr-rec-hydrograph.png" frameborder="0"></img>
             </div>				
           </div>
         </div> 
@@ -448,31 +466,33 @@
 <!-- Storage Section -->	  
   <!--  Snowpack Page -->
       <div class="section">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
+        <div class="row">
+          <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Storage - Snowpack</h2>
-			  <p><i></i></p>
+			  <p>As mentioned previously, approximately 80% of river runoff comes from snowmelt.  Snowpack is essentially a one-year storage 
+			  reservoir and has the benefit of being a natural, high-elevation and generally high-quality supply.  The amount of water that is 
+			  generated by the melting of the snowpack is vital for water managers to understand because they must predict yearly water supplies
+			  for homes, businesses, farms, etc.  Snowpack is measured by the NRCS’s National Water and Climate Center and a network of Snow Telemetry 
+			  <a href="https://www.wcc.nrcs.usda.gov/snow/" target="_blank">(SNOTEL)</a> stations.  Automated remote sensing equipment at these 
+			  stations (which are located throughout the western U.S.) generate real-time snow and climate data.  The data are available in hourly, 
+			  daily, monthly and year increments.  The NRCS compiles monthly 
+			  <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detailfull/co/snow/waterproducts/basin/?cid=nrcs144p2_063076" 
+			  target="_blank">Colorado Water Supply Outlook Reports</a> from January through June.  The April 1 snowpack report is the most-awaited 
+			  report for water managers because it guides their water supply management strategies for the coming year 
+			  (<a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-where-your-water-comes-from/" 
+			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.7).</p>
+			  <p>This visualization is from the NRCS's National Water and Climate Center and shows the snow water equivalent percent for each basin in 
+			  Colorado.  Note that depending on the time of year, the map will be gray, indicating the lack of snowpack.  On the right side of the map, 
+			  choose a month like April under the "Month:" option to get a better sense of snow water equivalent in each basin.</p>
+			  <p>Some municipal water providers generate their own water forecasts.  For example, Denver Water produces <a 
+			  href="https://www.denverwater.org/your-water/water-supply-and-planning/supply-data-and-reports" target="_blank">Water Watch Reports</a>.</p>
+			  <p><i>Some mention of dust-on-snow events and earlier runoff due to climate change.</i></p>
               </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
-            </div>				
+		  <div class="col-lg-8 side-content">
+                <iframe data-src="https://www.wcc.nrcs.usda.gov/webmap_beta/#version=98&elements=&networks=!&states=!&counties=!&hucs=&minElevation=&maxElevation=&elementSelectType=all&activeOnly=true&activeForecastPointsOnly=false&hucLabels=true&hucIdLabels=false&hucParameterLabels=true&stationLabels=&overlays=&hucOverlays=wy_8,state&basinOpacity=70&basinNoDataOpacity=100&basemapOpacity=90&maskOpacity=0&mode=data&openSections=parameter,date,basin,options,elements,location,overlays,labels&controlsOpen=true&popup=&popupMulti=&base=esriWsr&displayType=basinstation&basinType=co_8&dataElement=WTEQ&parameter=PCTMED&frequency=MONTHLY&duration=I&customDuration=&dayPart=E&year=2018&month=8&day=8&monthPart=B&forecastPubMonth=4&forecastPubDay=1&forecastExceedance=50&seqColor=1&divColor=1&scaleType=C&scaleMin=40&scaleMax=160&referencePeriodType=POR&referenceBegin=1981&referenceEnd=2010&minimumYears=20&hucAssociations=true&lat=38.598&lon=-104.224&zoom=7.0" 
+				scrolling="no" frameborder="0"></iframe>
           </div>
-        </div> 
-      </div> 
-  <!--  Groundwater Page -->
-      <div class="section">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
-              <h2>Storage - Groundwater</h2>
-			  <p><i></i></p>
-              </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
-            </div>				
-          </div>
-        </div> 
+        </div>
       </div> 
   <!--  Reservoirs Page -->
       <div class="section">
@@ -480,14 +500,68 @@
           <div class="row">
             <div class="col-lg-5 text-left-custom custom-scroll">
               <h2>Storage - Reservoirs</h2>
-			  <p><i></i></p>
+			  <p>As has been shown, various users of the Basin's water resources need water at different times of the year and in different amounts.  
+			  If left to its own means, the snowpack that begins to melt in April would run off quickly into Colorado's rivers and out of the state.  Dry 
+			  conditions during the most of the year produce little water in rivers during the summer and winter months.  Historically, the South Platte River 
+			  naturally dried up for extended stretches during the late summer and early autumn months 
+			  (<a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-where-your-water-comes-from/" 
+			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.26).  
+			  Reservoirs are constructed to maintain a consistent supply of water for municipal, industrial, agricultural and sometimes environmental and 
+			  recreational uses.  Reservoirs essentially regulate river flows:  they can increase low flows during dry conditions and reduce flooding flows.</p>
+			  <p><i>Maybe expand on a little more.  Link to South Platte Storage Study.  Mention transbasin reservoirs.</i></p>
+			  <p><i>Need to decide on a viz.</i></p>
               </div>			
 		    <div class="col-lg-7 side-content">
               <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
             </div>				
           </div>
         </div> 
-      </div> 
+      </div>
+  <!--  Groundwater Page -->
+      <div class="section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-5 text-left-custom custom-scroll">
+              <h2>Storage - Groundwater</h2>
+			  <p>Water can also be stored underground in aquifers.  One benefit to underground storage is that it has less of an environmental impact compared 
+			  to constructing a new reservoir.</p>
+			  <p><i>Continue to fill in with info from Citizen's Guide to Where Your Water Comes From.</i></p>	
+			  <p><i>Need to decide on a graphic.  Perhaps something from the Aquifer Storage and Recovery projects?</i></p>				  
+              </div>			
+		    <div class="col-lg-7 side-content">
+              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+            </div>				
+          </div>
+        </div> 
+      </div>
+<!-- Drought Section -->
+      <div class="section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-5 text-left-custom custom-scroll">
+              <h2>Drought</h2>
+			  <p><i>Discuss here the potential impacts drought may have on the Basin's water resources.</i></p>				  
+              </div>			
+		    <div class="col-lg-7 side-content">
+              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+            </div>				
+          </div>
+        </div> 
+      </div>	
+<!-- Climate Change Section -->	 
+      <div class="section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-5 text-left-custom custom-scroll">
+              <h2>Climate Change</h2>
+			  <p><i>Discuss here the potential impacts climate change may have on the Basin's water resources.</i></p>			  
+              </div>			
+		    <div class="col-lg-7 side-content">
+              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+            </div>				
+          </div>
+        </div> 
+      </div>	  
 <!-- Hydrologic Tools Section -->	  
   <!--  Source Water Route Framework Page -->
       <div class="section">
@@ -540,21 +614,26 @@
 <!-- Poudre StoryMapJS Page -->	
       <div class="section">
 		<div class="row" style="margin: 0;">
-	      <div class="vco-container">
-		    <div class="vco-storyjs">
-			  <div id="storymapjs1" style="width: 100%; height: 100vh;"></div>  
+			  <div id="storymapjs1" style="width: 95%; height: 100vh;"></div>  
 				<script>
 				var storymap_data = 'data/story.json';
 				var storymap_options = {};
-				var storymap = new VCO.StoryMap('storymap', storymap_data, storymap_options);
+				var storymap = new VCO.StoryMap('storymapjs1', storymap_data, storymap_options);
 				window.onresize = function(event) {
 			    storymap.updateDisplay();
 			}
 				</script>
-		    </div>		
-		  </div>
-	    </div>
+		</div>		
 	  </div>	
+<!-- Water Plan TimelineJS Page -->	
+      <div class="section">
+	    <div class="row" style="margin: 0;">	  
+		  <div id='timeline-embed1' style="width: 95%; height: 100vh"></div>
+		    <script type="text/javascript">
+			timeline = new TL.Timeline('timeline-embed1', 'data/timeline.json');
+            </script>
+		</div>
+	  </div>
 <!-- Resources Page -->		  	  
       <div class="section">
           <div class="container text-center blue-bkgd-text">
@@ -592,7 +671,8 @@
               <h2>Sources</h2>
 			  <p>Water cycle image available from the <a href="https://water.usgs.gov/edu/watercycle.html" target="_blank">U.S. Geological Survey</a>.</p>
         </div>	
-      </div> 
+      </div>
+	  
      </div>	  
     </div>
 
@@ -610,15 +690,15 @@
         $('#fullpage').fullpage({
           licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
           anchors:['top', 'hydrologiccycle', 'hydrographs', 'heatmap', 'waterresourcessystems', 'streamgages', 'headgates', 'groundwater', 'naturalflows', 'pointflowmodels', 'statemod', 
-		   'demandag', 'demandmunic', 'demandeandr', 'storagesnowpack', 'storagegroundwater', 'storagereservoirs', 'toolsswrf', 'toolsdrought', 'poudrestorymap', 'resources', 'sources'],
+		   'demandag', 'demandmunic', 'demandeandr', 'storagesnowpack', 'storagereservoirs', 'storagegroundwater', 'drought', 'climatechange', 'toolsswrf', 'toolsdrought', 'poudrestorymap', 
+		   'cwptimeline', 'resources', 'sources'],
           sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf',
-		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#386981', '#386981'],
+		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#386981', '#386981'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Annual Flow Heatmap', 'Water Resources System',
-		  'Measuring Flows', 'Measuring Diversions', 'Measuring Groundwater Levels', 'Natural vs. Regulated Flows', 'Point Flow Models', 
-		  'StateMod Models', 'Ag Demand', 'Municipal Demand', 'Envr & Rec Demand', 
-		  'Snowpack Storage', 'Groundwater Storage', 'Reservoir Storage', 'Source Water Route Framework', 'Drought Tools', 'Poudre Demo', 'Resources', 'Sources'],
+          navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Annual Flow Heatmap', 'Water Resources System', 'Measuring Flows', 'Measuring Diversions', 
+		  'Measuring Groundwater Levels', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Ag Demand', 'Municipal Demand', 'Envr & Rec Demand', 'Snowpack Storage', 
+		  'Reservoir Storage', 'Groundwater Storage', 'Drought', 'Climate Change', 'Source Water Route Framework', 'Drought Tools', 'Poudre Demo', 'Timeline Demo', 'Resources', 'Sources'],
           recordHistory:false,
           menu:"#navbarResponsive",
           paddingTop:'75px'

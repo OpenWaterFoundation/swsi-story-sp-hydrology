@@ -1,0 +1,95 @@
+{
+    "calculate_zoom": true,
+    "storymap": {
+        "language": "en",
+        "map_type": "mapbox:mapbox.outdoors",
+        "map_as_image": false,
+        "slides": [{
+            "type": "overview",
+            "text": {
+                "headline": "Cache la Poudre Headwaters to the South Platte Confluence",
+                "text": "This tour will take you from the Cache la Poudre River's headwaters to its confluence with the South Platte River"
+            }
+        },{
+            "text": {
+                "headline": "Headwaters of the Cache la Poudre River in Rocky Mountain National Park",
+                "text": "Headwaters of the Cache la Poudre River in Rocky Mountain National Park"
+            },
+            "location": {
+                "lat": 40.421846,
+                "lon": -105.809382,
+                "line": true
+            }
+        },{
+            "text": {
+                "headline": "Confluence with Joe Wright Creek",
+                "text": "Confluence with Joe Wright Creek"
+            },
+            "location": {
+                "lat": 40.636817,
+                "lon": -105.80703,
+                "line": true
+            }
+        },{
+            "text": {
+                "headline": "Confluence with North Fork Cache la Poudre River",
+                "text": "Confluence with North Fork Cache la Poudre River"
+            },
+            "location": {
+                "lat": 40.700428,
+                "lon": -105.242623,
+                "line": true
+            }
+        },{
+            "text": {
+                "headline": "Fort Collins(College Avenue Bridge)",
+                "text": "Fort Collins(College Avenue Bridge)"
+            },
+            "location": {
+                "lat": 40.594938,
+                "lon": -105.076748,
+                "line": true
+            }
+        },{
+            "text": {
+                "headline": "Timnath",
+                "text": "Timnath"
+            },
+            "location": {
+                "lat": 40.526935,
+                "lon": -104.985736,
+                "line": true
+            }
+        },{
+            "text": {
+                "headline": "Windsor",
+                "text": "Windsor"
+            },
+            "location": {
+                "lat": 40.454687,
+                "lon": -104.900585,
+                "line": true
+            }
+        },{
+            "text": {
+                "headline": "Greeley",
+                "text": "Greeley"
+            },
+            "location": {
+                "lat": 40.441456,
+                "lon": -104.704735,
+                "line": true
+            }
+        },{
+            "text": {
+                "headline": "Confluence with South Platte River",
+                "text": "Confluence with South Platte River"
+            },
+            "location": {
+                "lat": 40.421944,
+                "lon": -104.59968,
+                "line": true
+            }
+        }]
+    }
+}

@@ -1,0 +1,45 @@
+{
+	"events": [
+		{
+			"start_date": {
+				"year": 2004
+			},
+			"text": {
+				"headline": "The Statewide Water Supply Initiative (SWSI) is first completed.",
+				"text": "The Department of Natural Resources Colorado Water Conservation Board stated that for the first time they know how much water Colorado will need in 2030, how short Colorado is on water, and what can be done.<br>View source <a href='http://cwcbweblink.state.co.us/WebLink/ElectronicFile.aspx?docid=144066&searchid=2c16c041-d0b2-4ec5-ac42-8b95aa0c04e3&dbid=0'>here</a>"
+			}
+		},{
+			"start_date": { 
+				"year": 2010
+			},
+			"text": {
+				"headline": "SWSI 2010 is released, which updated the first study and included an analysis of water supply demands to 2050.",
+				"text": "View source <a href='http://cwcb.state.co.us/water-management/water-supply-planning/Pages/SWSI2010.aspx'>here</a>"
+			}
+		},{
+			"start_date": {
+				"year": 2015
+			},
+			"text": {
+				"headline": "The South Platte and Metro basins complete a Basin Implementation Plan (BIP), which includes recommendations for meeting the water supply gap.",
+				"text": "View source <a href='http://www.colorado.gov/pacific/sites/default/files/SouthPlatteBasinImplementationPlan-04172015.pdf'>here</a>"
+			}
+		},{
+			"start_date": {
+				"year": 2015
+			},
+			"text": {
+				"headline": "The Colorado Water Plan is released.",
+				"text": "View source <a href='https://www.colorado.gov/pacific/cowaterplan'>here</a>"
+			}
+		},{
+			"start_date": {
+				"year": 2018
+			},
+			"text": {
+				"headline": "The SWSI Update is currently under way and will provide a consistent statewide framework for examining future water supply and demand under different scenarios.",
+				"text": "View source <a href='http://cwcb.state.co.us/water-management/water-supply-planning/Pages/SWSIUpdate.aspx'>here</a>"
+			}
+		}
+	]
+}
