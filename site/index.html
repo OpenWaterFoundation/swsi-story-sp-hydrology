@@ -77,7 +77,8 @@
   	<script src="data/statemod-node-network.geojson"></script>
   	<script src="data/cdss-mapviewer-active-streamgages.geojson"></script>
   	<script src="data/story.json"></script>	
-  	<script src="data/timeline.json"></script>		
+  	<script src="data/timeline.json"></script>
+  	<script src="data/small-precip-data.csv"></script>	
   	<!-- Boundary Files -->	
   	<script src="data/Colorado-IBCC-Basins-WGS84.geojson"></script>	
 	
@@ -183,7 +184,6 @@
       </div>
   <!-- Hydrographs Page -->
       <div class="section">
-	    <div class="container-fluid">
           <div class="row">
             <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Hydrology Concepts - Hydrographs</h2>			  
@@ -207,7 +207,6 @@
             </div>				
           </div>
         </div> 
-      </div> 
   <!-- Heatmap of Annual Flows for Several Gages Page -->	  
 		<div class="section">
 	      <div class="container-fluid">		
@@ -312,29 +311,70 @@
       </div>  	  
   <!-- Groundwater and Measuring Water Level Page -->
       <div class="section">
+          <div class="row">
+            <div class="col-lg-4 text-left-custom custom-scroll">
+              <h2>Hydrology Concepts - Groundwater and Measuring Water Level</h2>
+			  <p>Groundwater is water that is held underground within aquifers, which are geological formations (essentially rock layers).  The water is 
+			  contained within tiny pore spaces or cracks in the rock.  There are three types of aquifers:  alluvial, sedimentary bedrock and fractured rock.  
+			  Alluvial aquifers are generally composed of shallow sand and gravel deposits.  They are often also called tributary aquifers because they exchange 
+			  water with surface streams.  Groundwater in alluvial aquifers is recharged by the infiltration of rain and snowmelt through the soil.  Seepage from 
+			  irrigation canals and reservoirs and inflows from nearby aquifers also contribute water.  The South Platte Alluvial Aquifer is one of the largest 
+			  and most utilized alluvial aquifers in Colorado (<a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-where-your-water-comes-from/" 
+			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.15-16).</p>
+			  <p>Sedimentary bedrock aquifers occur deep underground primarily in sandstone and limestone.  These types of aquifers are not often hydraulically 
+			  connected to nearby streams.  They still have recharge areas like alluvial aquifers, but these may be many miles from the actual aquifer.  Deep 
+			  aquifers require long periods of time to recharge – potentially thousands of years.  The Denver Basin aquifer system is an example of a sedimentary bedrock aquifer
+			  (Citizen's Guide to Where Your Water Comes From, p.17).</p>
+			  <p>Fractured rock aquifers occur in bedrock that contains cracks and fractures due to the folding and faulting of the rock over millions of years.  
+			  These types of aquifers are common in mountainous areas.  Springs occur where fractures in the rock intersect the surface (Citizen's Guide to Where 
+			  Your Water Comes From, p.19).</p>
+			  <p>Groundwater is used for city water supplies, industry, irrigation, rural domestic use and livestock watering.  The State Engineer has estimated 
+			  that about 2 million acre-feet of groundwater is pumped and used annually, which amounts to approximately 20% of all water used in Colorado 
+			  (Citizen's Guide to Where Your Water Comes From, p.29).</p>
+			  <p>Groundwater from aquifers is made accessible to users via wells.  Groundwater use is administered and enforced by the <a href="http://water.state.co.us/groundwater/Pages/default.aspx" 
+			  target="_blank">Division of Water Resources<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>.  This tool, from <a href="http://cdss.state.co.us/Pages/CDSSHome.aspx" 
+			  target="_blank">Colorado's Decision Support Systems (CDSS)<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>shows that there 
+			  are over 13,000 wells in the South Platte Basin alone.  (Click on the Map tab to see locations in the Basin).  Wells are numerous because they 
+			  allow easy access to water.  Wells are often drilled in locations that are convenient to farms and homes, whereas surface water may be located much 
+			  farther away.</p>			  
+            </div>			
+		    <div class="col-lg-8 side-content">
+				<iframe data-src="https://dnrweb.state.co.us/cdss/GroundWater/WaterLevels?submitButton=Submit&SelectedGeoValue=waterDivisionDiv&SelectedWaterDivisionId=1&SelectedPublicationAreaName=All&SelectedAquiferName=All" scrolling="no" frameborder="0"></iframe>
+            </div>				
+        </div> 
+      </div>  	
+  <!-- Return Flows Page -->
+      <div class="section">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
-              <h2>Hydrology Concepts - Groundwater and Measuring Water Level</h2>
-			  <p>Groundwater is used for city water supplies, industry, irrigation, rural domestic use and livestock watering.  The State Engineer has estimated that 
-			  about 2 million acre-feet of groundwater is pumped and used annually, which amounts to approximately 20% of all water used in Colorado (
-			  <a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-where-your-water-comes-from/" 
-			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.29).
-			  <p><i>Continue to fill in with info from Citizen's Guide to Where Your Water Comes From.</i></p>	
-			  <p><i>Possibly reference HB 1278 study; state data for Gilcrest/La Salle, etc.</i></p>
-			  <p><i>Not sure about what type of viz to use here.</i></p>			  
+            <div class="col-lg-4 text-left-custom custom-scroll">
+              <h2>Hydrology Concepts - Return Flows</h2>
+			  <p>It may seem as though water is continuously removed from streams for agricultural, municipal and other uses and therefore the amount of water 
+			  in a stream decreases as one moves downstream.  However, water that is diverted for municipal, industrial or agricultural purposes that is not 
+			  consumed returns to rivers and/or aquifers by surface flows or underground flows.  For example, the U.S. Geological Survey has estimated that 
+			  approximately only 37% of the water diverted statewide for agriculture is actually consumed 
+			  (<a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-where-your-water-comes-from/" 
+			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.12).</p>
+			  <p>These surface and underground flows are collectively called return flows and can be used by downstream water users.  Types of return flows 
+			  include runoff and infiltration from agricultural lands, runoff and infiltration from lawns and returns from wastewater treatment plants.  Irrigation 
+ 			  return flows, in particular, are often reused multiple times. Unless a municipality relies exclusively on groundwater or its water supply comes 
+			  directly from a river’s headwaters, its residents are drinking reused water.  Although many people do not like the idea of drinking treated 
+			  wastewater, many cities in Colorado rely on reused (or recycled) water (Citizen's Guide to Where Your Water Comes From, p.24).</p>
+			  <p>Additionally, water that has been diverted from other basins (transbasin water) contributes flows to streams.</p>
+			  <p>This <a href="http://water.state.co.us/SurfaceWater/SWRights/WaterDiagrams/Pages/SnakeDiagram.aspx" target="_blank">snake diagram<img src="images/baseline_launch_black_18dp.png" 
+			  width="12px"/></a> from DWR shows how flows greatly increase downstream of Denver.</p>			  
               </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+		    <div class="col-lg-8 side-content">
+              <img class="image-centered" style="margin-top:5vh;" src="images/snake-diagram.png" frameborder="0"></img>
             </div>				
           </div>
         </div> 
-      </div>  	  	  
+      </div>  	  
   <!-- Natural vs. Regulated Flows Page -->
       <div class="section">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
+            <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Hydrology Concepts - Natural vs. Regulated Flows</h2>
 			  <p>Streamflows can represent various conditions.  Natural flow is streamflow absent the impacts of humans (no reservoirs, no diversions, etc.).  
 			  Natural streamflow can only be measured where human impacts are absent, such as headwater basins.  Regulated flow is streamflow that is impacted 
@@ -349,7 +389,7 @@
 			  StateMod model, which will be discussed in the next section.</p>
 			  <p><i>Graph of natural flow vs. regulated flow at a specific location.</i></p>
               </div>			
-		    <div class="col-lg-7 side-content">
+		    <div class="col-lg-8 side-content">
               <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
             </div>				
           </div>
@@ -521,15 +561,20 @@
       <div class="section">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
+            <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Storage - Groundwater</h2>
 			  <p>Water can also be stored underground in aquifers.  One benefit to underground storage is that it has less of an environmental impact compared 
 			  to constructing a new reservoir.</p>
-			  <p><i>Continue to fill in with info from Citizen's Guide to Where Your Water Comes From.</i></p>	
-			  <p><i>Need to decide on a graphic.  Perhaps something from the Aquifer Storage and Recovery projects?</i></p>				  
-              </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+			  <p>Denver Water is undertaking an Aquifer Storage and Recovery (ASR) study to determine locations where it can potentially inject treated drinking 
+			  water into underlying aquifers for use in the future.  During periods of abundant water supply, Denver Water would take drinking water from 
+			  water mains and inject it into wells in the Denver Basin aquifer system.  The same wells would then pump the water back up from the aquifers when 
+			  drier conditions are present.</p>
+			  <p>This short video from Denver Water describes more about the ASR project.  More information can also be found at 
+			  <a href="https://www.denverwater.org/your-water/water-supply-and-planning/aquifer-storage-and-recovery-study" target="_blank">Denver Water's 
+			  website<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>.</p>			  
+            </div>			
+		    <div class="col-lg-8 side-content">
+                <iframe src="https://www.youtube.com/embed/VgU19l6OD3g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>				
           </div>
         </div> 
@@ -538,27 +583,64 @@
       <div class="section">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
+            <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Drought</h2>
-			  <p><i>Discuss here the potential impacts drought may have on the Basin's water resources.</i></p>				  
+			  <p>Drought is a shortage of water associated with a lack of precipitation. It occurs when the normal amount of moisture required to satisfy an 
+			  area’s usual water consumption is unavailable.  Drought can appear slowly and last for many years or it can be a short-lived event.  It can occur 
+			  locally, regionally or statewide.  Drought is a regular feature of Colorado's climate but can be very destructive without adequate planning, 
+			  response and mitigation.  Planning is necessary so that when a drought-induced water supply shortage exists, water providers can take actions 
+			  to lessen the impacts.</p>
+			  <p>Many resources exist to assist water providers/users with drought planning.  Primarily, users need to know when drought is approaching.  
+			  This image is from the <a href="https://www.drought.gov/drought/states/colorado" target="_blank">U.S. Drought Monitor<img src="images/baseline_launch_black_18dp.png" 
+			  width="12px"/></a> and is a weekly map of drought conditions produced jointly by the National Oceanic and Atmospheric Administration, the U.S. 
+			  Department of Agriculture and the National Drought Mitigation Center at the University of Nebraska-Lincoln (NDMC-UNL).  The map is based on 
+			  measurements of climatic, hydrologic and soil conditions as well as reported impacts and observations from more than 350 contributors around 
+			  the country.  To see a live version of this map, click <a href="https://www.drought.gov/drought/states/colorado" target="_blank">here</a>.</p>	
+			  <p>The Colorado Water Conservation Board maintains a <a href="http://coh2o.co/" target="_blank">Drought Response Portal<img src="images/baseline_launch_black_18dp.png" 
+			  width="12px"/></a>.  See other drought resources on the <a href="#toolsdrought">Hydrology Tools - Drought</a> page.
               </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+		    <div class="col-lg-8 side-content">
+              <img class="image-centered" style="margin-top:5vh;" src="images/drought-monitor-map.png" frameborder="0"></img>
             </div>				
           </div>
         </div> 
       </div>	
 <!-- Climate Change Section -->	 
-      <div class="section">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
-              <h2>Climate Change</h2>
-			  <p><i>Discuss here the potential impacts climate change may have on the Basin's water resources.</i></p>			  
-              </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
-            </div>				
+      <div class="section" style="background-image:url('images/lake-haiyaha-1949919_1920.jpg'); height:100vh!important; background-position: center center;">
+        <div class="row">
+          <div class="col-lg-12">
+			<div class="container text-center text-image-overlay">
+              <h2 style="margin-top:5vh; float:top;">Climate Change</h2>
+			  <p>In 2014, the Colorado Water Conservation Board (CWCB) released a report titled <a href="http://wwa.colorado.edu/climate/co2014report/Climate_Change_CO_Report_2014_FINAL.pdf" 
+			  target="_blank">"Climate Change in Colorado:  A Synthesis to Support Water Resources Management and Adaptation"<img src="images/baseline_launch_white_18dp.png" width="12px"/></a>.  
+			  This, along with the <a href="https://issuu.com/cfwe/docs/cfwe_cc_cg_web" target="_blank">Citizen's Guide to Colorado Climate Change<img 
+			  src="images/baseline_launch_white_18dp.png" width="12px"/></a> assess how climate change will affect Colorado's water resources.  Key points from the 
+			  CWCB report include the following (p.1-4):</p>
+			  <ul>
+			    <li style="text-align:left;">All climate model projections indicate future warming in Colorado. The statewide average annual temperatures are projected to warm by +2.5&#8457 
+				to +5&#8457 by 2050 relative to a 1971–2000 baseline under a medium-low greenhouse-gas emissions scenario.  Under a high emissions scenario, the 
+				projected warming is larger at mid-century (+3.5&#8457 to +6.5&#8457).</li>
+			    <li style="text-align:left;">No long-term trends in average annual precipitation have been detected across Colorado, even considering the relatively dry period since 2000.</li>
+				<li style="text-align:left;">Climate model projections show less agreement regarding future precipitation change for Colorado.  The individual model projections of change 
+				by 2050 in statewide annual precipitation range from -5% to +6% for one model and from -3% to +8% for another model.</li>
+			    <li style="text-align:left;">Snowpack, as measured by April 1 snow-water equivalent (SWE), has been mainly below-average since 2000 in all of Colorado’s river basins, 
+				but no long-term (30-year, 50-year) declining trends have been detected.</li>
+				<li style="text-align:left;">Most model projections of Colorado’s spring snowpack show declines for the mid-21st century due to the projected warming.</li>				
+				<li style="text-align:left;">The timing of snowmelt and peak runoff has shifted earlier in the spring by 1–4 weeks across Colorado’s river basins over the past 30 
+				years, due to the combination of lower SWE since 2000, the warming trend in spring temperatures and enhanced solar absorption from dust-on-snow.</li>
+				<li style="text-align:left;">The peak of the spring runoff is projected to shift 1–3 weeks earlier by the mid-21st century due to warming. Late-summer flows are 
+				projected to decrease as the peak shifts earlier. Changes in the timing of runoff are more certain than changes in the amount of runoff.</li>
+			    <li style="text-align:left;">No long-term statewide trends in heavy precipitation events have been detected. The evidence suggests that there has been no statewide 
+				trend in the magnitude of flood events.</li>
+			    <li style="text-align:left;">Nearly all of the model projections indicate increasing winter precipitation by 2050. There is weaker consensus among the projections 
+				regarding precipitation in the other seasons.</li>
+			    <li style="text-align:left;">In the first projections of future Colorado hydrology based on the latest climate model output, most projections show decreases in 
+				annual streamflow by 2050 for the San Juan and Rio Grande basins. The projections are more evenly split between future increases and decreases 
+				in streamflow by 2050 for the Colorado Headwaters, Gunnison, Arkansas and South Platte basins. However, other hydrology projections show drier 
+				outcomes for Colorado, and the <i>overall body of published research indicates a tendency towards future decreases in annual streamflow for all of 
+				Colorado’s river basins</i>.</li>
+			  </ul>				  
+            </div>			
           </div>
         </div> 
       </div>	  
@@ -591,6 +673,7 @@
           <div class="row">
             <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Hydrology Tools - Drought</h2>
+			  <p><i>Need to revise this section and add more links.  Drought Monitor page cannot be used in an iframe, so need to come up with another resource.</i></p>
 			  <p>The <a href="http://droughtmonitor.unl.edu/Data/Timeseries.aspx" target="_blank">U.S. Drought Monitor</a> is a weekly map of drought conditions 
 			  produced jointly by the National Oceanic and Atmospheric Administration, the U.S. Department of Agriculture and the National Drought Mitigation 
 			  Center at the University of Nebraska-Lincoln (NDMC-UNL).  The map is based on measurements of climatic, hydrologic and soil conditions as well as 
@@ -670,6 +753,7 @@
         <div class="container text-center blue-bkgd-text">
               <h2>Sources</h2>
 			  <p>Water cycle image available from the <a href="https://water.usgs.gov/edu/watercycle.html" target="_blank">U.S. Geological Survey</a>.</p>
+			  <p>Lake Haiyaha in Rocky Mountain National Park available from <a href="https://pixabay.com/" target="_blank">Pixabay</a>.</p>			  
         </div>	
       </div>
 	  
@@ -689,15 +773,15 @@
       $(document).ready(function() {
         $('#fullpage').fullpage({
           licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
-          anchors:['top', 'hydrologiccycle', 'hydrographs', 'heatmap', 'waterresourcessystems', 'streamgages', 'headgates', 'groundwater', 'naturalflows', 'pointflowmodels', 'statemod', 
+          anchors:['top', 'hydrologiccycle', 'hydrographs', 'heatmap', 'waterresourcessystems', 'streamgages', 'headgates', 'groundwater', 'returnflows', 'naturalflows', 'pointflowmodels', 'statemod', 
 		   'demandag', 'demandmunic', 'demandeandr', 'storagesnowpack', 'storagereservoirs', 'storagegroundwater', 'drought', 'climatechange', 'toolsswrf', 'toolsdrought', 'poudrestorymap', 
 		   'cwptimeline', 'resources', 'sources'],
-          sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf',
-		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#386981', '#386981'],
+          sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf',
+		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#386981', '#386981'],
           navigation:true,
           navigationPosition:'right',
           navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Annual Flow Heatmap', 'Water Resources System', 'Measuring Flows', 'Measuring Diversions', 
-		  'Measuring Groundwater Levels', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Ag Demand', 'Municipal Demand', 'Envr & Rec Demand', 'Snowpack Storage', 
+		  'Measuring Groundwater Levels', 'Return Flows', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Ag Demand', 'Municipal Demand', 'Envr & Rec Demand', 'Snowpack Storage', 
 		  'Reservoir Storage', 'Groundwater Storage', 'Drought', 'Climate Change', 'Source Water Route Framework', 'Drought Tools', 'Poudre Demo', 'Timeline Demo', 'Resources', 'Sources'],
           recordHistory:false,
           menu:"#navbarResponsive",
