@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> Hydrology StoryMap </title>
+
+    <link rel="stylesheet" href="../css/storymap-0.6.7.css">
+    <script type="text/javascript" src="../js/storymap-0.6.7-min.js"></script>
+	
+  </head>
+
+  <style>
+    body {
+      margin:0;
+    }
+  </style>
+
+  <body>
+    <!-- Poudre StoryMapJS Page --> 
+    <div class="section">
+        <div class="row" style="margin: 0;">
+           <div id="storymapjs1" style="width: 100%; height: 100vh;"></div>  
+            <script>
+              var storymap_data = '../data/story.json';
+              var storymap_options = {};
+              var storymap = new VCO.StoryMap('storymapjs1', storymap_data, storymap_options);
+              window.onresize = function(event) {
+                 storymap.updateDisplay();
+              }
+            </script>
+        </div>
+    </div>	  
+
+  </body>
+
+</html>
+
