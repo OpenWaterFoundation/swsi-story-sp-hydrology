@@ -30,8 +30,6 @@
     <link href="css/county-population-forecast-map.css" rel="stylesheet" />
     <!-- Style for jBox library -->
     <link href="css/jBox-0.4.9.css" rel="stylesheet">
-    <!-- Style for StoryMapJS -->
-    <link href="css/storymap-0.6.7.css" rel="stylesheet">	
     <!-- Style for TimelineJS -->
     <link href="css/Timelinejs-3.6.0-min.css" rel="stylesheet">		
 
@@ -50,10 +48,8 @@
     <script src="https://d3js.org/d3-scale.v2.min.js"></script>
     <!-- Include custom class fileparser -->
     <script src="js/fileparser.js"></script>
-    <!-- StoryMapJS Javascript File -->		
-	<script type="text/javascript" src="js/storymap-0.6.7-min.js"></script>
     <!-- TimelineJS Javascript File -->		
-	<script type="text/javascript" src="js/Timelinejs-3.6.0-min.js"></script>		
+	  <script type="text/javascript" src="js/Timelinejs-3.6.0-min.js"></script>		
     <!-- MapBox Leaflet -->
     <!--<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>-->
     <script src="js/leaflet-1.3.3.js"></script>
@@ -757,15 +753,7 @@
 <!-- Poudre StoryMapJS Page -->	
       <div class="section">
 		<div class="row" style="margin: 0;">
-			  <div id="storymapjs1" style="width: 95%; height: 100vh;"></div>  
-				<script>
-				var storymap_data = 'data/story.json';
-				var storymap_options = {};
-				var storymap = new VCO.StoryMap('storymapjs1', storymap_data, storymap_options);
-				window.onresize = function(event) {
-			    storymap.updateDisplay();
-			}
-				</script>
+			  <iframe style="width:95%" src="viz-knightlab/poudre-headwaters-to-south-platte-storymap.html" frameborder="0"></iframe>
 		</div>		
 	  </div>	
 <!-- Water Plan TimelineJS Page -->	
