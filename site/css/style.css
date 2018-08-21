@@ -101,6 +101,11 @@ iframe {
 	overflow:auto;
 }
 
+.text-left-custom a{
+	color:black;
+	text-decoration: underline;
+}
+
 .text-image-overlay{
 	background-color:rgba(70,70,70,.7);
 	border-radius:10px;

@@ -460,7 +460,9 @@
 			  entities compete for the Basin's water resources and these entities need water at different times of the year.  Agriculture is the largest user of the Basin's 
 			  water resources (<a href="https://www.colorado.gov/cowaterplan" target="_blank">Colorado Water Plan<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, 
 			  p.3-13).</p>  
-			  <p>Agricultural demand for water is typically from May to October...</p> 
+			  <p>Agricultural demand for water is typically from May to October...Crop irrigation requirements are defined as the depth of water needed to meet the water 
+			  consumed through evapotranspiration by a disease-free crop, growing in large fields under non-restricting soil conditions including soil water and fertility, 
+			  and achieving full production potential under the given growing environment.  Irrigation requirements vary depending on the crop that is grown.</p>
 			  <p><i>Discussion of the amount and timing of agricultural demands and yearly patterns.  Perhaps discuss that different crops need water at different 
 			  times.  StateMod outputs for total demand show the May-October cycle for ditches -- could plot a few of these.</i></p>
               </div>			
@@ -493,9 +495,29 @@
           <div class="row">
             <div class="col-lg-5 text-left-custom custom-scroll">
               <h2>Water Demands - Environment and Recreation</h2>
-			  <p><i>Discussion of the amount and timing of E&R demands and yearly patterns.  Include hydrograph of instream flow and 
-			  recreation demand, similar to graphs in BIP.  Make this interactive using Plotly.</i></p>
-			  <p>Senior agricultural water rights lower in the Basin benefit instream flows as long as exchanges do not dry up the river.</p>
+			  <p>Environmental and recreational needs are a third category of demand placed on the Basin's water resources, but in this case, the demand is to keep water 
+			  in the river.  The <a href="https://www.colorado.gov/pacific/sites/default/files/SouthPlatteBasinImplementationPlan-04172015.pdf" 
+			  target="_blank">South Platte Basin Implementation Plan (BIP)<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> (p.2-25) describes the environmental 
+			  and recreational attributes that are important to the Basin.  These include the protection of habitat for fish species like greenback cutthroat trout and 
+			  plains fish species like plains minnow, common shiner and stonecat, to name a few.  Non-fish species that are considered important include species like 
+			  boreal toad, yellow mud turtle and river otter.  Recreational activities that are considered important to the Basin include fishing and both flatwater and 
+			  whitewater boating.  Protection of the riparian plant community is also important to the Basin.</p>
+			  <p>The protection of these varied environmental and recreational attributes corresponds to the protection of flows that meet these attributes' needs.  For 
+			  example, many fish species require a range of flows to thrive.  Flushing (high) flows move sediment downstream, create new habitat and can be cues to spawn.  
+			  The life stage of the species (larval, juvenile or adult) can also determine the necessary flows.  All species need some minimum flow that will ensure they 
+			  have adequate habitat to survive.</p>
+			  <p>For a given stream reach, the flows necessary to protect environmental and recreational uses can be highly varied and also vary within a year.  This graphic 
+			  shows the flows needed for some environmental and recreational attributes on the South Platte River below Chatfield Reservoir, as well as the streamflow that 
+			  was actually present during that time.  This example shows that environmental flushing flows were largely not met during 2004. (Source: 
+			  <a href="https://www.colorado.gov/pacific/sites/default/files/Appendix%20D%20-%20Environmental%20and%20Recreational%20Assessment%20Methodology%20and%20Framework.pdf" 
+			  target="_blank">South Platte BIP Appendix D-2 - Environmental and Recreational Assessement Methodology and Framework<img src="images/baseline_launch_black_18dp.png" 
+			  width="12px"/></a>).</p>
+			  <p><i>Include hydrograph of instream flow and recreation demand, similar to graphs in BIP.  Make this interactive using Plotly.</i></p>
+			  <p>The Environmental and Recreational component of the <a href="http://cwcb.state.co.us/water-management/water-supply-planning/Pages/SWSIUpdate.aspx" 
+			  target="_blank">Statewide Water Supply Initiative (SWSI) Update<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>
+			  is focusing on the development of a Flow Tool, along with an update to the Environmental and Recreational database.  This tool 
+			  will be able to assess flow conditions in each basin and help basin roundtables assess their environmental and recreational 
+			  flow needs and if those flow needs are being met.</p>			  
               </div>			
 		    <div class="col-lg-7 side-content">
               <img class="image-centered" style="margin-top:15vh;" src="images/envr-rec-hydrograph.png" frameborder="0"></img>
@@ -513,20 +535,21 @@
 			  reservoir and has the benefit of being a natural, high-elevation and generally high-quality supply.  The amount of water that is 
 			  generated by the melting of the snowpack is vital for water managers to understand because they must predict yearly water supplies
 			  for homes, businesses, farms, etc.  Snowpack is measured by the NRCS’s National Water and Climate Center and a network of Snow Telemetry 
-			  <a href="https://www.wcc.nrcs.usda.gov/snow/" target="_blank">(SNOTEL)</a> stations.  Automated remote sensing equipment at these 
-			  stations (which are located throughout the western U.S.) generate real-time snow and climate data.  The data are available in hourly, 
-			  daily, monthly and year increments.  The NRCS compiles monthly 
+			  <a href="https://www.wcc.nrcs.usda.gov/snow/" target="_blank">(SNOTEL)<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> 
+			  stations.  Automated remote sensing equipment at these stations (which are located throughout the western U.S.) generate real-time snow 
+			  and climate data.  The data are available in hourly, daily, monthly and year increments.  The NRCS compiles monthly 
 			  <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detailfull/co/snow/waterproducts/basin/?cid=nrcs144p2_063076" 
-			  target="_blank">Colorado Water Supply Outlook Reports</a> from January through June.  The April 1 snowpack report is the most-awaited 
-			  report for water managers because it guides their water supply management strategies for the coming year 
+			  target="_blank">Colorado Water Supply Outlook Reports<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> from January 
+			  through June.  The April 1 snowpack report is the most-awaited report for water managers because it guides their water supply management 
+			  strategies for the coming year 
 			  (<a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-where-your-water-comes-from/" 
 			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.7).</p>
 			  <p>This visualization is from the NRCS's National Water and Climate Center and shows the snow water equivalent percent for each basin in 
 			  Colorado.  Note that depending on the time of year, the map will be gray, indicating the lack of snowpack.  On the right side of the map, 
 			  choose a month like April under the "Month:" option to get a better sense of snow water equivalent in each basin.</p>
 			  <p>Some municipal water providers generate their own water forecasts.  For example, Denver Water produces <a 
-			  href="https://www.denverwater.org/your-water/water-supply-and-planning/supply-data-and-reports" target="_blank">Water Watch Reports</a>.</p>
-			  <p><i>Some mention of dust-on-snow events and earlier runoff due to climate change.</i></p>
+			  href="https://www.denverwater.org/your-water/water-supply-and-planning/supply-data-and-reports" target="_blank">Water Watch Reports<img 
+			  src="images/baseline_launch_black_18dp.png" width="12px"/></a>.</p>
               </div>			
 		  <div class="col-lg-8 side-content">
                 <iframe data-src="https://www.wcc.nrcs.usda.gov/webmap_beta/#version=98&elements=&networks=!&states=!&counties=!&hucs=&minElevation=&maxElevation=&elementSelectType=all&activeOnly=true&activeForecastPointsOnly=false&hucLabels=true&hucIdLabels=false&hucParameterLabels=true&stationLabels=&overlays=&hucOverlays=wy_8,state&basinOpacity=70&basinNoDataOpacity=100&basemapOpacity=90&maskOpacity=0&mode=data&openSections=parameter,date,basin,options,elements,location,overlays,labels&controlsOpen=true&popup=&popupMulti=&base=esriWsr&displayType=basinstation&basinType=co_8&dataElement=WTEQ&parameter=PCTMED&frequency=MONTHLY&duration=I&customDuration=&dayPart=E&year=2018&month=8&day=8&monthPart=B&forecastPubMonth=4&forecastPubDay=1&forecastExceedance=50&seqColor=1&divColor=1&scaleType=C&scaleMin=40&scaleMax=160&referencePeriodType=POR&referenceBegin=1981&referenceEnd=2010&minimumYears=20&hucAssociations=true&lat=38.598&lon=-104.224&zoom=7.0" 
@@ -591,16 +614,12 @@
 			  response and mitigation.  Planning is necessary so that when a drought-induced water supply shortage exists, water providers can take actions 
 			  to lessen the impacts.</p>
 			  <p>Many resources exist to assist water providers/users with drought planning.  Primarily, users need to know when drought is approaching.  
-			  This image is from the <a href="https://www.drought.gov/drought/states/colorado" target="_blank">U.S. Drought Monitor<img src="images/baseline_launch_black_18dp.png" 
-			  width="12px"/></a> and is a weekly map of drought conditions produced jointly by the National Oceanic and Atmospheric Administration, the U.S. 
-			  Department of Agriculture and the National Drought Mitigation Center at the University of Nebraska-Lincoln (NDMC-UNL).  The map is based on 
-			  measurements of climatic, hydrologic and soil conditions as well as reported impacts and observations from more than 350 contributors around 
-			  the country.  To see a live version of this map, click <a href="https://www.drought.gov/drought/states/colorado" target="_blank">here</a>.</p>	
-			  <p>The Colorado Water Conservation Board maintains a <a href="http://coh2o.co/" target="_blank">Drought Response Portal<img src="images/baseline_launch_black_18dp.png" 
-			  width="12px"/></a>.  See other drought resources on the <a href="#toolsdrought">Hydrology Tools - Drought</a> page.
-              </div>			
+			  The Colorado Water Conservation Board maintains a <a href="http://coh2o.co/" target="_blank">Drought Response Portal<img src="images/baseline_launch_black_18dp.png" 
+			  width="12px"/></a>, shown at right, that provides an overall indication of drought status, as well as links to other resources such as a monthly 
+			  drought update.</p>
+            </div>			
 		    <div class="col-lg-8 side-content">
-              <img class="image-centered" style="margin-top:5vh;" src="images/drought-monitor-map.png" frameborder="0"></img>
+              <iframe data-src="http://coh2o.co/" scrolling="no" frameborder="0"></iframe>
             </div>				
           </div>
         </div> 
@@ -653,9 +672,9 @@
               <h2>Hydrology Tools - Source Water Route Framework</h2>
 			  <p>A dataset that has recently been developed by DWR is the Source Water Route Framework (SWRF), which is a spatial data layer representing 
 			  most streams in Colorado, in particular those with water rights or other important features.  SWRF is derived from the USGS's 
-			   <a href="https://nhd.usgs.gov/NHD_High_Resolution.html" target="_blank">National Hydrography Dataset (NHD)</a>, which is available 
-			  at several scales.  A Geographic Names Information System (GNIS) ID, an 8-digit identifier, is used to uniquely identify most streams in the 
-			  state, rather than using the stream's common name (there are 13 streams named Dry Creek in the South Platte basin alone).</p>
+			  <a href="https://nhd.usgs.gov/NHD_High_Resolution.html" target="_blank">National Hydrography Dataset (NHD)<img src="images/baseline_launch_black_18dp.png" 
+			  width="12px"/></a>, which is available at several scales.  A Geographic Names Information System (GNIS) ID, an 8-digit identifier, is used to uniquely 
+			  identify most streams in the state, rather than using the stream's common name (there are 13 streams named Dry Creek in the South Platte basin alone).</p>
 			  <p>By using the NHD linked to Colorado water data, it is possible to link federal and State datasets.  Datasets such as 
 			  stream gages, diversion structures and instream flow rights can be "referenced" to the SWRF to provide a common framework for analysis; 
 			  such data work is ongoing in order to leverage the SWRF dataset.</p>
@@ -668,16 +687,57 @@
           </div>
         </div> 
       </div>   
+  <!--  SNODAS Page -->
+      <div class="section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-3 text-left-custom custom-scroll">
+              <h2>Hydrology Tools - SNODAS</h2>
+			  <p>This visualization, developed for the Colorado Water Conservation Board, provides access to a historical archive of Snow Data Assimilation 
+			  System (SNODAS) data products for Colorado water supply basins.  <a href="https://nsidc.org/data/g02158SNODAS" target="_blank">SNODAS<img 
+			  src="images/baseline_launch_black_18dp.png" width="12px"/></a> data from the National Operational Hydrologic Remote Sensing Center (NOHRSC) 
+			  are processed daily to calculate Snow Water Equivalent (SWE) and Snow Coverage statistics for water supply basins in Colorado. Snow Water 
+			  Equivalent is the estimate of the depth of liquid water contained within the snowpack. Snow coverage is a percent of the basin land surface 
+			  covered by snow (water bodies in the basin are ignored).  Mean SWE is displayed in the map using a legend similar to the National Weather Service.</p>
+			  <p>Instructions for using this SNODAS tool can be found under the "About" tab in the upper left corner.  The visualization can also be viewed 
+			  <a href="http://snodas.cdss.state.co.us/app/index.html" target="_blank">here</a>.</p>
+            </div>			
+			<div class="col-lg-9 side-content">
+                <iframe data-src="http://snodas.cdss.state.co.us/app/index.html" scrolling="no" frameborder="0"></iframe>
+            </div>			
+          </div>
+        </div> 
+      </div>  
+  <!--  SWSI Page -->
+      <div class="section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-4 text-left-custom custom-scroll">
+              <h2>Hydrology Tools - Surface Water Supply Index (SWSI)</h2>
+			  <p>The <a href="http://water.state.co.us/DWRDocs/Reports/Pages/SWSIReport.aspx" target="_blank">Surface Water Supply Index<img 
+			  src="images/baseline_launch_black_18dp.png" width="12px"/></a>(SWSI, not to be confused with the Statewide Water Supply Initiative) developed by the Division of Water Resources 
+			  and the USDA Natural Resources Conservation Service (NRCS) is used as an indicator of mountain-based water supply conditions in the major river basins 
+			  and sub-basins of the state.  The SWSI compares the total volume of water in a basin or sub-basin against the volume available in the same month of 
+			  historical years.  Depending on the month, the volume is a combination of streamflow, streamflow forecast and reservoir storage.</p>
+			  <p>To view the SWSI map layer, check the "Surface Water Supply Index (SWSI)" layer.  Expand the layer by clicking on the + on the left of the layer name.  
+			  Then click on the legend icon to see the categories of conditions.</p>
+              </div>			
+			<div class="col-lg-8 side-content">
+                <iframe data-src="https://gis.colorado.gov/dnrviewer/Index.html?viewer=mapviewer" scrolling="no" frameborder="0"></iframe>
+            </div>			
+          </div>
+        </div> 
+      </div>  	  
   <!--  Drought Monitor Page -->
       <div class="section">
           <div class="row">
             <div class="col-lg-4 text-left-custom custom-scroll">
-              <h2>Hydrology Tools - Drought</h2>
-			  <p><i>Need to revise this section and add more links.  Drought Monitor page cannot be used in an iframe, so need to come up with another resource.</i></p>
+              <h2>Hydrology Tools - Drought Monitor</h2>
 			  <p>The <a href="http://droughtmonitor.unl.edu/Data/Timeseries.aspx" target="_blank">U.S. Drought Monitor</a> is a weekly map of drought conditions 
 			  produced jointly by the National Oceanic and Atmospheric Administration, the U.S. Department of Agriculture and the National Drought Mitigation 
 			  Center at the University of Nebraska-Lincoln (NDMC-UNL).  The map is based on measurements of climatic, hydrologic and soil conditions as well as 
-			  reported impacts and observations from more than 350 contributors around the country.</p>
+			  reported impacts and observations from more than 350 contributors around the country.  To see a live version of the map shown at right, click 
+			  <a href="http://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?CO" target="_blank">here</a>.</p>
 			  <p>Drought severity is <a href="http://droughtmonitor.unl.edu/AboutUSDM/DroughtClassification.aspx" target="_blank">classified</a> as the following:</p>
 			  <ul>
 			    <li>D0 - abnormally dry</li>
@@ -686,12 +746,12 @@
 			    <li>D3 - extreme drought</li>
 			    <li>D4 - exceptional drought</li>				
 			  </ul>	
-			  <p>To view the current status of the South Platte Basin, under "Area type" click "HUC (6 digit)", then under "Area", choose "101900 (South Platte)".</p> 
-			  <p>This map is courtesy of NDMC-UNL.</p>
+			  <p>To view the current status of the South Platte Basin, click on the "Data" tab, then choose "Time Series".  Under "Area type" click "HUC (6 digit)", 
+			  then under "Area", choose "101900 (South Platte)".  Note that this is the entire South Platte Basin and therefore incorporates other states.</p>  
             </div>
-			<div class="col-lg-8 side-content">
-                <iframe data-src="http://droughtmonitor.unl.edu/Data/Timeseries.aspx" scrolling="no" frameborder="0"></iframe>
-            </div>
+		    <div class="col-lg-8 side-content">
+              <img class="image-centered" style="margin-top:5vh;" src="images/drought-monitor-map.png" frameborder="0"></img>
+            </div>	
           </div>
       </div>
 <!-- Poudre StoryMapJS Page -->	
@@ -773,16 +833,16 @@
       $(document).ready(function() {
         $('#fullpage').fullpage({
           licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
-          anchors:['top', 'hydrologiccycle', 'hydrographs', 'heatmap', 'waterresourcessystems', 'streamgages', 'headgates', 'groundwater', 'returnflows', 'naturalflows', 'pointflowmodels', 'statemod', 
-		   'demandag', 'demandmunic', 'demandeandr', 'storagesnowpack', 'storagereservoirs', 'storagegroundwater', 'drought', 'climatechange', 'toolsswrf', 'toolsdrought', 'poudrestorymap', 
-		   'cwptimeline', 'resources', 'sources'],
+          anchors:['top', 'hydrologiccycle', 'hydrographs', 'heatmap', 'waterresourcessystems', 'streamgages', 'headgates', 'groundwater', 'returnflows', 'naturalflows', 'pointflowmodels', 
+		   'statemod', 'demandag', 'demandmunic', 'demandeandr', 'storagesnowpack', 'storagereservoirs', 'storagegroundwater', 'drought', 'climatechange', 'swrf', 'snodas', 'swsi',
+		   'droughtmonitor', 'poudrestorymap', 'cwptimeline', 'resources', 'sources'],
           sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf',
-		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#386981', '#386981'],
+		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#386981', '#386981'],
           navigation:true,
           navigationPosition:'right',
           navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Annual Flow Heatmap', 'Water Resources System', 'Measuring Flows', 'Measuring Diversions', 
 		  'Measuring Groundwater Levels', 'Return Flows', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Ag Demand', 'Municipal Demand', 'Envr & Rec Demand', 'Snowpack Storage', 
-		  'Reservoir Storage', 'Groundwater Storage', 'Drought', 'Climate Change', 'Source Water Route Framework', 'Drought Tools', 'Poudre Demo', 'Timeline Demo', 'Resources', 'Sources'],
+		  'Reservoir Storage', 'Groundwater Storage', 'Drought', 'Climate Change', 'Source Water Route Framework', 'SNODAS', 'SWSI', 'Drought Monitor', 'Poudre Demo', 'Timeline Demo', 'Resources', 'Sources'],
           recordHistory:false,
           menu:"#navbarResponsive",
           paddingTop:'75px'
