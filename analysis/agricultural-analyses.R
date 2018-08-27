@@ -53,6 +53,10 @@ head(canals)
   summarise(Acres = sum(Acres)))
 
 # 2005
+#Overall crop summary
+(overall_crop_summary_2005 = irrigated_lands_2005 %>%
+  group_by(CROP_TYPE) %>%
+  summarise(Acres = sum(ACRES)))
 (crop_summary_2005 = irrigated_lands_2005 %>%
   group_by(CROP_TYPE, IRRIG_TYPE) %>%
   summarise(Acres = sum(ACRES)))
@@ -82,20 +86,21 @@ irrigated_lands_2005_2015 = inner_join(irrigated_lands_2015, irrigated_lands_200
 head(irrigated_lands_2005_2015, n=100)
 
 # c) Summarize types of crops irrigated by first surface water WDID (SW_WDID1)
-(wdid_summary_2015 = irrigated_lands_2015 %>%
+(wdid_summary_2005 = irrigated_lands_2005 %>%
   group_by(SW_WDID1) %>%
   summarise(Acres = sum(ACRES)) %>%
   arrange(desc(Acres)))
-# Now take the top 5 and create a new dataset from those, then summarize by crop type
-(wdid_summary_2015 = irrigated_lands_2015 %>%
-  filter(SW_WDID1 %in% c("300919", "300911", "100687", "300929", "500526")) %>%
+# Now take a select 4 and create a new dataset from those, then summarize by crop type
+# Used StateMod outputs of total demand to determine the locations
+(wdid_summary_2005 = irrigated_lands_2005 %>%
+  filter(SW_WDID1 %in% c("100503", "100507", "100687", "100514")) %>%
   group_by(SW_WDID1, CROP_TYPE) %>%
   summarise(Acres = sum(ACRES)) %>%
   arrange(SW_WDID1, desc(Acres)) %>%
   rename(WDID = SW_WDID1))
 
 # Rearrange table
-(wdid_summary_2015 = spread(wdid_summary_2015, CROP_TYPE, Acres))
+(wdid_summary_2005 = spread(wdid_summary_2005, CROP_TYPE, Acres))
 
 #############################################################################################
 # 3) Statistics for Structures

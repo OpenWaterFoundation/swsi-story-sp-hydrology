@@ -81,7 +81,6 @@
   	<script src="data/statemod-node-network.geojson"></script>
   	<script src="data/cdss-mapviewer-active-streamgages.geojson"></script>
 	<script src="data/cdss-structures-ditches-southplatte.geojson"></script>	
-  	<script src="data/story.json"></script>	
   	<script src="data/timeline.json"></script>
   	<script src="data/small-precip-data.csv"></script>	
   	<!-- Boundary Files -->	
@@ -483,13 +482,13 @@
 			  <p>Agricultural demand for water is typically from May to October.  Irrigation requirements vary depending on the crop that is grown.  Crop irrigation 
 			  requirements are defined as the depth of water needed to meet the water consumed through evapotranspiration by a disease-free crop, growing in large fields 
 			  under non-restricting soil conditions including soil water and fertility, and achieving full production potential under the given growing environment.  
-			  The table below lists water requirements for crops grown in eastern Colorado (Source: <a href="
+			  The table below lists water requirements for crops grown in eastern Colorado.  In general, alfalfa requires the most water, followed by sugar beets (Source: <a href="
 			  http://extension.colostate.edu/topic-areas/agriculture/seasonal-water-needs-and-opportunities-for-limited-irrigation-for-colorado-crops-4-718/" target="_blank">CSU 
 			  Extension Fact Sheet: Seasonal Water Needs and Opportunities for Limited Irrigation for Colorado Crops)<img src="images/baseline_launch_black_18dp.png" 
 			  width="12px"/></a>.</p>
-			  <p><i>Discussion of the amount and timing of agricultural demands and yearly patterns.  Perhaps discuss that different crops need water at different 
-			  times.  StateMod outputs for total demand show the May-October cycle for ditches -- could plot a few of these.  Could also link the ditches to the irrigated 
-			  lands dataset to see what kinds of crops (and the acreage) were grown with that water.</i></p>
+			  <p><i>StateMod outputs for total demand show the May-October cycle for ditches -- could plot a few of these.  Could also link the ditches to the irrigated 
+			  lands dataset to see what kinds of crops (and the acreage) were grown with that water.  Plan to include an iframe of StateMod outputs and an iframe of a 
+			  stacked bar chart showing the crop acreage for those same ditches.</i></p>
 			  <p><img class="image-centered" src="images/crop-requirements.png" frameborder="0"></img></p>
               </div>			
 		    <div class="col-lg-7 side-content">
@@ -725,11 +724,11 @@
 			  are processed daily to calculate Snow Water Equivalent (SWE) and Snow Coverage statistics for water supply basins in Colorado. Snow Water 
 			  Equivalent is the estimate of the depth of liquid water contained within the snowpack. Snow coverage is a percent of the basin land surface 
 			  covered by snow (water bodies in the basin are ignored).  Mean SWE is displayed in the map using a legend similar to the National Weather Service.</p>
-			  <p>Instructions for using this SNODAS tool can be found under the "About" tab in the upper left corner.  The visualization can also be viewed 
-			  <a href="http://snodas.cdss.state.co.us/app/index.html" target="_blank">here</a>.</p>
+			  <p>Instructions for using this <a href="http://snodas.cdss.state.co.us/app/index.html" target="_blank">SNODAS tool<img 
+			  src="images/baseline_launch_black_18dp.png" width="12px"/></a> can be found under the "About" tab in the upper left corner.</p>
             </div>			
 			<div class="col-lg-9 side-content">
-                <iframe data-src="http://snodas.cdss.state.co.us/app/index.html" scrolling="no" frameborder="0"></iframe>
+              <img class="image-centered" style="margin-top:5vh;" src="images/snodas.png" frameborder="0"></img> 
             </div>			
           </div>
         </div> 
@@ -738,20 +737,19 @@
       <div class="section">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-4 text-left-custom custom-scroll">
+            <div class="col-lg-3 text-left-custom custom-scroll">
               <h2>Hydrology Tools - Surface Water Supply Index (SWSI)</h2>
 			  <p>The <a href="http://water.state.co.us/DWRDocs/Reports/Pages/SWSIReport.aspx" target="_blank">Surface Water Supply Index<img 
 			  src="images/baseline_launch_black_18dp.png" width="12px"/></a>(SWSI, not to be confused with the Statewide Water Supply Initiative) developed by the Division of Water Resources 
 			  and the USDA Natural Resources Conservation Service (NRCS) is used as an indicator of mountain-based water supply conditions in the major river basins 
 			  and sub-basins of the state.  The SWSI compares the total volume of water in a basin or sub-basin against the volume available in the same month of 
 			  historical years.  Depending on the month, the volume is a combination of streamflow, streamflow forecast and reservoir storage.</p>
-			  <p>To view the SWSI map layer, check the "Surface Water Supply Index (SWSI)" layer.  Expand the layer by clicking on the + on the left of the layer name.  
-			  Then click on the legend icon to see the categories of conditions.</p>
-			  <p><i>Consider using screenshots instead of embedding because when the website pops up you have to click on certain layers to get the right data 
-			  to show.  A screenshot would allow for a comparison of what you're supposed to be looking at.  Add link to the website.</i></p>
+			  <p>To view the live SWSI map layer, click <a href="https://gis.colorado.gov/dnrviewer/Index.html?viewer=mapviewer" target="_blank">here</a>.  Check 
+			  the "Surface Water Supply Index" layer.  Expand the layer by clicking on the + on the left of the layer name.  Then click on the legend 
+			  icon to see the categories of conditions.</p>
               </div>			
-			<div class="col-lg-8 side-content">
-                <iframe data-src="https://gis.colorado.gov/dnrviewer/Index.html?viewer=mapviewer" scrolling="no" frameborder="0"></iframe>
+			<div class="col-lg-9 side-content">
+              <img class="image-centered" style="margin-top:5vh;" src="images/swsi-index.png" frameborder="0"></img>
             </div>			
           </div>
         </div> 
@@ -782,10 +780,10 @@
             </div>	
           </div>
       </div>
-<!-- Poudre StoryMapJS Page -->	
+<!-- North Sterling Canal StoryMapJS Page -->	
       <div class="section">
 		<div class="row" style="margin: 0;">
-			  <iframe style="width:95%" src="viz-knightlab/poudre-headwaters-to-south-platte-storymap.html" frameborder="0"></iframe>
+			  <iframe style="width:95%" src="viz-knightlab/north-sterling-canal-storymap.html" frameborder="0"></iframe>
 		</div>		
 	  </div>	
 <!-- Water Plan TimelineJS Page -->	
@@ -855,14 +853,14 @@
           licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
           anchors:['top', 'hydrologiccycle', 'hydrographs', 'heatmap', 'waterresourcessystems', 'streamgages', 'headgates', 'groundwater', 'returnflows', 'naturalflows', 'pointflowmodels', 
 		   'statemod', 'demandag', 'demandmunic', 'demandeandr', 'storagesnowpack', 'storagereservoirs', 'storagegroundwater', 'drought', 'climatechange', 'swrf', 'snodas', 'swsi',
-		   'droughtmonitor', 'poudrestorymap', 'cwptimeline', 'resources', 'sources'],
+		   'droughtmonitor', 'sterlingstorymap', 'cwptimeline', 'resources', 'sources'],
           sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf',
 		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#386981', '#386981'],
           navigation:true,
           navigationPosition:'right',
           navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Annual Flow Heatmap', 'Water Resources System', 'Measuring Flows', 'Measuring Diversions', 
 		  'Measuring Groundwater Levels', 'Return Flows', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Ag Demand', 'Municipal Demand', 'Envr & Rec Demand', 'Snowpack Storage', 
-		  'Reservoir Storage', 'Groundwater Storage', 'Drought', 'Climate Change', 'Source Water Route Framework', 'SNODAS', 'SWSI', 'Drought Monitor', 'Poudre Demo', 'Timeline Demo', 'Resources', 'Sources'],
+		  'Reservoir Storage', 'Groundwater Storage', 'Drought', 'Climate Change', 'Source Water Route Framework', 'SNODAS', 'SWSI', 'Drought Monitor', 'North Sterling Canal', 'Timeline Demo', 'Resources', 'Sources'],
           recordHistory:false,
           menu:"#navbarResponsive",
           paddingTop:'75px'

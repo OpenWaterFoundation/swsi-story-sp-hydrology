@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Plotly TimeSeries Small TSTool Example</title>
+	<!-- JAVASCRIPT -->
+	<script src="javascript/plotly.min.js"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<h1>Total Water Demand as Modeled by StateMod for the South Platte Basin</h1>
+<div id="chart"></div>
+<script>
+	// Plotly uses d3 to read straight from CSV files
+	// rows is an array containing each row of data being read in by the csv file
+	Plotly.d3.csv('data/total-demand-selected-ditches.csv',function(rows){
+		// First series that will be plotted on the timeseries chart
+		var trace = {
+			type: 'scatter',	// type of plot
+			mode: 'lines',	// how the data will be plotted (line, bar, etc.)
+			x: rows.map(function(row){	// x data points (grabs data points under the 'Date' column)
+				return row['Date']
+			}),
+			y: rows.map(function(row){	// y data points (grabs data points under the '0100503' column)
+				return row['0100503_Riverside_Canal']
+			}),
+			line: {
+				width: 1	// line width
+			},
+			name: '0100503_Riverside Canal'	// name of series
+		};
+
+		// Second series that will be plotted on the timeseries chart
+		var trace2 = {
+			type: 'scatter',	// type of plot
+			mode: 'lines',	// how the data will be plotted (line, bar, etc.)
+			x: rows.map(function(row){	// x data points (grabs data points under the 'Date' column)
+				return row['Date']
+			}),
+			y: rows.map(function(row){	// y data points (grabs data points under the '0100507' column)
+				return row['0100507_Bijou_Canal']
+			}),
+			line: {
+				width: 1	// line width
+			},
+			name: '0100507_Bijou Canal'	// name of series
+		};
+
+		// Third series that will be plotted on the timeseries chart
+		var trace3 = {
+			type: 'scatter',	// type of plot
+			mode: 'lines',	// how the data will be plotted (line, bar, etc.)
+			x: rows.map(function(row){	// x data points (grabs data points under the 'Date' column)
+				return row['Date']
+			}),
+			y: rows.map(function(row){	// y data points (grabs data points under the '0100514' column)
+				return row['0100514_Ft.Morgan_Canal']
+			}),
+			line: {
+				width: 1	// line width
+			},
+			name: '0100514_Fort Morgan Canal'	// name of series
+		};
+
+		// Fourth series that will be plotted on the timeseries chart
+		var trace4 = {
+			type: 'scatter',	// type of plot
+			mode: 'lines',	// how the data will be plotted (line, bar, etc.)
+			x: rows.map(function(row){	// x data points (grabs data points under the 'Date' column)
+				return row['Date']
+			}),
+			y: rows.map(function(row){	// y data points (grabs data points under the '0100687' column)
+				return row['0100687_North_Sterling_Canal']
+			}),
+			line: {
+				width: 1	// line width
+			},
+			name: '0100687_North Sterling Canal'	// name of series
+		};
+
+		// Chart Options
+		var layout = {
+			yaxis: {
+				title: 'Total Demand (acre-feet)'	// y axis title
+			},
+			xaxis: {
+				title: 'Date',	// x axis title
+				showgrid: false, // show grid on x-axis
+			},
+		};
+		// Plot series with chart options
+		Plotly.plot(document.getElementById('chart'),[trace, trace2, trace3,trace4],layout,{showLink: false});
+	});
+</script>
+</body>
+</html>

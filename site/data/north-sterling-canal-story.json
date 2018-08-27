@@ -1,0 +1,65 @@
+{
+    "calculate_zoom": true,
+    "storymap": {
+        "language": "en",
+        "map_type": "mapbox:mapbox.outdoors",
+        "map_as_image": false,
+        "slides": [{
+            "type": "overview",
+            "text": {
+                "headline": "North Sterling Irrigation District",
+                "text": "This tour provides information about the North Sterling Irrigation District, including the North Sterling Canal and Sterling Reservoir.  Most of the information comes from the <a href='http://cwcbweblink.state.co.us/WebLink/PDF/5nhmaieur3y52uqeai1qmw45/1/SPDSS_Task5_KeyStructure_NorthSterling.pdf' target='_blank'><u>SPDSS Memo Task 5 - Key Structure, North Sterling Irrigation District</u></a>."
+            }
+        },{
+            "text": {
+                "headline": "North Sterling Inlet Canal",
+                "text": "The North Sterling Inlet Canal (WDID 0100687) diverts water directly from the South Platte River for storage in North Sterling Reservoir.  The diversion works of the inlet canal consist of a concrete dam and four radial gates.  The canal's length is approximately 63 miles."
+            },
+			"media": {
+                "url": "../images/north-sterling-inlet.png",
+                "caption": "North Sterling Canal inlet diverting water north from the South Platte River",
+                "credit": "Google Earth"
+            },			
+            "location": {
+                "lat": 40.352461,
+                "lon": -103.540756,
+                "line": true
+            }
+        },{
+            "text": {
+                "headline": "North Sterling Reservoir",
+                "text": "North Sterling Reservoir is an off-channel storage facility.  It has a total storage capacity of 80,590 acre-feet and an active storage capacity of 74,590 acre-feet.  Storage water is released to the North Sterling Outlet Canal for irrigation.  North Sterling State Park is located on the east side of the reservoir and is managed by Colorado Parks and Wildlife as a popular boating area."
+            },
+			"media": {
+                "url": "../images/north-sterling-reservoir.png",
+                "caption": "North Sterling Reservoir",
+                "credit": "Google Earth"
+            },				
+            "location": {
+                "lat": 40.776103,
+                "lon": -103.284027,
+                "line": true
+            }
+        },{
+            "text": {
+                "headline": "North Sterling Outlet Canal",
+                "text": "The outlet canal delivers irrigation water to approximately 75 individual turnouts within the district.  Each turnout consists of a concrete headgate, steel slide gate and a Parshall flume.  Turnouts may serve more than one user or farm and farms may be served by more than one turnout.  The first requests for water typically occur near the end of April and stop near the end of September.  The district manages water such that each land owner must take delivery of the full amount of water requested.  The outlet canal runs for a length of approximately 65 miles.  <i>Include StateMod outputs of demand here</i>."
+            },
+            "location": {
+                "lat": 40.785169,
+                "lon": -103.265652,
+                "line": true
+            }
+		},{
+            "text": {
+                "headline": "Crops Grown in the District",
+                "text": "<i>Discuss the types and acreage of crops grown in the district, using the 2015 Irrigated Lands layer.  Include an image of the parcels color-coded by crop type (use QGIS).  Do a second page showing flood vs. sprinkler use.</i>"
+            },
+            "location": {
+                "lat": 40.775111,
+                "lon": -103.129678,
+                "line": true
+            }		
+        }]
+    }
+}
