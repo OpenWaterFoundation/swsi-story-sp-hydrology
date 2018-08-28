@@ -2,8 +2,8 @@
 # Filter gages to include South Platte Basin only and
 # conversion into GeoJSON format to be used for map
 #
-# Read table downloaded from CDSS's Map Viewer.  "Active Gage-Stream" was selected from the 
-# Surface Water Current Conditions layer.  All gages were selected in the state and then 
+# Read table downloaded from CDSS's Map Viewer.  "Active Gage-Stream" was selected from the
+# Surface Water Current Conditions layer.  All gages were selected in the state and then
 # exported in CSV format.
 ReadTableFromDelimitedFile(TableID="streamgages-orig",InputFile="..\site\data\cdss-mapviewer-active-streamgages.csv",HeaderLines="1",DoubleColumns="latdecdeg,longdecdeg",TextColumns="moreinfo,statname,dwrabbrev,wdid,usgsstatid")
 #
@@ -17,7 +17,7 @@ ManipulateTableString(TableID="streamgages-v1",InputColumn1="Data_Source",Operat
 WriteTableToGeoJSON(TableID="streamgages-v1",OutputFile="..\site\data\cdss-mapviewer-active-streamgages.geojson",LongitudeColumn="Longitude",LatitudeColumn="Latitude",JavaScriptVar="streamgages")
 #
 ####################################################################################################
-# Use daily data from a sample gage to show the hydrologic variability within a year and from year 
+# Use daily data from a sample gage to show the hydrologic variability within a year and from year
 # to year.  For the Boulder Creek gage, the following years will be used:  2002 (drought), 2006 (dry),
 # 2010 (average), 2011 (wet) and 1995 (flood)
 #
@@ -51,4 +51,10 @@ JoinTables(TableID="bouldercreek-sampleflows",TableToJoinID="bouldercreek-2011",
 JoinTables(TableID="bouldercreek-sampleflows",TableToJoinID="bouldercreek-1995",JoinColumns="Date:Date-noyear",IncludeColumns="Discharge_1995",JoinMethod=JoinIfInBoth)
 #
 TableToTimeSeries(TableID="bouldercreek-sampleflows",DateTimeFormat="%m-%d",DateColumn="Date",LocationID="TC[2:6]",LocationType="06730500",ValueColumn="TC[2:6]",DataSource="USGS",DataType="Discharge",Interval=Day,Alias="%A")
+#
+# Copy table to rename columns for visualization
+CopyTable(TableID="bouldercreek-sampleflows",NewTableID="bouldercreek-sampleflows-final",ColumnMap="Discharge_2002:2002-Much-Below-Normal,Discharge_2006:2006-Below-Normal,Discharge_2010:2010-Normal,Discharge_2011:2001-Above-Normal,Discharge_1995:1995-Much-Above-Normal")
+#
+# Export to csv to use in hydrograph visualization
+WriteTableToDelimitedFile(TableID="bouldercreek-sampleflows-final",OutputFile="..\site\visualizations\hydrographs-bouldercreek\data\boulder-creek-hydrographs.csv",WriteHeaderComments=False,NaNValue="Blank")
 #

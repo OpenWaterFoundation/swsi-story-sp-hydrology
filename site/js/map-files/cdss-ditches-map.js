@@ -66,6 +66,7 @@ var ditches_map = (function(){
 		this._div.innerHTML = '<h5>South Platte and Metro Basin Ditch Diversions</h5>' +  (props ?
 			'<b>Name: </b>' + ((props.structname) ? props.structname : "") + '<br/>' + 
 			'<b>WDID: </b>' + ((props.wdid) ? props.wdid : "") + '<br />' + 
+			'<b>Type: </b>' + ((props.structtype) ? props.structtype : "") + '<br />' +			
 			'<b>Website: </b>' + ((props.moreinfo) ? hasHttp(props.moreinfo) : "") + '<br/>' + 
 			'<b>Water Source: </b>' + ((props.watersrc) ? props.watersrc : "") + '<br />' +		
 			'<b>County: </b>' + ((props.county) ? props.county : "") + '<br />' +			
@@ -161,6 +162,7 @@ var ditches_map = (function(){
 		var str =
 		'<b>Name: </b>' + ((props.structname) ? props.structname : "") + '<br/>' + 
 		'<b>WDID: </b>' + ((props.wdid) ? props.wdid : "") + '<br />' +
+		'<b>Type: </b>' + ((props.structtype) ? props.structtype : "") + '<br />' +
 		"<b>Website: </b><a href='" + ((props.moreinfo) ? hasHttp(props.moreinfo) : "") + "' target='_blank'>" + ((props.moreinfo) ? hasHttp(props.moreinfo) : "") + "</a> <i style='font-size:9px;' class='fa fa-external-link'></i><br/>" + 
 		'<b>Water Source: </b>' + ((props.watersrc) ? props.watersrc : "") + '<br />' +	
 		'<b>County: </b>' + ((props.county) ? props.county : "") + '<br />' +				
