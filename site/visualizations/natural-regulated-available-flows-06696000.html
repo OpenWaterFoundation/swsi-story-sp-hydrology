@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Boulder Creek Hydrographs</title>
+    <title>Hydrograph Examples of Natural, Regulated and Available Flows</title>
     <!-- Javascript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="javascript/highstock.src.js"></script>
-    <script src="javascript/data.js"></script>
+    <script src="js/highstock.src.js"></script>
+    <script src="js/data-5.0.14.js"></script>
     <script>
     $(function(){
-        // jQuery command to get/read file from boulder-creek-hydrographs.csv
-        $.get('data/boulder-creek-hydrographs.csv', function(csv) {
+        // jQuery command to get/read file from natural-regulated-available-flows.csv
+        $.get('data/natural-regulated-available-flows-06696000.csv', function(csv) {
             Highcharts.chart('container', {
                 chart: {
                     zoomType: 'x',  // describes what axis to zoom in on when a user decides to zoom on certain data
                 },
                 title: {
-                    text: 'Boulder Creek near Longmont' // title of chart
+                    text: 'South Platte River near Lake George' // title of chart
                 },
 				subtitle: {
-                    text: 'Source:  CDSS HydroBase' // title of chart
+                    text: 'Natural, Regulated and Available Flows' // title of chart
                 },
-				colors: ['#b30000', '#fe9929', 'green', '#6baed6', '#08519c'],
                 xAxis: {
                     type: 'datetime',   // datatype of x axis (YYYY-MM-DD, MM-DD-YYYY, etc.)
 					labels: {
-						format: '{value:%b-%e}'
+						format: '{value:%m/%y}'
 						},
                     title: {
                         text: 'Date'    // x axis title
@@ -33,7 +32,7 @@
                 },
                 yAxis: {
                     title: {
-                        text: 'Discharge (cfs)',  // y axis title
+                        text: 'Volume (acre-feet)',  // y axis title
                     },
                 },
                 tooltip: {  // control what the tooltip displays when a user hovers over a data point
@@ -57,6 +56,6 @@
 </script>
 </head>
 <body>
-    <div id="container" style="width:100%; height:800px;"></div>
+    <div id="container" style="width:100%; height:400px;"></div>
 </body>
 </html>

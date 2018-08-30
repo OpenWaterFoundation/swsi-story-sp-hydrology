@@ -211,7 +211,7 @@
 			  mid-April to August.</p>		  
               </div>			
 		    <div class="col-lg-8 side-content">
-			  <iframe style="width:95%" src="visualizations/hydrographs-bouldercreek/index.html" frameborder="0"></iframe>
+			  <iframe style="width:95%" src="visualizations/hydrographs-boulder-creek.html" frameborder="0"></iframe>
             </div>				
           </div>
         </div> 
@@ -223,9 +223,11 @@
               <h2>Hydrology Concepts - Variability</h2>
 			  <p>Hydrologic variability occurs across space and time.  Within the South Platte Basin, flows can vary between sub-basins within the same 
 			  year, with one sub-basin experiencing drought and another experiencing adequate water supplies.  Variation can occur because of elevation, 
-			  regional weather patterns, water storage projects, impacts of specific storm events and other reasons.  This interactive visualization shows 
-			  annual flow volume in acre-feet from 1950 to 2011 for 33 streamgages in the basin, representing the South Platte River and 
-			  many of its tributaries.  Within a streamgage, average volumes are ranked and placed into percentile categories as follows:</p>
+			  regional weather patterns, water storage projects, impacts of specific storm events and other reasons.</p>  
+			  <p>This interactive visualization shows annual flow volume in acre-feet from 1950 to 2011 for 33 streamgages in the basin, representing the South Platte River and 
+			  many of its tributaries.  Streamgages on the South Platte River are ordered from upstream to downstream and tributaries are generally arranged 
+			  in order from where their confluences are with the South Platte River.  Within a streamgage, average volumes are ranked and placed into 
+			  percentile categories as follows:</p>
 			  <ul>
 			    <li><span style="color:#b30000;">Less than 10<sup>th</sup> percentile = Much Below Normal</span></li>
 			    <li><span style="color:#fe9929;">10<sup>th</sup> - 24<sup>th</sup> percentile = Below Normal</span></li>
@@ -242,7 +244,7 @@
 			  and other data.</p>			  
               </div>
 		      <div class="col-lg-8 side-content">
-			  <iframe style="width:95%" src="visualizations/natural-flows-duration-annual/index.html" frameborder="0"></iframe>
+			  <iframe style="width:95%" src="visualizations/natural-flows-duration-annual.html" frameborder="0"></iframe>
               </div>				
             </div>
 		  </div>	
@@ -452,15 +454,16 @@
 			  demands.  In a planning study, the amount of available flow indicates the opportunity for additional water development, such as building a reservoir 
 			  to store the available flow, or implementing an instream flow right to preserve environmental flows.</p>
 			  <p>Hydrographs (see the <a href="#hydrographs">Hydrographs</a> page of this story), can be used for natural, regulated or available flows, as well as 
-			  any other subset or aggregation of flow data.</p>
+			  any other subset or aggregation of flow data.  The interactive hydrographs at right are for two locations on the South Platte River:  higher up in the 
+			  basin near Elevenmile Canyon Reservoir and near the stateline at Julesburg.</p>
 			  <p>Analyses of water supplies and the effects of climate change on streamflow are a couple of ways where it may be necessary to estimate 
 			  natural flows.  Estimation of natural flows and understanding conditions in a system typically require utilizing models. Two examples are point flow 
 			  models and the CDSS StateMod model, which will be discussed in the next section.</p>
-			  <p><i>Graph of natural flow vs. regulated flow vs. available flow at a specific location.</i></p>
               </div>			
 		    <div class="col-lg-8 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
-            </div>				
+			  <iframe style="width:95%; height:55%" src="visualizations/natural-regulated-available-flows-06696000.html" frameborder="0"></iframe>	
+			  <iframe style="width:95%; height:55%" src="visualizations/natural-regulated-available-flows-06764000.html" frameborder="0"></iframe>	 			  
+            </div>			
           </div>
         </div> 
       </div>  
@@ -564,7 +567,7 @@
       <div class="section">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
+            <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Water Demands - Municipalities and Industry</h2>
 			   <p>Municipalities and industry are a second category of demand placed on the Basin's water resources.  Municipal and industrial water demand tends to be 
 			   fairly predictable from year to year and season to season in a general sense, although variation does occur.  Municipal water demand is fairly constant 
@@ -581,11 +584,12 @@
 			   additional water supplies or changes to operations are needed.  Based on the analysis, a water provider such as a utility may decide to acquire additional water 
 			   supplies as an insurance policy to decrease the certainty of a negative impact, thus reducing risk.  Each water provider must perform their own analysis based on 
 			   their water supply portfolio and local conditions.  In Colorado, the worst situation is when a statewide drought occurs that impacts many basins.</p>
-			   <p><i>Find some graphic of the amount and timing of M&I demands and yearly patterns, especially indoor and outdoor use.  Can use StateMod outputs for a few 
-			   cities in the Basin.  These clearly show that water use almost doubles in the summer months.  Use Plotly to make interactive.</i></p>
+			   <p>The interactive visualization at right shows the indoor and outdoor water demands of Denver, Aurora and Boulder.  The hydrographs (from StateMod) clearly 
+			   show that water use almost doubles in the summer months for these large municipalities.</p>
+			   <p><i>Need to fix hydrographs so that indoor/outdoor are distinct, solid vs. dashed line.</i></p>
               </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+		    <div class="col-lg-8 side-content">
+ 			  <iframe style="width:95%;" src="visualizations/municipal-indoor-outdoor-demand.html" frameborder="0"></iframe>	 		
             </div>				
           </div>
         </div> 
@@ -594,7 +598,7 @@
       <div class="section">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
+            <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Water Demands - Environment and Recreation</h2>
 			  <p>Environmental and recreational needs are a third category of demand placed on the Basin's water resources, but in this case, the demand is to keep water 
 			  in the river and other water bodies.  The <a href="https://www.colorado.gov/pacific/sites/default/files/SouthPlatteBasinImplementationPlan-04172015.pdf" 
@@ -610,21 +614,21 @@
 			  have adequate habitat to survive.  Species can survive low flows and variation in flows but can be severely impacted by conditions in which the magnitude,
 			  timing, and/or persistence of flows are outside of biologically-tuned ranges.  It is a challenge to quantify required flows for each species and therefore 
 			  indicator species are often used to monitor and evaluate habitats.</p>
-			  <p>For a given stream reach, the flows necessary to protect environmental and recreational uses can be highly varied and also vary within a year.  This graphic 
-			  shows the flows needed for some environmental and recreational attributes on the South Platte River below Chatfield Reservoir, as well as the streamflow that 
-			  was actually present during that time.  This example shows that environmental flushing flows were largely not met during 2004. (Source: 
-			  <a href="https://www.colorado.gov/pacific/sites/default/files/Appendix%20D%20-%20Environmental%20and%20Recreational%20Assessment%20Methodology%20and%20Framework.pdf" 
+			  <p>For a given stream reach, the flows necessary to protect environmental and recreational uses can be highly varied and also vary within a year.  This interactive 			  
+			  visualization shows the flows needed for some environmental and recreational attributes on the South Platte River below Chatfield Reservoir, as well as the 
+			  streamflow that was actually present during that time.  
+			  (Source: <a href="https://www.colorado.gov/pacific/sites/default/files/Appendix%20D%20-%20Environmental%20and%20Recreational%20Assessment%20Methodology%20and%20Framework.pdf" 
 			  target="_blank">South Platte BIP Appendix D-2 - Environmental and Recreational Assessement Methodology and Framework<img src="images/baseline_launch_black_18dp.png" 
-			  width="12px"/></a>).  It is challenging to quantify and maintain environmental and recreational flows at each location on a river.</p>
-			  <p><i>Include hydrograph of instream flow and recreation demand, similar to graphs in BIP.  Make this interactive using Plotly.</i></p>
+			  width="12px"/></a>).  This visualization, while just an example, shows that it can be challenging to meet environmental and recreational flow recommendations 
+			  in any given year.</p>
 			  <p>The Environmental and Recreational component of the <a href="http://cwcb.state.co.us/water-management/water-supply-planning/Pages/SWSIUpdate.aspx" 
 			  target="_blank">Statewide Water Supply Initiative (SWSI) Update<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>
 			  is focusing on the development of a Flow Tool, along with an update to the Environmental and Recreational database.  This tool 
 			  will be able to assess flow conditions in each basin and help basin roundtables assess their environmental and recreational 
 			  flow needs and if those flow needs are being met.</p>			  
               </div>			
-		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="images/envr-rec-hydrograph.png" frameborder="0"></img>
+		    <div class="col-lg-8 side-content">
+			  <iframe style="width:95%;" src="visualizations/envr-rec-flows.html" frameborder="0"></iframe>	 			  
             </div>				
           </div>
         </div> 
@@ -803,9 +807,9 @@
 			  <p>It is difficult to fully quantify the impacts of climate change on water resources.  Systems models such as StateMod have been used to simulate river systems 
 			  using a possible range of precipitation, temperature and related data, in order to understand impacts on water supplies (see the 
 			  <a href="http://cwcbweblink.state.co.us/WebLink/ElectronicFile.aspx?docid=158319&searchid=78f0eafa-0b8f-4d8a-9ff3-faf67cc82f52&dbid=0" target="_blank">Colorado 
-			  River Water Availability Study<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> and the Colorado River Water Supply and Demand Study (need link)).  A general 
+			  River Water Availability Study<img src="images/baseline_launch_white_18dp.png" width="12px"/></a> and the Colorado River Water Supply and Demand Study (need link)).  A general 
 			  concern among municipal water providers is that the gains due to water conservation will be offset by the impacts of climate change and efforts to develop new water 
-			  supplies must account not only for certain population growth, but uncertain, yet significant, impacts of climate change.</p>
+			  supplies must account not only for certain population growth but uncertain, yet significant, impacts of climate change.</p>
             </div>			
           </div>
         </div> 

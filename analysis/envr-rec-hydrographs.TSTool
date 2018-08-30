@@ -1,0 +1,64 @@
+# SOUTH PLATTE DATA PLATFORM HYDROLOGY STORY
+#
+# Environmental and Recreational Analyses
+###################################################################################################
+#
+# a)  Replicate the example in the South Platte BIP, Appendix D-2: Environmental and Recreational 
+#     Assessment Methodology and Framework
+# An example on pg. 72, Fig. 5-27, shows a hydrograph of the South Platte below Chatfield Reservoir in 2004
+# as well as recommended recreational and environmental flows (from pg. 67). 
+#
+# Download streamgage data
+# PLACHACO - SOUTH PLATTE RIVER BELOW CHATFIELD RESERVOIR
+PLACHACO.DWR.Streamflow.Day~ColoradoWaterHBGuest
+ChangePeriod(TSList=AllMatchingTSID,TSID="PLACHACO.DWR.Streamflow.Day",NewStart="2000-01-01",NewEnd="2017-09-30")
+#
+# Create the environmental flushing flows as per the example
+NewPatternTimeSeries(Alias="Flushing",NewTSID="Flushing.BIP.Discharge.Month.Flushing",Description="Environmental flushing flows",SetStart="2000-01",SetEnd="2017-09",Units="cfs",PatternValues=",,,,268,268,,,,,,,")
+Disaggregate(TSID="Flushing",Alias="Flushing-Day",Method=SameValue,NewInterval=Day)
+#
+# Create the recreational minimum flows as per the example
+NewPatternTimeSeries(Alias="Recreational",NewTSID="Recreational.BIP.Discharge.Month.Minimum",Description="Recreational minimum flows",SetStart="2000-01",SetEnd="2017-09",Units="cfs",PatternValues=",,,,100,100,100,,,,,,")
+Disaggregate(TSID="Recreational",Alias="Recreational-Day",Method=SameValue,NewInterval=Day)
+#
+# Recommended environmental minimum as per the example
+NewPatternTimeSeries(Alias="EnvironmentalMinimum",NewTSID="Environmental.BIP.Discharge.Month.Minimum",Description="Environmental minimum flows",SetStart="2000-01",SetEnd="2017-09",Units="cfs",PatternValues="35,35,35,35,160,160,160,160,160,35,35,35,")
+Disaggregate(TSID="EnvironmentalMinimum",Alias="EnvironmentalMinimum-Day",Method=SameValue,NewInterval=Day)
+#
+# Convert time series to tables
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*Streamflow*",TableID="envr-rec-flows",DateTimeColumn="Date",ValueColumn="South_Platte_River_below_Chatfield_Reservoir",IfTableNotFound="Create")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*Flushing-Day*",TableID="envr-rec-flows",DateTimeColumn="Date",ValueColumn="Environmental_Flushing")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="Recreational-Day",TableID="envr-rec-flows",DateTimeColumn="Date",ValueColumn="Recreational_Minimum")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="EnvironmentalMinimum-Day",TableID="envr-rec-flows",DateTimeColumn="Date",ValueColumn="Environmental_Minimum")
+#
+# Output to csv
+WriteTableToDelimitedFile(TableID="envr-rec-flows",OutputFile="..\site\visualizations\data\envr-rec-flows-example.csv",WriteHeaderComments=False,NaNValue="Blank")
+###################################################################################################
+# 
+# b) Data for an example heatmap visualization showing how often minimum instream flows are met.
+# Using CDSS Map Viewer, found a location on the North Fork Big Thompson River where a minimum instream 
+# flow exists and a streamgage is just downstream.
+#
+# Get streamgage data
+# 06736000 - NORTH FORK BIG THOMPSON RIVER AT DRAKE, CO.
+06736000.NWBOR.Streamflow.Day~ColoradoWaterHBGuest
+ChangePeriod(TSList=AllMatchingTSID,TSID="06736000.NWBOR.Streamflow.Day",NewStart="2000-01-01",NewEnd="2013-09-30")
+#
+# Create a time series of minimum instream flow right
+# Right is for 8 cfs from 4/1 to 10/31 and 3.5 cfs from 11/1 to 3/31
+NewPatternTimeSeries(Alias="MinimumFlow",NewTSID="North Fork Big Thompson.CWCB.Discharge.Month.MinimumFlow",Description="CWCB Minimum Instream Flow Right",SetStart="2000-01",SetEnd="2013-09",Units="cfs",PatternValues="3.5,3.5,3.5,8,8,8,8,8,8,8,3.5,3.5,")
+Disaggregate(TSID="MinimumFlow",Alias="NForkBigThompson-Day",Method=SameValue,NewInterval=Day)
+#
+# Convert time series to tables
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*0673600*",TableID="min-flows",DateTimeColumn="Date",ValueColumn="North_Fork_Big_Thompson_River_at_Drake",IfTableNotFound="Create")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="NForkBigThompson-Day",TableID="min-flows",DateTimeColumn="Date",ValueColumn="North_Fork_Big_Thompson_River_Minimum_Flow",IfTableNotFound="Create")
+#
+# Subtract columns from each other and create new column of the difference
+TableMath(TableID="min-flows",Input1="North_Fork_Big_Thompson_River_at_Drake",Operator="-",Input2="North_Fork_Big_Thompson_River_Minimum_Flow",Output="Difference")
+#
+# Split year from date
+FormatTableDateTime(TableID="min-flows",InputColumn="Date",DateTimeFormat="%Y",OutputColumn="Year",OutputType=DateTime,InsertBeforeColumn="Date")
+#
+# Create a Node column that allows for creation of heatmap
+InsertTableColumn(TableID="min-flows",InsertColumn="Node",InsertBeforeColumn="Difference",ColumnType=Integer,InitialValue="0",InitialFunction="Row0")
+#
