@@ -1,0 +1,42 @@
+# SOUTH PLATTE DATA PLATFORM
+#
+# Agricultural hydrographs and analyses that relate to agricultural uses of water resources
+####################################################################################################
+# 1) Examples of ditches that use water in various ways, depending on seniority, type of irrigation method, if storage is available, etc.
+#
+# a) Example of a ditch with senior rights that is able to support the same use pretty much every year due to the seniority of their water rights.
+# 0200809 - BRANTNER DITCH
+0200809.DWR.DivTotal.Day~ColoradoWaterHBGuest
+#
+# b) Example of a ditch with supplemental supply.  This type of ditch can irrigate at "normal" levels, even in drought.
+# 0100503 - RIVERSIDE CANAL
+0100503.DWR.DivTotal.Day~ColoradoWaterHBGuest
+#
+# c) Example of a ditch with CBT water and no independent, off-channel storage
+# 0400503 - BIG THOMPSON DITCH & MANUFACTURING CO DI
+0400503.DWR.DivTotal.Day~ColoradoWaterHBGuest
+#
+# d) Example of a ditch that has lots of shortages
+# 0600593 - S BOULDER CANON DITCH
+0600593.DWR.DivTotal.Day~ColoradoWaterHBGuest
+#
+# e) Example of a ditch that has switched to sprinkler irrigation (highlights innovation).  This ditch has junior 
+#    water rights and has transitioned irrigation methods and the type of crops grown to increase the certainty 
+#    of producing crops even when water short.
+# 6400511 - HARMONY DITCH 1
+6400511.DWR.DivTotal.Day~ColoradoWaterHBGuest
+#
+# Shorten the period of record for all of these
+ChangePeriod(TSList=AllTS,NewStart="2000-01-01",NewEnd="2017-12-31")
+#
+# Put timeseries into table format
+TimeSeriesToTable(TSList=AllTS,TableID="ag-ditch-diversions",DateTimeColumn="Date",ValueColumn="%D_%L",IfTableNotFound="Create")
+#
+# Copy table to rename columns to be more descriptive for visualization
+CopyTable(TableID="ag-ditch-diversions",NewTableID="ag-ditch-diversions-final",ColumnMap="BIG THOMPSON DITCH & MANUFACTURING CO DI_0400503:BIG THOMPSON DITCH & MANUFACTURING CO._0400503,S BOULDER CANON DITCH_0600593:S. BOULDER CANON DITCH_0600593")
+#
+# Export to csv
+WriteTableToDelimitedFile(TableID="ag-ditch-diversions-final",OutputFile="..\site\visualizations\data\ag-diversion-hydrographs.csv",WriteHeaderComments=False,NaNValue="Blank")
+#
+#
+#
