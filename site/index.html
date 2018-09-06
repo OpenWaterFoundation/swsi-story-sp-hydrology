@@ -12,6 +12,8 @@
     <!-- Colorado triangle favicon -->
     <link id="czr-favicon" rel="icon" href="images/co-triangle-favicon.ico">
 
+	<!-- Maps style -->
+    <link href="css/map.css" rel="stylesheet"/>		
     <!-- Custom style -->
     <link href="css/style.css" rel="stylesheet">
     <!-- Custom leaflet style added -->
@@ -26,8 +28,8 @@
     <!--<link href='css/mapbox-gl-0.47.0.css' rel='stylesheet' />-->
     <!-- Stylesheet for leaflet -->
     <link href="css/leaflet-1.3.3.css" rel="stylesheet" />
-    <!-- style for population projection map -->
-    <link href="css/county-population-forecast-map.css" rel="stylesheet" />
+	<!-- Taken from owf-webapp-spatial-datasets-js repo. Required to display latitude and longitude. -->
+    <link href="css/L.Control.MousePosition.1.css" rel="stylesheet" />
     <!-- Style for jBox library -->
     <link href="css/jBox-0.4.9.css" rel="stylesheet">
 	<!-- Style for Clusterize.js -->
@@ -84,12 +86,13 @@
   	<script src="data/timeline.json"></script>
   	<script src="data/small-precip-data.csv"></script>
 	<script src="data/CO-DWR-SourceWaterRouteFramework-Division01-20180228-reduced.geojson"></script>	
+	<script src="data/southplatte-transbasin-diversions.geojson"></script>		
   	<!-- Boundary Files -->	
   	<script src="data/Colorado-IBCC-Basins-WGS84.geojson"></script>	
 	
   </head>
 
-  <script>
+<script>
     /* Use jBox for popups on maps */
     /* This jBox popup is used in mapfiles */
     var mousetooltip;
@@ -102,8 +105,15 @@
         content: "Click to toggle mouse scroll wheel behavior.<br> [ x ] Mouse scroll pages forward/back. <br> [ &nbsp; ] Mouse scroll zooms map."
      });
     })
-  </script>
-
+    var tooltip;
+    $(window).bind("load", function(){
+      tooltip = new jBox('Tooltip', {
+        closeOnMouseleave: true,
+        attach: '.jbox-tooltip'
+      })
+    })
+  </script>  
+  
 <body>
 
     <div class="loader"></div>
@@ -209,7 +219,16 @@
 			  <p>This interactive visualization shows five annual hydrographs from a streamgage on Boulder Creek.  Each line represents a year of flow data and 
 			  shows the variability that can occur from year to year.  To select/deselect years on the plot, click on the year in the legend at the bottom.  
 			  Note that even though these years represent a wide range of flows observed on Boulder Creek at this location, flows are most variable from 
-			  mid-April to August.</p>		  
+			  mid-April to August.  (Source:  <a href="https://dnrweb.state.co.us/cdss/" target="_blank">CDSS HydroBase<img src="images/baseline_launch_black_18dp.png" 
+			  width="12px"/></a>)</p>
+			  <p>The year classifications (e.g., "Much Below Normal") are based on USGS terminology and are categorized as follows:</p>
+			  <ul>
+			    <li><span style="color:#b30000;">Less than 10<sup>th</sup> percentile = Much Below Normal</span></li>
+			    <li><span style="color:#fe9929;">10<sup>th</sup> - 24<sup>th</sup> percentile = Below Normal</span></li>
+			    <li><span style="color:green;">25<sup>th</sup> - 75<sup>th</sup> percentile = Normal</span></li>
+			    <li><span style="color:#6baed6;">76<sup>th</sup> - 90<sup>th</sup> percentile = Above Normal</span></li>
+			    <li><span style="color:#08519c;">Greater than 90<sup>th</sup> percentile = Much Above Normal</span></li>				
+			  </ul>			  
               </div>			
 		    <div class="col-lg-8 side-content">
 			  <iframe style="width:95%" src="visualizations/hydrographs-boulder-creek.html" frameborder="0"></iframe>
@@ -236,10 +255,12 @@
 			    <li><span style="color:#6baed6;">76<sup>th</sup> - 90<sup>th</sup> percentile = Above Normal</span></li>
 			    <li><span style="color:#08519c;">Greater than 90<sup>th</sup> percentile = Much Above Normal</span></li>				
 			  </ul>
+			  <p>Note that 2002 was a severe drought across the entire basin and resulted in many changes, including the adoption of water conservation 
+			  practices.  See the <a href="#drought">Drought</a> section for more information.</p>
 			  <p>It is important to recognize that the data used in an analysis can be impacted by human actions.  Streamgage measurements reflect the 
 			  impacts of diversions, reservoir releases and other impacts.  Therefore, evaluating streamgage data also indirectly reflects other conditions 
 			  in the basin.  Annual data can also be impacted by extreme events.  For example, a streamgage may indicate drought conditions for the majority 
-			  of the year and one large rain event may skew the annual result (i.e., the September 2013 flood event centered on the Colorado Front 
+			  of the year and one large rain event may skew the annual result (e.g., the September 2013 flood event centered on the Colorado Front 
 			  Range).  It may be necessary to view data at finer detail, such as a monthly interval, to fully understand conditions.  Fully understanding 
 			  drought conditions requires evaluation of <a href="#storagesnowpack">snowpack</a>, precipitation, <a href="#naturalflows">natural flows</a> 
 			  and other data.</p>			  
@@ -271,7 +292,7 @@
 			  target="_blank">Natural Resources Conservation Service (NRCS)<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> and local 
 			  entities such as cities and water districts.</p>
 			  <p>The complexity of water resources systems is illustrated by “straight line diagrams” that combine physical and legal information to help 
-			  people understand water resources systems.  The diagrams are graphical linear representations of structures and/or water rights for a given stream 
+			  people understand water resources systems.  The diagrams are graphical linear representations of structures and water rights for a given stream 
 			  system that allows a large amount of complex information to be observed at a glance.  This straight line diagram of water district 04 (Big Thompson 
 			  River) can also be viewed <a href="https://dnrweblink.state.co.us/dwr/0/doc/2083919/Page1.aspx?searchid=fd2f4d5d-003a-48dc-bb41-b937f8afa88f" 
 			  target="_blank">here<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>.</p>		  
@@ -294,9 +315,9 @@
 			  Water Resources (DWR)<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, local water utilities and other entities that need to know flow amounts for reporting and operations.  Sensors and 
 			  data loggers (also called data collection units (DCUs) or stage discharge recorders (SDRs)) may record measurements at regular intervals and can be 
 			  triggered by changing values such as a rain event.  These measurements, often referred to as real-time or instantaneous, may or may not be publicly 
-			  available.  Data are often reported at 15-minute intervals, representing average conditions over that time.  These values are then aggregated to 
+			  available.  Real-time data are often publicly reported at 15-minute intervals, representing average conditions over that time.  These values are then aggregated to 
 			  longer intervals including hour and day.  Average values are often suitable for water supply management operations, whereas instantaneous values 
-			  may be used for peak flows or other critical conditions.</p>  
+			  may be used to monitor peak flows, environmental flows or other critical conditions.</p>  
 			  <p>It is important to recognize that a daily average flow, such as reported by USGS or DWR, does not mean that the flow was the same from midnight 
 			  to midnight; in actuality, the flow could have varied significantly during the day and using shorter-interval data is necessary to understand the 
 			  variation.</p>  
@@ -365,7 +386,7 @@
       <div class="section">
           <div class="row">
             <div class="col-lg-4 text-left-custom custom-scroll">
-              <h2>Hydrology Concepts - Groundwater and Measuring Water Level</h2>
+              <h2>Hydrology Concepts - Groundwater and Measuring Water Level and Pumping</h2>
 			  <p>Groundwater is water that is held underground within aquifers, which are geological formations (essentially rock or soil layers).  The water is 
 			  contained within tiny pore spaces or cracks in the solid material.  There are three types of aquifers:  alluvial, sedimentary bedrock and fractured rock.  
 			  Alluvial aquifers are generally composed of shallow sand and gravel deposits.  They are often also called tributary aquifers because they exchange 
@@ -390,12 +411,13 @@
 			  allow easy access to water.  Wells are often drilled in locations that are convenient to farms and homes, whereas surface water may be located much 
 			  farther away.</p>
 			  <p>Small wells, such as domestic wells, are constructed after obtaining a well permit and have limited size (50 gallons per minute or less).  Larger 
-			  wells, such as used for agriculture and municipal supply, typically have a Water District Identifier (WDID) similar to headgates, with similar 
-			  <a href="https://dnrweb.state.co.us/cdss/Structures?submitButton=Submit&SelectedGeoValue=waterDivisionDiv&SelectedWaterDivisionId=1&SelectedStructureId=2" 
-			  target="_blank">diversion record data<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>.  
-			  <a href="https://dnrweb.state.co.us/cdss/GroundWater/WaterLevels?submitButton=Submit&SelectedGeoValue=waterDivisionDiv&SelectedWaterDivisionId=1&SelectedPublicationAreaName=All&SelectedAquiferName=All" target="_blank">Water level data<img src="images/baseline_launch_black_18dp.png" 
-			  width="12px"/></a> for wells is also important because it relates to the depth of wells needed to access the water, and in some areas, 
-			  high water tables have resulted in flooding fields and infrastructure (see <a href="http://water.state.co.us/DivisionsOffices/Div1SPlatteRiverBasin/Pages/GroundwaterSterling.aspx" 
+			  wells, such as used for agriculture and municipal supply, have a water right decree and typically have a Water District Identifier (WDID) similar to 
+			  headgates, with similar <a href="https://dnrweb.state.co.us/cdss/Structures?submitButton=Submit&SelectedGeoValue=waterDivisionDiv&SelectedWaterDivisionId=1&SelectedStructureId=2" 
+			  target="_blank">diversion record data<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> as headgate diversions.  
+			  <a href="https://dnrweb.state.co.us/cdss/GroundWater/WaterLevels?submitButton=Submit&SelectedGeoValue=waterDivisionDiv&SelectedWaterDivisionId=1&SelectedPublicationAreaName=All&SelectedAquiferName=All" 
+			  target="_blank">Water level data<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> for wells is also important because it relates to 
+			  the depth of wells needed to access the water, and in some areas, high water tables have resulted in flooding fields and infrastructure (see 
+			  <a href="http://water.state.co.us/DivisionsOffices/Div1SPlatteRiverBasin/Pages/GroundwaterSterling.aspx" 
 			  target="_blank">HB1278 Study: Groundwater Modeling Efforts<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> for the Gilcrest/LaSalle and Sterling areas).</p>
             </div>			
 		    <div class="col-lg-8 side-content">
@@ -428,8 +450,9 @@
 			  <p>This <a href="http://water.state.co.us/SurfaceWater/SWRights/WaterDiagrams/Pages/SnakeDiagram.aspx" target="_blank">diagram<img src="images/baseline_launch_black_18dp.png" 
 			  width="12px"/></a>, sometimes called the "snake diagram", from DWR shows how flows greatly increase downstream of Denver, which allows reuse for 
 			  agriculture and other purposes.  In general, municipalities seek cleaner water supplies, which often means acquiring mountain supplies.  In some 
-			  cases, exchanges can occur, for example, allowing a municipality to use cleaner mountain water supplies in exchange for an equivalent amount of 
-			  water accessible at a lower elevation.</p>			  
+			  cases, exchanges can occur, for example, allowing a municipality to use cleaner mountain water supplies in exchange for agricultural or other users 
+			  taking water from municipal water rights downstream.  This allows different water providers in a region to share infrastructure and water supplies 
+			  to optimize the system.</p>			  
               </div>			
 		    <div class="col-lg-8 side-content">
               <img class="image-centered" style="margin-top:5vh;" src="images/snake-diagram.png" frameborder="0"></img>
@@ -456,7 +479,8 @@
 			  to store the available flow, or implementing an instream flow right to preserve environmental flows.</p>
 			  <p>Hydrographs (see the <a href="#hydrographs">Hydrographs</a> page of this story), can be used for natural, regulated or available flows, as well as 
 			  any other subset or aggregation of flow data.  The interactive hydrographs at right are for two locations on the South Platte River:  higher up in the 
-			  basin near Elevenmile Canyon Reservoir and near the stateline at Julesburg.</p>
+			  basin near Elevenmile Canyon Reservoir and near the stateline at Julesburg.  Depending on the location and impacts of regulation, natural flows may be 
+			  larger or smaller than regulated flows.</p>
 			  <p>Analyses of water supplies and the effects of climate change on streamflow are a couple of ways where it may be necessary to estimate 
 			  natural flows.  Estimation of natural flows and understanding conditions in a system typically require utilizing models. Two examples are point flow 
 			  models and the CDSS StateMod model, which will be discussed in the next section.</p>
@@ -483,7 +507,7 @@
 			  <p>Point flow models will typically result in errors because of externalities such as unmeasured inflows and outflows, timing issues and data input errors, 
 			  which can generally be represented as gains and losses between measured streamgage nodes.  The errors can be distributed between nodes in a reach, where 
 			  a reach is bounded by streamgages.  The distribution of errors can be based on stream mile or other mechanism.  For example, if the point flow calculations 
-			  between two streamgages indicate that flow at the lower gage is 100 cfs higher than calculated, the 100 cfs can be distributed across the stream reach 
+			  between two streamgages indicate that flow at the lower gage is 100 cfs higher than calculated, the 100 cfs error can be distributed across the stream reach 
 			  between gages, indicating that return flows are occurring.  Such return flows vary depending on season and are themselves lagged in time from the original 
 			  use of the water.  Point flow models therefore provide a useful conceptualization of a system without having to model complex interactions.</p>
 			  <p>This <a href="https://www.lspwcd.org/index_files/PointFlow.htm" target="_blank">visualization</a> is a point flow model for the South Platte River 
@@ -502,7 +526,7 @@
          <div class="row">
             <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Modeling Concepts - CDSS and StateMod</h2>
-			  <p>Colorado’s Decision Support Systems (CDSS) <a href="http://cdss.state.co.us/Modeling/Pages/SurfaceWaterStateMod.aspx" target="_blank">StateMod<img 
+			  <p>Colorado’s Decision Support Systems (CDSS) <a href="https://www.colorado.gov/pacific/cdss/surface-water-statemod" target="_blank">StateMod<img 
 			  src="images/baseline_launch_black_18dp.png" width="12px"/></a> model is a tool that represents a river basin using constructs that closely match the water 
 			  rights system in Colorado.  The model represents a river system using a network of nodes, called stations (i.e., streamgage, diversion and well stations).  
 			  The nodes in the model are associated with other data files, including water rights, return flow tables and time series files indicating historical diversions, 
@@ -546,9 +570,10 @@
 			  entities compete for the Basin's water resources and these entities need water at different times of the year.  Agriculture is the largest user of the Basin's 
 			  water resources, accounting for 85% of total water diversions (<a href="https://www.colorado.gov/cowaterplan" 
 			  target="_blank">Colorado Water Plan<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.3-13).</p>  
-			  <p>Agricultural demand for water is typically from May to October.  Irrigation requirements vary depending on the crop that is grown.  Crop irrigation 
-			  requirements are defined as the depth of water needed to meet the water consumed through evapotranspiration by a disease-free crop, growing in large fields 
-			  under non-restricting soil conditions including soil water and fertility, and achieving full production potential under the given growing environment.  
+			  <p>Agricultural demand for water is typically from May to October, although there is demand in the colder months as irrigation reservoirs are filled to 
+			  prepare for the following year.  Irrigation requirements vary depending on farming practices, irrigation method and the crops that are grown.  Crop 
+			  irrigation requirements are defined as the depth of water needed to meet the water consumed through evapotranspiration by a disease-free crop, growing in 
+			  large fields under non-restricting soil conditions including soil water and fertility, and achieving full production potential under the given growing environment.  
 			  The table below lists water requirements for crops grown in eastern Colorado.  In general, alfalfa requires the most water, followed by sugar beets (Source: <a href="
 			  http://extension.colostate.edu/topic-areas/agriculture/seasonal-water-needs-and-opportunities-for-limited-irrigation-for-colorado-crops-4-718/" target="_blank">CSU 
 			  Extension Fact Sheet: Seasonal Water Needs and Opportunities for Limited Irrigation for Colorado Crops)<img src="images/baseline_launch_black_18dp.png" 
@@ -557,7 +582,8 @@
 			  <p>Agricultural producers rely on various data to help make decisions about the upcoming irrigation season, including reservoir storage conditions, snowpack 
 			  conditions, water rental programs and other information.  Water use for each agricultural producer and ditch system depends on the location, conditions 
 			  and operations of the system, as well as the seniority of their water rights.  This interactive visualization shows diversion records for five ditches in 
-			  the Basin and illustrates some conditions and circumstances under which ditches divert water for agricultural purposes.</p>
+			  the Basin and illustrates some conditions and circumstances under which ditches divert water for agricultural purposes.  To select/deselect a ditch on the 
+			  plot, click on the ditch in the legend at the bottom.</p>
 			  <ul>
 			    <li><span style="color:#6baed6;">Brantner Ditch</span>:  this is an example of a ditch with senior water rights that is able to support the same use nearly 
 				every year because of those senior rights.  To clearly see this, click on the other ditch names in the legend to "turn off" those ditches so that only 
@@ -567,7 +593,8 @@
 			    <li><span style="color:#08519c;">Harmony Ditch</span>:  this example ditch highlights innovation.  This ditch has junior water rights, yet 
 				has changed irrigation methods (flood to sprinkler) and the type of crops grown to increase the certainty of producing crops even when water short.</li>
 			    <li><span style="color:#fe9929;">Big Thompson Ditch & Manufacturing Company</span>:  this is an example of a ditch that has rights to Colorado-Big Thompson 
-				(transbasin) water and no independent, off-channel storage.</li>
+				(transbasin) water and no independent, off-channel storage.  In general, diversions decline as the season progresses, which can be due to a number of 
+				reasons, including the types of crops that are grown.</li>
 			    <li><span style="color:#b30000;">S. Boulder Canon Ditch</span>:  this is an example of a ditch that frequently experiences shortages.  Not only does this ditch 
 				divert less water than the other four ditches shown, but it diverts over a shorter time period.  Each year, the ditch diverts water for about two months.</li>				
 			  </ul>
@@ -604,9 +631,15 @@
 			   additional water supplies or changes to operations are needed.  Based on the analysis, a water provider such as a utility may decide to acquire additional water 
 			   supplies as an insurance policy to decrease the certainty of a negative impact, thus reducing risk.  Each water provider must perform their own analysis based on 
 			   their water supply portfolio and local conditions.  In Colorado, the worst situation is when a statewide drought occurs that impacts many basins.</p>
-			   <p>The interactive visualization at right shows the indoor and outdoor water demands of Denver, Aurora and Boulder.  The hydrographs (from StateMod) clearly 
-			   show that water use almost doubles in the summer months for these large municipalities.</p>
-			   <p><i>Need to fix hydrographs so that indoor/outdoor are distinct, solid vs. dashed line.</i></p>
+			   <p>The interactive visualization at right shows the indoor and outdoor water demands of Denver, Aurora and Boulder.  The hydrographs (from 
+			   <a href="https://www.colorado.gov/pacific/cdss/surface-water-statemod" target="_blank">StateMod<img src="images/baseline_launch_black_18dp.png" 
+			   width="12px"/></a>, Total Demand time series) clearly show that water use almost doubles in the summer months for these large municipalities.  Water use data 
+			   are often provided in municipal water efficiency plans or annual reports.  <a href="https://www.denverwater.org/sites/default/files/water-efficiency-plan-draft.pdf" 
+			   target="_blank">Denver<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, 
+			   <a href="https://www.auroragov.org/UserFiles/Servers/Server_1881137/File/Residents/Water/Water%20System/Aurora%20Water%20Facts/Final_2015_ConservationPlan_update_3.18.16.pdf" 
+			   target="_blank">Aurora<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> and 
+			   <a href="https://www-static.bouldercolorado.gov/docs/WEP_October_Final-1-201610180831.pdf" target="_blank">Boulder<img src="images/baseline_launch_black_18dp.png" 
+			   width="12px"/></a> all have water efficiency plans.</p>
               </div>			
 		    <div class="col-lg-8 side-content">
  			  <iframe style="width:95%;" src="visualizations/municipal-indoor-outdoor-demand.html" frameborder="0"></iframe>	 		
@@ -633,14 +666,15 @@
 			  The life stage of the species (larval, juvenile or adult) can also determine the necessary flows.  All species need some minimum flow that will ensure they 
 			  have adequate habitat to survive.  Species can survive low flows and variation in flows but can be severely impacted by conditions in which the magnitude,
 			  timing, and/or persistence of flows are outside of biologically-tuned ranges.  It is a challenge to quantify required flows for each species and therefore 
-			  indicator species are often used to monitor and evaluate habitats.</p>
+			  indicator species and/or habitats are often used to monitor and evaluate habitats.</p>
 			  <p>For a given stream reach, the flows necessary to protect environmental and recreational uses can be highly varied and also vary within a year.  This interactive 			  
 			  visualization shows the flows needed for some environmental and recreational attributes on the South Platte River below Chatfield Reservoir, as well as the 
 			  streamflow that was actually present during that time.  
 			  (Source: <a href="https://www.colorado.gov/pacific/sites/default/files/Appendix%20D%20-%20Environmental%20and%20Recreational%20Assessment%20Methodology%20and%20Framework.pdf" 
 			  target="_blank">South Platte BIP Appendix D-2 - Environmental and Recreational Assessement Methodology and Framework<img src="images/baseline_launch_black_18dp.png" 
 			  width="12px"/></a>).  This visualization, while just an example, shows that it can be challenging to meet environmental and recreational flow recommendations 
-			  in any given year.</p>
+			  in any given year.  There are opportunities to meet flow recommendations by reducing demands, managing reservoir storage releases and water deliveries through 
+			  a reach and changing operations.</p>
 			  <p>The Environmental and Recreational component of the <a href="http://cwcb.state.co.us/water-management/water-supply-planning/Pages/SWSIUpdate.aspx" 
 			  target="_blank">Statewide Water Supply Initiative (SWSI) Update<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>
 			  is focusing on the development of a Flow Tool, along with an update to the Environmental and Recreational database.  This tool 
@@ -682,7 +716,7 @@
 			  about an additional tool.</p>
               </div>			
 		  <div class="col-lg-8 side-content">
-              <img class="image-centered" style="margin-top:5vh;" src="images/nrcs-swe.png" frameborder="0"></img>
+			  <img class="image-centered jbox-tooltip" title="Click <a href='https://www.wcc.nrcs.usda.gov/webmap_beta/#version=98&elements=&networks=!&states=!&counties=!&hucs=&minElevation=&maxElevation=&elementSelectType=all&activeOnly=true&activeForecastPointsOnly=false&hucLabels=true&hucIdLabels=false&hucParameterLabels=true&stationLabels=&overlays=&hucOverlays=wy_8,state&basinOpacity=70&basinNoDataOpacity=100&basemapOpacity=90&maskOpacity=0&mode=data&openSections=parameter,date,basin,options,elements,location,overlays,labels&controlsOpen=true&popup=&popupMulti=&base=esriWsr&displayType=basinstation&basinType=co_8&dataElement=WTEQ&parameter=PCTMED&frequency=MONTHLY&duration=I&customDuration=&dayPart=E&year=2018&month=8&day=8&monthPart=B&forecastPubMonth=4&forecastPubDay=1&forecastExceedance=50&seqColor=1&divColor=1&scaleType=C&scaleMin=40&scaleMax=160&referencePeriodType=POR&referenceBegin=1981&referenceEnd=2010&minimumYears=20&hucAssociations=true&lat=38.598&lon=-104.224&zoom=7.0' target='_blank'>here</a> to go to online tool" style="margin-top:5vh;" src="images/nrcs-swe.png" frameborder="0" ></img>			  
           </div>
         </div>
       </div> 
@@ -700,30 +734,48 @@
 			  target="_blank">Citizen's Guide to Where Your Water Comes From<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>, p.26).  
 			  Reservoirs are constructed to maintain a consistent supply of water for municipal, industrial, agricultural and sometimes environmental and 
 			  recreational uses.  Reservoirs essentially regulate river flows:  they can increase low flows during dry conditions and reduce flooding flows.</p>
-			  <p>Some reservoirs are operated primarily for drought reserve and can remain substantially full until needed.  Other reservoirs are operated 
-			  primarily for irrigation and tend to fill in non-irrigation months and drain each year during the irrigation season.  Some reservoirs may also 
-			  provide flood storage, meaning that the reservoir is kept partially empty in order to store flood flows.  New reservoirs and changes to existing 
-			  reservoirs often seek to meet multiple purposes in order to maximize benefits of storage, although adding significant storage to provide 
-			  environmental flows is a challenge.</p>
+			  <p>Some reservoirs are operated primarily for drought reserve and can remain substantially full until needed.  One example is <span 
+			  style="color:green;">Eleven Mile Canyon Reservoir</span>.  This is the second-largest reservoir in Denver Water's collection system.  Note how 
+			  the reservoir is at or above capacity most of the time.  Also note how the drought of 2002 affected the reservoir.  Over half of its capacity 
+			  was used in the later half of 2002 and it took until July 2005 for the reservoir to refill.  Denver Water publishes 
+			  <a href="https://www.denverwater.org/your-water/water-supply-and-planning/reservoir-levels" target="_blank">reservoir level data<img 
+			  src="images/baseline_launch_black_18dp.png" width="12px"/></a> on a daily basis.</p>
+			  <p>Other reservoirs are operated primarily for irrigation and tend to fill in non-irrigation months and drain each year during the irrigation 
+			  season.  An example of this type of reservoir is <span style="color:#b30000;">North Sterling Reservoir</span>, an off-channel reservoir.  Reservoir 
+			  levels typically peak in the spring and then decline as the irrigation season progresses.</p>
+			  <p>Some reservoirs may also provide flood storage, meaning that the reservoir is kept partially empty in order to store flood flows.  An example of 
+			  this type of reservoir is <span style="color:#fe9929;">Chatfield Reservoir</span>.  Chatfield Reservoir was built in response to flooding in 
+			  1965 and has the ability to store floodwaters from the South Platte River and Plum Creek.  The <a href="https://chatfieldreallocation.org/" 
+			  target="_blank">Chatfield Storage Reallocation Project<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> is currently being 
+			  undertaken to reallocate uses of the water.  It was determined that the reservoir can accommodate an additional 20,600 acre-feet of water storage 
+			  for water supply without compromising its flood control function. This additional storage space will be used by municipal and agricultural 
+			  water users.</p>
+			  <p><span style="color:#08519c;">Carter Lake</span> is an example of a transbasin reservoir.  It is the principal reservoir for the Colorado-Big 
+			  Thompson Project (see the <a href="#transbasin">Transbasin Diversions</a> page).  Several cities, including Longmont, Boulder and Broomfield, 
+			  receive water from Carter Lake.  This water also irrigates farms and ranches in Boulder and Weld counties (Source:  
+			  <a href="http://www.northernwater.org/WaterProjects/CarterLake.aspx" target="_blank">Northern Water<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>).
+			  A condition for transbasin diversions may be the construction of a “compensatory storage” reservoir that benefits the originating basin, in 
+			  which case storage is used to provide supply that might originally have come from the natural river.  Transbasin diversions often also include 
+			  storage in the receiving basin in order to re-time flows to meet demands over an entire year.</p>			  
 			  <p>Reservoirs also provide operational flexibility.  For example, a reservoir may release water to meet return flow obligations directly 
 			  (rather than delayed returns from recharge ponds).  Systems that include multiple reservoirs can support exchanges where releases from an 
 			  upstream reservoir can be provided to an upstream entity in exchange for releases from a downstream reservoir to meet the demands of a downstream 
 			  entity, although this practice can deplete the intervening reach.  Conversely, an upstream reservoir may release water to a downstream reservoir 
 			  while improving flows in the intervening reach.  Reservoirs may include gravel pits.  Consequently, an entity such as municipal utility may own 
-			  storage reservoirs that are below the intakes to their water treatment plants, in order to provide options within the region.</p>
-			  <p>A condition for transbasin diversions may be the construction of a “compensatory storage” reservoir that benefits the originating basin, in 
-			  which case storage is used to provide supply that might originally have come from the natural river.  Transbasin diversions often also include 
-			  storage in the receiving basin in order to re-time flows to meet demands over an entire year.</p>
+			  storage reservoirs that are below the intakes to their water treatment plants, in order to provide options within the region.</p>			  
 			  <p>Reservoirs may be constructed on channel or off channel.  Resistance to on-channel reservoirs has resulted in new storage projects often being 
 			  designed as off-channel locations or the expansion of existing on-channel reservoirs.  Off-channel reservoirs may require pumping.  New reservoirs 
 			  often include hydropower generation in order to generate electricity and revenue.</p>
+			  <p>New reservoirs and changes to existing reservoirs often seek to meet multiple purposes in order to maximize benefits of storage, although 
+			  adding significant storage to provide environmental flows is a challenge because funding is often not available to pay for environmental water.  
+			  The nonprofit <a href="http://www.coloradowatertrust.org/" target="_blank">Colorado Water Trust<img src="images/baseline_launch_black_18dp.png" 
+			  width="12px"/></a> is one organization that helps improve flow conditions within the water rights system.</p>			  
 			  <p>Reservoirs do have issues, including concerns about depleting river flows in order to fill reservoirs, losses due to evaporation from reservoir 
 			  surfaces, climate impacts of energy use to pump water into storage, changes in water quality and temperature and other issues.  These factors and 
 			  others are considered during the permitting process for a new reservoir.</p>
-			  <p><i>Need to decide on a viz.  Possibly show a hydrograph for each reservoir type:  drought reserve, irrigation, flood control, transbasin.</i></p>
               </div>			
 		    <div class="col-lg-7 side-content">
-              <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+			  <iframe style="width:95%;" src="visualizations/reservoirs-initial-storage-examples.html" frameborder="0"></iframe>	 
             </div>				
           </div>
         </div> 
@@ -742,7 +794,8 @@
 			  water can be pumped when needed and may be of higher quality than surface water.  In order to pump out of priority, a well must be part of an 
 			  <a href="http://water.state.co.us/groundwater/GWAdmin/Pages/AugPlans.aspx" target="_blank">augmentation plan<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> 
 			  that replaces the out-of-priority depletion and its impact on the river with some other source, such as releases from a reservoir.  The pumping impact 
-			  on the river is not instantaneous and may, in fact, need to be paid back over many years as part of the augmentation plan.</p>			  
+			  on the river is not instantaneous and may, in fact, need to be paid back over many years as part of the augmentation plan.  Tracking augmentation 
+			  plans within a system is one of the costs borne by water providers and their customers, as well as DWR staff.</p>			  
 			  <p>Denver Water is undertaking an Aquifer Storage and Recovery (ASR) study to determine locations where it can potentially inject treated drinking 
 			  water into underlying aquifers for use in the future.  During periods of abundant water supply, Denver Water would take drinking water from 
 			  water mains and inject it into wells in the Denver Basin aquifer system.  The same wells would then pump the water back up from the aquifers when 
@@ -771,14 +824,18 @@
 			  target="_blank">Citizen's Guide to Colorado's Transbasin Diversions<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>).  In essence, 
 			  water supply and demand are on opposite sides of the State.</p>  
 			  <p>Of the 44 transbasin diversions in the State, 17 divert water into the South Platte Basin.  The largest, and likely most familiar, diversions are 
-			  the Colorado-Big Thompson Project, the Roberts Tunnel Collection System and the Moffat Collection System Project.</p>
+			  the <a href="http://www.northernwater.org/WaterProjects/C-BTProject.aspx" target="_blank">Colorado-Big Thompson Project<img src="images/baseline_launch_black_18dp.png" 
+			  width="12px"/></a> (Northern Water), <a href="https://www.denverwater.org/your-water/water-supply-and-planning/collection-system" target="_blank">Roberts Tunnel 
+			  Collection System<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> (Denver Water) and the <a href="https://www.denverwater.org/your-water/water-supply-and-planning/collection-system" 
+			  target="_blank">Moffat Collection System<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> (Denver Water).</p>
 			  <p>The <a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-colorados-transbasin-diversions/" 
 			  target="_blank">Citizen's Guide to Colorado's Transbasin Diversions<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> provides much 
 			  more information about transbasin diversions in Colorado.</p>
-			  <p><i>Can put in a map here or a graphic of diversion totals.</i></p>
-            </div>			
-		    <div class="col-lg-8 side-content">
-               <img class="image-centered" style="margin-top:15vh;" src="" frameborder="0"></img>
+			  <p><i>Add in table of diversion totals.</i></p>
+            </div>	
+		    <div class="col-lg-8 side-content">			
+              <div id="mapbox5" class="map-right"></div>
+				<script src="js/map-files/transbasin-diversions-map.js"></script>
             </div>				
           </div>
         </div> 
@@ -806,6 +863,7 @@
 			  target="_blank">Drought Response Portal<img src="images/baseline_launch_black_18dp.png" 
 			  width="12px"/></a>, shown at right, that provides an overall indication of drought status, as well as links to other resources such as a monthly 
 			  drought update.</p>
+			  <p>See the <a href="#droughtmonitor">Hydrology Tools - Drought Monitor</a> page for information about another drought tool.</p>
             </div>			
 		    <div class="col-lg-8 side-content">
               <iframe data-src="http://coh2o.co/" scrolling="no" frameborder="0"></iframe>
@@ -864,6 +922,7 @@
 <!-- Hydrologic Tools Section -->	  
   <!--  Source Water Route Framework Page -->
       <div class="section">
+	   <div class="container-fluid">
         <div class="row">
           <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Hydrology Tools - Source Water Route Framework</h2>
@@ -875,13 +934,15 @@
 			  <p>By using the NHD linked to the SWRF, it is possible to link federal and State datasets.  Datasets such as 
 			  stream gages, diversion structures and instream flow rights can be "referenced" to the SWRF to provide a common framework for analysis; 
 			  such data work is ongoing in order to leverage the SWRF dataset.</p>
-			  <p>The SWRF can be downloaded <a href="http://cdss.state.co.us/GIS/Pages/AllGISData.aspx" target="_blank">here</a>.</p>
+			  <p>This map shows a small section of the SWRF, representing the southwest portion of the Basin.  The SWRF can be downloaded 
+			  <a href="http://cdss.state.co.us/GIS/Pages/AllGISData.aspx" target="_blank">here</a>.</p>
           </div>			
 		  <div class="col-lg-8 side-content">
-            <div id="mapbox3" class="map-right"></div>
-			  <script src="js/map-files/swrf-map.js"></script>
-          </div>				
-        </div>
+              <div id="mapbox3" class="map-right"></div>
+				<script src="js/map-files/swrf-map.js"></script>
+          </div>						
+          </div>
+	    </div>	
       </div> 
   <!--  SNODAS Page -->
       <div class="section">
@@ -902,7 +963,7 @@
 			  src="images/baseline_launch_black_18dp.png" width="12px"/></a> can be found under the "About" tab in the upper left corner.</p>
             </div>			
 			<div class="col-lg-9 side-content">
-              <img class="image-centered" style="margin-top:5vh;" src="images/snodas.png" frameborder="0"></img> 
+			  <img class="image-centered jbox-tooltip" title="Click <a href='http://snodas.cdss.state.co.us/app/index.html' target='_blank'>here</a> to go to online tool" style="margin-top:5vh;" src="images/snodas.png" frameborder="0" ></img>			   
             </div>			
           </div>
         </div> 
@@ -923,7 +984,7 @@
 			  on the legend icon to see the categories of conditions.</p>
               </div>			
 			<div class="col-lg-9 side-content">
-              <img class="image-centered" style="margin-top:5vh;" src="images/swsi-index.png" frameborder="0"></img>
+			  <img class="image-centered jbox-tooltip" title="Click <a href='https://gis.colorado.gov/dnrviewer/Index.html?viewer=mapviewer' target='_blank'>here</a> to go to online tool" style="margin-top:5vh;" src="images/swsi-index.png" frameborder="0" ></img>			   
             </div>			
           </div>
         </div> 
@@ -937,7 +998,7 @@
 			  produced jointly by the National Oceanic and Atmospheric Administration, the U.S. Department of Agriculture and the National Drought Mitigation 
 			  Center at the University of Nebraska-Lincoln (NDMC-UNL).  The map is based on measurements of climatic, hydrologic and soil conditions as well as 
 			  reported impacts and observations from more than 350 contributors around the country.  To see a live version of the map shown at right, click 
-			  <a href="http://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?CO" target="_blank">here</a>.</p>
+			  <a href="https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?CO" target="_blank">here</a>.</p>
 			  <p>Drought severity is <a href="http://droughtmonitor.unl.edu/AboutUSDM/DroughtClassification.aspx" target="_blank">classified</a> as the following:</p>
 			  <ul>
 			    <li>D0 - abnormally dry</li>
@@ -950,7 +1011,7 @@
 			  then under "Area", choose "101900 (South Platte)".  Note that this is the entire South Platte Basin and therefore incorporates other states.</p>  
             </div>
 		    <div class="col-lg-8 side-content">
-              <img class="image-centered" style="margin-top:5vh;" src="images/drought-monitor-map.png" frameborder="0"></img>
+			  <img class="image-centered jbox-tooltip" title="Click <a href='https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?CO' target='_blank'>here</a> to go to online tool" style="margin-top:5vh;" src="images/drought-monitor-map.png" frameborder="0" ></img>			   
             </div>	
           </div>
       </div>

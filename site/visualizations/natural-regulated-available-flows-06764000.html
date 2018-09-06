@@ -8,6 +8,13 @@
     <script src="js/data-5.0.14.js"></script>
     <script>
     $(function(){
+			// Set all numbers to have a comma separator, not a space separator	
+				Highcharts.setOptions({
+					lang: {
+						thousandsSep: ','
+					}
+				});
+				
         // jQuery command to get/read file from natural-regulated-available-flows.csv
         $.get('data/natural-regulated-available-flows-06764000.csv', function(csv) {
             Highcharts.chart('container', {
@@ -15,10 +22,10 @@
                     zoomType: 'x',  // describes what axis to zoom in on when a user decides to zoom on certain data
                 },
                 title: {
-                    text: 'South Platte River at Julesburg' // title of chart
+                    text: 'South Platte River at Julesburg (06764000)' // title of chart
                 },
 				subtitle: {
-                    text: 'Natural, Regulated and Available Flows' // title of chart
+                    text: 'Natural, Regulated and Available Flows (Source:  StateMod)' // title of chart
                 },
                 xAxis: {
                     type: 'datetime',   // datatype of x axis (YYYY-MM-DD, MM-DD-YYYY, etc.)
@@ -32,7 +39,7 @@
                 },
                 yAxis: {
                     title: {
-                        text: 'Volume (acre-feet)',  // y axis title
+                        text: 'Monthly Volume (acre-feet)',  // y axis title
                     },
                 },
                 tooltip: {  // control what the tooltip displays when a user hovers over a data point

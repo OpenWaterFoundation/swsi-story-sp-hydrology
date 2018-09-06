@@ -8,6 +8,13 @@
     <script src="js/data-5.0.14.js"></script>
     <script>
     $(function(){
+			// Set all numbers to have a comma separator, not a space separator	
+				Highcharts.setOptions({
+					lang: {
+						thousandsSep: ','
+					}
+				});
+				
         // jQuery command to get/read file from ag-diversion-hydrographs.csv
         $.get('data/ag-diversion-hydrographs.csv', function(csv) {
             Highcharts.chart('container', {
@@ -39,6 +46,7 @@
                 tooltip: {  // control what the tooltip displays when a user hovers over a data point
                     pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b>',
                     valueDecimals: 0, // how many decimals to show 
+					xDateFormat: '%m/%d/%Y',
                     split: true
                 },
                 legend: {

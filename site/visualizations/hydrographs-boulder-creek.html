@@ -8,6 +8,13 @@
     <script src="js/data-5.0.14.js"></script>
     <script>
     $(function(){
+		// Set all numbers to have a comma separator, not a space separator	
+				Highcharts.setOptions({
+					lang: {
+						thousandsSep: ','
+					}
+				});
+					
         // jQuery command to get/read file from boulder-creek-hydrographs.csv
         $.get('data/boulder-creek-hydrographs.csv', function(csv) {
             Highcharts.chart('container', {
@@ -15,7 +22,7 @@
                     zoomType: 'x',  // describes what axis to zoom in on when a user decides to zoom on certain data
                 },
                 title: {
-                    text: 'Boulder Creek near Longmont' // title of chart
+                    text: 'Boulder Creek near Longmont (06730500)' // title of chart
                 },
 				subtitle: {
                     text: 'Source:  CDSS HydroBase' // title of chart

@@ -35,7 +35,7 @@ var statemod_nodes_map = (function(){
 			'<b>Node ID: </b>' + props.Node_ID + '<br/>' + 
 			'<b>Node Name: </b>' + props.Node_Name + '<br />' +
 			'<b>Node Type: </b>' + props.Node_Type 
-			: 'Hover on a circle for more information');
+			: 'Hover on a circle for more information.');
 	};
 	info.addTo(map);
 
