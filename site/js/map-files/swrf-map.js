@@ -1,12 +1,12 @@
-// South Platte Data Platform - Map of Source Water Route Framework (reduced to a few districts to make the file size smaller)
+// South Platte Data Platform - Map of reduced Source Water Route Framework (reduced to decrease file size)
 
 //id='mapbox3'
 
 var swrf_map = (function(){
 
-	var map = L.map('mapbox3', {scrollWheelZoom: false}).setView([40.072, -104.348], 9);
+	var map = L.map('mapbox3', {scrollWheelZoom: false}).setView([39.572, -104.748], 9);
 	
-// Add in outdoors base layer
+	// Add in outdoors base layer
 	var outdoors = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia3Jpc3RpbnN3YWltIiwiYSI6ImNpc3Rjcnl3bDAzYWMycHBlM2phbDJuMHoifQ.vrDCYwkTZsrA_0FffnzvBw', {
 		maxZoom: 18,
 		attribution: 'Created by the <a href="http://openwaterfoundation.org">Open Water Foundation. </a>' + 
@@ -17,7 +17,7 @@ var swrf_map = (function(){
 	});
 	outdoors.addTo(map);
 	
-// Add in satellite base layer
+	// Add in satellite base layer
 	var satellite = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia3Jpc3RpbnN3YWltIiwiYSI6ImNpc3Rjcnl3bDAzYWMycHBlM2phbDJuMHoifQ.vrDCYwkTZsrA_0FffnzvBw', {
 		maxZoom: 18,
 		attribution: 'Created by the <a href="http://openwaterfoundation.org">Open Water Foundation. </a>' + 
@@ -27,7 +27,7 @@ var swrf_map = (function(){
 		id: 'mapbox.satellite'
 	});	
 	
-// Add in streets base layer
+	// Add in streets base layer
 	var streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia3Jpc3RpbnN3YWltIiwiYSI6ImNpc3Rjcnl3bDAzYWMycHBlM2phbDJuMHoifQ.vrDCYwkTZsrA_0FffnzvBw', {
 		maxZoom: 18,
 		attribution: 'Created by the <a href="http://openwaterfoundation.org">Open Water Foundation. </a>' + 
@@ -37,44 +37,42 @@ var swrf_map = (function(){
 		id: 'mapbox.streets'
 	});	
 	
-// Create an object that contains the satellite, outdoors and streets base layers
+	// Create an object that contains the satellite, outdoors and streets base layers
 	var baseMaps = {
 		"Outdoors": outdoors,
 		"Satellite": satellite,
 		"Streets": streets
 	};
-
-// Create layer control that allows for switching between base maps		
+	// Create layer control that allows for switching between base maps		
 	L.control.layers(baseMaps, null, {position: 'topleft'}).addTo(map);
 	
-	
-// Add in IBCC basins layer
+		
+	// Add in IBCC basins layer
 	basin1 = L.geoJson(basins, {
 	  color: 'black',
 	  weight: 1,
 	  fillOpacity: 0
 	}).addTo(map)		
 		
-// Control that shows node info on hover -- creates an info box
+	// Control that shows stream info on hover -- creates an info box
 	var info = L.control();
 	info.onAdd = function (map) {
 		this._div = L.DomUtil.create('div', 'info'); // Creates a div with a class named "info"
 		this.update();
 		return this._div;
 	};
-// Method used to update the control based on feature properties passed
+	// Method used to update the control based on feature properties passed
 	info.update = function (props) {
 		this._div.innerHTML = '<h5>Source Water Route Framework</h5>' +  (props ?
-			'<b>Stream Name: </b>' + props.GNIS Name + '<br/>' + 
-			'<b>GNIS ID: </b>' + props.GNIS ID + '<br />' +
-			'<b>Length(miles): </b>' + props.L Miles + '<br />' +
-			'<b>District: </b>' + props.District 			
+			'<b>Stream Name: </b>' + (props.GNIS_Name) + '<br/>' + 
+			'<b>GNIS ID: </b>' + (props.GNIS_ID) + '<br />' + 
+			'<b>Length (miles): </b>' + (props.L_Miles) + '<br />' +			
+			'<b>District: </b>' + (props.District)
 			: 'Hover on a line for more information');
 	};
 	info.addTo(map);
-
 	
-// Highlight a line when it is hovered over on the map
+	// Highlight a point when it is hovered over on the map
 	function highlightFeature(e) {
 		var layer = e.target;
 
@@ -91,10 +89,10 @@ var swrf_map = (function(){
 		info.update(layer.feature.properties);
 	}
 	
-// Create variable for streams
+	// Create variable for swrf lines
 	var swrflines;
 	
-// Reset the color after hovering over
+	// Reset the color after hovering over
 	function resetHighlight(e) {
 		swrflines.resetStyle(e.target);
 		info.update();
@@ -106,22 +104,22 @@ var swrf_map = (function(){
 			mouseout: resetHighlight
 		});
 	}
-
 	
-	swrflines = L.geoJson(swrf, {		
-	  color: 'black',
-	  weight: 2,
-	  fillOpacity: 0,
-	  onEachFeature: onEachFeature
+	swrflines = L.geoJson(swrf, {
+			 color: 'blue',
+			 weight: 2,
+			 fillOpacity: 0,
+			onEachFeature: onEachFeature
 	}).addTo(map);
-	
-
-// Add a scroll button to the map
+		
+map.attributionControl.addAttribution('Data &copy; <a href="https://www.colorado.gov/cdss">CDSS</a>');
+		
+    // Add a scroll button to the map
 	var scrollbutton = L.control({position: 'topleft'});
 	scrollbutton.onAdd = function (map) {
 		var div = L.DomUtil.create('div', 'scrollbutton');
 		div.innerHTML = "<image id='scrollbutton' src='images/mouse.svg' class='scrollbutton-tooltip'" +
-						" style='width:20px; cursor:pointer;' onclick='water_providers_southplatte_metro_map.scrollButtonClickFunction()'></image>";
+						" style='width:20px; cursor:pointer;' onclick='ditches_map.scrollButtonClickFunction()'></image>";
 		return div;
 	};
 	scrollbutton.addTo(map);		
@@ -137,15 +135,15 @@ var swrf_map = (function(){
 			mousetooltip.setContent(title)
 	    }
 	}
-
-// Return function that need to be accessed by the DOM 
+	
+   	// Return function that needs to be accessed by the DOM 
 	return{
 		scrollButtonClickFunction: scrollButtonClick,
 		maplayer: map
 	}
-	
-// Show the current latitude and longitude of the mouse cursor.
-// 'º' used for the degree character when the latitude and longitude of the cursor is displayed
+
+	// Show the current latitude and longitude of the mouse cursor.
+	// 'º' used for the degree character when the latitude and longitude of the cursor is displayed
 	L.control.mousePosition({position: 'bottomleft',lngFormatter: function(num) {
 			var direction = (num < 0) ? 'W' : 'E';
 			var formatted = Math.abs(L.Util.formatNum(num, 6)) + 'º ' + direction;
@@ -157,7 +155,7 @@ var swrf_map = (function(){
 			return formatted;
 	}}).addTo(map);
 	
-// Show the scale in km and miles
+	// Show the scale in km and miles
 	L.control.scale({position: 'bottomleft',imperial: true}).addTo(map);
 	
 })();

@@ -8,9 +8,17 @@
     <script src="js/data-5.0.14.js"></script>
     <script>
     $(function(){
+		// Set all numbers to have a comma separator, not a space separator
+			Highcharts.setOptions({
+					lang: {
+						thousandsSep: ','
+					}
+				});
+				
         // jQuery command to get/read file from municipal-indoor-outdoor-demand.csv
         $.get('data/municipal-indoor-outdoor-demand.csv', function(csv) {
-            Highcharts.chart('container', {
+            Highcharts.chart('container', {			
+			
                 chart: {
                     zoomType: 'x',  // describes what axis to zoom in on when a user decides to zoom on certain data
                 },
@@ -21,7 +29,7 @@
                     text: 'Source:  StateMod' // title of chart
                 },
 				colors: ['#b30000', '#b30000', '#fe9929', '#fe9929', '#08519c', '#08519c'],		
-                series:[{dashStyle:'dot'},{dashStyle:'solid'},{dashStyle:'dot'},{dashStyle:'solid'},{dashStyle:'dot'},{dashStyle:'solid'}],
+                series:[{dashStyle:'solid'},{dashStyle:'shortdash'},{dashStyle:'solid'},{dashStyle:'shortdash'},{dashStyle:'solid'},{dashStyle:'shortdash'}],
                 xAxis: {
                     type: 'datetime',   // datatype of x axis (YYYY-MM-DD, MM-DD-YYYY, etc.)
 					labels: {
@@ -43,7 +51,9 @@
                     split: true
                 },
                 legend: {
-                    enabled: true   // show legend
+                    enabled: true,   // show legend
+					symbolWidth: 40,
+					symbolHeight: 0
                 },
                 data: {
                     csv: csv    // data to be plotted

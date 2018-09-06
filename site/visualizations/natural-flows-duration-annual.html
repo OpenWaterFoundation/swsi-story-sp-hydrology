@@ -55,7 +55,7 @@
     }
 
   Highcharts.chart('container', {
-
+	
     chart: {
       type: 'heatmap',
 	  spacingBottom: 25
@@ -64,17 +64,21 @@
     title: {
       text: 'South Platte Basin Annual Natural Flows - Percentiles'
     },
+	
+    subtitle: {
+      text: 'Source:  StateMod'
+    },	
 
     yAxis: {
       categories: dates,
 	  reversed: true,
       title: {
-        text: 'Date'
+        text: 'Calendar Year'
       }
     },
 
     xAxis: {
-      categories: ["S. PLATTE RIVER BELOW ANTERO RESERVOIR", "S PLATTE RIV AB 11-MILE CANYON RES NR HARTSEL", "S. PLATTE RIVER NR LAKE GEORGE", "ROCK CRK ABV CONFLUENCE WITH TARRYALL CRK",
+      categories: ["S. PLATTE RIVER BELOW ANTERO RESERVOIR", "S. PLATTE RIV AB 11-MILE CANYON RES NR HARTSEL", "S. PLATTE RIVER NR LAKE GEORGE", "ROCK CRK ABV CONFLUENCE WITH TARRYALL CRK",
 				   "S. PLATTE RIVER BELOW CHEESMAN RESERVOIR", "NORTH FORK S. PLATTE RIVER AT GRANT", "NORTH FORK S. PLATTE RIVER AT BAILEY", "S. PLATTE RIVER AT SOUTH PLATTE", 
 				   "S. PLATTE RIVER AT WATERTON", "PLUM CRK AT TITAN ROAD NEAR LOUVIERS", "BEAR CRK AT SHERIDAN", "S. PLATTE RIVER AT ENGLEWOOD", "CHERRY CRK AT DENVER", 
 				   "S. PLATTE RIVER AT DENVER", "CLEAR CRK AT DERBY", "COAL CRK NEAR PLAINVIEW", "BIG DRY CRK AT WESTMINSTER", "S. PLATTE RIVER AT HENDERSON", "S. PLATTE RIVER AT FORT LUPTON", 
@@ -122,10 +126,9 @@
       },
 
       tooltip: {  // control what the tooltip will display when a user hovers over a point on the heatmap
-        headerFormat: 'Percentile<br>',
-        formatter: function()
-        {
-          return 'Percentile<br>' + this.series.yAxis.categories[this.point.y] + ': ' + this.point.value + ' %';
+        formatter: function()  {
+          return '<b>' + this.series.xAxis.categories[this.point.x] + '</b>' + '<br>' + 'was in the ' + '<b>' + this.point.value 
+		  + '</b>' + ' percentile' + '<br>' + 'in ' + '<b>' + this.series.yAxis.categories[this.point.y] + '</b>';           
         }
       },
 
@@ -136,3 +139,4 @@
 
 </body>
 </html>
+

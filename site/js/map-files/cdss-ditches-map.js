@@ -64,15 +64,15 @@ var ditches_map = (function(){
 	// Method used to update the control based on feature properties passed
 	info.update = function (props) {
 		this._div.innerHTML = '<h5>South Platte and Metro Basin Ditch Diversions</h5>' +  (props ?
-			'<b>Name: </b>' + ((props.structname) ? props.structname : "") + '<br/>' + 
-			'<b>WDID: </b>' + ((props.wdid) ? props.wdid : "") + '<br />' + 
-			'<b>Type: </b>' + ((props.structtype) ? props.structtype : "") + '<br />' +			
-			'<b>Website: </b>' + ((props.moreinfo) ? hasHttp(props.moreinfo) : "") + '<br/>' + 
-			'<b>Water Source: </b>' + ((props.watersrc) ? props.watersrc : "") + '<br />' +		
-			'<b>County: </b>' + ((props.county) ? props.county : "") + '<br />' +			
-			'<b>Water District: </b>' + ((props.wd) ? props.wd : "") + '<br />' +
-			'<b>Status: </b>' + ((props.currinuse) ? props.currinuse : "")
-			: 'Hover on a circle for more information');
+			'<b>Name: </b>' + ((props.Structure_) ? props.Structure_ : "") + '<br/>' + 
+			'<b>WDID: </b>' + ((props.WDID) ? props.WDID : "") + '<br />' + 
+			'<b>Type: </b>' + ((props.Structure_1) ? props.Structure_1 : "") + '<br />' +			
+			'<b>Website: </b>' + ((props.More_Infor) ? hasHttp(props.More_Infor) : "") + '<br/>' + 
+			'<b>Water Source: </b>' + ((props.Water_Sour) ? props.Water_Sour : "") + '<br />' +		
+			'<b>County: </b>' + ((props.County) ? props.County : "") + '<br />' +			
+			'<b>Water District: </b>' + ((props.WD) ? props.WD : "") + '<br />' +
+			'<b>Status: </b>' + ((props.CIU_Code) ? props.CIU_Code : "")
+			: 'Hover on a circle for more information.  Click on a circle to allow following links.');
 	};
 	info.addTo(map);
 
@@ -124,7 +124,7 @@ var ditches_map = (function(){
 	// Create function of color based on water source
 	function styleditch(feature) {
 	   var colorditch;
-	   var point = feature.properties.watersrc;
+	   var point = feature.properties.Water_Sour;
 	   
 	   return getditchcolor(point);
 	}
@@ -160,14 +160,14 @@ var ditches_map = (function(){
 	ditchMarkers.bindPopup(function(d){
 		var props = d.feature.properties;
 		var str =
-		'<b>Name: </b>' + ((props.structname) ? props.structname : "") + '<br/>' + 
-		'<b>WDID: </b>' + ((props.wdid) ? props.wdid : "") + '<br />' +
-		'<b>Type: </b>' + ((props.structtype) ? props.structtype : "") + '<br />' +
-		"<b>Website: </b><a href='" + ((props.moreinfo) ? hasHttp(props.moreinfo) : "") + "' target='_blank'>" + ((props.moreinfo) ? hasHttp(props.moreinfo) : "") + "</a> <i style='font-size:9px;' class='fa fa-external-link'></i><br/>" + 
-		'<b>Water Source: </b>' + ((props.watersrc) ? props.watersrc : "") + '<br />' +	
-		'<b>County: </b>' + ((props.county) ? props.county : "") + '<br />' +				
-		'<b>Water District: </b>' + ((props.wd) ? props.wd : "") + '<br />' +
-		'<b>Status: </b>' + ((props.currinuse) ? props.currinuse : "");		
+		'<b>Name: </b>' + ((props.Structure_) ? props.Structure_ : "") + '<br/>' + 
+		'<b>WDID: </b>' + ((props.WDID) ? props.WDID : "") + '<br />' +
+		'<b>Type: </b>' + ((props.Structure_1) ? props.Structure_1 : "") + '<br />' +
+		"<b>Website: </b><a href='" + ((props.More_Infor) ? hasHttp(props.More_Infor) : "") + "' target='_blank'>" + ((props.More_Infor) ? hasHttp(props.More_Infor) : "") + "</a> <i style='font-size:9px;' class='fa fa-external-link'></i><br/>" + 
+		'<b>Water Source: </b>' + ((props.Water_Sour) ? props.Water_Sour : "") + '<br />' +	
+		'<b>County: </b>' + ((props.County) ? props.County : "") + '<br />' +				
+		'<b>Water District: </b>' + ((props.WD) ? props.WD : "") + '<br />' +
+		'<b>Status: </b>' + ((props.CIU_Code) ? props.CIU_Code : "");		
 		return str
 	})
 	

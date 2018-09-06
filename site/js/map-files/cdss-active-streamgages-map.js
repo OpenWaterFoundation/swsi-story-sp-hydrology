@@ -72,7 +72,7 @@ var streamgages_map = (function(){
 			'<b>USGS ID: </b>' + ((props.usgsstatid) ? props.usgsstatid : "") + '<br />' +		
 			'<b>WDID: </b>' + ((props.WDID) ? props.WDID : "") + '<br />' +				
 			'<b>Water District: </b>' + ((props.Water_District) ? props.Water_District : "")
-			: 'Hover on a circle for more information');
+			: 'Hover on a circle for more information.  Click on a circle to allow following links.');
 	};
 	info.addTo(map);
 
