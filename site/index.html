@@ -102,6 +102,14 @@
         content: "Click to toggle mouse scroll wheel behavior.<br> [ x ] Mouse scroll pages forward/back. <br> [ &nbsp; ] Mouse scroll zooms map."
      });
     })
+
+    var tooltip;
+    $(window).bind("load", function(){
+      tooltip = new jBox('Tooltip', {
+        closeOnMouseleave: true,
+        attach: '.jbox-tooltip'
+      })
+    })
   </script>
 
 <body>
@@ -682,7 +690,7 @@
 			  about an additional tool.</p>
               </div>			
 		  <div class="col-lg-8 side-content">
-              <img class="image-centered" style="margin-top:5vh;" src="images/nrcs-swe.png" frameborder="0"></img>
+              <img class="image-centered jbox-tooltip" title="Click <a href='https://www.wcc.nrcs.usda.gov/webmap_beta/#version=98&elements=&networks=!&states=!&counties=!&hucs=&minElevation=&maxElevation=&elementSelectType=all&activeOnly=true&activeForecastPointsOnly=false&hucLabels=true&hucIdLabels=false&hucParameterLabels=true&stationLabels=&overlays=&hucOverlays=wy_8,state&basinOpacity=70&basinNoDataOpacity=100&basemapOpacity=90&maskOpacity=0&mode=data&openSections=parameter,date,basin,options,elements,location,overlays,labels&controlsOpen=true&popup=&popupMulti=&base=esriWsr&displayType=basinstation&basinType=co_8&dataElement=WTEQ&parameter=PCTMED&frequency=MONTHLY&duration=I&customDuration=&dayPart=E&year=2018&month=8&day=8&monthPart=B&forecastPubMonth=4&forecastPubDay=1&forecastExceedance=50&seqColor=1&divColor=1&scaleType=C&scaleMin=40&scaleMax=160&referencePeriodType=POR&referenceBegin=1981&referenceEnd=2010&minimumYears=20&hucAssociations=true&lat=38.598&lon=-104.224&zoom=7.0' target='_blank'>here</a> to go to online tool" style="margin-top:5vh;" src="images/nrcs-swe.png" frameborder="0" ></img>
           </div>
         </div>
       </div> 
