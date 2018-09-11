@@ -1,44 +1,88 @@
 {
+	"title": {
+		"text": {
+			"headline": "Timeline of Addressing Water Supply Issues in the South Platte Basin",
+			"text": "Some of the major milestones are summarized here.  Use the arrow at right to move through the timeline."	
+		},
+		"background": {
+			"color": "#386981"
+		}
+	},
 	"events": [
 		{
 			"start_date": {
 				"year": 2004
 			},
 			"text": {
-				"headline": "The Statewide Water Supply Initiative (SWSI) is first completed.",
-				"text": "The Department of Natural Resources Colorado Water Conservation Board stated that for the first time they know how much water Colorado will need in 2030, how short Colorado is on water, and what can be done.<br>View source <a href='http://cwcbweblink.state.co.us/WebLink/ElectronicFile.aspx?docid=144066&searchid=2c16c041-d0b2-4ec5-ac42-8b95aa0c04e3&dbid=0'>here</a>"
+				"headline": "The Statewide Water Supply Initiative (SWSI) is first completed",
+				"text": "The Colorado Water Conservation Board states that for the first time they know how much water Colorado will need in 2030, how short Colorado is on water and what can be done.  The South Platte Basin is predicted to have a water supply need of nearly 410,000 acre-feet. <br>Source:  <a href='http://cwcbweblink.state.co.us/WebLink/ElectronicFile.aspx?docid=144066&searchid=2c16c041-d0b2-4ec5-ac42-8b95aa0c04e3&dbid=0'>SWSI 2004</a>."
+			},
+			"media": {
+				"url": "images/swsi2004-gap.png",
+                "caption": "Figure ES-8: Effectiveness of IPPs in Meeting 2030 M&I and SSI Demands",
+                "credit": "<a href='http://cwcbweblink.state.co.us/WebLink/ElectronicFile.aspx?docid=144066&searchid=2c16c041-d0b2-4ec5-ac42-8b95aa0c04e3&dbid=0' target='_blank'>Source: SWSI 2004<img src='images/baseline_launch_black_18dp.png' width='12px'/></a>"
 			}
+		},{
+			"start_date": {
+				"year": 2005
+			},
+			"text": {
+				"headline": "IBCC and Basin Roundtables are established",
+				"text": "The Interbasin Compact Committee (IBCC) is established by the Colorado Water for the 21st Century Act to facilitate conversations among Colorado’s river basins and to address statewide water issues.  Nine basin roundtables are created and represent each of the State’s eight major river basins and the Denver metropolitan area. <br>Source: <a href='http://cwcb.state.co.us/about-us/about-the-ibcc-brts/Pages/main.aspx'>CWCB</a>."
+			},
+			"media": {
+				"url": "images/ibcc-basins.png",
+                "caption": "Map of IBCC basins",
+                "credit": "<a href='https://www.colorado.gov/pacific/cowaterplan/basins' target='_blank'>Source: Colorado Water Plan<img src='images/baseline_launch_black_18dp.png' width='12px'/></a>"
+			}	
 		},{
 			"start_date": { 
 				"year": 2010
 			},
 			"text": {
-				"headline": "SWSI 2010 is released, which updated the first study and included an analysis of water supply demands to 2050.",
-				"text": "View source <a href='http://cwcb.state.co.us/water-management/water-supply-planning/Pages/SWSI2010.aspx'>here</a>"
+				"headline": "SWSI 2010 updates the 2004 study",
+				"text": "<a href='http://cwcb.state.co.us/water-management/water-supply-planning/Pages/SWSI2010.aspx'>SWSI 2010</a> includes an analysis of water supply demands to 2050.  It also summarizes environmental and recreational needs in each basin, as identified by basin roundtables.  The key finding was that Colorado faces a shortage of water for meeting both consumptive (municipal and industrial) and environmental and recreational needs."
+			},
+			"media": {
+				"url": "images/swsi2010-gap.png",
+                "caption": "Figure ES-20: 2050 M&I and SSI Gap Analysis - Medium Gap Scenario",
+                "credit": "<a href='http://cwcb.state.co.us/water-management/water-supply-planning/Pages/SWSI2010.aspx' target='_blank'>Source: SWSI 2010<img src='images/baseline_launch_black_18dp.png' width='12px'/></a>"
 			}
 		},{
 			"start_date": {
 				"year": 2015
 			},
 			"text": {
-				"headline": "The South Platte and Metro basins complete a Basin Implementation Plan (BIP), which includes recommendations for meeting the water supply gap.",
-				"text": "View source <a href='http://www.colorado.gov/pacific/sites/default/files/SouthPlatteBasinImplementationPlan-04172015.pdf'>here</a>"
+				"headline": "The South Platte and Metro basins complete a Basin Implementation Plan",
+				"text": "The key recommendation from SWSI 2010 was that basin roundtables should determine and pursue projects and methods that address multiple purposes, including municipal, industrial, agricultural, environmental and recreational needs.  This recommendation led to the creation of a <a href='http://www.colorado.gov/pacific/sites/default/files/SouthPlatteBasinImplementationPlan-04172015.pdf'>Basin Implementation Plan (BIP)</a>.  A website (shown at left) is created for the BIP and other important documents."
+			},
+			"media": {
+				"url": "<iframe src='http://southplattebasin.com/' frameborder='0'></iframe>"
 			}
 		},{
 			"start_date": {
 				"year": 2015
 			},
 			"text": {
-				"headline": "The Colorado Water Plan is released.",
-				"text": "View source <a href='https://www.colorado.gov/pacific/cowaterplan'>here</a>"
-			}
+				"headline": "Colorado's Water Plan is released",
+				"text": "<a href='https://www.colorado.gov/pacific/cowaterplan'>Colorado's Water Plan</a> is 'a roadmap that leads to a productive economy, vibrant and sustainable cities, productive agriculture, a strong environment and a robust recreation industry. It sets forth the measurable objectives, goals and actions by which Colorado will address its projected future water needs and measure its progress.'  The Water Plan's website provides monthly Implementation Updates."
+			},
+			"media": {
+				"url": "images/cwp.png",
+                "credit": "<a href='https://www.colorado.gov/pacific/cowaterplan' target='_blank'>Source: Colorado's Water Plan<img src='images/baseline_launch_black_18dp.png' width='12px'/></a>"
+			}			
 		},{
 			"start_date": {
 				"year": 2018
 			},
 			"text": {
-				"headline": "The SWSI Update is currently under way and will provide a consistent statewide framework for examining future water supply and demand under different scenarios.",
-				"text": "View source <a href='http://cwcb.state.co.us/water-management/water-supply-planning/Pages/SWSIUpdate.aspx'>here</a>"
+				"headline": "SWSI Update",
+				"text": "The <a href='http://cwcb.state.co.us/water-management/water-supply-planning/Pages/SWSIUpdate.aspx'>SWSI Update</a> is currently under way and will provide a consistent statewide framework for examining future water supply and demand under different scenarios.  It is expected to be completed in 2019."
+			},
+			"media": {
+				"url": "images/swsi-update.png",
+                "caption": "SWSI Update Fact Sheet",
+                "credit": "<a href='http://cwcb.state.co.us/water-management/water-supply-planning/Documents/SWSI2016/FactSheets/8_SWSIOverview.pdf' target='_blank'>Source: SWSI Update<img src='images/baseline_launch_black_18dp.png' width='12px'/></a>"
 			}
 		}
 	]

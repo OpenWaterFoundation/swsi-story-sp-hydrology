@@ -66,7 +66,7 @@ var ditches_map = (function(){
 		this._div.innerHTML = '<h5>South Platte and Metro Basin Ditch Diversions</h5>' +  (props ?
 			'<b>Name: </b>' + ((props.Structure_) ? props.Structure_ : "") + '<br/>' + 
 			'<b>WDID: </b>' + ((props.WDID) ? props.WDID : "") + '<br />' + 
-			'<b>Type: </b>' + ((props.Structure_1) ? props.Structure_1 : "") + '<br />' +			
+			'<b>Type: </b>' + ((props.Structur_1) ? props.Structur_1 : "") + '<br />' +			
 			'<b>Website: </b>' + ((props.More_Infor) ? hasHttp(props.More_Infor) : "") + '<br/>' + 
 			'<b>Water Source: </b>' + ((props.Water_Sour) ? props.Water_Sour : "") + '<br />' +		
 			'<b>County: </b>' + ((props.County) ? props.County : "") + '<br />' +			

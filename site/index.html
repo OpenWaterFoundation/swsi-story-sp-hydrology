@@ -83,8 +83,7 @@
   	<script src="data/statemod-node-network.geojson"></script>
   	<script src="data/cdss-mapviewer-active-streamgages.geojson"></script>
 	<script src="data/cdss-structures-ditches-southplatte.geojson"></script>	
-  	<script src="data/timeline.json"></script>
-  	<script src="data/small-precip-data.csv"></script>
+  	<script src="data/timeline.json"></script>	
 	<script src="data/CO-DWR-SourceWaterRouteFramework-Division01-20180228-reduced.geojson"></script>	
 	<script src="data/southplatte-transbasin-diversions.geojson"></script>		
   	<!-- Boundary Files -->	
@@ -246,7 +245,7 @@
 			  <p>Hydrologic variability occurs across space and time.  Within the South Platte Basin, flows can vary between sub-basins within the same 
 			  year, with one sub-basin experiencing drought and another experiencing adequate water supplies.  Variation can occur because of elevation, 
 			  regional weather patterns, water storage projects, impacts of specific storm events and other reasons.</p>  
-			  <p>This interactive visualization shows annual flow volume in acre-feet from 1950 to 2011 for 33 streamgages in the basin, representing the South Platte River and 
+			  <p>This interactive visualization shows annual flow volume in acre-feet from 1950 to 2011 for 32 streamgages in the basin, representing the South Platte River and 
 			  many of its tributaries.  Streamgages on the South Platte River are ordered from upstream to downstream and tributaries are generally arranged 
 			  in order from where their confluences are with the South Platte River.  Within a streamgage, average volumes are ranked and placed into 
 			  percentile categories as follows:</p>
@@ -304,7 +303,13 @@
             </div>				
           </div>
         </div> 
-      </div>    
+      </div> 
+<!-- North Sterling Canal StoryMapJS Page -->	
+      <div class="section">
+		<div class="row" style="margin: 0;">
+			  <iframe style="width:95%" src="visualizations/north-sterling-canal-storymap.html" frameborder="0"></iframe>
+		</div>		
+	  </div>	  
   <!-- Stream Gages and Measuring Flows Page -->
      <div class="section">
          <div class="row">
@@ -365,9 +370,9 @@
 			  in order (i.e., the South Platte River has the most ditch diversions, followed by the Cache la Poudre River); diversions from all other streams are shown 
 			  in black.</p>
 			  <p>The table below lists the number of ditch diversions on each stream in the Basin for those streams that have 10 or more ditch diversion structures.</p>
-				<div id='clusterize' class='clusterize' style="width: 100%; height: 380px;"></div>
+				<div id='clusterize1' class='clusterize' style="width: 100%; height: 380px;"></div>
 				  <script>
-				  CsvToTable("clusterize", "data/ditch-watersources.csv", {});
+				  CsvToTable("clusterize1", "data/ditch-watersources.csv", {});
 				  // Match header to table when scrolling horizontally
 				  $('#scrollArea').on('scroll', (function() {
 					return function() { 
@@ -829,11 +834,26 @@
 			  the <a href="http://www.northernwater.org/WaterProjects/C-BTProject.aspx" target="_blank">Colorado-Big Thompson Project<img src="images/baseline_launch_black_18dp.png" 
 			  width="12px"/></a> (Northern Water), <a href="https://www.denverwater.org/your-water/water-supply-and-planning/collection-system" target="_blank">Roberts Tunnel 
 			  Collection System<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> (Denver Water) and the <a href="https://www.denverwater.org/your-water/water-supply-and-planning/collection-system" 
-			  target="_blank">Moffat Collection System<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> (Denver Water).</p>
-			  <p>The <a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-colorados-transbasin-diversions/" 
-			  target="_blank">Citizen's Guide to Colorado's Transbasin Diversions<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> provides much 
-			  more information about transbasin diversions in Colorado.</p>
-			  <p><i>Add in table of diversion totals.</i></p>
+			  target="_blank">Moffat Collection System<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> (Denver Water).</p>			  
+			  <p>The table below lists the average annual amount of water that is diverted by each transbasin diversion, in acre-feet.</p>
+				<div id='clusterize2' class='clusterize' style="width: 100%; height: 380px;"></div>
+				  <script>
+				    CsvToTable("clusterize2", "data/transbasin-diversions-average-annual-diverted.csv", {notFormatted: ["Transbasin_Diversion"], decimalPrecision: {"Mean_Annual_Flow_Diverted_AF": 0}});
+          // Match header to table when scrolling horizontally
+				  // Match header to table when scrolling horizontally
+				  $('#scrollArea').on('scroll', (function() {
+					return function() { 
+					setHeaderLeftMargin($(this).scrollLeft()); 
+					}
+				  }()));
+				  </script>
+                  <p>Source for table and map:  Colorado's Decision Support Systems, <a href="https://dnrweb.state.co.us/cdss/" target="_blank">HydroBase 
+			      <img src="images/baseline_launch_black_18dp.png" width="12px"/></a> data with calculations by Open Water Foundation.  Also see the Open Water 
+				  Foundation's <a href="https://github.com/OpenWaterFoundation/owf-data-co-transbasin-diversions" target="_blank">transbasin diversion 
+				  dataset<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>.</p>
+				  <p>The <a href="https://www.watereducationcolorado.org/news-and-publications/citizen-guides/citizens-guide-to-colorados-transbasin-diversions/" 
+				  target="_blank">Citizen's Guide to Colorado's Transbasin Diversions<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> provides much 
+				  more information about transbasin diversions in Colorado.</p>
             </div>	
 		    <div class="col-lg-8 side-content">			
               <div id="mapbox5" class="map-right"></div>
@@ -841,7 +861,7 @@
             </div>				
           </div>
         </div> 
-      </div>	  
+      </div>  
 <!-- Drought Section -->
       <div class="section">
         <div class="container-fluid">
@@ -1016,14 +1036,8 @@
 			  <img class="jbox-tooltip" title="Click <a href='https://droughtmonitor.unl.edu/CurrentMap/StateDroughtMonitor.aspx?CO' target='_blank'>here</a> to go to online tool" style="margin-top:5vh;" src="images/drought-monitor-map.png" frameborder="0" ></img>			   
             </div>	
           </div>
-      </div>
-<!-- North Sterling Canal StoryMapJS Page -->	
-      <div class="section">
-		<div class="row" style="margin: 0;">
-			  <iframe style="width:95%" src="viz-knightlab/north-sterling-canal-storymap.html" frameborder="0"></iframe>
-		</div>		
-	  </div>	
-<!-- Water Plan TimelineJS Page -->	
+      </div>	
+<!-- Basin TimelineJS Page -->	
       <div class="section">
 	    <div class="row" style="margin: 0;">	  
 		  <div id='timeline-embed1' style="width: 95%; height: 100vh"></div>
@@ -1032,6 +1046,19 @@
             </script>
 		</div>
 	  </div>
+<!-- Summary Page -->	
+      <div class="section" style="background-image:url('images/colorado-1734145_1920.jpg'); height:100vh!important; background-position: center center;">
+        <div class="row">
+          <div class="col-lg-12">
+			<div class="container text-center text-image-overlay">
+              <h2 style="margin-top:5vh; float:top;">Summary</h2>
+			  <p>As part of the South Platte Data Platform Project, this hydrology story is an attempt to tell a story about Colorado's water resources that 
+			  provides useful context.  It also aims to provide and improve access to the data within the story.  The topics discussed within this story could 
+			  be analyzed in more detail.</p>			  
+            </div>			
+          </div>
+        </div> 
+      </div>	  	  
 <!-- Resources Page -->		  	  
       <div class="section">
           <div class="container text-center blue-bkgd-text">
@@ -1057,7 +1084,7 @@
         			 <p><a href="http://cwcb.state.co.us/water-management/water-supply-planning/Pages/main.aspx" target="_blank">Colorado Water 
         			  Conservation Board Water Supply Planning Section</a></p>
         			 <p>Questions or feedback?  Contact xxxx@xxxx.com (placeholder for Basin Roundtable member) </p>
-        			 <p>Last update:  July 25, 2018</p>
+        			 <p>Last update:  September 10, 2018</p>
               </div>
             </div>
           </div>
@@ -1088,16 +1115,17 @@
       $(document).ready(function() {
         $('#fullpage').fullpage({
           licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
-          anchors:['top', 'hydrologiccycle', 'hydrographs', 'heatmap', 'waterresourcessystems', 'streamgages', 'headgates', 'groundwater', 'returnflows', 'naturalflows', 'pointflowmodels', 
+          anchors:['top', 'hydrologiccycle', 'hydrographs', 'heatmap', 'waterresourcessystems', 'sterlingstorymap', 'streamgages', 'headgates', 'groundwater', 'returnflows', 'naturalflows', 'pointflowmodels', 
 		   'statemod', 'demandag', 'demandmunic', 'demandeandr', 'storagesnowpack', 'storagereservoirs', 'storagegroundwater', 'transbasin', 'drought', 'climatechange', 'swrf', 'snodas', 'swsi',
-		   'droughtmonitor', 'sterlingstorymap', 'cwptimeline', 'resources', 'sources'],
+		   'droughtmonitor', 'timeline', 'summary', 'resources', 'sources'],
           sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf',
-		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#386981', '#386981'],
+		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#386981', '#386981'],
           navigation:true,
           navigationPosition:'right',
-          navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Annual Flow Heatmap', 'Water Resources System', 'Measuring Flows', 'Measuring Diversions', 
-		  'Measuring Groundwater Levels', 'Return Flows', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Ag Demand', 'Municipal Demand', 'Envr & Rec Demand', 'Snowpack Storage', 
-		  'Reservoir Storage', 'Groundwater Storage', 'Transbasin Diversions', 'Drought', 'Climate Change', 'Source Water Route Framework', 'SNODAS', 'SWSI', 'Drought Monitor', 'North Sterling Canal', 'Timeline Demo', 'Resources', 'Sources'],
+          navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Annual Flow Heatmap', 'Water Resources System', 'North Sterling Canal', 'Measuring Flows', 
+		  'Measuring Diversions', 'Measuring Groundwater Levels', 'Return Flows', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Ag Demand', 'Municipal Demand', 
+		  'Envr & Rec Demand', 'Snowpack Storage', 'Reservoir Storage', 'Groundwater Storage', 'Transbasin Diversions', 'Drought', 'Climate Change', 'Source Water Route Framework', 'SNODAS', 
+		  'SWSI', 'Drought Monitor', 'Timeline', 'Summary', 'Resources', 'Sources'],
           recordHistory:false,
           menu:"#navbarResponsive",
           paddingTop:'25px'

@@ -8,7 +8,7 @@
             "type": "overview",
             "text": {
                 "headline": "North Sterling Irrigation District",
-                "text": "This tour provides information about the North Sterling Irrigation District, including the North Sterling Canal and Sterling Reservoir.  Most of the information comes from the <a href='http://cwcbweblink.state.co.us/WebLink/PDF/5nhmaieur3y52uqeai1qmw45/1/SPDSS_Task5_KeyStructure_NorthSterling.pdf' target='_blank'><u>SPDSS Memo Task 5 - Key Structure, North Sterling Irrigation District</u></a>."
+                "text": "Another example that illustrates the complexity of water resources systems is the North Sterling Irrigation District.  Click the arrow at right to navigate through the system.  Most of the following information comes from the <a href='http://cwcbweblink.state.co.us/WebLink/PDF/5nhmaieur3y52uqeai1qmw45/1/SPDSS_Task5_KeyStructure_NorthSterling.pdf' target='_blank'><u>SPDSS Memo Task 5 - Key Structure, North Sterling Irrigation District</u></a>."
             }
         },{
             "text": {
@@ -28,7 +28,7 @@
         },{
             "text": {
                 "headline": "North Sterling Reservoir",
-                "text": "North Sterling Reservoir is an off-channel storage facility.  It has a total storage capacity of 80,590 acre-feet and an active storage capacity of 74,590 acre-feet.  Storage water is released to the North Sterling Outlet Canal for irrigation.  North Sterling State Park is located on the east side of the reservoir and is managed by Colorado Parks and Wildlife as a popular boating area."
+                "text": "The North Sterling Inlet Canal releases water into North Sterling Reservoir.  The reservoir is an off-channel storage facility.  It has a total storage capacity of 80,590 acre-feet and an active storage capacity of 74,590 acre-feet.  Storage water is released to the North Sterling Outlet Canal for irrigation.  North Sterling State Park is located on the east side of the reservoir and is managed by Colorado Parks and Wildlife as a popular boating area."
             },
 			"media": {
                 "url": "../images/north-sterling-reservoir.png",
@@ -40,10 +40,25 @@
                 "lon": -103.284027,
                 "line": true
             }
+		},{
+            "text": {
+                "headline": "Operations",
+                "text": "The District typically begins to fill North Sterling Reservoir under its senior water right in the first week of October.  The reservoir will store water throughout the winter under its senior water right, up to 69,446 acre-feet.  At this point, priority shifts to Prewitt Reservoir, the next storage right in priority in Water District 64.  North Sterling Reservoir will again store water under its junior decrees after Prewitt Reservoir has stored the full amount of its senior decree, as water is available in priority."
+            },
+			"media": {
+                "url": "../images/prewitt-reservoir.png",
+				"caption": "Prewitt Reservoir",
+                "credit": "Google Earth"
+            },
+            "location": {
+                "lat": 40.420227,
+                "lon": -103.362811,
+                "line": true
+            }			
         },{
             "text": {
                 "headline": "North Sterling Outlet Canal",
-                "text": "The outlet canal delivers irrigation water to approximately 75 individual turnouts within the district.  Each turnout consists of a concrete headgate, steel slide gate and a Parshall flume.  Turnouts may serve more than one user or farm and farms may be served by more than one turnout.  The first requests for water typically occur near the end of April and stop near the end of September.  The district manages water such that each land owner must take delivery of the full amount of water requested.  The outlet canal runs for a length of approximately 65 miles.  <i>Include StateMod outputs of demand here</i>."
+                "text": "The outlet canal delivers irrigation water to approximately 75 individual turnouts within the district.  Each turnout consists of a concrete headgate, steel slide gate and a Parshall flume.  Turnouts may serve more than one user or farm and farms may be served by more than one turnout.  The first requests for water typically occur near the end of April and stop near the end of September.  The district manages water such that each land owner must take delivery of the full amount of water requested.  The outlet canal runs for a length of approximately 65 miles."
             },
             "location": {
                 "lat": 40.785169,
@@ -53,13 +68,29 @@
 		},{
             "text": {
                 "headline": "Crops Grown in the District",
-                "text": "<i>Discuss the types and acreage of crops grown in the district, using the 2015 Irrigated Lands layer.  Include an image of the parcels color-coded by crop type (use QGIS).  Do a second page showing flood vs. sprinkler use.</i>"
+                "text": "Here are some of the parcels of land that use water from the District to irrigate crops.  Data are from the <a href='https://www.colorado.gov/pacific/cdss/division-1-south-platte' 'target='_blank'><u>CDSS Division 1 Irrigated Lands 2015</u></a> GIS data layer. Irrigated crops are primarily <span style='color:#e66f03;'>alfalfa</span>, <span style='color:#ca1c6b;'>corn</span>, <span style='color:#20d149;'>grass pasture</span>, <span style='color:#532ae9;'>spring wheat</span> and <span style='color:#cb2ce0;'>sugar beets</span>."
+            },
+			"media": {
+                "url": "../images/north-sterling-irrigated-lands.png"
             },
             "location": {
-                "lat": 40.775111,
-                "lon": -103.129678,
+                "lat": 40.789800,
+                "lon": -103.104200,
                 "line": true
-            }		
+            }
+		},{
+            "text": {
+                "headline": "Irrigation Methods in the District",
+                "text": "Both flood and sprinkler irrigation methods are used.  Approximately 60% of irrigated lands in the District are sprinkler-irrigated.  Sprinkler systems typically pump from small ponds that receive water from the outlet canal.  Use of sprinklers has become more common over the last 30 years.  Here is an example of cropland that uses sprinkler irrigation methods for growing corn."
+            },
+			"media": {
+                "url": "../images/north-sterling-sprinkler.png"
+            },
+            "location": {
+                "lat": 40.875430,
+                "lon": -102.83467,
+                "line": true
+            }			
         }]
     }
 }
