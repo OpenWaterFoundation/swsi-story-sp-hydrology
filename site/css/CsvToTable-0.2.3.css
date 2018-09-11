@@ -1,4 +1,7 @@
-.clusterize #scrollArea {
+.clusterize .scroll-area{
+	height: 95%;
+    height: -webkit-calc(100% - 36px);
+    height: : -moz-calc(100% - 36px);
 	height: calc(100% - 36px);
 }
 
@@ -20,7 +23,7 @@
 	border-collapse: collapse;
 }
 
-.clusterize #scrollArea table {
+.clusterize .scroll-area table {
 	table-layout: fixed;
 }
 
