@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hydrographs of Municipal Indoor and Outdoor Demand for Select Locations in the South Platte Basin</title>
+    <title>Hydrographs of Municipal Total Demand for Select Locations in the South Platte Basin</title>
     <!-- Javascript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/highstock.src.js"></script>
@@ -23,13 +23,12 @@
                     zoomType: 'x',  // describes what axis to zoom in on when a user decides to zoom on certain data
                 },
                 title: {
-                    text: 'Indoor and Outdoor Water Demand for Select Municipalities in the South Platte Basin' // title of chart
+                    text: 'Total Water Demand for Select Municipalities in the South Platte Basin' // title of chart
                 },
 				subtitle: {
-                    text: 'Source:  StateMod' // title of chart
+                    text: 'Source:  StateMod, Total Demand Time Series' // title of chart
                 },
-				colors: ['#b30000', '#b30000', '#fe9929', '#fe9929', '#08519c', '#08519c'],		
-                series:[{dashStyle:'solid'},{dashStyle:'shortdash'},{dashStyle:'solid'},{dashStyle:'shortdash'},{dashStyle:'solid'},{dashStyle:'shortdash'}],
+				colors: ['#b30000', '#fe9929', '#08519c'],		
                 xAxis: {
                     type: 'datetime',   // datatype of x axis (YYYY-MM-DD, MM-DD-YYYY, etc.)
 					labels: {
