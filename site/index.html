@@ -34,7 +34,7 @@
 	<!-- Style for Clusterize.js -->
     <link href="css/clusterize-0.18.0.css" rel="stylesheet">
     <!-- Style for CsvToTable.js -->
-    <link href="css/CsvToTable-0.1.1.css" rel="stylesheet">	
+    <link href="css/CsvToTable-0.2.3.css" rel="stylesheet">	
     <!-- Style for TimelineJS -->
     <link href="css/Timelinejs-3.6.0-min.css" rel="stylesheet">		
 
@@ -73,7 +73,7 @@
 	<!-- Clusterize.js Javascript file -->
     <script src="js/clusterize-0.18.0.min.js"></script>
     <!-- CsvToTable Javascript file -->
-    <script src="js/CsvToTable-0.1.1.min.js"></script>
+    <script src="js/CsvToTable-0.2.3.min.js"></script>
     <!-- Plotly Javascript File -->	
 	<script src="js/plotly-1.39.4.min.js"></script>
 
@@ -371,7 +371,7 @@
 			  <p>The table below lists the number of ditch diversions on each stream in the Basin for those streams that have 10 or more ditch diversion structures.</p>
 				<div id='clusterize1' class='clusterize' style="width: 100%; height: 380px;"></div>
 				  <script>
-				  CsvToTable("clusterize1", "data/ditch-watersources.csv", {});
+				  CsvToTable("clusterize1", "data/ditch-watersources.csv", {}, 1);
 				  // Match header to table when scrolling horizontally
 				  $('#scrollArea').on('scroll', (function() {
 					return function() { 
@@ -895,7 +895,7 @@
 			  <p>The table below lists the average annual amount of water that is diverted by each transbasin diversion, in acre-feet.</p>
 				<div id='clusterize2' class='clusterize' style="width: 100%; height: 380px;"></div>
 				  <script>
-				    CsvToTable("clusterize2", "data/transbasin-diversions-average-annual-diverted.csv", {notFormatted: ["Transbasin_Diversion"], decimalPrecision: {"Mean_Annual_Flow_Diverted_AF": 0}});
+				    CsvToTable("clusterize2", "data/transbasin-diversions-average-annual-diverted.csv", {notFormatted: ["Transbasin_Diversion"], decimalPrecision: {"Mean_Annual_Flow_Diverted_AF": 0}}, 2);
           // Match header to table when scrolling horizontally
 				  // Match header to table when scrolling horizontally
 				  $('#scrollArea').on('scroll', (function() {
