@@ -135,7 +135,7 @@
               <a class="nav-link" href="#pointflowmodels">Modeling</a>
             </li>			
            <li class="nav-item">
-              <a class="nav-link" href="#demandag">Demand</a>
+              <a class="nav-link" href="#demandag1">Demand</a>
             </li>
            <li class="nav-item">
               <a class="nav-link" href="#storagesnowpack">Storage</a>
@@ -557,7 +557,7 @@
 			  target="_blank">Bijou Irrigation System memo<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> from the South Platte Decision Support System Task 5) 
 			  and to fill data gaps.  Consequently, StateMod datasets provide useful quality-controlled system-level data to understand water resources planning issues.</p>
 			  <p>StateMod models are being used in the <a href="http://cwcb.state.co.us/water-management/water-supply-planning/Documents/SWSI2016/FactSheets/6_WaterSupply.pdf" 
-			  target="_blank">Statewide Water Supply Initiative (SWSI) Update</a> to estimate current and future available water supplies.</p>
+			  target="_blank">Statewide Water Supply Initiative (SWSI) Update<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> to estimate current and future available water supplies.</p>
             </div>			
 		    <div class="col-lg-8">
               <div id="mapbox4" class="map-right"></div>
@@ -566,11 +566,11 @@
          </div>
       </div>	
 <!-- Demands Section -->	  
-  <!--  Agricultural Demand Page -->
+  <!--  Agricultural Demand - Crops Page -->
       <div class="section">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-5 text-left-custom custom-scroll">
+            <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Water Demands - Agriculture</h2>
 			  <p>Understanding current and future available water supplies requires understanding the demands that are placed on those supplies.  Various 
 			  entities compete for the Basin's water resources and these entities need water at different times of the year.  Agriculture is the largest user of the Basin's 
@@ -579,12 +579,24 @@
 			  <p>Agricultural demand for water is typically from May to October, although there is demand in the colder months as irrigation reservoirs are filled to 
 			  prepare for the following year.  Irrigation requirements vary depending on farming practices, irrigation method and the crops that are grown.  Crop 
 			  irrigation requirements are defined as the depth of water needed to meet the water consumed through evapotranspiration by a disease-free crop, growing in 
-			  large fields under non-restricting soil conditions including soil water and fertility, and achieving full production potential under the given growing environment.  
-			  The table below lists water requirements for crops grown in eastern Colorado.  In general, alfalfa requires the most water, followed by sugar beets (Source: <a href="
-			  http://extension.colostate.edu/topic-areas/agriculture/seasonal-water-needs-and-opportunities-for-limited-irrigation-for-colorado-crops-4-718/" target="_blank">CSU 
-			  Extension Fact Sheet: Seasonal Water Needs and Opportunities for Limited Irrigation for Colorado Crops)<img src="images/baseline_launch_black_18dp.png" 
+			  large fields under non-restricting soil conditions including soil water and fertility, and achieving full production potential under the given growing environment.</p>  
+			  <p>This visualization shows the irrigation water requirements for crops grown in select locations in eastern Colorado.  In general, alfalfa requires the 
+			  most water, followed by sugar beets (Source: <a href="http://extension.colostate.edu/topic-areas/agriculture/seasonal-water-needs-and-opportunities-for-limited-irrigation-for-colorado-crops-4-718/" 
+			  target="_blank">CSU Extension Fact Sheet: Seasonal Water Needs and Opportunities for Limited Irrigation for Colorado Crops)<img src="images/baseline_launch_black_18dp.png" 
 			  width="12px"/></a>.</p>
-			  <p><img class="image-centered" src="images/crop-requirements.png" frameborder="0"></img></p>
+              </div>			
+		    <div class="col-lg-8 side-content">
+			       <iframe style="width:90%;" src="visualizations/crop-irrigation-requirements.html" frameborder="0"></iframe>	 	
+            </div>				
+          </div>
+        </div> 
+      </div> 
+  <!--  Agricultural Demand - Ditches Page -->
+      <div class="section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-4 text-left-custom custom-scroll">
+              <h2>Water Demands - Agriculture</h2>
 			  <p>Agricultural producers rely on various data to help make decisions about the upcoming irrigation season, including reservoir storage conditions, snowpack 
 			  conditions, water rental programs and other information.  Water use for each agricultural producer and ditch system depends on the location, conditions 
 			  and operations of the system, as well as the seniority of their water rights.  This interactive visualization shows diversion records for five ditches in 
@@ -610,12 +622,12 @@
 			  <a href="https://www.colorado.gov/pacific/cdss/consumptive-use-statecu" target="_blank">StateCU<img src="images/baseline_launch_black_18dp.png" 
 			  width="12px"/></a> software.</p>
               </div>			
-		    <div class="col-lg-7 side-content">
+		    <div class="col-lg-8 side-content">
 			       <iframe style="width:90%;" src="visualizations/ag-diversion-hydrographs.html" frameborder="0"></iframe>	 	
             </div>				
           </div>
         </div> 
-      </div> 
+      </div> 	  
   <!--  M&I Demand Page -->
       <div class="section">
         <div class="container-fluid">
@@ -904,7 +916,7 @@
 					}
 				  }()));
 				  </script>
-                  <p>Source for table and map:  Colorado's Decision Support Systems, <a href="https://dnrweb.state.co.us/cdss/" target="_blank">HydroBase 
+                  <p>Source:  Colorado's Decision Support Systems, <a href="https://dnrweb.state.co.us/cdss/" target="_blank">HydroBase 
 			      <img src="images/baseline_launch_black_18dp.png" width="12px"/></a> data with calculations by Open Water Foundation.  Also see the Open Water 
 				  Foundation's <a href="https://github.com/OpenWaterFoundation/owf-data-co-transbasin-diversions" target="_blank">transbasin diversion 
 				  dataset<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>.</p>
@@ -1173,14 +1185,14 @@
         $('#fullpage').fullpage({
           licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
           anchors:['top', 'hydrologiccycle', 'hydrographs', 'heatmap', 'waterresourcessystems', 'sterlingstorymap', 'streamgages', 'headgates', 'groundwater', 'returnflows', 'naturalflows', 'pointflowmodels', 
-		   'statemod', 'demandag', 'demandmunic', 'demandeandr', 'demandmgmt', 'storagesnowpack', 'storagereservoirs', 'storagegroundwater', 'transbasin', 'drought', 'climatechange', 'swrf', 'snodas', 'swsi',
+		   'statemod', 'demandag1', 'demandag2', 'demandmunic', 'demandeandr', 'demandmgmt', 'storagesnowpack', 'storagereservoirs', 'storagegroundwater', 'transbasin', 'drought', 'climatechange', 'swrf', 'snodas', 'swsi',
 		   'droughtmonitor', 'timeline', 'summary', 'resources', 'sources'],
-          sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf',
+          sectionsColor:['#386981','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf',
 		  '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf','#c3c5bf','#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#c3c5bf', '#386981', '#386981'],
           navigation:true,
           navigationPosition:'right',
           navigationTooltips:['South Platte and Metro Basin Hydrology', 'Hydrologic Cycle', 'Hydrographs', 'Annual Flow Heatmap', 'Water Resources System', 'North Sterling Canal', 'Measuring Flows', 
-		  'Measuring Diversions', 'Measuring Groundwater Levels', 'Return Flows', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Ag Demand', 'Municipal Demand', 
+		  'Measuring Diversions', 'Measuring Groundwater Levels', 'Return Flows', 'Natural vs. Regulated Flows', 'Point Flow Models', 'StateMod Models', 'Ag Demand - Crops', 'Ag Demand - Ditches', 'Municipal Demand', 
 		  'Envr & Rec Demand', 'Demand Management', 'Snowpack Storage', 'Reservoir Storage', 'Groundwater Storage', 'Transbasin Diversions', 'Drought', 'Climate Change', 'Source Water Route Framework', 'SNODAS', 
 		  'SWSI', 'Drought Monitor', 'Timeline', 'Summary', 'Resources', 'Sources'],
           recordHistory:false,
