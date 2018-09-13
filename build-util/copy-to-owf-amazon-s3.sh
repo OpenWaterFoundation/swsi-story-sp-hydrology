@@ -54,10 +54,12 @@ aws s3 sync ../site ${s3Folder} ${dryrun} --delete --profile "$awsProfile"
 
 # Update content of index.html to use versioned files
 # - put the variable definitions first because all are used in index.html update
-styleCssOrig="style.css"
-styleCssWithVersion="style.${version}.css"
-customLeafletCssOrig="custom-leaflet-style.css"
-customLeafletCssWithVersion="custom-leaflet-style.${version}.css"
+owfStyleCssOrig="owf-style.css"
+owfStyleCssWithVersion="owf-style.${version}.css"
+customLeafletStyleCssOrig="custom-leaflet-style.css"
+customLeafletStyleCssWithVersion="custom-leaflet-style.${version}.css"
+mapCssOrig="map.css"
+mapCssWithVersion="map.${version}.css"
 # JavaScript files that need versioned
 # -don't include /map-files because slash messes up sed command
 fileParserJsOrig="fileparser.js"
@@ -69,19 +71,23 @@ cdssActiveStreamgagesMapJsOrig="cdss-active-streamgages-map.js"
 cdssActiveStreamgagesMapJsWithVersion="cdss-active-streamgages-map.${version}.js"
 cdssDitchesMapJsOrig="cdss-ditches-map.js"
 cdssDitchesMapJsWithVersion="cdss-ditches-map.${version}.js"
-plotlyExampleJsOrig="plotly-example.js"
-plotlyExampleJsWithVersion="plotly-example.${version}.js"
 statemodNodesMapJsOrig="statemod-nodes-map.js"
 statemodNodesMapJsWithVersion="statemod-nodes-map.${version}.js"
+swrfMapJsOrig="swrf-map.js"
+swrfMapJsWithVersion="swrf-map.${version}.js"
+transbasinDiversionsMapJsOrig="transbasin-diversions-map.js"
+transbasinDiversionsMapJsWithVersion="transbasin-diversions-map.${version}.js"
 # List alphabetically to simplify insertions
-cat ../site/index.html | sed -e "s/${cdssActiveStreamgagesMapJsOrig}/${cdssActiveStreamgagesMapJsWithVersion}/g" | sed -e "s/${cdssDitchesMapJsOrig}/${cdssDitchesMapJsWithVersion}/g" | sed -e "s/${styleCssOrig}/${styleCssWithVersion}/g" | sed -e "s/${customLeafletCssOrig}/${customLeafletCssWithVersion}/g" | sed -e "s/${fileParserJsOrig}/${fileParserJsWithVersion}/g" | sed -e "s/${plotlyExampleJsOrig}/${plotlyExampleJsWithVersion}/g" | sed -e "s/${statemodNodesMapJsOrig}/${statemodNodesMapJsWithVersion}/g" > ${tmpBuildFolder}/index.html
+cat ../site/index.html | sed -e "s/${cdssActiveStreamgagesMapJsOrig}/${cdssActiveStreamgagesMapJsWithVersion}/g" | sed -e "s/${cdssDitchesMapJsOrig}/${cdssDitchesMapJsWithVersion}/g" | sed -e "s/${customLeafletStyleCssOrig}/${customLeafletStyleCssWithVersion}/g" | sed -e "s/${fileParserJsOrig}/${fileParserJsWithVersion}/g" | sed -e "s/${mapCssOrig}/${mapCssWithVersion}/g" | sed -e "s/${owfStyleCssOrig}/${owfStyleCssWithVersion}/g" | sed -e "s/${statemodNodesMapJsOrig}/${statemodNodesMapJsWithVersion}/g" | sed -e "s/${transbasinDiversionsMapJsOrig}/${transbasinDiversionsMapJsWithVersion}/g" > ${tmpBuildFolder}/index.html
 aws s3 cp ${tmpBuildFolder}/index.html ${s3Folder}/index.html ${dryrun} --profile "$awsProfile"
-aws s3 cp ../site/css/${styleCssOrig} ${s3Folder}/css/${styleCssWithVersion} ${dryrun} --profile "$awsProfile"
-aws s3 cp ../site/css/${customLeafletCssOrig} ${s3Folder}/css/${customLeafletCssWithVersion} ${dryrun} --profile "$awsProfile"
+aws s3 cp ../site/css/${customLeafletStyleCssOrig} ${s3Folder}/css/${customLeafletStyleCssWithVersion} ${dryrun} --profile "$awsProfile"
+aws s3 cp ../site/css/${mapCssOrig} ${s3Folder}/css/${mapCssWithVersion} ${dryrun} --profile "$awsProfile"
+aws s3 cp ../site/css/${owfStyleCssOrig} ${s3Folder}/css/${owfStyleCssWithVersion} ${dryrun} --profile "$awsProfile"
 # General
 aws s3 cp ../site/js/${fileParserJsOrig} ${s3Folder}/js/${fileParserJsWithVersion} ${dryrun} --profile "$awsProfile"
 # Map-files
 aws s3 cp ../site/js/map-files/${cdssActiveStreamgagesMapJsOrig} ${s3Folder}/js/map-files/${cdssActiveStreamgagesMapJsWithVersion} ${dryrun} --profile "$awsProfile"
 aws s3 cp ../site/js/map-files/${cdssDitchesMapJsOrig} ${s3Folder}/js/map-files/${cdssDitchesMapJsWithVersion} ${dryrun} --profile "$awsProfile"
-aws s3 cp ../site/js/map-files/${plotlyExampleJsOrig} ${s3Folder}/js/map-files/${plotlyExampleJsWithVersion} ${dryrun} --profile "$awsProfile"
 aws s3 cp ../site/js/map-files/${statemodNodesMapJsOrig} ${s3Folder}/js/map-files/${statemodNodesMapJsWithVersion} ${dryrun} --profile "$awsProfile"
+aws s3 cp ../site/js/map-files/${swrfMapJsOrig} ${s3Folder}/js/map-files/${swrfMapJsWithVersion} ${dryrun} --profile "$awsProfile"
+aws s3 cp ../site/js/map-files/${transbasinDiversionsMapJsOrig} ${s3Folder}/js/map-files/${transbasinDiversionsMapJsWithVersion} ${dryrun} --profile "$awsProfile"
