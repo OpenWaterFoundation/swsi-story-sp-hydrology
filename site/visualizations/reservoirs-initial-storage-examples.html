@@ -27,8 +27,8 @@
 				subtitle: {
                     text: 'Source:  StateMod, Initial Storage Time Series' // title of chart
                 },
-				colors: ['green', '#fe9929', '#b30000', '#08519c'],
-				series:[{dashStyle:'solid'},{dashStyle:'solid'},{dashStyle:'solid'},{dashStyle:'solid'},{dashStyle:'shortdash'},{dashStyle:'shortdash'},{dashStyle:'shortdash'},{dashStyle:'shortdash'}],
+				colors: ['green', 'green', '#fe9929', '#fe9929', '#b30000', '#b30000', '#08519c', '#08519c'],
+				series:[{dashStyle:'solid'},{dashStyle:'shortdash'},{dashStyle:'solid'},{dashStyle:'shortdash'},{dashStyle:'solid'},{dashStyle:'shortdash'},{dashStyle:'solid'},{dashStyle:'shortdash'}],
                 xAxis: {
                     type: 'datetime',   // datatype of x axis (YYYY-MM-DD, MM-DD-YYYY, etc.)
 					labels: {
@@ -51,7 +51,8 @@
                     split: true
                 },
                 legend: {
-                    enabled: true   // show legend
+                    enabled: true,   // show legend
+					symbolWidth: 50
                 },
                 data: {
                     csv: csv    // data to be plotted

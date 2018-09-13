@@ -1,9 +1,8 @@
 # swsi-story-sp-hydrology #
 
 This repository contains the "South Platte and Metro Basin Hydrology" story and all of its associated content. This story provides a summary 
-of South Platte and Metro Basin hydrology in order to provide background for understanding water resources issues in the Basin, including the 
-need for storage. The purpose of the story is to provide general context regarding the hydrology of the Basin and to provide links to useful 
-datasets and resources.
+of South Platte and Metro Basin hydrology in order to provide background for understanding water resources issues in the Basin. The purpose 
+of the story is to provide general context regarding the hydrology of the Basin and to provide links to useful datasets and resources.
 
 The Hydrology story was created with the [fullPage.js](https://alvarotrigo.com/fullPage/) JavaScript library.  
 See the story [deployed on the Open Water Foundation (OWF)'s website](http://stories.openwaterfoundation.org/co/swsi-story-sp-hydrology/).

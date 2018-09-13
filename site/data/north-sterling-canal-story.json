@@ -8,12 +8,12 @@
             "type": "overview",
             "text": {
                 "headline": "North Sterling Irrigation District",
-                "text": "Another example that illustrates the complexity of water resources systems is the North Sterling Irrigation District.  Click the arrow at right to navigate through the system.  Most of the following information comes from the <a href='http://cwcbweblink.state.co.us/WebLink/PDF/5nhmaieur3y52uqeai1qmw45/1/SPDSS_Task5_KeyStructure_NorthSterling.pdf' target='_blank'><u>SPDSS Memo Task 5 - Key Structure, North Sterling Irrigation District</u></a>."
+                "text": "It is helpful to understand a system’s components by 'walking through' the system on a map from upstream to downstream.  This example illustrates the North Sterling Irrigation District located on the Lower South Platte.  Click the arrow at right to navigate through the system.  Most of the following information comes from the <a href='http://cwcbweblink.state.co.us/WebLink/PDF/5nhmaieur3y52uqeai1qmw45/1/SPDSS_Task5_KeyStructure_NorthSterling.pdf' target='_blank'><u>SPDSS Memo Task 5 - Key Structure, North Sterling Irrigation District</u></a>."
             }
         },{
             "text": {
                 "headline": "North Sterling Inlet Canal",
-                "text": "The North Sterling Inlet Canal (WDID 0100687) diverts water directly from the South Platte River for storage in North Sterling Reservoir.  The diversion works of the inlet canal consist of a concrete dam and four radial gates.  The canal's length is approximately 63 miles."
+                "text": "The North Sterling Inlet Canal (<a href='https://dnrweb.state.co.us/cdss/Structures/0100687' target='_blank'><u>WDID 0100687</u></a>) diverts water directly from the South Platte River for storage in North Sterling Reservoir.  The diversion works of the inlet canal consist of a concrete dam and four radial gates.  The canal's length is approximately 63 miles."
             },
 			"media": {
                 "url": "../images/north-sterling-inlet.png",
@@ -28,7 +28,7 @@
         },{
             "text": {
                 "headline": "North Sterling Reservoir",
-                "text": "The North Sterling Inlet Canal releases water into North Sterling Reservoir.  The reservoir is an off-channel storage facility.  It has a total storage capacity of 80,590 acre-feet and an active storage capacity of 74,590 acre-feet.  Storage water is released to the North Sterling Outlet Canal for irrigation.  North Sterling State Park is located on the east side of the reservoir and is managed by Colorado Parks and Wildlife as a popular boating area."
+                "text": "The North Sterling Inlet Canal releases water into North Sterling Reservoir (<a href='https://dnrweb.state.co.us/cdss/Structures/6403551' target='_blank'><u>WDID 6403551</u></a>).  The reservoir is an off-channel storage facility.  It has a total storage capacity of 80,590 acre-feet and an active storage capacity of 74,590 acre-feet.  Storage water is released to the North Sterling Outlet Canal for irrigation.  North Sterling State Park is located on the east side of the reservoir and is managed by Colorado Parks and Wildlife as a popular boating area."
             },
 			"media": {
                 "url": "../images/north-sterling-reservoir.png",
@@ -42,8 +42,8 @@
             }
 		},{
             "text": {
-                "headline": "Operations",
-                "text": "The District typically begins to fill North Sterling Reservoir under its senior water right in the first week of October.  The reservoir will store water throughout the winter under its senior water right, up to 69,446 acre-feet.  At this point, priority shifts to Prewitt Reservoir, the next storage right in priority in Water District 64.  North Sterling Reservoir will again store water under its junior decrees after Prewitt Reservoir has stored the full amount of its senior decree, as water is available in priority."
+                "headline": "Prewitt Reservoir",
+                "text": "The District typically begins to fill North Sterling Reservoir under its senior water right in the first week of October.  The reservoir will store water throughout the winter under its senior water right, up to 69,446 acre-feet.  At this point, priority shifts to Prewitt Reservoir (<a href='https://dnrweb.state.co.us/cdss/Structures/6403552' target='_blank'><u>WDID 6403552</u></a>), the next storage right in priority in Water District 64.  North Sterling Reservoir will again store water under its junior decrees after Prewitt Reservoir has stored the full amount of its senior decree, as water is available in priority."
             },
 			"media": {
                 "url": "../images/prewitt-reservoir.png",
