@@ -13,7 +13,34 @@ var transbasin_diversions_map = (function(){
 			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 		id: 'mapbox.outdoors'
 	}).addTo(map);
-		
+
+	var satellite = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia3Jpc3RpbnN3YWltIiwiYSI6ImNpc3Rjcnl3bDAzYWMycHBlM2phbDJuMHoifQ.vrDCYwkTZsrA_0FffnzvBw', {
+        maxZoom: 18,
+        attribution: 'Created by the <a href="http://openwaterfoundation.org">Open Water Foundation. </a>' + 
+        'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.satellite'
+    }); 
+
+    var streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoia3Jpc3RpbnN3YWltIiwiYSI6ImNpc3Rjcnl3bDAzYWMycHBlM2phbDJuMHoifQ.vrDCYwkTZsrA_0FffnzvBw', {
+        maxZoom: 18,
+        attribution: 'Created by the <a href="http://openwaterfoundation.org">Open Water Foundation. </a>' + 
+        'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.streets'
+    });
+
+    var streetsatellite = L.tileLayer('https://api.mapbox.com/v4/mapbox.streets-satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3Jpc3RpbnN3YWltIiwiYSI6ImNpc3Rjcnl3bDAzYWMycHBlM2phbDJuMHoifQ.vrDCYwkTZsrA_0FffnzvBw', {
+        maxZoom: 18,
+        attribution: 'Created by the <a href="http://openwaterfoundation.org">Open Water Foundation. </a>' + 
+        'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.streets-satellite'
+    });
+
 	// Add in IBCC basins layer
 	basin1 = L.geoJson(basins, {
 	  color: 'black',
@@ -138,6 +165,15 @@ var transbasin_diversions_map = (function(){
 			mousetooltip.setContent(title)
 	    }
 	}
+
+	var baseMaps = {
+        "Outdoors": outdoors,
+        "Satellite": satellite,
+        "Streets": streets,
+        "Streets & Satellite": streetsatellite
+    }
+        
+    L.control.layers(baseMaps, null, {position:'topleft'}).addTo(map);
 
    	// Return function that need to be accessed by the DOM 
 	return{

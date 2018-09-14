@@ -37,15 +37,15 @@ var streamgages_map = (function(){
 			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 		id: 'mapbox.streets'
 	});	
-	
-	// Create an object that contains the satellite, outdoors and streets base layers
-	var baseMaps = {
-		"Outdoors": outdoors,
-		"Satellite": satellite,
-		"Streets": streets
-	};
-	// Create layer control that allows for switching between base maps		
-	L.control.layers(baseMaps, null, {position: 'topleft'}).addTo(map);
+
+	var streetsatellite = L.tileLayer('https://api.mapbox.com/v4/mapbox.streets-satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3Jpc3RpbnN3YWltIiwiYSI6ImNpc3Rjcnl3bDAzYWMycHBlM2phbDJuMHoifQ.vrDCYwkTZsrA_0FffnzvBw', {
+        maxZoom: 18,
+        attribution: 'Created by the <a href="http://openwaterfoundation.org">Open Water Foundation. </a>' + 
+        'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        id: 'mapbox.streets-satellite'
+    });
 	
 		
 	// Add in IBCC basins layer
@@ -191,6 +191,17 @@ var streamgages_map = (function(){
 		return div;
 	};
 	scrollbutton.addTo(map);		
+
+	// Create an object that contains the satellite, outdoors and streets base layers
+	var baseMaps = {
+		"Outdoors": outdoors,
+		"Satellite": satellite,
+		"Streets": streets,
+		"Streets & Satellite": streetsatellite
+	};
+	// Create layer control that allows for switching between base maps		
+	L.control.layers(baseMaps, null, {position: 'topleft'}).addTo(map);
+
 	function scrollButtonClick(){
 	 	if (map.scrollWheelZoom.enabled()) {
 	    	map.scrollWheelZoom.disable();
