@@ -123,7 +123,7 @@ if [ "$runMode" == "prepUpload" ]
         then
         # Zip files using 7zip
         echo "Zip site files"
-        7z a -tzip swsi-story-sp-entities.zip ${tmpBuildFolder}/*
+        7z a -tzip swsi-story-sp-hydrology.zip ${tmpBuildFolder}/*
 fi
 
 if [ "$runMode" == "upload" ]
