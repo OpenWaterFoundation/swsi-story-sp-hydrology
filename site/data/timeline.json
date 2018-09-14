@@ -2,7 +2,7 @@
 	"title": {
 		"text": {
 			"headline": "Timeline of Addressing Water Supply Issues in the South Platte Basin",
-			"text": "Some of the major milestones are summarized here.  Use the arrow at right to move through the timeline."	
+			"text": "This story has presented background on hydrology and challenges and opportunities related to meet water demands.  Colorado’s Water Plan provides a framework for solutions to the State's water challenges and provides guidance for future decision-making to ensure that water resources will be protected and available.  The Statewide Water Supply Initiative Update provides a technical platform and methods for addressing water supply issues.  This example timeline visualization illustrates how information about historical events can be presented, focusing on major water supply planning activities.  <i>Use the arrow at right to move through the timeline</i>."	
 		},
 		"background": {
 			"color": "#386981"
@@ -10,6 +10,19 @@
 	},
 	"events": [
 		{
+			"start_date": {
+				"year": 2002
+			},
+			"text": {
+				"headline": "The 2002 Drought",
+				"text": "The historic drought of 2002 wrought profound water shortages, widespread crop losses and devastating wildfires, such as the Hayman Fire.  The drought was the impetus for the policies, studies and plans that follow."
+			},
+			"media": {
+				"url": "images/cheesman-02-drought-e1478200361939.jpg",
+                "caption": "Cheesman Reservoir during the 2002 drought",
+                "credit": "<a href='https://denverwatertap.org/2015/04/23/water-restrictions-in-california-could-impact-denver-water-customers-too/cheesman-02-drought/' target='_blank'>Denver Water<img src='images/baseline_launch_black_18dp.png' width='12px'/></a>"
+			}
+		},{
 			"start_date": {
 				"year": 2004
 			},
@@ -22,7 +35,7 @@
                 "caption": "Figure ES-8: Effectiveness of IPPs in Meeting 2030 M&I and SSI Demands",
                 "credit": "<a href='http://cwcbweblink.state.co.us/WebLink/ElectronicFile.aspx?docid=144066&searchid=2c16c041-d0b2-4ec5-ac42-8b95aa0c04e3&dbid=0' target='_blank'>Source: SWSI 2004<img src='images/baseline_launch_black_18dp.png' width='12px'/></a>"
 			}
-		},{
+		},{		
 			"start_date": {
 				"year": 2005
 			},

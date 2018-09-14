@@ -1,0 +1,181 @@
+Crop,Node,Water_Requirement_inches_per_season,Town
+Alfalfa,0,44.1,Burlington
+Alfalfa,1,51.6,Cheyenne Wells
+Alfalfa,2,46.2,Penrose
+Alfalfa,3,46.3,Holly
+Alfalfa,4,37.1,Greeley
+Alfalfa,5,49.7,Lamar
+Alfalfa,6,43.5,Fort Lupton
+Alfalfa,7,45.7,Rocky Ford
+Alfalfa,8,59,Walsh
+Alfalfa,9,39.2,Iliff
+Alfalfa,10,46.4,Trinidad
+Alfalfa,11,26.2,Wray
+Grass hay/pasture,0,29.9,Burlington
+Grass hay/pasture,1,35.2,Cheyenne Wells
+Grass hay/pasture,2,31.4,Penrose
+Grass hay/pasture,3,31.5,Holly
+Grass hay/pasture,4,25.7,Greeley
+Grass hay/pasture,5,33.8,Lamar
+Grass hay/pasture,6,29.8,Fort Lupton
+Grass hay/pasture,7,31,Rocky Ford
+Grass hay/pasture,8,39.9,Walsh
+Grass hay/pasture,9,26.9,Iliff
+Grass hay/pasture,10,31.5,Trinidad
+Grass hay/pasture,11,25,Wray
+Dry beans,0,15.7,Burlington
+Dry beans,1,21.8,Cheyenne Wells
+Dry beans,2,19.7,Penrose
+Dry beans,3,19.3,Holly
+Dry beans,4,15.7,Greeley
+Dry beans,5,20.8,Lamar
+Dry beans,6,17.7,Fort Lupton
+Dry beans,7,18.4,Rocky Ford
+Dry beans,8,24.6,Walsh
+Dry beans,9,16.9,Iliff
+Dry beans,10,18.4,Trinidad
+Dry beans,11,16.6,Wray
+Grain Corn,0,26.2,Burlington
+Grain Corn,1,28.2,Cheyenne Wells
+Grain Corn,2,26.6,Penrose
+Grain Corn,3,26.3,Holly
+Grain Corn,4,23.9,Greeley
+Grain Corn,5,27.4,Lamar
+Grain Corn,6,25.9,Fort Lupton
+Grain Corn,7,26.5,Rocky Ford
+Grain Corn,8,29.3,Walsh
+Grain Corn,9,24.5,Iliff
+Grain Corn,10,26.7,Trinidad
+Grain Corn,11,24.5,Wray
+Silage Corn,0,25.2,Burlington
+Silage Corn,1,27.2,Cheyenne Wells
+Silage Corn,2,25.6,Penrose
+Silage Corn,3,25.3,Holly
+Silage Corn,4,22.9,Greeley
+Silage Corn,5,26.4,Lamar
+Silage Corn,6,24.9,Fort Lupton
+Silage Corn,7,25.5,Rocky Ford
+Silage Corn,8,28.3,Walsh
+Silage Corn,9,23.5,Iliff
+Silage Corn,10,25.7,Trinidad
+Silage Corn,11,23.5,Wray
+Sweet Corn,0,24,Burlington
+Sweet Corn,1,25.8,Cheyenne Wells
+Sweet Corn,2,24.3,Penrose
+Sweet Corn,3,24.1,Holly
+Sweet Corn,4,21.9,Greeley
+Sweet Corn,5,25.1,Lamar
+Sweet Corn,6,23.7,Fort Lupton
+Sweet Corn,7,24.3,Rocky Ford
+Sweet Corn,8,26.8,Walsh
+Sweet Corn,9,22.5,Iliff
+Sweet Corn,10,24.5,Trinidad
+Sweet Corn,11,22.4,Wray
+Cantaloupe,0,17.2,Burlington
+Cantaloupe,1,23.3,Cheyenne Wells
+Cantaloupe,2,20.8,Penrose
+Cantaloupe,3,20.8,Holly
+Cantaloupe,4,17.2,Greeley
+Cantaloupe,5,22.3,Lamar
+Cantaloupe,6,19.1,Fort Lupton
+Cantaloupe,7,20.6,Rocky Ford
+Cantaloupe,8,26.2,Walsh
+Cantaloupe,9,17.9,Iliff
+Cantaloupe,10,20.6,Trinidad
+Cantaloupe,11,16.4,Wray
+Potatoes,0,24,Burlington
+Potatoes,1,30,Cheyenne Wells
+Potatoes,2,27.1,Penrose
+Potatoes,3,26.9,Holly
+Potatoes,4,20.2,Greeley
+Potatoes,5,29.3,Lamar
+Potatoes,6,25.3,Fort Lupton
+Potatoes,7,25.5,Rocky Ford
+Potatoes,8,36.2,Walsh
+Potatoes,9,21.7,Iliff
+Potatoes,10,26.3,Trinidad
+Potatoes,11,20.5,Wray
+Onion,0,27.6,Burlington
+Onion,1,31.3,Cheyenne Wells
+Onion,2,28.5,Penrose
+Onion,3,28.6,Holly
+Onion,4,24.2,Greeley
+Onion,5,30.2,Lamar
+Onion,6,27.5,Fort Lupton
+Onion,7,28.2,Rocky Ford
+Onion,8,34.1,Walsh
+Onion,9,25.3,Iliff
+Onion,10,28.6,Trinidad
+Onion,11,24.2,Wray
+Small vegetables,0,22.7,Burlington
+Small vegetables,1,31.5,Cheyenne Wells
+Small vegetables,2,28.5,Penrose
+Small vegetables,3,28.2,Holly
+Small vegetables,4,22.7,Greeley
+Small vegetables,5,30.2,Lamar
+Small vegetables,6,25.4,Fort Lupton
+Small vegetables,7,27,Rocky Ford
+Small vegetables,8,36,Walsh
+Small vegetables,9,24.1,Iliff
+Small vegetables,10,27,Trinidad
+Small vegetables,11,23.2,Wray
+Sorghum,0,20.9,Burlington
+Sorghum,1,28.8,Cheyenne Wells
+Sorghum,2,25.7,Penrose
+Sorghum,3,25.6,Holly
+Sorghum,4,20.9,Greeley
+Sorghum,5,27.4,Lamar
+Sorghum,6,23.4,Fort Lupton
+Sorghum,7,24.9,Rocky Ford
+Sorghum,8,32.7,Walsh
+Sorghum,9,22.2,Iliff
+Sorghum,10,24.9,Trinidad
+Sorghum,11,21,Wray
+Soybeans,0,22.2,Burlington
+Soybeans,1,26,Cheyenne Wells
+Soybeans,2,23.2,Penrose
+Soybeans,3,23.3,Holly
+Soybeans,4,18.7,Greeley
+Soybeans,5,25,Lamar
+Soybeans,6,21.9,Fort Lupton
+Soybeans,7,23,Rocky Ford
+Soybeans,8,29.7,Walsh
+Soybeans,9,19.7,Iliff
+Soybeans,10,23.3,Trinidad
+Soybeans,11,18.2,Wray
+Spring grains,0,22.6,Burlington
+Spring grains,1,30.6,Cheyenne Wells
+Spring grains,2,24.7,Penrose
+Spring grains,3,25.8,Holly
+Spring grains,4,20.6,Greeley
+Spring grains,5,27.7,Lamar
+Spring grains,6,23,Fort Lupton
+Spring grains,7,23.4,Rocky Ford
+Spring grains,8,36.7,Walsh
+Spring grains,9,24.8,Iliff
+Spring grains,10,24.3,Trinidad
+Spring grains,11,18.9,Wray
+Sugar beets,0,33.7,Burlington
+Sugar beets,1,37.9,Cheyenne Wells
+Sugar beets,2,35,Penrose
+Sugar beets,3,34.7,Holly
+Sugar beets,4,27.1,Greeley
+Sugar beets,5,37.3,Lamar
+Sugar beets,6,32.8,Fort Lupton
+Sugar beets,7,34.9,Rocky Ford
+Sugar beets,8,43.6,Walsh
+Sugar beets,9,29,Iliff
+Sugar beets,10,35.3,Trinidad
+Sugar beets,11,28.4,Wray
+Winter wheat,0,18.7,Burlington
+Winter wheat,1,19,Cheyenne Wells
+Winter wheat,2,19,Penrose
+Winter wheat,3,18.5,Holly
+Winter wheat,4,17.9,Greeley
+Winter wheat,5,19.1,Lamar
+Winter wheat,6,18.4,Fort Lupton
+Winter wheat,7,19.2,Rocky Ford
+Winter wheat,8,19.8,Walsh
+Winter wheat,9,17.9,Iliff
+Winter wheat,10,19.2,Trinidad
+Winter wheat,11,15.5,Wray
