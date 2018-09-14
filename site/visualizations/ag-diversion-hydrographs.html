@@ -7,6 +7,7 @@
     <script src="js/highstock.src.js"></script>
     <script src="js/data-5.0.14.js"></script>
     <script>
+    var chart;
     $(function(){
 			// Set all numbers to have a comma separator, not a space separator	
 				Highcharts.setOptions({
@@ -17,7 +18,7 @@
 				
         // jQuery command to get/read file from ag-diversion-hydrographs.csv
         $.get('data/ag-diversion-hydrographs.csv', function(csv) {
-            Highcharts.chart('container', {
+            chart = Highcharts.chart('container', {
                 chart: {
                     zoomType: 'x',  // describes what axis to zoom in on when a user decides to zoom on certain data
                 },
@@ -62,9 +63,25 @@
             });
         });
     });
+
+    function selectAllFunction(){
+        for(var i = 0; i < chart.series.length; i++){
+            var series = chart.series[i];
+            series.show();
+        }
+    }
+
+    function deselectAllFunction(){
+        for(var i = 0; i < chart.series.length; i++){
+            var series = chart.series[i];
+            series.hide();
+        }
+    }
 </script>
 </head>
 <body>
     <div id="container" style="width:100%; height:800px;"></div>
+    <button id="selectAll" onclick="selectAllFunction()">Select All Series</button>
+    <button id="deselectAll" onclick="deselectAllFunction()">Deselect All Series</button>
 </body>
 </html>
