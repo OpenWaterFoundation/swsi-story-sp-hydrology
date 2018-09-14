@@ -8,6 +8,12 @@
 dryrun=""
 #dryrun="--dryrun"
 s3Folder="s3://stories.openwaterfoundation.org/co/swsi-story-sp-hydrology"
+# runMode indicates what the script should do
+# - upload = prep and upload to Amazon S3,
+#   used when uploading to OWF website
+# - prepUpload = prep the site for upload but don't do it,
+#   used when creating the site folder for southplattebasin.com
+runMode="upload"
 
 # Make sure that this is being run from the build-util folder
 pwd=`pwd`
@@ -26,6 +32,14 @@ if [ "$1" == "" ]
 	echo "Copy the site files to the Amazon S3 static website folder:  $s3Folder"
 	echo ""
 	exit 0
+fi
+
+if [ "$1" == "prep-upload" ]
+        then
+        # Prep the website for upload in the tmp-build folder but do not actually do the upload.
+        # - the site can then be uploaded to southplattebasin.com
+        # - don't actually do the upload
+        runMode="prepUpload"
 fi
 
 awsProfile="$1"
@@ -49,8 +63,14 @@ if [ ! -e "${tmpBuildFolder}" ]
         exit 1
 fi
 
-# Sync first, then copy specific files
-aws s3 sync ../site ${s3Folder} ${dryrun} --delete --profile "$awsProfile"
+# First clean out the contents of the "tmp-build" folder
+echo "Remove files from ${tmpBuildFolder}"
+rm -rf ${tmpBuildFolder}/*
+
+# Copy the entire site into the "tmp-build" folder
+echo "Copy ../site to ${tmpBuildFolder}"
+cp -r ../site/* ${tmpBuildFolder}
+
 
 # Update content of index.html to use versioned files
 # - put the variable definitions first because all are used in index.html update
@@ -78,16 +98,36 @@ swrfMapJsWithVersion="swrf-map.${version}.js"
 transbasinDiversionsMapJsOrig="transbasin-diversions-map.js"
 transbasinDiversionsMapJsWithVersion="transbasin-diversions-map.${version}.js"
 # List alphabetically to simplify insertions
+#
+# Replace references in index.html with files that have versions
+echo "Update index.html with versioned references"
 cat ../site/index.html | sed -e "s/${cdssActiveStreamgagesMapJsOrig}/${cdssActiveStreamgagesMapJsWithVersion}/g" | sed -e "s/${cdssDitchesMapJsOrig}/${cdssDitchesMapJsWithVersion}/g" | sed -e "s/${customLeafletStyleCssOrig}/${customLeafletStyleCssWithVersion}/g" | sed -e "s/${fileParserJsOrig}/${fileParserJsWithVersion}/g" | sed -e "s/${mapCssOrig}/${mapCssWithVersion}/g" | sed -e "s/${owfStyleCssOrig}/${owfStyleCssWithVersion}/g" | sed -e "s/${statemodNodesMapJsOrig}/${statemodNodesMapJsWithVersion}/g" | sed -e "s/${transbasinDiversionsMapJsOrig}/${transbasinDiversionsMapJsWithVersion}/g" > ${tmpBuildFolder}/index.html
-aws s3 cp ${tmpBuildFolder}/index.html ${s3Folder}/index.html ${dryrun} --profile "$awsProfile"
-aws s3 cp ../site/css/${customLeafletStyleCssOrig} ${s3Folder}/css/${customLeafletStyleCssWithVersion} ${dryrun} --profile "$awsProfile"
-aws s3 cp ../site/css/${mapCssOrig} ${s3Folder}/css/${mapCssWithVersion} ${dryrun} --profile "$awsProfile"
-aws s3 cp ../site/css/${owfStyleCssOrig} ${s3Folder}/css/${owfStyleCssWithVersion} ${dryrun} --profile "$awsProfile"
+
+# Copy the original files and add version to the filename
+echo "Copy versioned files to ${tmpBuildFolder}"
+
+cp ../site/css/${customLeafletStyleCssOrig} ${tmpBuildFolder}/css/${customLeafletStyleCssWithVersion} 
+cp ../site/css/${mapCssOrig} ${tmpBuildFolder}/css/${mapCssWithVersion} 
+cp ../site/css/${owfStyleCssOrig} ${tmpBuildFolder}/css/${owfStyleCssWithVersion} 
 # General
-aws s3 cp ../site/js/${fileParserJsOrig} ${s3Folder}/js/${fileParserJsWithVersion} ${dryrun} --profile "$awsProfile"
+cp ../site/js/${fileParserJsOrig} ${tmpBuildFolder}/js/${fileParserJsWithVersion} 
 # Map-files
-aws s3 cp ../site/js/map-files/${cdssActiveStreamgagesMapJsOrig} ${s3Folder}/js/map-files/${cdssActiveStreamgagesMapJsWithVersion} ${dryrun} --profile "$awsProfile"
-aws s3 cp ../site/js/map-files/${cdssDitchesMapJsOrig} ${s3Folder}/js/map-files/${cdssDitchesMapJsWithVersion} ${dryrun} --profile "$awsProfile"
-aws s3 cp ../site/js/map-files/${statemodNodesMapJsOrig} ${s3Folder}/js/map-files/${statemodNodesMapJsWithVersion} ${dryrun} --profile "$awsProfile"
-aws s3 cp ../site/js/map-files/${swrfMapJsOrig} ${s3Folder}/js/map-files/${swrfMapJsWithVersion} ${dryrun} --profile "$awsProfile"
-aws s3 cp ../site/js/map-files/${transbasinDiversionsMapJsOrig} ${s3Folder}/js/map-files/${transbasinDiversionsMapJsWithVersion} ${dryrun} --profile "$awsProfile"
+cp ../site/js/map-files/${cdssActiveStreamgagesMapJsOrig} ${tmpBuildFolder}/js/map-files/${cdssActiveStreamgagesMapJsWithVersion} 
+cp ../site/js/map-files/${cdssDitchesMapJsOrig} ${tmpBuildFolder}/js/map-files/${cdssDitchesMapJsWithVersion} 
+cp ../site/js/map-files/${statemodNodesMapJsOrig} ${tmpBuildFolder}/js/map-files/${statemodNodesMapJsWithVersion} 
+cp ../site/js/map-files/${swrfMapJsOrig} ${tmpBuildFolder}/js/map-files/${swrfMapJsWithVersion} 
+cp ../site/js/map-files/${transbasinDiversionsMapJsOrig} ${tmpBuildFolder}/js/map-files/${transbasinDiversionsMapJsWithVersion} 
+
+# Create zip folder if runMode = prepUpload
+if [ "$runMode" == "prepUpload" ]
+        then
+        # Zip files using 7zip
+        echo "Zip site files"
+        7z a -tzip swsi-story-sp-entities.zip ${tmpBuildFolder}/*
+fi
+
+if [ "$runMode" == "upload" ]
+        then
+        # Sync the tmp-build folder to Amazon S3
+        aws s3 sync ${tmpBuildFolder} ${s3Folder} ${dryrun} --delete --profile "$awsProfile"
+fi
