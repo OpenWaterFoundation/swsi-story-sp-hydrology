@@ -1,0 +1,179 @@
+# SOUTH PLATTE STATEMOD HISTORICAL MODEL
+#
+####################################################################################################
+# ESTABLISH THE NODE NETWORK
+####################################################################################################
+# Use TSTool v. 12.00.00 (version 12.03.00's ReadTableFromDataStore() command is not working)
+# Read in the .rin file, which lists the nodes in order; this will establish the network of nodes
+ReadTableFromFixedFormatFile(TableID="Node-Network-orig",InputFile="SP2016.rin",DataFormat="s12s24s12x1s12x1f8",ColumnNames="Node_ID,Name,Downstream_Node,Comment,GWMax")
+# Delete the Comment and GWMax columns
+DeleteTableColumns(TableID="Node-Network-orig",DeleteColumns="Comment,GWMax")
+# Make sure Node_IDs are text to preserve leading zeroes
+FormatTableString(TableID="Node-Network-orig",InputColumns="Node_ID",Format="%s",OutputColumn="Node_ID2",InsertBeforeColumn="Node_ID")
+FormatTableString(TableID="Node-Network-orig",InputColumns="Downstream_Node",Format="%s",OutputColumn="Downstream_Node2",InsertBeforeColumn="Downstream_Node")
+DeleteTableColumns(TableID="Node-Network-orig",DeleteColumns="Node_ID,Downstream_Node")
+#
+CopyTable(TableID="Node-Network-orig",NewTableID="Diversions&Wells",ColumnFilters="Name:*D&W*")
+InsertTableColumn(TableID="Diversions&Wells",InsertColumn="Type",InitialValue="Diversion and Well")
+JoinTables(TableID="Node-Network-orig",TableToJoinID="Diversions&Wells",JoinColumns="Node_ID2:Node_ID2",IncludeColumns="Type",JoinMethod=JoinIfInBoth)
+#
+# Read in preliminary station request file (SP2016_H.xou), which gives the node types
+# The file was first imported into Excel and saved in .csv format
+ReadTableFromDelimitedFile(TableID="Node-Types",InputFile="SP2016_H.xou.csv",HeaderLines="1")
+ManipulateTableString(TableID="Node-Types",InputColumn1="Node_Type",Operator="Replace",InputValue2="DIV",InputValue3="Diversion",OutputColumn="Node_Type")
+ManipulateTableString(TableID="Node-Types",InputColumn1="Node_Type",Operator="Replace",InputValue2="RES",InputValue3="Reservoir",OutputColumn="Node_Type")
+ManipulateTableString(TableID="Node-Types",InputColumn1="Node_Type",Operator="Replace",InputValue2="WEL",InputValue3="Well",OutputColumn="Node_Type")
+ManipulateTableString(TableID="Node-Types",InputColumn1="Node_Type",Operator="Replace",InputValue2="FLO",InputValue3="StreamGage",OutputColumn="Node_Type")
+ManipulateTableString(TableID="Node-Types",InputColumn1="Node_Type",Operator="Replace",InputValue2="ISF",InputValue3="InstreamFlow",OutputColumn="Node_Type")
+ManipulateTableString(TableID="Node-Types",InputColumn1="Node_Type",Operator="Replace",InputValue2="OTH",InputValue3="Other",OutputColumn="Node_Type")
+ManipulateTableString(TableID="Node-Types",InputColumn1="Node_Type",Operator="Replace",InputValue2="OPR",InputValue3="Operational",OutputColumn="Node_Type")
+ManipulateTableString(TableID="Node-Types",ColumnIncludeFilters="Node_Name:*Brian Canal*",InputColumn1="Node_Name",Operator="Remove",InputValue2=",DIV",OutputColumn="Node_Name")
+ManipulateTableString(TableID="Node-Types",ColumnIncludeFilters="Node_Name:*Brian Canal*",InputColumn1="Node_Type",Operator="Prepend",InputValue2="Diversion",OutputColumn="Node_Type")
+#
+# Join Node-Types table to Node-Network table
+JoinTables(TableID="Node-Network-orig",TableToJoinID="Node-Types",JoinColumns="Node_ID2:Node_ID",JoinMethod=JoinIfInBoth)
+ManipulateTableString(TableID="Node-Network-orig",ColumnIncludeFilters="Type:Diversion and Well",InputColumn1="Node_Type",Operator="Replace",InputValue2="Well",InputValue3="Diversion and Well",OutputColumn="Node_Type")
+CopyTable(TableID="Node-Network-orig",NewTableID="Node-Network",IncludeColumns="Node_ID2,Node_Name,Node_Type,Downstream_Node2",ColumnMap="Node_ID2:Node_ID,Downstream_Node2:Downstream_Node")
+# Insert a Node_Order column, starting with 0, that will ensure a way to determine the order, even if the dataset is sorted
+InsertTableColumn(TableID="Node-Network",InsertColumn="Node_Order",InsertBeforeColumn="Node_Type",ColumnType=Integer,InitialValue="0")
+#
+# Add coordinate (Lat/Long) data where available
+ReadTableFromDataStore(DataStore="HydroBase-HBGuest",DataStoreTable="vw_HBGuest_Station",TableID="Stations")
+CopyTable(TableID="Stations",NewTableID="Stations2",IncludeColumns="station_name,station_id,latdecdeg,longdecdeg,county")
+JoinTables(TableID="Node-Network",TableToJoinID="Stations2",JoinColumns="Node_ID:station_id",IncludeColumns="latdecdeg,longdecdeg,county",ColumnMap="latdecdeg:Latitude,longdecdeg:Longitude,county:County",JoinMethod=JoinIfInBoth)
+ReadTableFromDataStore(DataStore="HydroBase-HBGuest",DataStoreTable="vw_HBGuest_Structure",TableID="Structures")
+CopyTable(TableID="Structures",NewTableID="Structures2",IncludeColumns="str_name,wdid,latdecdeg,longdecdeg,county")
+JoinTables(TableID="Node-Network",TableToJoinID="Structures2",JoinColumns="Node_ID:wdid",IncludeColumns="latdecdeg,longdecdeg,county",ColumnMap="latdecdeg:Latitude,longdecdeg:Longitude,county:County",JoinMethod=JoinIfInBoth)
+#
+# Output node network to .csv and .geojson for mapping/visualizations
+WriteTableToDelimitedFile(TableID="Node-Network",OutputFile="..\site\data\statemod-node-network.csv",WriteHeaderComments=False)
+WriteTableToGeoJSON(TableID="Node-Network",OutputFile="..\site\data\statemod-node-network.geojson",LongitudeColumn="Longitude",LatitudeColumn="Latitude",JavaScriptVar="StateModNodes",PrependText="var StateModNodes =")
+#
+########################################################################################################
+# NATURAL FLOWS
+########################################################################################################
+# Per StateMod documentation (p. 15), natural flows are flows that have the impact of historical diversions,
+# return flows, well pumping, and reservoir storage, release, evaporation and seepage removed.  Basically,
+# all impacts from man are removed.
+# Read in SP2016_BFx.xbm file, which are Natural Flows
+ReadStateMod(InputFile="SP2016_BFx.xbm",Alias="%L-naturalflow-month")
+# Write natural flows to .dv for future use
+WriteDateValue(TSList=AllMatchingTSID,TSID="*naturalflow*",OutputFile="natural-flow.dv")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*naturalflow*",TableID="Natural-Flows",DateTimeColumn="Date",TableTSIDColumn="Node",TableTSIDFormat="%D",ValueColumn="Natural_Flow_AF",IfTableNotFound="Create")
+FormatTableDateTime(TableID="Natural-Flows",InputColumn="Date",DateTimeFormat="%Y",OutputColumn="Year",OutputType=Integer,InsertBeforeColumn="Node")
+FormatTableDateTime(TableID="Natural-Flows",InputColumn="Date",DateTimeFormat="%m",OutputColumn="Month",OutputType=Integer,InsertBeforeColumn="Node")
+#
+# Convert monthly flows to average annual
+ChangeInterval(TSList=AllMatchingTSID,TSID="*naturalflow*",Alias="%D-naturalflow-annual",NewInterval=Year,OldTimeScale=ACCM,NewTimeScale=MEAN)
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*naturalflow*annual*",TableID="Natural-Flows-Annual",DateTimeColumn="Date",TableTSIDColumn="Node",TableTSIDFormat="%D",ValueColumn="Natural_Flow_AF",IfTableNotFound="Create")
+# Copy table and filter to contain only one year of data to be able to link to the node network table
+CopyTable(TableID="Natural-Flows-Annual",NewTableID="natural-flow-node-network",IncludeColumns="Node",ColumnFilters="Date:1950")
+# Join natural flows to node network together to get the node order of natural flow nodes
+JoinTables(TableID="natural-flow-node-network",TableToJoinID="Node-Network",JoinColumns="Node:Node_ID")
+SortTable(TableID="natural-flow-node-network",SortColumns="Node_Order")
+# Write average annual natural flows to CSV
+WriteTableToDelimitedFile(TableID="Natural-Flows-Annual",OutputFile="natural-flows-average-annual.csv",WriteHeaderComments=False)
+# Write natural flow node network to CSV
+WriteTableToDelimitedFile(TableID="natural-flow-node-network",OutputFile="natural-flow-node-network.csv",WriteHeaderComments=False)
+#
+####################################################################################################
+# DIVERSIONS
+####################################################################################################
+# Read StateMod binary output file for diversions (*.b43)
+# This information is the same as what is provided in the Stream Summary File (*.xdd) but in a usable form for TSTool
+# From the StateMod documentation:  "For nodes with stream gages, only the columns containing hydrology
+# data (Upstream Inflow, Reach Gain, Return Flow, River Inflow, River Outflow) have non-zero values. Nodes
+# with reservoirs are similar to stream gage nodes but include the column River Divert, which may be
+# positive if the reservoir diverts or negative if the reservoir releases."
+#
+# ** SKIP THE NEXT LINE ONCE THIS HAS BEEN RUN ONCE.  SKIP TO "ReadDateValue" COMMANDS ONCE THE .dv FILES HAVE BEEN CREATED **
+ReadStateModB(InputFile="SP2016_H.b43")
+#
+# 1) Write some parameters to .dv files for easier loading.  Definitions of parameters are provided in
+# the StateMod documentation, Section 5.2.1 (p. 208-209).
+# Write Total Demand to .dv
+WriteDateValue(TSList=AllMatchingTSID,TSID="*Total_Demand*",OutputFile="total-demand.dv")
+# Write Available Flow to .dv; this is the amount of water available to a potential user that is the most junior in the basin
+WriteDateValue(TSList=AllMatchingTSID,TSID="*Available_Flow*",OutputFile="available-flow.dv")
+# Write River Outflow to .dv
+WriteDateValue(TSList=AllMatchingTSID,TSID="*River_Outflow*",OutputFile="river-outflow.dv")
+#
+#
+# 2) Compare natural flow, regulated flow and available flow for a location for the South Platte Data Platform Hydrology story
+# Load Natural Flow
+ReadDateValue(InputFile="natural-flow.dv")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*naturalflow*",TableID="natural-flows-2",DateTimeColumn="Date",TableTSIDColumn="ID",TableTSIDFormat="%L",ValueColumn="Natural_Flow",OutputStart="2000-01-01",OutputEnd="2012-12-31",IfTableNotFound="Create")
+# Load Regulated Flow (this is River Outflow in StateMod)
+ReadDateValue(InputFile="river-outflow.dv")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*River_Outflow*",TableID="river-outflow",DateTimeColumn="Date",TableTSIDColumn="ID",TableTSIDFormat="%L",ValueColumn="River_Outflow",OutputStart="2000-01-01",OutputEnd="2012-12-31",IfTableNotFound="Create")
+# Load Available Flow
+ReadDateValue(InputFile="available-flow.dv")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*Available_Flow*",TableID="available-flow",DateTimeColumn="Date",TableTSIDColumn="ID",TableTSIDFormat="%L",ValueColumn="Available_Flow",OutputStart="2000-01-01",OutputEnd="2012-12-31",IfTableNotFound="Create")
+CopyTable(TableID="natural-flows-2",NewTableID="natural-regulated-available")
+JoinTables(TableID="natural-regulated-available",TableToJoinID="river-outflow",JoinColumns="ID:ID,Date:Date")
+JoinTables(TableID="natural-regulated-available",TableToJoinID="available-flow",JoinColumns="ID:ID,Date:Date")
+#
+# Filter table to include a few locations
+CopyTable(TableID="natural-regulated-available",NewTableID="natural-regulated-available-06696000",IncludeColumns="Date,Natural_Flow,River_Outflow,Available_Flow",ColumnMap="Natural_Flow:South_Platte_near_Lake_George_Natural_Flow,River_Outflow:South_Platte_near_Lake_George_Regulated_Flow,Available_Flow:South_Platte_near_Lake_George_Available_Flow",ColumnFilters="ID:06696000")
+CopyTable(TableID="natural-regulated-available",NewTableID="natural-regulated-available-06764000",IncludeColumns="Date,Natural_Flow,River_Outflow,Available_Flow",ColumnMap="Natural_Flow:South_Platte_at_Julesburg_Natural_Flow,River_Outflow:South_Platte_at_Julesburg_Regulated_Flow,Available_Flow:South_Platte_at_Julesburg_Available_Flow",ColumnFilters="ID:06764000")
+# Output to csv
+WriteTableToDelimitedFile(TableID="natural-regulated-available-06696000",OutputFile="..\site\visualizations\data\natural-regulated-available-flows-06696000.csv",WriteHeaderComments=False,NaNValue="Blank")
+WriteTableToDelimitedFile(TableID="natural-regulated-available-06764000",OutputFile="..\site\visualizations\data\natural-regulated-available-flows-06764000.csv",WriteHeaderComments=False,NaNValue="Blank")
+#
+# 3) Get total demand for a few municipalities for South Platte Data Platform Hydrology story
+# Municipalities have "IndoorDem" and "OutdoorDem" in the time series name
+ReadDateValue(InputFile="total-demand.dv")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*08_Denver_*",TableID="municipal-demand",DateTimeColumn="Date",ValueColumn="%D",OutputStart="2000-01-01",OutputEnd="2012-12-31",IfTableNotFound="Create")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*08_Aurora_*",TableID="municipal-demand",DateTimeColumn="Date",ValueColumn="%D",OutputStart="2000-01-01",OutputEnd="2012-12-31",IfTableNotFound="Create")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*06BOULDER_*",TableID="municipal-demand",DateTimeColumn="Date",ValueColumn="%D",OutputStart="2000-01-01",OutputEnd="2012-12-31",IfTableNotFound="Create")
+#
+# Add indoor and outdoor demands together for each location
+TableMath(TableID="municipal-demand",Input1="DenverIndoorDem",Operator="+",Input2="DenverOutdoorDem",Output="Denver_Total_Demand")
+TableMath(TableID="municipal-demand",Input1="AuroraIndoorDem",Operator="+",Input2="AuroraOutdoorDem",Output="Aurora_Total_Demand")
+TableMath(TableID="municipal-demand",Input1="Boulder Indoor",Operator="+",Input2="Boulder Outdoor",Output="Boulder_Total_Demand")
+#
+# Copy table to delete some columns
+CopyTable(TableID="municipal-demand",NewTableID="municipal-demand-final",IncludeColumns="Date,Denver_Total_Demand,Aurora_Total_Demand,Boulder_Total_Demand")
+#
+# Output table to csv
+WriteTableToDelimitedFile(TableID="municipal-demand-final",OutputFile="..\site\visualizations\data\municipal-indoor-outdoor-demand.csv",WriteHeaderComments=False,NaNValue="Blank")
+#
+####################################################################################################
+#  RESERVOIRS
+####################################################################################################
+# Read StateMod binary output file for reservoirs (*.b44)
+# This describes diversion, release, storage and stream flow data at river nodes that contain a reservoir
+# This information is the same as what is provided in the Reservoir Summary File (*.xre) but in a usable form for TSTool
+ReadStateModB(InputFile="SP2016_H.b44")
+#
+# Write some parameters to .dv files for easier loading.  Definitions of parameters are provided in
+# the StateMod documentation, Section 5.2.2 (p. 209-210).
+# Write Initial Storage to .dv; this is storage at the beginning of the month
+WriteDateValue(TSList=AllMatchingTSID,TSID="*Initial_Storage*",OutputFile="initial-storage.dv")
+#
+# Read in the Date-Value files
+ReadDateValue(InputFile="initial-storage.dv",Alias="%D")
+#
+# Export Initial Storage time series for Eleven Mile Canyon, Carter, Chatfield and North Sterling Reservoirs
+# to show storage for different types of reservoirs.  Used for South Platte Data Platform Hydrology story.
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*Eleven Mile*",TableID="storage-example-reservoirs",DateTimeColumn="Date",ValueColumn="%D",IfTableNotFound="Create")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*Chatfield*",TableID="storage-example-reservoirs",DateTimeColumn="Date",ValueColumn="%D",IfTableNotFound="Create")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*North Sterling Res*",TableID="storage-example-reservoirs",DateTimeColumn="Date",ValueColumn="%D",IfTableNotFound="Create")
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*Carter Lake*",TableID="storage-example-reservoirs",DateTimeColumn="Date",ValueColumn="%D",IfTableNotFound="Create")
+CopyTable(TableID="storage-example-reservoirs",NewTableID="storage-example-reservoirs-v2",IncludeColumns="Date,Eleven Mile Reservoir,Chatfield Reservoir,North Sterling Res,Carter Lake",ColumnMap="North Sterling Res:North Sterling Reservoir,Eleven Mile Reservoir:Eleven Mile Canyon Reservoir")
+#
+# Create simple time series of the total capacity of each reservoir to show how frequently capacity is reached.
+# Data come from Denver Water's website, Northern Water's website and Task5-Key Structures-North Sterling
+NewTimeSeries(Alias="%D",NewTSID="Eleven Mile Canyon Reservoir.Denver Water.Volume.Month.Total Capacity",Description="Eleven Mile Canyon Reservoir Total Capacity",SetStart="1993-01",SetEnd="2012-12",Units="ACFT",InitialValue=97779)
+NewTimeSeries(Alias="%D",NewTSID="Chatfield Reservoir.Denver Water.Volume.Month.Total Capacity",Description="Chatfield Reservoir Total Capacity",SetStart="1993-01",SetEnd="2012-12",Units="ACFT",InitialValue=27076)
+NewTimeSeries(Alias="%D",NewTSID="North Sterling Reservoir.Task5-KeyStructures-NorthSterling.Volume.Month.Total Capacity",Description="North Sterling Reservoir Total Capacity",SetStart="1993-01",SetEnd="2012-12",Units="ACFT",InitialValue=80590)
+NewTimeSeries(Alias="%D",NewTSID="Carter Lake.Northern Water.Volume.Month.Total Capacity",Description="Carter Lake Total Capacity",SetStart="1993-01",SetEnd="2012-12",Units="ACFT",InitialValue=112230)
+TimeSeriesToTable(TSList=AllMatchingTSID,TSID="*Total Capacity*",TableID="storage-example-reservoirs-v2",DateTimeColumn="Date",ValueColumn="%L-%Z")
+#
+# Copy table to reorder columns
+CopyTable(TableID="storage-example-reservoirs-v2",NewTableID="storage-example-reservoirs-final",IncludeColumns="Date,Eleven Mile Canyon Reservoir,Eleven Mile Canyon Reservoir-Total Capacity,Chatfield Reservoir,Chatfield Reservoir-Total Capacity,North Sterling Reservoir,North Sterling Reservoir-Total Capacity,Carter Lake,Carter Lake-Total Capacity")
+#
+WriteTableToDelimitedFile(TableID="storage-example-reservoirs-final",OutputFile="..\site\visualizations\data\reservoirs-initial-storage-examples.csv",WriteHeaderComments=False,NaNValue="Blank")
+#
+#
+#

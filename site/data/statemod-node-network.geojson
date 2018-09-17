@@ -1,4 +1,4 @@
-var StateModNodes ={
+var StateModNodes = {
   "type": "FeatureCollection",
   "bbox": [-106.232877, 38.879478, -102.247062, 40.982546],
   "features": [
@@ -8,6 +8,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400542",
         "Node_Name": "MCWILLIAMS CANAL",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "6400801",
         "Latitude": 40.952064,
@@ -25,6 +26,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400801",
         "Node_Name": "COTTONWOOD CR RCHRG PUMP",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "6402517_R",
         "Latitude": 40.924186,
@@ -42,6 +44,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6403906",
         "Node_Name": "Julesburg Res",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "6400511_I",
         "Latitude": 40.933702,
@@ -59,6 +62,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6403551",
         "Node_Name": "North Sterling Res",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "6403392_R",
         "Latitude": 40.781864,
@@ -76,6 +80,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400584",
         "Node_Name": "I O JONES DITCH \u0026 RESERV",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "6403551_Ced",
         "Latitude": 40.911417,
@@ -93,6 +98,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6402515",
         "Node_Name": "SterlingRechargeArea",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "6402540",
         "Latitude": 40.654933,
@@ -110,6 +116,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6403552",
         "Node_Name": "Prewitt Res",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "Prewitt_O",
         "Latitude": 40.423029,
@@ -127,6 +134,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0103651",
         "Node_Name": "Riverside Res",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0100503_I",
         "Latitude": 40.328515,
@@ -144,6 +152,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100565",
         "Node_Name": "MAGUIRE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0100570",
         "Latitude": 39.270951,
@@ -161,6 +170,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100570",
         "Node_Name": "East Gulch Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0103576",
         "Latitude": 39.504729,
@@ -178,6 +188,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0103576",
         "Node_Name": "BRAMKAMP RES",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "01_AWP040",
         "Latitude": 39.83845,
@@ -195,6 +206,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0103816",
         "Node_Name": "Empire Res",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0103570",
         "Latitude": 40.378525,
@@ -212,6 +224,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0103570",
         "Node_Name": "Bijou Res",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0100507_I",
         "Latitude": 40.291067,
@@ -229,6 +242,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0103817",
         "Node_Name": "Jackson Res",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0103817_I",
         "Latitude": 40.386219,
@@ -246,6 +260,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0103592",
         "Node_Name": "HenrylynReservoirSystem",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0200805_I",
         "Latitude": 40.001429,
@@ -263,6 +278,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100620",
         "Node_Name": "Consolidated Larson D",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "9903334_E",
         "Latitude": 40.942781,
@@ -280,6 +296,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0203837",
         "Node_Name": "Barr Lake",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0203837_I",
         "Latitude": 39.958863,
@@ -297,6 +314,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0203876",
         "Node_Name": "Milton Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0203876_I",
         "Latitude": 40.238979,
@@ -314,6 +332,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0203858",
         "Node_Name": "Lower Latham Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0200834_I",
         "Latitude": 40.356691,
@@ -331,6 +350,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06752500",
         "Node_Name": "CACHE LA POUDRE RIVER NE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "CenHighRFs",
         "Latitude": 40.417759,
@@ -348,6 +368,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0404156",
         "Node_Name": "Boulder Larimer Res",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0400588_I",
         "Latitude": 40.258925,
@@ -365,6 +386,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "LTCANYCO",
         "Node_Name": "LITTLE THOMPSON RIVER AT",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0400602",
         "Latitude": 40.258038,
@@ -382,6 +404,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400602",
         "Node_Name": "SUPPLY LATERAL DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400588",
         "Latitude": 40.259247,
@@ -399,6 +422,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400588",
         "Node_Name": "Boulder Larimer Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400603",
         "Latitude": 40.258656,
@@ -416,6 +440,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400603",
         "Node_Name": "W R BLOWER DITCH 1",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400592",
         "Latitude": 40.257525,
@@ -433,6 +458,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400592",
         "Node_Name": "EAGLE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400596",
         "Latitude": 40.264953,
@@ -450,6 +476,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400596",
         "Node_Name": "JIM EGLIN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400600",
         "Latitude": 40.274232,
@@ -467,6 +494,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400600",
         "Node_Name": "OSBORNE CAYWOOD DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "04_AWP002",
         "Latitude": 40.278601,
@@ -484,6 +512,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400601",
         "Node_Name": "Rockwell Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0400599",
         "Latitude": 40.293766,
@@ -501,6 +530,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400599",
         "Node_Name": "MINER LONGAN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400587",
         "Latitude": 40.300673,
@@ -518,6 +548,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400587",
         "Node_Name": "BEELINE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "04_AWP005",
         "Latitude": 40.329789,
@@ -535,6 +566,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06743500",
         "Node_Name": "LITTLE THOMPSON RIVER AT",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0400517",
         "Latitude": 40.33526,
@@ -552,6 +584,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0403659",
         "Node_Name": "Green Ridge Glade Res",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "04_Lovelnd_I",
         "Latitude": 40.434447,
@@ -569,6 +602,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400702",
         "Node_Name": "Greeley Boyd Filter Plan",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400532_I",
         "Latitude": 40.409005,
@@ -586,6 +620,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400574",
         "Node_Name": "BUCKHORN HIGHLINE DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0400578",
         "Latitude": 40.52099,
@@ -603,6 +638,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400578",
         "Node_Name": "KIRCHNER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400580",
         "Latitude": 40.520919,
@@ -620,6 +656,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400580",
         "Node_Name": "PERKINS DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400582",
         "Latitude": 40.509413,
@@ -637,6 +674,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400582",
         "Node_Name": "UNION DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400583",
         "Latitude": 40.493149,
@@ -654,6 +692,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400583",
         "Node_Name": "Victory Irrig Cnl",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "06739500",
         "Latitude": 40.477079,
@@ -671,6 +710,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06739500",
         "Node_Name": "BUCKHORN CREEK NEAR MASO",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0400501",
         "Latitude": 40.434444,
@@ -688,6 +728,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0404513",
         "Node_Name": "Carter Lake",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0401002",
         "Latitude": 40.323103,
@@ -705,6 +746,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0401002",
         "Node_Name": "Hansen Feeder Wastewat",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0401001",
         "Latitude": 40.419839,
@@ -722,6 +764,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0401001",
         "Node_Name": "Big T Power Plant",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400691",
         "Latitude": 40.419839,
@@ -739,6 +782,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400691",
         "Node_Name": "Hansen Feeder Canal",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400692",
         "Latitude": 40.423493,
@@ -756,6 +800,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400692",
         "Node_Name": "St. Vrain Supply Canal",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0401000_R",
         "Latitude": 40.326933,
@@ -773,6 +818,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06734500",
         "Node_Name": "FISH CREEK NEAR ESTES PA",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0404128",
         "Latitude": 40.368595,
@@ -790,6 +836,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06733000",
         "Node_Name": "BIG THOMPSON RIVER AT ES",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0400518_O",
         "Latitude": 40.378317,
@@ -807,6 +854,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0404128",
         "Node_Name": "Lake Estes",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0404128_M",
         "Latitude": 40.375925,
@@ -824,6 +872,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0402110",
         "Node_Name": "BIG T OLYMPUS/DRAKE M FL",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "0401000",
         "Latitude": 40.376504,
@@ -841,6 +890,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0401000",
         "Node_Name": "Olympus Tunnel",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06735500",
         "Latitude": 40.37363,
@@ -858,6 +908,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06735500",
         "Node_Name": "BIG THOMPSON RIVER NEAR",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0402112",
         "Latitude": 40.376373,
@@ -875,6 +926,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06736000",
         "Node_Name": "NORTH FORK BIG THOMPSON",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0400561",
         "Latitude": 40.433317,
@@ -892,6 +944,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400561",
         "Node_Name": "BLACK CANNON DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0402112",
         "Latitude": 40.402401,
@@ -909,6 +962,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0402112",
         "Node_Name": "LOVELAND PWR-DILLE M FL",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "0400540",
         "Latitude": 40.420038,
@@ -926,6 +980,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400540",
         "Node_Name": "DILLE TUNNEL",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "04_ARP005",
         "Latitude": 40.418348,
@@ -943,6 +998,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06738000",
         "Node_Name": "BIG THOMPSON RIVER AT MO",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0400521",
         "Latitude": 40.42165,
@@ -960,6 +1016,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400521",
         "Node_Name": "Handy Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400511",
         "Latitude": 40.421351,
@@ -977,6 +1034,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400511",
         "Node_Name": "Loveland Pipeline",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400524",
         "Latitude": 40.42481,
@@ -994,6 +1052,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400524",
         "Node_Name": "Home Supply Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400543",
         "Latitude": 40.424576,
@@ -1011,6 +1070,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400543",
         "Node_Name": "South Side Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400530",
         "Latitude": 40.417239,
@@ -1028,6 +1088,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400530",
         "Node_Name": "Louden Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400520",
         "Latitude": 40.417612,
@@ -1045,6 +1106,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400520",
         "Node_Name": "George Rist Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400501",
         "Latitude": 40.417267,
@@ -1062,6 +1124,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400501",
         "Node_Name": "Barnes Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "04_AWP004",
         "Latitude": 40.405931,
@@ -1079,6 +1142,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400534",
         "Node_Name": "MARIANA DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400541",
         "Latitude": 40.402245,
@@ -1096,6 +1160,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400541",
         "Node_Name": "RIST GOSS DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400503",
         "Latitude": 40.400349,
@@ -1113,6 +1178,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400503",
         "Node_Name": "BIG THOMPSON DITCH \u0026 MAN",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400532",
         "Latitude": 40.3977,
@@ -1130,6 +1196,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400532",
         "Node_Name": "Loveland Greeley Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0400519",
         "Latitude": 40.398151,
@@ -1147,6 +1214,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400519",
         "Node_Name": "Farmers Irrigation Canal",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "06741510",
         "Latitude": 40.391322,
@@ -1164,6 +1232,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06741510",
         "Node_Name": "BIG THOMPSON RIVER AT LO",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0400523",
         "Latitude": 40.378595,
@@ -1181,6 +1250,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400523",
         "Node_Name": "Hillsborough Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "BIGHILCO",
         "Latitude": 40.385811,
@@ -1198,6 +1268,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "BIGHILCO",
         "Node_Name": "BIG THOMPSON RIVER AT HI",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0400522",
         "Latitude": 40.38526,
@@ -1215,6 +1286,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400522",
         "Node_Name": "Hill Brush Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0400502",
         "Latitude": 40.386918,
@@ -1232,6 +1304,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400502",
         "Node_Name": "Big T \u0026 Platte R Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0400517",
         "Latitude": 40.34612,
@@ -1249,6 +1322,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0400517",
         "Node_Name": "Evanstown Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "04_AUP002_I",
         "Latitude": 40.346434,
@@ -1266,6 +1340,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06744000",
         "Node_Name": "BIG THOMPSON RIVER AT MO",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "9903334_C",
         "Latitude": 40.349983,
@@ -1283,6 +1358,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504032",
         "Node_Name": "HIGHLAND RES NO. 2",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0504037",
         "Latitude": 40.251667,
@@ -1300,6 +1376,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504037",
         "Node_Name": "HIGHLAND RES NO.1",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0504038",
         "Latitude": 40.211441,
@@ -1317,6 +1394,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504038",
         "Node_Name": "HIGHLAND RES NO. 3",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0500526_I",
         "Latitude": 40.196954,
@@ -1334,6 +1412,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504073",
         "Node_Name": "MCINTOSH RESERVOIR",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0503905",
         "Latitude": 40.19583,
@@ -1351,6 +1430,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0503905",
         "Node_Name": "UNION RESERVOIR",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0500547_I",
         "Latitude": 40.182374,
@@ -1368,6 +1448,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504515",
         "Node_Name": "BOULDER RESERVOIR",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "BCSC",
         "Latitude": 40.07856,
@@ -1385,6 +1466,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500534",
         "Node_Name": "GOSS PRIVATE DITCH 1",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500536",
         "Latitude": 40.195976,
@@ -1402,6 +1484,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500536",
         "Node_Name": "CLOUGH PRIVATE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500535",
         "Latitude": 40.201445,
@@ -1419,6 +1502,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500535",
         "Node_Name": "CLOUGH/TRUE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500537",
         "Latitude": 40.194169,
@@ -1436,6 +1520,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500537",
         "Node_Name": "WEBSTER MCCASLIN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500538",
         "Latitude": 40.190512,
@@ -1453,6 +1538,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500538",
         "Node_Name": "TRUE WEBSTER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500539",
         "Latitude": 40.194155,
@@ -1470,6 +1556,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500539",
         "Node_Name": "JAMES DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500542",
         "Latitude": 40.208325,
@@ -1487,6 +1574,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500542",
         "Node_Name": "DAVIS DOWNING DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500550",
         "Latitude": 40.183252,
@@ -1504,6 +1592,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504071",
         "Node_Name": "FOOTHILLS RESERVOIR",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0500547",
         "Latitude": 40.189018,
@@ -1521,6 +1610,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504020",
         "Node_Name": "BEAVER PARK RES",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0502115_Dwn",
         "Latitude": 40.119279,
@@ -1538,6 +1628,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06722500",
         "Node_Name": "SOUTH ST. VRAIN CREEK NE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0502115",
         "Latitude": 40.09082,
@@ -1555,6 +1646,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0502115",
         "Node_Name": "S ST VRAIN CR MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "0500603",
         "Latitude": 40.075299,
@@ -1572,6 +1664,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500603",
         "Node_Name": "LEFT HAND DITCH DIVERSIO",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0502115_Dwn",
         "Latitude": 40.091382,
@@ -1589,6 +1682,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "MIDSTECO",
         "Node_Name": "MIDDLE SAINT VRAIN AT PE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0502120",
         "Latitude": 40.131924,
@@ -1606,6 +1700,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0502120",
         "Node_Name": "MID ST VRAIN CR MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "0502120_Dwn",
         "Latitude": 40.132221,
@@ -1623,6 +1718,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0502127",
         "Node_Name": "S ST VRAIN CR MIN FLOW 2",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0500520",
         "Latitude": 40.167394,
@@ -1640,6 +1736,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500520",
         "Node_Name": "SOUTH LEDGE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500519",
         "Latitude": 40.211497,
@@ -1657,6 +1754,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500519",
         "Node_Name": "REESE STILES DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500522",
         "Latitude": 40.213292,
@@ -1674,6 +1772,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500522",
         "Node_Name": "LONGMONT SOUTH PIPELINE",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0502127_Dwn",
         "Latitude": 40.213897,
@@ -1691,6 +1790,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0502129",
         "Node_Name": "S ST VRAIN CR MIN FLOW 3",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "0502129_Dwn",
         "Latitude": 40.213997,
@@ -1708,6 +1808,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504010",
         "Node_Name": "BUTTON ROCK RES",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "LONG_RES_Re",
         "Latitude": 40.216918,
@@ -1725,6 +1826,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0502128",
         "Node_Name": "N ST VRAIN CR MIN FLOW 2",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "0500511",
         "Latitude": 40.215358,
@@ -1742,6 +1844,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500511",
         "Node_Name": "LONGMONT NORTH PIPELINE",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500512",
         "Latitude": 40.229299,
@@ -1759,6 +1862,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500512",
         "Node_Name": "LYONS PIPELINE",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500513",
         "Latitude": 40.249746,
@@ -1776,6 +1880,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500513",
         "Node_Name": "DAVE MILLER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0502128_Dwn",
         "Latitude": 40.23948,
@@ -1793,6 +1898,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06724000",
         "Node_Name": "ST. VRAIN CREEK AT LYONS",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0500523",
         "Latitude": 40.21804,
@@ -1810,6 +1916,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500523",
         "Node_Name": "SUPPLY DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0500526",
         "Latitude": 40.218798,
@@ -1827,6 +1934,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500526",
         "Node_Name": "HIGHLAND DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500527",
         "Latitude": 40.215398,
@@ -1844,6 +1952,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500527",
         "Node_Name": "ROUGH READY DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0500528",
         "Latitude": 40.212466,
@@ -1861,6 +1970,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500528",
         "Node_Name": "ST VRAIN PALMERTON DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500529",
         "Latitude": 40.212422,
@@ -1878,6 +1988,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500529",
         "Node_Name": "SWEDE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0500530",
         "Latitude": 40.211623,
@@ -1895,6 +2006,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500530",
         "Node_Name": "SMEAD DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500531",
         "Latitude": 40.212901,
@@ -1912,6 +2024,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500531",
         "Node_Name": "MONTGOMERY PRIVATE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500532",
         "Latitude": 40.211301,
@@ -1929,6 +2042,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500532",
         "Node_Name": "FOOTHILLS INLET",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "05_SBRANCH",
         "Latitude": 40.208688,
@@ -1946,6 +2060,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500545",
         "Node_Name": "LONGMONT SUPPLY DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500546",
         "Latitude": 40.204237,
@@ -1963,6 +2078,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500546",
         "Node_Name": "CHAPMAN MCCASLIN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500547",
         "Latitude": 40.190556,
@@ -1980,6 +2096,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500547",
         "Node_Name": "OLIGARCHY DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500548",
         "Latitude": 40.197335,
@@ -1997,6 +2114,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500548",
         "Node_Name": "DENIO TAYLOR DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0500549",
         "Latitude": 40.18684,
@@ -2014,6 +2132,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500549",
         "Node_Name": "RUNYAN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500601",
         "Latitude": 40.181418,
@@ -2031,6 +2150,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500601",
         "Node_Name": "ZWECK TURNER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0500550",
         "Latitude": 40.186855,
@@ -2048,6 +2168,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500550",
         "Node_Name": "PECK DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500551",
         "Latitude": 40.179545,
@@ -2065,6 +2186,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500551",
         "Node_Name": "PELLA DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500552",
         "Latitude": 40.175945,
@@ -2082,6 +2204,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500552",
         "Node_Name": "CLOVER BASIN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500554",
         "Latitude": 40.179545,
@@ -2099,6 +2222,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500554",
         "Node_Name": "NIWOT DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500557",
         "Latitude": 40.175582,
@@ -2116,6 +2240,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500557",
         "Node_Name": "NORTHWEST MUT INS CO D",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500553",
         "Latitude": 40.166953,
@@ -2133,6 +2258,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500553",
         "Node_Name": "HAGERS MEADOW DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500558",
         "Latitude": 40.16675,
@@ -2150,6 +2276,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500558",
         "Node_Name": "SOUTH FLAT DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500602",
         "Latitude": 40.174168,
@@ -2167,6 +2294,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500602",
         "Node_Name": "JAMES MASON DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500561",
         "Latitude": 40.16695,
@@ -2184,6 +2312,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500561",
         "Node_Name": "ISLAND DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500559",
         "Latitude": 40.16671,
@@ -2201,6 +2330,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500559",
         "Node_Name": "CUSHMAN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500560",
         "Latitude": 40.166918,
@@ -2218,6 +2348,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500560",
         "Node_Name": "BECKWITH DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500563",
         "Latitude": 40.168664,
@@ -2235,6 +2366,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500563",
         "Node_Name": "BONUS DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "05LONG_RFOs",
         "Latitude": 40.152354,
@@ -2252,6 +2384,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504077",
         "Node_Name": "ALLENS LAKE",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0500564_I",
         "Latitude": 40.138781,
@@ -2269,6 +2402,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500648",
         "Node_Name": "TOLL GATE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0500571",
         "Latitude": 40.152501,
@@ -2286,6 +2420,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504488",
         "Node_Name": "LEFT HAND VALLEY RESERVO",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0500571",
         "Latitude": 40.102798,
@@ -2303,6 +2438,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0504015",
         "Node_Name": "GOLD LAKE",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "06724500",
         "Latitude": 40.084243,
@@ -2320,6 +2456,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06724500",
         "Node_Name": "LEFT HAND CREEK NEAR BOU",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0500564",
         "Latitude": 40.125542,
@@ -2337,6 +2474,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500564",
         "Node_Name": "LAKE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500565",
         "Latitude": 40.126926,
@@ -2354,6 +2492,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500565",
         "Node_Name": "HALDI DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500619_a",
         "Latitude": 40.131631,
@@ -2371,6 +2510,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500568",
         "Node_Name": "CROCKER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0500569",
         "Latitude": 40.128825,
@@ -2388,6 +2528,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500569",
         "Node_Name": "TABLE MOUNTAIN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0500570",
         "Latitude": 40.128006,
@@ -2405,6 +2546,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500570",
         "Node_Name": "BADER DITCH 1 \u0026 2",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "05_LHVRIN",
         "Latitude": 40.108995,
@@ -2422,6 +2564,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500571",
         "Node_Name": "JOHNSON DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0500572",
         "Latitude": 40.108941,
@@ -2439,6 +2582,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500572",
         "Node_Name": "STAR DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0500573",
         "Latitude": 40.108995,
@@ -2456,6 +2600,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500573",
         "Node_Name": "HINMAN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0500574",
         "Latitude": 40.107173,
@@ -2473,6 +2618,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500574",
         "Node_Name": "HOLLAND DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "05_LHBR",
         "Latitude": 40.108995,
@@ -2490,6 +2636,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500575",
         "Node_Name": "WILLIAMSON DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "05LONG_RFOs",
         "Latitude": 40.103418,
@@ -2507,6 +2654,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600534",
         "Node_Name": "HOUCK 2 DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600520_D",
         "Latitude": 40.102524,
@@ -2524,6 +2672,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600553",
         "Node_Name": "SMITH EMMONS DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0600523",
         "Latitude": 40.126912,
@@ -2541,6 +2690,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600523",
         "Node_Name": "DELEHANT DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600532",
         "Latitude": 40.126913,
@@ -2558,6 +2708,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600532",
         "Node_Name": "Highland Southside Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "06IDA_CALIB",
         "Latitude": 40.123299,
@@ -2575,6 +2726,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06730300",
         "Node_Name": "COAL CREEK NEAR PLAINVIE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0600615",
         "Latitude": 39.877766,
@@ -2592,6 +2744,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600615",
         "Node_Name": "LAST CHANCE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600606",
         "Latitude": 39.877708,
@@ -2609,6 +2762,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600606",
         "Node_Name": "CHURCH DITCH(UPPER)",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600608_D",
         "Latitude": 39.87754,
@@ -2626,6 +2780,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600621",
         "Node_Name": "WILLIAM C HAKE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600612",
         "Latitude": 39.944961,
@@ -2643,6 +2798,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600612",
         "Node_Name": "KERR DITCH NO 1",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600613",
         "Latitude": 39.970579,
@@ -2660,6 +2816,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600613",
         "Node_Name": "KERR DITCH NO 2",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0600611",
         "Latitude": 39.970579,
@@ -2677,6 +2834,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600611",
         "Node_Name": "HARRIS DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600622",
         "Latitude": 39.980599,
@@ -2694,6 +2852,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600622",
         "Node_Name": "T N WILLIS DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600610",
         "Latitude": 39.979612,
@@ -2711,6 +2870,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600610",
         "Node_Name": "ERIE COAL CR DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06LOU_RFO",
         "Latitude": 40.015629,
@@ -2728,6 +2888,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600800",
         "Node_Name": "Boulder Res Intake",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06BOULDER_O",
         "Latitude": 39.9829,
@@ -2745,6 +2906,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0604212",
         "Node_Name": "Marshall Lake",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0604214",
         "Latitude": 39.947937,
@@ -2762,6 +2924,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0604214",
         "Node_Name": "McKay Lake",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0604212_C",
         "Latitude": 39.953534,
@@ -2779,6 +2942,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0604199",
         "Node_Name": "GROSS RES",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0602110_U",
         "Latitude": 39.94756,
@@ -2796,6 +2960,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600590",
         "Node_Name": "South Boulder Conduit",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0602110_UD",
         "Latitude": 39.932491,
@@ -2813,6 +2978,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06729500",
         "Node_Name": "SOUTH BOULDER CREEK NEAR",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0600597",
         "Latitude": 39.931099,
@@ -2830,6 +2996,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600597",
         "Node_Name": "Lafayette PL",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600598",
         "Latitude": 39.93155,
@@ -2847,6 +3014,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600598",
         "Node_Name": "Louisville PL",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600564_D",
         "Latitude": 39.931568,
@@ -2864,6 +3032,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600567",
         "Node_Name": "DAVIDSON DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600650",
         "Latitude": 39.938611,
@@ -2881,6 +3050,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600650",
         "Node_Name": "GOODHUE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0600588",
         "Latitude": 39.951047,
@@ -2898,6 +3068,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600588",
         "Node_Name": "S BOULDER BEAR CR DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600570",
         "Latitude": 39.952804,
@@ -2915,6 +3086,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600570",
         "Node_Name": "DRY CREEK NO 2 DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600585",
         "Latitude": 39.955479,
@@ -2932,6 +3104,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600585",
         "Node_Name": "MARSHALVILLE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600592",
         "Latitude": 39.959329,
@@ -2949,6 +3122,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600592",
         "Node_Name": "SCHEARER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600593",
         "Latitude": 39.967295,
@@ -2966,6 +3140,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600593",
         "Node_Name": "S BOULDER CANON DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600586",
         "Latitude": 39.972438,
@@ -2983,6 +3158,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600586",
         "Node_Name": "MCGINN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0602110_LD",
         "Latitude": 39.980786,
@@ -3000,6 +3176,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600580",
         "Node_Name": "HOWARD DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0600575",
         "Latitude": 39.988624,
@@ -3017,6 +3194,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600575",
         "Node_Name": "EAST BOULDER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06_VALMT_C",
         "Latitude": 39.996508,
@@ -3034,6 +3212,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600582",
         "Node_Name": "JONES DONNELLY DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600528",
         "Latitude": 40.017314,
@@ -3051,6 +3230,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06727500",
         "Node_Name": "FOURMILE CREEK AT ORODEL",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0600603",
         "Latitude": 40.018667,
@@ -3068,6 +3248,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0602107",
         "Node_Name": "MIDDLE BOULDER CR MIN FL",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "06725500",
         "Latitude": 39.952819,
@@ -3085,6 +3266,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06725500",
         "Node_Name": "MIDDLE BOULDER CREEK AT",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0602107_DWN",
         "Latitude": 39.961655,
@@ -3102,6 +3284,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0604172",
         "Node_Name": "Barker Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0600943",
         "Latitude": 39.965105,
@@ -3119,6 +3302,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600943",
         "Node_Name": "BOULDER PL 3 AT BARKER R",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06_BARKMSF",
         "Latitude": 39.965744,
@@ -3136,6 +3320,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0602125",
         "Node_Name": "BOULDER CREEK MSF SEG A",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "0602125_DWN",
         "Latitude": 40.013655,
@@ -3153,6 +3338,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600599",
         "Node_Name": "BOULDER CITY PL",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0602124_U",
         "Latitude": 40.012882,
@@ -3170,6 +3356,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06727000",
         "Node_Name": "BOULDER CREEK NEAR ORODE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0602124_LD",
         "Latitude": 40.006374,
@@ -3187,6 +3374,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0602100",
         "Node_Name": "BOULDER CREEK MSF SEG C",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "0600603",
         "Latitude": 40.004873,
@@ -3204,6 +3392,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600603",
         "Node_Name": "SILVER LAKE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600501",
         "Latitude": 40.015243,
@@ -3221,6 +3410,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600501",
         "Node_Name": "Anderson Carrier",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600525",
         "Latitude": 40.012959,
@@ -3238,6 +3428,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600525",
         "Node_Name": "FARMERS DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600554",
         "Latitude": 40.013898,
@@ -3255,6 +3446,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600554",
         "Node_Name": "SMITH GOSS DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600516",
         "Latitude": 40.015323,
@@ -3272,6 +3464,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600516",
         "Node_Name": "Boulder White Rock Carri",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600513",
         "Latitude": 40.015043,
@@ -3289,6 +3482,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600513",
         "Node_Name": "BOULDER LEFT HAND DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0600543",
         "Latitude": 40.015043,
@@ -3306,6 +3500,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600543",
         "Node_Name": "N BOULD FARMER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600542",
         "Latitude": 40.015043,
@@ -3323,6 +3518,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600542",
         "Node_Name": "MC CARTY DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600518",
         "Latitude": 40.016239,
@@ -3340,6 +3536,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600753",
         "Node_Name": "ANDERSON EXTENSION DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06BC_CALIB",
         "Latitude": 39.985717,
@@ -3357,6 +3554,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600518",
         "Node_Name": "BUTTE MILL DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600528",
         "Latitude": 40.028272,
@@ -3374,6 +3572,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600528",
         "Node_Name": "GREEN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "06_BOU_RF",
         "Latitude": 40.036398,
@@ -3391,6 +3590,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06730200",
         "Node_Name": "BOULDER CREEK AT NORTH 7",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0602100_DWN",
         "Latitude": 40.051652,
@@ -3408,6 +3608,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600878",
         "Node_Name": "Lafayette Boulder Creek",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06BOU_RFO",
         "Latitude": 40.054613,
@@ -3425,6 +3626,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600537",
         "Node_Name": "Leggett Carrier",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600538_D",
         "Latitude": 40.053022,
@@ -3442,6 +3644,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0604173",
         "Node_Name": "Baseline Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "064173_CH",
         "Latitude": 39.999305,
@@ -3459,6 +3662,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600576",
         "Node_Name": "ENTERPRISE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600566",
         "Latitude": 39.98612,
@@ -3476,6 +3680,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600566",
         "Node_Name": "COTTONWOOD DITCH 2",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0600560",
         "Latitude": 39.999043,
@@ -3493,6 +3698,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600560",
         "Node_Name": "ANDREWS FARWELL DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600569_D",
         "Latitude": 39.978782,
@@ -3510,6 +3716,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600565",
         "Node_Name": "Leyner Cottonwood Carrie",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06DRY_CALIB",
         "Latitude": 40.0217,
@@ -3527,6 +3734,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600536",
         "Node_Name": "HOWELL DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06LOU_RFO",
         "Latitude": 39.988274,
@@ -3544,6 +3752,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0604187",
         "Node_Name": "Six Mile Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0604185",
         "Latitude": 40.067384,
@@ -3561,6 +3770,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0604185",
         "Node_Name": "Panama Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0600516_I",
         "Latitude": 40.094957,
@@ -3578,6 +3788,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600527",
         "Node_Name": "GODDING DAILEY PLUMB D",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0600663",
         "Latitude": 40.093335,
@@ -3595,6 +3806,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600663",
         "Node_Name": "Idaho Creek",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0600551",
         "Latitude": 40.14432,
@@ -3612,6 +3824,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0600551",
         "Node_Name": "RURAL DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06_ASP006",
         "Latitude": 40.124969,
@@ -3629,6 +3842,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06730500",
         "Node_Name": "BOULDER CREEK AT MOUTH N",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0500589",
         "Latitude": 40.152047,
@@ -3646,6 +3860,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500589",
         "Node_Name": "LAST CHANCE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0500939",
         "Latitude": 40.170127,
@@ -3663,6 +3878,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0500939",
         "Node_Name": "Goosequill Pump Station",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "05_ARP008",
         "Latitude": 40.246695,
@@ -3680,6 +3896,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06731000",
         "Node_Name": "ST. VRAIN CREEK AT MOUTH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0200828",
         "Latitude": 40.258038,
@@ -3697,6 +3914,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0203351",
         "Node_Name": "Bull Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0200873",
         "Latitude": 40.013053,
@@ -3714,6 +3932,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0203903",
         "Node_Name": "Standley Lake",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "PhantomStand",
         "Latitude": 39.863371,
@@ -3731,6 +3950,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200992",
         "Node_Name": "Westminster Standley PL2",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "StanReuseW",
         "Latitude": 39.863803,
@@ -3748,6 +3968,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200993",
         "Node_Name": "Northglenn Standley PL",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "StanReuseN",
         "Latitude": 39.863803,
@@ -3765,6 +3986,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200994",
         "Node_Name": "Thornton Standley PL",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "StanReuseT",
         "Latitude": 39.863803,
@@ -3782,6 +4004,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06720820",
         "Node_Name": "BIG DRY CREEK AT WESTMIN",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0200871",
         "Latitude": 39.905681,
@@ -3799,6 +4022,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200871",
         "Node_Name": "Whipple D (Bull Canal)",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0200872",
         "Latitude": 39.931487,
@@ -3816,6 +4040,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200872",
         "Node_Name": "GERMAN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200873",
         "Latitude": 39.946081,
@@ -3833,6 +4058,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200873",
         "Node_Name": "BIG DRY CREEK DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200874",
         "Latitude": 39.999276,
@@ -3850,6 +4076,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200874",
         "Node_Name": "YOXALL DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "ThBDC_RFs",
         "Latitude": 40.01528,
@@ -3867,6 +4094,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06720990",
         "Node_Name": "BIG DRY CREEK AT MOUTH N",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "CenBriRFs",
         "Latitude": 40.069149,
@@ -3884,6 +4112,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0203700",
         "Node_Name": "East Gravel Lakes",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "EGLks_Pln",
         "Latitude": 39.834448,
@@ -3901,6 +4130,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0203379",
         "Node_Name": "Aurora Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "AurResPln",
         "Latitude": 39.6166,
@@ -3918,6 +4148,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0704354",
         "Node_Name": "Copeland Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "02_ChrkPP",
         "Latitude": 39.808139,
@@ -3935,6 +4166,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200805",
         "Node_Name": "Denver Hudson Canal",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200806",
         "Latitude": 39.791895,
@@ -3952,6 +4184,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200915",
         "Node_Name": "Little Burlington Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0200806",
         "Latitude": 39.884215,
@@ -3969,6 +4202,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0803832",
         "Node_Name": "McLellan Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "08_Englwd_I",
         "Latitude": 39.5697,
@@ -3986,6 +4220,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0802300",
         "Node_Name": "Bi-City WWTP",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0802300DW",
         "Latitude": 39.668275,
@@ -4003,6 +4238,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0804097",
         "Node_Name": "South Platte Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "SPLk_Pump",
         "Latitude": 39.571492,
@@ -4020,6 +4256,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801124",
         "Node_Name": "HAYLAND DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0801125",
         "Latitude": 39.551479,
@@ -4037,6 +4274,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801125",
         "Node_Name": "Fairview Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0801127",
         "Latitude": 39.553527,
@@ -4054,6 +4292,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801127",
         "Node_Name": "OLD TIME DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0801128",
         "Latitude": 39.553615,
@@ -4071,6 +4310,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801128",
         "Node_Name": "GARDEN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0803514",
         "Latitude": 39.551703,
@@ -4088,6 +4328,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801235",
         "Node_Name": "RED ROCK DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0801241",
         "Latitude": 39.275775,
@@ -4105,6 +4346,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801241",
         "Node_Name": "Dakan Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0801240",
         "Latitude": 39.293987,
@@ -4122,6 +4364,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801240",
         "Node_Name": "Ratcliff Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0801237",
         "Latitude": 39.297619,
@@ -4139,6 +4382,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801237",
         "Node_Name": "Spring Creek Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "06709530",
         "Latitude": 39.303084,
@@ -4156,6 +4400,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06709530",
         "Node_Name": "PLUM CREEK AT TITAN ROAD",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "08_AUP001_I",
         "Latitude": 39.507369,
@@ -4173,6 +4418,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000653",
         "Node_Name": "Roberts Tunnel",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "RobTunPln",
         "Latitude": 39.461257,
@@ -4190,6 +4436,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000706",
         "Node_Name": "BEAVER CREEK DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "8000650",
         "Latitude": 39.456033,
@@ -4207,6 +4454,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000650",
         "Node_Name": "WANITA DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "8000651",
         "Latitude": 39.460013,
@@ -4224,6 +4472,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000651",
         "Node_Name": "HALL VALLEY DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "8000713",
         "Latitude": 39.459904,
@@ -4241,6 +4490,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000713",
         "Node_Name": "KENOSHA DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "PLAGRACO",
         "Latitude": 39.456352,
@@ -4258,6 +4508,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "PLAGRACO",
         "Node_Name": "NORTH FORK SOUTH PLATTE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "8000732_D",
         "Latitude": 39.457763,
@@ -4275,6 +4526,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000760",
         "Node_Name": "WINKLER DITCH 1",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "8000761",
         "Latitude": 39.405647,
@@ -4292,6 +4544,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000761",
         "Node_Name": "WINKLER DITCH 3",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "8000759",
         "Latitude": 39.405647,
@@ -4309,6 +4562,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000759",
         "Node_Name": "MCARTHUR DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "8000667",
         "Latitude": 39.403927,
@@ -4326,6 +4580,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000667",
         "Node_Name": "SOUTH SIDE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "PLABAICO",
         "Latitude": 39.413164,
@@ -4343,6 +4598,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "PLABAICO",
         "Node_Name": "NORTH FORK SOUTH PLATTE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "8000774_D",
         "Latitude": 39.388318,
@@ -4360,6 +4616,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8002110",
         "Node_Name": "DEER CR MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "8000784",
         "Latitude": 39.550092,
@@ -4377,6 +4634,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000784",
         "Node_Name": "JEFFRIES CRAWFORD DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "8000785",
         "Latitude": 39.493746,
@@ -4394,6 +4652,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000785",
         "Node_Name": "WONDER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "8000812",
         "Latitude": 39.488319,
@@ -4411,6 +4670,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000812",
         "Node_Name": "CLIFFORD GULCH DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "8000792",
         "Latitude": 39.486469,
@@ -4428,6 +4688,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000792",
         "Node_Name": "PARMALEE DITCH 2 \u0026 3",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "8000794",
         "Latitude": 39.472972,
@@ -4445,6 +4706,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8000794",
         "Node_Name": "FLUME DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "8000799_D",
         "Latitude": 39.460527,
@@ -4462,6 +4724,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06706400",
         "Node_Name": "N.F. SOUTH PLATTE RIVER",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "8000673_D",
         "Latitude": 39.407489,
@@ -4479,6 +4742,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8002111",
         "Node_Name": "ELK CR MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "8000829_D",
         "Latitude": 39.546387,
@@ -4496,6 +4760,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302910",
         "Node_Name": "OHLER GULCH NEAR JEFFERS",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302910_A",
         "Latitude": 39.390078,
@@ -4513,6 +4778,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302116",
         "Node_Name": "JEFFERSON CK MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2303981",
         "Latitude": 39.476024,
@@ -4530,6 +4796,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2303981",
         "Node_Name": "Jefferson Lake Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "JeffLkDRF",
         "Latitude": 39.450579,
@@ -4547,6 +4814,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302908",
         "Node_Name": "JEFFERSON CREEK NEAR JEF",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302908_A",
         "Latitude": 39.390084,
@@ -4564,6 +4832,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302917",
         "Node_Name": "JEFFERSON CREEK BELOW SY",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302917_A",
         "Latitude": 39.339175,
@@ -4581,6 +4850,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302916",
         "Node_Name": "SCHATTINGER FLUME ABOVE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302916_A",
         "Latitude": 39.372037,
@@ -4598,6 +4868,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302118",
         "Node_Name": "MICHIGAN CREEK MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302907",
         "Latitude": 39.450555,
@@ -4615,6 +4886,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302907",
         "Node_Name": "MICHIGAN CREEK ABOVE JEF",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302907_A",
         "Latitude": 39.353559,
@@ -4632,6 +4904,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300991",
         "Node_Name": "TAYLOR DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2300993",
         "Latitude": 39.345517,
@@ -4649,6 +4922,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300993",
         "Node_Name": "GIBSON DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2300994",
         "Latitude": 39.345517,
@@ -4666,6 +4940,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300994",
         "Node_Name": "CROSIER TAYLOR DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302118_Dwn",
         "Latitude": 39.34005,
@@ -4683,6 +4958,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302119",
         "Node_Name": "TARRYALL CREEK MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302906",
         "Latitude": 39.34222,
@@ -4700,6 +4976,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302906",
         "Node_Name": "TARRYALL CREEK AT US 285",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302906_A",
         "Latitude": 39.331658,
@@ -4717,6 +4994,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302918",
         "Node_Name": "DIXON FLUME ON HOLLTHUSE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302918_A",
         "Latitude": 39.342512,
@@ -4734,6 +5012,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300902",
         "Node_Name": "PETRIE DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2300904",
         "Latitude": 39.310748,
@@ -4751,6 +5030,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300904",
         "Node_Name": "LINK DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302119_Dwn",
         "Latitude": 39.305987,
@@ -4768,6 +5048,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302107",
         "Node_Name": "TARRYALL CREEK UPPER MIN",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "2302909",
         "Latitude": 39.295247,
@@ -4785,6 +5066,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302915",
         "Node_Name": "ROCK CREEK ABOVE CONFLUE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302915_A",
         "Latitude": 39.291347,
@@ -4802,6 +5084,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302909",
         "Node_Name": "TARRYALL CREEK AT BORDEN",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302909_A",
         "Latitude": 39.287207,
@@ -4819,6 +5102,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300922",
         "Node_Name": "HOLST DITCH 2",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "TaryTempPln",
         "Latitude": 39.241038,
@@ -4836,6 +5120,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300923",
         "Node_Name": "HOLST PACKER D",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2300924",
         "Latitude": 39.239454,
@@ -4853,6 +5138,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300924",
         "Node_Name": "HOLST DITCH 1",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2300926",
         "Latitude": 39.241372,
@@ -4870,6 +5156,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300926",
         "Node_Name": "PACKER BONIS DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302107_Dwn",
         "Latitude": 39.237674,
@@ -4887,6 +5174,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "TARTARCO",
         "Node_Name": "TARRYALL CREEK BELOW TAR",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "23_AUP002_I",
         "Latitude": 39.223318,
@@ -4904,6 +5192,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302911",
         "Node_Name": "TROUT CREEK NEAR GARO",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302911_A",
         "Latitude": 39.123331,
@@ -4921,6 +5210,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302912",
         "Node_Name": "SPRING BRANCH ABOVE CONF",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302912_A",
         "Latitude": 39.16732,
@@ -4938,6 +5228,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300760",
         "Node_Name": "SACRAMENTO DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302148",
         "Latitude": 39.224848,
@@ -4955,6 +5246,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302148",
         "Node_Name": "MID FK S PLATTE MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "2302148_Dwn",
         "Latitude": 39.236448,
@@ -4972,6 +5264,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302913",
         "Node_Name": "MIDDLE FORK SOUTH PLATTE",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302913_A",
         "Latitude": 39.109632,
@@ -4989,6 +5282,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302902",
         "Node_Name": "MIDDLE FORK SOUTH PLATTE",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302902_A",
         "Latitude": 39.057989,
@@ -5006,6 +5300,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302123",
         "Node_Name": "FOURMILE CREEK MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302201",
         "Latitude": 38.879478,
@@ -5023,6 +5318,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302201",
         "Node_Name": "BEERY DITCH DENVER TFR",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "2302905",
         "Latitude": 39.111572,
@@ -5040,6 +5336,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302905",
         "Node_Name": "Beery Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302904",
         "Latitude": 39.112242,
@@ -5057,6 +5354,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302904",
         "Node_Name": "FOUR MILE AT HIGH CREEK",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302904_A",
         "Latitude": 39.084038,
@@ -5074,6 +5372,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302901",
         "Node_Name": "FOUR MILE CREEK NEAR HAR",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302901_A",
         "Latitude": 39.022389,
@@ -5091,6 +5390,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "HOMSPICO",
         "Node_Name": "Homestake Pipeline",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "HomestkPln",
         "Latitude": 38.94388,
@@ -5108,6 +5408,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302103",
         "Node_Name": "SO FORK SO PLATTE MIN FL",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2300500",
         "Latitude": 39.067383,
@@ -5125,6 +5426,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2300500",
         "Node_Name": "PLATTE STATION DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302900",
         "Latitude": 39.068055,
@@ -5142,6 +5444,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302900",
         "Node_Name": "SOUTH FORK OF SOUTH PLAT",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302900_A",
         "Latitude": 39.070789,
@@ -5159,6 +5462,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2303904",
         "Node_Name": "Antero Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "PLAANTCO",
         "Latitude": 38.993498,
@@ -5176,6 +5480,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "PLAANTCO",
         "Node_Name": "SOUTH PLATTE RIVER BELOW",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2302922",
         "Latitude": 38.993326,
@@ -5193,6 +5498,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302922",
         "Node_Name": "HARTSEL COMPUTED",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "2302903",
         "Latitude": 39.020592,
@@ -5210,6 +5516,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2302903",
         "Node_Name": "SOUTH PLATTE RIVER ABOVE",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "2302903_A",
         "Latitude": 38.997131,
@@ -5227,6 +5534,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2304013",
         "Node_Name": "Spinney Mountain Reservo",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "SpinMtnDRF",
         "Latitude": 38.972233,
@@ -5244,6 +5552,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06695000",
         "Node_Name": "S PLATTE RIV AB 11-MILE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "2303965",
         "Latitude": 38.967492,
@@ -5261,6 +5570,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "2303965",
         "Node_Name": "Eleven Mile Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "23_ARP016",
         "Latitude": 38.904749,
@@ -5278,6 +5588,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06696000",
         "Node_Name": "SOUTH PLATTE RIVER NEAR",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "23_AUP002_I",
         "Latitude": 38.90527,
@@ -5295,6 +5606,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "8003550",
         "Node_Name": "CHEESMAN RES",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "80_ARP019",
         "Latitude": 39.199914,
@@ -5312,6 +5624,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06701500",
         "Node_Name": "SOUTH PLATTE RIVER BELOW",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "06707500",
         "Latitude": 39.209156,
@@ -5329,6 +5642,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06707500",
         "Node_Name": "SOUTH PLATTE RIVER AT SO",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "AurStronPln",
         "Latitude": 39.409157,
@@ -5346,6 +5660,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0803983",
         "Node_Name": "Strontia Springs Reservo",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0801001",
         "Latitude": 39.426806,
@@ -5363,6 +5678,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801001",
         "Node_Name": "Aurora Intake",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0801001_A",
         "Latitude": 39.432704,
@@ -5380,6 +5696,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801017",
         "Node_Name": "Denver Conduit 26",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06707501",
         "Latitude": 39.432704,
@@ -5397,6 +5714,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06707501",
         "Node_Name": "SOUTH PLATTE RIVER BELOW",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "1982_MinFlow",
         "Latitude": 39.434987,
@@ -5414,6 +5732,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801004",
         "Node_Name": "Highline Canal",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0801006",
         "Latitude": 39.482736,
@@ -5431,6 +5750,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801006",
         "Node_Name": "Last Chance Pump Stn",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "08_ASP008",
         "Latitude": 39.484466,
@@ -5448,6 +5768,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06708000",
         "Node_Name": "SOUTH PLATTE RIVER AT WA",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "08_ADP003",
         "Latitude": 39.488323,
@@ -5465,6 +5786,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801007",
         "Node_Name": "LAST CHANCE DITCH 2",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0801008",
         "Latitude": 39.56044,
@@ -5482,6 +5804,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801008",
         "Node_Name": "CITY DITCH PL",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0801100",
         "Latitude": 39.557554,
@@ -5499,6 +5822,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801100",
         "Node_Name": "Chatfield Pumps",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0803514",
         "Latitude": 39.530829,
@@ -5516,6 +5840,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0803514",
         "Node_Name": "Chatfield Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "Manifold",
         "Latitude": 39.548957,
@@ -5533,6 +5858,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "PLACHACO",
         "Node_Name": "SOUTH PLATTE RIVER BELOW",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0801013",
         "Latitude": 39.562484,
@@ -5550,6 +5876,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0903501",
         "Node_Name": "Marston Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0901700",
         "Latitude": 39.63005,
@@ -5567,6 +5894,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0901700",
         "Node_Name": "Martson WTP",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "08_Denver_I",
         "Latitude": 39.637712,
@@ -5584,6 +5912,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801013",
         "Node_Name": "Englewood Intake",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06710247",
         "Latitude": 39.632494,
@@ -5601,6 +5930,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06710247",
         "Node_Name": "SOUTH PLATTE RIVER BELOW",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "06711565",
         "Latitude": 39.632488,
@@ -5618,6 +5948,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0900767",
         "Node_Name": "INDEPENDENT HIGHLINE DIT",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0900535",
         "Latitude": 39.620439,
@@ -5635,6 +5966,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0900535",
         "Node_Name": "BERGEN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0900903",
         "Latitude": 39.622101,
@@ -5652,6 +5984,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0900903",
         "Node_Name": "WARRIOR/HARRIMAN D TK CR",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0903999",
         "Latitude": 39.637622,
@@ -5669,6 +6002,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0902115",
         "Node_Name": "BEAR CR MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "09_ARP014",
         "Latitude": 39.659722,
@@ -5686,6 +6020,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06710500",
         "Node_Name": "BEAR CREEK AT MORRISON",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0902115_Dwn",
         "Latitude": 39.653042,
@@ -5703,6 +6038,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0900958",
         "Node_Name": "WARD DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0903999",
         "Latitude": 39.651944,
@@ -5720,6 +6056,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0903999",
         "Node_Name": "Bear Creek Lake",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0900752",
         "Latitude": 39.650708,
@@ -5737,6 +6074,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0900752",
         "Node_Name": "HODGSON DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0900816",
         "Latitude": 39.663354,
@@ -5754,6 +6092,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0900816",
         "Node_Name": "MCBROOM DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "09_ARP015",
         "Latitude": 39.652355,
@@ -5771,6 +6110,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06711500",
         "Node_Name": "BEAR CREEK AT SHERIDAN",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "06711565",
         "Latitude": 39.65221,
@@ -5788,6 +6128,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06711565",
         "Node_Name": "SOUTH PLATTE RIVER AT EN",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0801014",
         "Latitude": 39.664987,
@@ -5805,6 +6146,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801014",
         "Node_Name": "Arapahoe Power Plant",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0801015",
         "Latitude": 39.66777,
@@ -5822,6 +6164,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801400",
         "Node_Name": "ALDERMAN DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "08_ADP002",
         "Latitude": 39.164051,
@@ -5839,6 +6182,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801403",
         "Node_Name": "Heiser Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0801404",
         "Latitude": 39.215368,
@@ -5856,6 +6200,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801404",
         "Node_Name": "McCracken Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0801405",
         "Latitude": 39.222982,
@@ -5873,6 +6218,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801405",
         "Node_Name": "Smith Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0801406",
         "Latitude": 39.23734,
@@ -5890,6 +6236,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801406",
         "Node_Name": "SCHREIBER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0801362",
         "Latitude": 39.257605,
@@ -5907,6 +6254,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801492",
         "Node_Name": "IZZARD DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0801412",
         "Latitude": 39.179639,
@@ -5924,6 +6272,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801412",
         "Node_Name": "Sixty Seven Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0801413",
         "Latitude": 39.208389,
@@ -5941,6 +6290,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801413",
         "Node_Name": "CRAWFORD DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0801414",
         "Latitude": 39.217852,
@@ -5958,6 +6308,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801414",
         "Node_Name": "BIRMINGHAM DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0801416",
         "Latitude": 39.232332,
@@ -5975,6 +6326,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801416",
         "Node_Name": "GOODRICH DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0801417",
         "Latitude": 39.249618,
@@ -5992,6 +6344,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801417",
         "Node_Name": "ROCKY RIDGE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0801362",
         "Latitude": 39.254145,
@@ -6009,6 +6362,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0801362",
         "Node_Name": "JOHN JONES DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "08_AWP002",
         "Latitude": 39.3629,
@@ -6026,6 +6380,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0803532",
         "Node_Name": "CHERRY CREEK RESERVOIR",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "08_AWP005",
         "Latitude": 39.640793,
@@ -6043,6 +6398,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06713500",
         "Node_Name": "CHERRY CREEK AT DENVER,",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0200800",
         "Latitude": 39.742487,
@@ -6060,6 +6416,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200800",
         "Node_Name": "Farmers Gardeners Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "09_AUP001_I",
         "Latitude": 39.755661,
@@ -6077,6 +6434,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06714000",
         "Node_Name": "SOUTH PLATTE RIVER AT DE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "AggWell_02",
         "Latitude": 39.759708,
@@ -6094,6 +6452,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200802",
         "Node_Name": "Burlington Canal",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200806",
         "Latitude": 39.790179,
@@ -6111,6 +6470,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200806",
         "Node_Name": "Gardeners Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06714215",
         "Latitude": 39.801006,
@@ -6128,6 +6488,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06714215",
         "Node_Name": "SOUTH PLATTE R AT 64TH A",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "AurLastChRF",
         "Latitude": 39.812208,
@@ -6145,6 +6506,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0703308",
         "Node_Name": "ArvadaReservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "07_Arvada_I",
         "Latitude": 39.822701,
@@ -6162,6 +6524,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0703324",
         "Node_Name": "Ralston Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "MoffatWTP",
         "Latitude": 39.828937,
@@ -6179,6 +6542,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700614",
         "Node_Name": "MANHART DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700597",
         "Latitude": 39.802831,
@@ -6196,6 +6560,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0703010",
         "Node_Name": "Coors South Lakes",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0700527_D",
         "Latitude": 39.81665,
@@ -6213,6 +6578,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0702318",
         "Node_Name": "SEWAGE DISPOSAL PLANT OU",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0700647",
         "Latitude": 39.771703,
@@ -6230,6 +6596,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0704626",
         "Node_Name": "Vidler Tunnel",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "VidlerPln",
         "Latitude": 39.631031,
@@ -6247,6 +6614,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0702113",
         "Node_Name": "LEAVENWORTH CR MIN FLOW",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0700681",
         "Latitude": 39.613162,
@@ -6264,6 +6632,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700681",
         "Node_Name": "Georgetown D",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "06716500",
         "Latitude": 39.690205,
@@ -6281,6 +6650,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700903",
         "Node_Name": "Straight Creek Tunnel",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "StratCkPln",
         "Latitude": 39.678827,
@@ -6298,6 +6668,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0702109",
         "Node_Name": "Upper Clear Ck ISF",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "06716500",
         "Latitude": 39.67486,
@@ -6315,6 +6686,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0704625",
         "Node_Name": "Berthoud Pass Divn",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "BerthoudPln",
         "Latitude": 39.797601,
@@ -6332,6 +6704,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0704650",
         "Node_Name": "Gumlick Tunnel",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "GumlickPln",
         "Latitude": 39.770213,
@@ -6349,6 +6722,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0702118",
         "Node_Name": "WEST FK CLEAR CR MIN FL",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0704030",
         "Latitude": 39.768613,
@@ -6366,6 +6740,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0704030",
         "Node_Name": "Guanella Reservoir",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "0702118_Dwn",
         "Latitude": 39.757705,
@@ -6383,6 +6758,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06716500",
         "Node_Name": "CLEAR CREEK NEAR LAWSON,",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0700699",
         "Latitude": 39.765821,
@@ -6400,6 +6776,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700699",
         "Node_Name": "WELCH DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700699_A",
         "Latitude": 39.742785,
@@ -6417,6 +6794,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06719500",
         "Node_Name": "CLEAR CREEK NEAR GOLDEN,",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "GldPri12Pln",
         "Latitude": 39.750543,
@@ -6434,6 +6812,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700542",
         "Node_Name": "Golden City D",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700540",
         "Latitude": 39.751595,
@@ -6451,6 +6830,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700540",
         "Node_Name": "CHURCH DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700540_A",
         "Latitude": 39.752315,
@@ -6468,6 +6848,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06719505",
         "Node_Name": "CLEAR CREEK AT GOLDEN, C",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0701000",
         "Latitude": 39.753043,
@@ -6485,6 +6866,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0701000",
         "Node_Name": "Golden WhiteWater Course",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "0700502",
         "Latitude": 39.753448,
@@ -6502,6 +6884,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700502",
         "Node_Name": "AGRICULTURAL DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700502_A",
         "Latitude": 39.757853,
@@ -6519,6 +6902,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700725",
         "Node_Name": "Coors Ind Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700569",
         "Latitude": 39.758117,
@@ -6536,6 +6920,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700569",
         "Node_Name": "FARMERS HIGHLINE CNL",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0700569_A",
         "Latitude": 39.758703,
@@ -6553,6 +6938,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700698",
         "Node_Name": "Wannamaker Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700698_A",
         "Latitude": 39.764345,
@@ -6570,6 +6956,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700601",
         "Node_Name": "Lee Stewart Eskins Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700652",
         "Latitude": 39.764578,
@@ -6587,6 +6974,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700652",
         "Node_Name": "ROCKY MOUNTAIN DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700652_A",
         "Latitude": 39.768036,
@@ -6604,6 +6992,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700553",
         "Node_Name": "Croke Canal",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "CoorsGuaPln",
         "Latitude": 39.768568,
@@ -6621,6 +7010,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700726",
         "Node_Name": "Coors Ind Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "CoorsAug3",
         "Latitude": 39.771633,
@@ -6638,6 +7028,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700647",
         "Node_Name": "Reno Juchem Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "CoorsAug12",
         "Latitude": 39.77235,
@@ -6655,6 +7046,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0703390",
         "Node_Name": "COORS AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0700527_D_A",
         "Latitude": 39.756257,
@@ -6672,6 +7064,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700669",
         "Node_Name": "SOUTH SIDE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700632",
         "Latitude": 39.774605,
@@ -6689,6 +7082,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700632",
         "Node_Name": "OUELETTE DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "ConMClCkRFs",
         "Latitude": 39.775053,
@@ -6706,6 +7100,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700551",
         "Node_Name": "CORT GRAVES HUGHES DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700597",
         "Latitude": 39.784762,
@@ -6723,6 +7118,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700597",
         "Node_Name": "KERSHAW DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700597_A",
         "Latitude": 39.797004,
@@ -6740,6 +7136,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700570",
         "Node_Name": "FISHER DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0700570_A",
         "Latitude": 39.797899,
@@ -6757,6 +7154,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700549",
         "Node_Name": "Colorado Ag D",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "BypReturn",
         "Latitude": 39.815466,
@@ -6774,6 +7172,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0700547",
         "Node_Name": "Lower Clear Ck D",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "LCCLimitPln",
         "Latitude": 39.816186,
@@ -6791,6 +7190,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0203699",
         "Node_Name": "West Gravel/Brannan Lks",
+        "Node_Order": 0,
         "Node_Type": "Reservoir",
         "Downstream_Node": "CosmicRel",
         "Latitude": 39.848878,
@@ -6808,6 +7208,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06720000",
         "Node_Name": "CLEAR CREEK AT DERBY",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "PSCoSPRFs",
         "Latitude": 39.82832,
@@ -6825,6 +7226,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200808",
         "Node_Name": "Fulton Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200808_A",
         "Latitude": 39.877541,
@@ -6842,6 +7244,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200809",
         "Node_Name": "Brantner Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "9902502",
         "Latitude": 39.906636,
@@ -6859,6 +7262,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06720500",
         "Node_Name": "SOUTH PLATTE RIVER AT HE",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0200810",
         "Latitude": 39.921928,
@@ -6876,6 +7280,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200810",
         "Node_Name": "Brighton Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200810_A",
         "Latitude": 39.973981,
@@ -6893,6 +7298,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200812",
         "Node_Name": "Lupton Bottom Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200812_A",
         "Latitude": 40.035128,
@@ -6910,6 +7316,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200813",
         "Node_Name": "Platteville Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200813_A",
         "Latitude": 40.094305,
@@ -6927,6 +7334,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06721000",
         "Node_Name": "SOUTH PLATTE RIVER AT FO",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "CenPVRFs",
         "Latitude": 40.116094,
@@ -6944,6 +7352,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200821",
         "Node_Name": "Meadow Island No. 1",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0200821_A",
         "Latitude": 40.121789,
@@ -6961,6 +7370,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200817",
         "Node_Name": "Evans No 2 Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "NglennLBRFs",
         "Latitude": 40.127545,
@@ -6978,6 +7388,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200822",
         "Node_Name": "Meadow Island  No. 2",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0200822_A",
         "Latitude": 40.169389,
@@ -6995,6 +7406,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200824",
         "Node_Name": "Farmers Indep Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200824_A",
         "Latitude": 40.206577,
@@ -7012,6 +7424,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200825",
         "Node_Name": "Hewes Cook Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200825_A",
         "Latitude": 40.233017,
@@ -7029,6 +7442,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200826",
         "Node_Name": "Jay Thomas Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "PSCoSPRFs2",
         "Latitude": 40.244375,
@@ -7046,6 +7460,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200828",
         "Node_Name": "Union Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200830",
         "Latitude": 40.312961,
@@ -7063,6 +7478,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200830",
         "Node_Name": "Section No. 3 Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0200830_A",
         "Latitude": 40.340561,
@@ -7080,6 +7496,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200834",
         "Node_Name": "Lower Latham Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200836",
         "Latitude": 40.361647,
@@ -7097,6 +7514,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200836",
         "Node_Name": "Patterson Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0200837",
         "Latitude": 40.389905,
@@ -7114,6 +7532,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0200837",
         "Node_Name": "Highland Ditch",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0200837_A",
         "Latitude": 40.400954,
@@ -7131,6 +7550,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0103397",
         "Node_Name": "LOWER POUDRE AUGMENTATIO",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0103336",
         "Latitude": 40.459305,
@@ -7148,6 +7568,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06754000",
         "Node_Name": "SOUTH PLATTE RIVER NEAR",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "9903334_D",
         "Latitude": 40.411926,
@@ -7165,6 +7586,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100501",
         "Node_Name": "Empire Canal",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0100503_D",
         "Latitude": 40.378525,
@@ -7182,6 +7604,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0102522",
         "Node_Name": "RIVERSIDE AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0102513_ReW",
         "Latitude": 40.341976,
@@ -7199,6 +7622,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0103339",
         "Node_Name": "BIJOU AUG PLAN",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0100513",
         "Latitude": 40.322505,
@@ -7216,6 +7640,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100513",
         "Node_Name": "JACKSON LAKE INLET DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0100511",
         "Latitude": 40.307046,
@@ -7233,6 +7658,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100511",
         "Node_Name": "Weldon Valley Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0102513",
         "Latitude": 40.309334,
@@ -7250,6 +7676,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0102513",
         "Node_Name": "WIGGINS FARMS AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "01_AWP033",
         "Latitude": 40.318049,
@@ -7267,6 +7694,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100514",
         "Node_Name": "Ft Morgan Div System",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0102528",
         "Latitude": 40.353523,
@@ -7284,6 +7712,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0102528",
         "Node_Name": "FT MORGAN CNL AUG PLAN",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0102456",
         "Latitude": 40.35514,
@@ -7301,6 +7730,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0102456",
         "Node_Name": "FT MORGAN CITY AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "01_ADP037",
         "Latitude": 40.239532,
@@ -7318,6 +7748,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06758500",
         "Node_Name": "SOUTH PLATTE RIVER NEAR",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0100517",
         "Latitude": 40.321388,
@@ -7335,6 +7766,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100517",
         "Node_Name": "Deuel Snyder Canal",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0100515",
         "Latitude": 40.277648,
@@ -7352,6 +7784,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100515",
         "Node_Name": "Upper Platte Beaver Cana",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0102529",
         "Latitude": 40.274699,
@@ -7369,6 +7802,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100518",
         "Node_Name": "Lower Platte Beaver Ditc",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0102535",
         "Latitude": 40.280411,
@@ -7386,6 +7820,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0102518",
         "Node_Name": "PIONEER AUG PLAN",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0100520",
         "Latitude": 40.282826,
@@ -7403,6 +7838,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100520",
         "Node_Name": "Gill Stevens Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0102662",
         "Latitude": 40.291474,
@@ -7420,6 +7856,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0102662",
         "Node_Name": "BRUSH AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "0100524",
         "Latitude": 40.268663,
@@ -7437,6 +7874,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100524",
         "Node_Name": "Trowell Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "0100711",
         "Latitude": 40.318922,
@@ -7454,6 +7892,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100687",
         "Node_Name": "N Sterling Div System",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0100688",
         "Latitude": 40.352461,
@@ -7471,6 +7910,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100688",
         "Node_Name": "Union Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "01_ASP001",
         "Latitude": 40.352461,
@@ -7488,6 +7928,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06759910",
         "Node_Name": "SOUTH PLATTE RIVER AT CO",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "0100525",
         "Latitude": 40.357498,
@@ -7505,6 +7946,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100525",
         "Node_Name": "TETSEL DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0100829",
         "Latitude": 40.379145,
@@ -7522,6 +7964,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100829",
         "Node_Name": "Prewitt Res Inlet",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "0100526",
         "Latitude": 40.379763,
@@ -7539,6 +7982,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "0100526",
         "Node_Name": "Johnson Edwards Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400535",
         "Latitude": 40.379763,
@@ -7556,6 +8000,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400535",
         "Node_Name": "South Platte Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6402539",
         "Latitude": 40.410399,
@@ -7573,6 +8018,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6402539",
         "Node_Name": "LOGAN WELL USERS AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "6400533",
         "Latitude": 40.499518,
@@ -7590,6 +8036,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400533",
         "Node_Name": "Pawnee Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6402519",
         "Latitude": 40.457135,
@@ -7607,6 +8054,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6402519",
         "Node_Name": "DINSDALE AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "6400532",
         "Latitude": 40.878957,
@@ -7624,6 +8072,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400532",
         "Node_Name": "DAVIS BROS DITCH",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400531",
         "Latitude": 40.470196,
@@ -7641,6 +8090,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400531",
         "Node_Name": "Schneider Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400530",
         "Latitude": 40.499955,
@@ -7658,6 +8108,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400530",
         "Node_Name": "Springdale Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400528",
         "Latitude": 40.53456,
@@ -7675,6 +8126,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400528",
         "Node_Name": "Sterling No. 1 Irrigatio",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400528_RF",
         "Latitude": 40.54574,
@@ -7692,6 +8144,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400526",
         "Node_Name": "STERLING IRR CO DITCH 2",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "6400525",
         "Latitude": 40.601735,
@@ -7709,6 +8162,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400525",
         "Node_Name": "HENDERSON SMITH DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "6400525_RF",
         "Latitude": 40.618621,
@@ -7726,6 +8180,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400524",
         "Node_Name": "Lowline Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6402526",
         "Latitude": 40.620976,
@@ -7743,6 +8198,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6402526",
         "Node_Name": "STERLING AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "6402540",
         "Latitude": 40.677608,
@@ -7760,6 +8216,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6402540",
         "Node_Name": "LOWLINE DITCH CO AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "6400522_D",
         "Latitude": 40.622295,
@@ -7777,6 +8234,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400520",
         "Node_Name": "Iliff Platte Valley Ditc",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400519",
         "Latitude": 40.725428,
@@ -7794,6 +8252,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400519",
         "Node_Name": "JUD BRUSH DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "6400518",
         "Latitude": 40.727953,
@@ -7811,6 +8270,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400518",
         "Node_Name": "LONE TREE DITCH",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "6400516",
         "Latitude": 40.740011,
@@ -7828,6 +8288,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400516",
         "Node_Name": "Powell Blair Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400599",
         "Latitude": 40.782414,
@@ -7845,6 +8306,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400599",
         "Node_Name": "Rice Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400514",
         "Latitude": 40.78389,
@@ -7862,6 +8324,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400514",
         "Node_Name": "Ramsey Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400513",
         "Latitude": 40.795628,
@@ -7879,6 +8342,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400513",
         "Node_Name": "Chambers Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6402525",
         "Latitude": 40.811853,
@@ -7896,6 +8360,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6402525",
         "Node_Name": "CONDON AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "6403392",
         "Latitude": 40.811688,
@@ -7913,6 +8378,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6403392",
         "Node_Name": "NORTH STERLING AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "6400511_D",
         "Latitude": 40.632308,
@@ -7930,6 +8396,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6402518",
         "Node_Name": "HARMONY DITCH CO AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "6402536",
         "Latitude": 40.821918,
@@ -7947,6 +8414,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6402536",
         "Node_Name": "LOWER LOGAN WELL USERS A",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "6400508",
         "Latitude": 40.722298,
@@ -7964,6 +8432,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400508",
         "Node_Name": "Settlers Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400507",
         "Latitude": 40.85749,
@@ -7981,6 +8450,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400507",
         "Node_Name": "Long Island Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400506",
         "Latitude": 40.862321,
@@ -7998,6 +8468,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400506",
         "Node_Name": "Red Lion Supply Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400504",
         "Latitude": 40.862336,
@@ -8015,6 +8486,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400504",
         "Node_Name": "Peterson Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6402517",
         "Latitude": 40.923618,
@@ -8032,6 +8504,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6402517",
         "Node_Name": "SEDGWICK CTY WL USERS AU",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "6400503",
         "Latitude": 40.922706,
@@ -8049,6 +8522,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400503",
         "Node_Name": "South Reservation Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6400502",
         "Latitude": 40.942464,
@@ -8066,6 +8540,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400502",
         "Node_Name": "Liddle Ditch",
+        "Node_Order": 0,
         "Node_Type": "Well",
         "Downstream_Node": "6402542",
         "Latitude": 40.954919,
@@ -8083,6 +8558,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6402542",
         "Node_Name": "LSPWCD AUG",
+        "Node_Order": 0,
         "Node_Type": "Other",
         "Downstream_Node": "6400643",
         "Latitude": 40.958649,
@@ -8100,6 +8576,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400643",
         "Node_Name": "HEYBORNE LIFT STATION",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "6400501",
         "Latitude": 40.945168,
@@ -8117,6 +8594,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6400501",
         "Node_Name": "CARLSON DITCH",
+        "Node_Order": 0,
         "Node_Type": "Diversion",
         "Downstream_Node": "64_AUP001_I",
         "Latitude": 40.941577,
@@ -8134,6 +8612,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "06764000",
         "Node_Name": "SOUTH PLATTE RIVER AT JU",
+        "Node_Order": 0,
         "Node_Type": "StreamGage",
         "Downstream_Node": "6499999",
         "Latitude": 40.974995,
@@ -8151,6 +8630,7 @@ var StateModNodes ={
       "properties": {
         "Node_ID": "6499999",
         "Node_Name": "South Platte Compact",
+        "Node_Order": 0,
         "Node_Type": "InstreamFlow",
         "Downstream_Node": "END",
         "Latitude": 40.982546,
@@ -8163,4 +8643,4 @@ var StateModNodes ={
       }
     },
   ]
-}
+};
