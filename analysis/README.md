@@ -5,11 +5,11 @@ visualized in the Hydrology story.
 
 The folder contains the following data-processing files:
 
-* [agricultural-analyses.R](#agricultural-analyses.R)
-* [agricultural-hydrographs.TSTool](#agricultural-hydrographs.TSTool)
-* [envr-rec-hydrographs.TSTool](#envr-rec-hydrographs.TSTool)
-* [streamgage-locations.TSTool](#streamgage-locations.TSTool)
-* [statemod-analyses.TSTool](#statemod-analyses.TSTool)
+* [agricultural-analyses.R](#agricultural-analysesr)
+* [agricultural-hydrographs.TSTool](#agricultural-hydrographststool)
+* [envr-rec-hydrographs.TSTool](#envr-rec-hydrographststool)
+* [streamgage-locations.TSTool](#streamgage-locationststool)
+* [statemod-analyses.TSTool](#statemod-analyseststool)
 
 ## agricultural-analyses.R ##
 This R script processes agricultural datasets available from [Colorado's Decision Support Systems (CDSS)](https://www.colorado.gov/cdss). 

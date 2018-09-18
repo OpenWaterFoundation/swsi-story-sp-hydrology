@@ -1,154 +1,151 @@
 # data #
 
-The `data` folder contains data files needed to create the visualizations shown in the Water Entities story.  Data sources are provided.  Any 
-data processing that was required is described within the file descriptions below.
+The `data` folder contains several of the data files needed to create the visualizations shown in the Hydrology story.  Data sources are 
+provided.  Any data processing that was required is described within the file descriptions below.
 
 The folder contains the following files:
 
-* [CO-DWR-DitchServiceAreas-Division01-2005-20180228.csv](#CO-DWR-DitchServiceAreas-Division01-2005-20180228.csv)
-* [CO-DWR-DitchServiceAreas-Division01-2005-20180228.geojson](#CO-DWR-DitchServiceAreas-Division01-2005-20180228.geojson)
-* [Colorado_Counties.geojson](#Colorado_Counties.geojson)
-* [Colorado-IBCC-Basins-WGS84.geojson](#Colorado-IBCC-Basins-WGS84.geojson)
-* [Colorado-Municipal-Water-Providers-SouthPlatte-Metro.csv](#Colorado-Municipal-Water-Providers-SouthPlatte-Metro.csv)
-* [Colorado-Municipal-Water-Providers-SouthPlatte-Metro.geojson](#Colorado-Municipal-Water-Providers-SouthPlatte-Metro.geojson)
-* [county-population-forecast.geojson](#county-population-forecast.geojson)
-* [county-population-forecast-yearsinsinglecolumn.csv](#county-population-forecast-yearsinsinglecolumn.csv)
-* [municipal-population-2006-2016.csv](#municipal-population-2006-2016.csv)
-* [municipal-population-2006-2016.geojson](#municipal-population-2006-2016.geojson)
-* [municipal-population-historical-change.csv](#municipal-population-historical-change.csv)
-* [municipal-population-historical-change.geojson](#municipal-population-historical-change.geojson)
-* [municipal-population-historical-yearsinsinglecolumn.csv](#municipal-population-historical-yearsinsinglecolumn.csv)
-* [SouthPlatteMetro-instreamflow-reaches-decreed-with-amounts.geojson](#SouthPlatteMetro-instreamflow-reaches-decreed-with-amounts.geojson)
-* [waterproviders-wedp-population-wateruse.geojson](#waterproviders-wedp-population-wateruse.geojson)
+* [cdss-mapviewer-active-streamgages.csv](#cdss-mapviewer-active-streamgagescsv)
+* [cdss-mapviewer-active-streamgages.geojson](#cdss-mapviewer-active-streamgagesgeojson)
+* [cdss-structures-ditches-southplatte.csv](#cdss-structures-ditches-southplattecsv)
+* [cdss-structures-ditches-southplatte.geojson](#cdss-structures-ditches-southplattegeojson)
+* [CO-DWR-SourceWaterRouteFramework-Division01-20180228-reduced.geojson](#CO-DWR-SourceWaterRouteFramework-Division01-20180228-reducedgeojson)
+* [Colorado-IBCC-Basins-WGS84.geojson](#Colorado-IBCC-Basins-WGS84geojson)
+* [ditch-watersources.csv](#ditch-watersourcescsv)
+* [north-sterling-canal-story.json](#north-sterling-canal-storyjson)
+* [southplatte-transbasin-diversions.csv](#southplatte-transbasin-diversionscsv)
+* [southplatte-transbasin-diversions.geojson](#southplatte-transbasin-diversionsgeojson)
+* [statemod-node-network.csv](#statemod-node-networkcsv)
+* [statemod-node-network.geojson](#statemod-node-networkgeojson)
+* [timeline.json](#timelinejson)
+* [transbasin-diversions-average-annual-diverted.csv](#transbasin-diversions-average-annual-divertedcsv)
 
-## CO-DWR-DitchServiceAreas-Division01-2005-20180228.csv ##
-This file contains ditch service area data from 2005 for the South Platte Basin (Division 1).  The file comes from [OWF's processing](http://data.openwaterfoundation.org/co/cdss-data-spatial-bybasin/) 
+
+## cdss-mapviewer-active-streamgages.csv ##
+This file contains all of the active streamgages in the South Platte Basin and was obtained from the [CDSS Map Viewer](https://gis.colorado.gov/dnrviewer/Index.html?viewer=mapviewer). 
+"Active Gage-Stream" was selected from the Surface Water Current Conditions layer.  All gages were selected in the state and exported in CSV format.  The TSTool 
+command file, [streamgage-locations.TSTool](https://github.com/OpenWaterFoundation/swsi-story-sp-hydrology/blob/master/analysis/streamgage-locations.TSTool), 
+then filtered the data to only include gages in the South Platte Basin and exported the data into GEOJSON format.  
+
+While this file is not directly used in visualizations, it is contained within the repository because it is essentially a copy of 
+cdss-mapviewer-active-streamgages.geojson but is in a format that may be more readily viewed and used by others.
+
+## cdss-mapviewer-active-streamgages.geojson ##
+This file contains all of the active streamgages in the South Platte Basin and was obtained from the [CDSS Map Viewer](https://gis.colorado.gov/dnrviewer/Index.html?viewer=mapviewer). 
+"Active Gage-Stream" was selected from the Surface Water Current Conditions layer.  All gages were selected in the state and exported in CSV format.  The TSTool 
+command file, [streamgage-locations.TSTool](https://github.com/OpenWaterFoundation/swsi-story-sp-hydrology/blob/master/analysis/streamgage-locations.TSTool), 
+then filtered the data to only include gages in the South Platte Basin and exported the data into GEOJSON format.
+
+This file is used for the map shown on the 'Hydrology Concepts - Streamgages and Measuring Flows' page, in which streamgages are color-coded based on data 
+source (USGS, DWR or other).
+
+## cdss-structures-ditches-southplatte.csv ##
+This file comes from the [Structures](https://dnrweb.state.co.us/cdss/Structures?submitButton=Submit&SelectedGeoValue=waterDivisionDiv&SelectedWaterDivisionId=1&SelectedStructureId=1) 
+dataset from CDSS by selecting the South Platte Water Division and selecting "Ditch" as the Structure Type.  Data were exported in CSV format.  No additional 
+processing of the dataset was required.  
+
+While this file is not directly used in visualizations, it is contained within the repository because it is essentially a copy of 
+cdss-structures-ditches-southplatte.geojson but is in a format that may be more readily viewed and used by others.
+
+## cdss-structures-ditches-southplatte.geojson ##
+This file comes from the [Structures](https://dnrweb.state.co.us/cdss/Structures?submitButton=Submit&SelectedGeoValue=waterDivisionDiv&SelectedWaterDivisionId=1&SelectedStructureId=1) 
+dataset from CDSS by selecting the South Platte Water Division and selecting "Ditch" as the Structure Type.  Data were exported in CSV format. 
+The CSV file was then imported into QGIS and saved in GEOJSON format.
+
+This file is used for the map shown on the 'Hydrology Concepts - Diversion Headgates and Measuring Diversions' page, in which diversions are color-coded 
+by their water source.
+
+## CO-DWR-SourceWaterRouteFramework-Division01-20180228-reduced.geojson ##
+This file contains a portion of the Source Water Route Framework (SWRF) within the South Platte Basin.  The file comes from the 
+[Open Water Foundation's processing](http://data.openwaterfoundation.org/co/cdss-data-spatial-bybasin/) 
 of [Colorado's Decision Support Systems (CDSS) Geographic Information System Data](http://cdss.state.co.us/GIS/Pages/GISDataHome.aspx).  OWF 
 developed a tool using open source QGIS software that splits CDSS spatial data layers to provide datasets for specific water divisions (basins) or districts.
 The resulting smaller datasets, provided in useful formats, are easier to work with and benefit the Colorado water community.
 
-For each service area (polygon) shown, the name of the ditch, the acres served and the water district identifier (WDID) is provided.  The WDID can be used 
-to link to other CDSS datasets.  While this file is not directly used in visualizations, it is contained within the repository because it 
-is essentially a copy of CO-DWR-DitchServiceAreas-Division01-2005-20180228.geojson but is in a format that may be more readily viewed and used by others. 
-Note that this file does not have any spatial data associated with it.
-
-## CO-DWR-DitchServiceAreas-Division01-2005-20180228.geojson ##
-This file contains ditch service area data from 2005 for the South Platte Basin (Division 1).  The file comes from [OWF's processing](http://data.openwaterfoundation.org/co/cdss-data-spatial-bybasin/) 
-of [Colorado's Decision Support Systems (CDSS) Geographic Information System Data](http://cdss.state.co.us/GIS/Pages/GISDataHome.aspx).  OWF 
-developed a tool using open source QGIS software that splits CDSS spatial data layers to provide datasets for specific water divisions (basins) or districts.
-The resulting smaller datasets, provided in useful formats, are easier to work with and benefit the Colorado water community.
-
-For each service area (polygon) shown, the name of the ditch, the acres served and the water district identifier (WDID) is provided.  The WDID can be used 
-to link to other CDSS datasets.  This file is used in page 13 of the Water Entities story (Agricultural Entities), in which service areas are color-coded 
-by the acreage served.  No additional processing of the dataset was required.
-
-## Colorado_Counties.geojson ##
-This file contains the boundaries for each county in Colorado.  The file was accessed from OWF's [owf-data-co-counties](https://github.com/OpenWaterFoundation/owf-data-co-counties) 
-repository that contains unique identifers and other data for Colorado's counties.  The file was originally downloaded from the Colorado Water Conservation Board (CWCB)'s 
-[Data Viewer](https://gis.colorado.gov/dnrviewer/Index.html?viewer=cwcbviewer) as a shapefile.  It was opened in QGIS and the coordinate reference system 
-was converted to WGS 84 so that the map could be properly viewed in web applications.  The shapefile was then saved in GeoJSON format.
-
-This file is used in page 7 of the Water Entities story (Population Projections to 2050), in which counties are color-coded by population.
+This file is used for the map shown on the 'Hydrology Tools - Source Water Route Framework' page.  The file size for the entire 
+South Platte Basin portion of the SWRF is 25 MB, so OWF opted to display a smaller portion so that the map doesn't load slowly. 
 
 ## Colorado-IBCC-Basins-WGS84.geojson ##
-This file contains the boundaries for each Interbasin Compact Committee (IBCC) basin in Colorado.  The file was accessed from OWF's [owf-data-co-roundtable-basins](https://github.com/OpenWaterFoundation/owf-data-co-roundtable-basins) 
-repository that contains basic information regarding each basin.  The file was originally downloaded from the Colorado Water Conservation Board (CWCB)'s 
+This file contains the boundaries for each Interbasin Compact Committee (IBCC) basin in Colorado.  The file was accessed from OWF's 
+[owf-data-co-roundtable-basins](https://github.com/OpenWaterFoundation/owf-data-co-roundtable-basins) repository that contains basic 
+information regarding each basin.  The file was originally downloaded from the Colorado Water Conservation Board (CWCB)'s 
 [Data Viewer](https://gis.colorado.gov/dnrviewer/Index.html?viewer=cwcbviewer) as a shapefile.  It was opened in QGIS and the coordinate reference system 
 was converted to WGS 84 so that the map could be properly viewed in web applications.  The shapefile was then saved in GeoJSON format.
 
-This file is used in most of the maps within the Water Entities story to indicate basin boundaries.
+This file is used in most of the maps within the Hydrology story to indicate basin boundaries.
 
-## Colorado-Municipal-Water-Providers-SouthPlatte-Metro.csv ##
-This file contains municipal water provider data for the South Platte Basin.  The file comes from OWF's [owf-data-co-municipal-water-providers](https://github.com/OpenWaterFoundation/owf-data-co-municipal-water-providers) 
-repository that contains unique identifiers and other data for Colorado's municipal water providers.  The dataset was filtered to only contain providers in the South Platte and 
-Metro basins.  Each water provider is represented by a point and contains information such as the type of provider (municipality, water district, private company, etc.), website 
-and links to water efficiency plans, if available.  See the [owf-data-co-municipal-water-providers](https://github.com/OpenWaterFoundation/owf-data-co-municipal-water-providers) 
-repository for more information about how the dataset was developed.  
+## ditch-water-sources.csv ##
+This file comes from the [Structures](https://dnrweb.state.co.us/cdss/Structures/) dataset from CDSS.  The R script, [agricultural-analyses.R](https://github.com/OpenWaterFoundation/swsi-story-sp-hydrology/blob/master/analysis/agricultural-analyses.R) 
+calculated the total number of ditches associated with each water source.  Those water sources with 10 or more ditches were saved in this file.  See the 
+README in the `analysis` folder for data processing steps.  
 
-While this file is not directly used in visualizations, it is contained within the repository because it is essentially a copy of 
-Colorado-Municipal-Water-Providers-SouthPlatte-Metro.geojson but is in a format that may be more readily viewed and used by others. 
+This file is used for the table on the 'Hydrology Concepts - Diversion Headgates and Measuring Diversions' page.
 
-## Colorado-Municipal-Water-Providers-SouthPlatte-Metro.geojson ##
-This file contains municipal water provider data for the South Platte Basin.  The file comes from OWF's [owf-data-co-municipal-water-providers](https://github.com/OpenWaterFoundation/owf-data-co-municipal-water-providers) 
-repository that contains unique identifiers and other data for Colorado's municipal water providers.  The dataset was filtered to only contain providers in the South Platte and 
-Metro basins.  Each water provider is represented by a point and contains information such as the type of provider (municipality, water district, private company, etc.), website 
-and links to water efficiency plans, if available.  After filtering the dataset, the file was first saved in CSV format, then opened in QGIS and saved in 
-GeoJSON format.  See the [owf-data-co-municipal-water-providers](https://github.com/OpenWaterFoundation/owf-data-co-municipal-water-providers) 
-repository for more information about how the dataset was developed.
+## north-sterling-canal-story.json ##
+This file is the basis for the page titled 'North Sterling Irrigation District'.  This page uses the [StoryMapJS](https://storymap.knightlab.com/) 
+template developed by the Northwestern University Knight Lab.  StoryMapJS, a JavaScript library, is a spatial story-telling tool that 
+points users to locations on a map as they progress through a story.  The story is configured through a JSON file.  The basic components of each 'slide' 
+of the file include a title, some text, location coordinates in decimal degrees and an image, video or other type of medium.  The images within this 
+file are from Google Earth.  Data regarding crops grown in the district are from the [CDSS Division 1 Irrigated Lands 2015](https://www.colorado.gov/pacific/cdss/division-1-south-platte) 
+GIS data layer.
 
-This file is used in pages 9 and 11 of the Water Entities story (Municipal Water Providers and Municipal Water Use and Efficiency, respectively).  
-
-## county-population-forecast.geojson ##
-This file is a merging of the [Colorado_Counties.geojson](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/site/data/Colorado_Counties.geojson) and 
-[county-population-forecast-yearsinmultiplecolumns.csv](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/site/data/county-population-forecast-yearsinmultiplecolumns.csv) files. 
-
-This file is used in page 7 of the Water Entities story (Population Projections to 2050), in which counties are color-coded by population.
-
-## county-population-forecast-yearsinmultiplecolumns.csv ##
-This file contains county population forecasts for the years 2000 to 2050.  Each year of data is within its own column, which is necessary for some visualizations. 
-The data were processed with the [county-municipal-population-dola.R](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/analysis/county-municipal-population-dola.R) script. 
-See the `analysis` folder for processing steps and data inputs.  
+## southplatte-transbasin-diversions.csv ##
+This file contains information about transbasin diversions in the South Platte Basin and comes from the Open Water Foundation's 
+[transbasin diversions dataset](https://github.com/OpenWaterFoundation/owf-data-co-transbasin-diversions).  The file within the repository, 
+[Colorado-Transbasin-Diversions.csv](https://github.com/OpenWaterFoundation/owf-data-co-transbasin-diversions/blob/master/data/Colorado-Transbasin-Diversions.csv), 
+was filtered to only include diversions that put water into the South Platte Basin.  See the transbasin diversions repository for information about how 
+the data were collected and sources of information.
 
 While this file is not directly used in visualizations, it is contained within the repository because it is essentially a copy of 
-county-population-forecast.geojson but is in a format that may be more readily viewed and used by others. 
+southplatte-transbasin-diversions.geojson but is in a format that may be more readily viewed and used by others.
 
-## county-population-forecast-yearsinsinglecolumn.csv ##
-This file contains county population forecasts for the years 2000 to 2050.  Each year of data is combined into a single "Year" column.
-The data were processed with the [county-municipal-population-dola.R](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/analysis/county-municipal-population-dola.R) script. 
-See the `analysis` folder for processing steps and data inputs.  
+## southplatte-transbasin-diversions.geojson ##
+This file contains information about transbasin diversions in the South Platte Basin and comes from the Open Water Foundation's 
+[transbasin diversions dataset](https://github.com/OpenWaterFoundation/owf-data-co-transbasin-diversions).  The file within the repository, 
+[Colorado-Transbasin-Diversions.csv](https://github.com/OpenWaterFoundation/owf-data-co-transbasin-diversions/blob/master/data/Colorado-Transbasin-Diversions.csv), 
+was filtered to only include diversions that put water into the South Platte Basin.  See the transbasin diversions repository for information about how 
+the data were collected and sources of information.  The CSV file was imported into QGIS and converted to GEOJSON format.
 
-This file is used in page 7 of the Water Entities story (Population Projections to 2050), in which counties are color-coded by population.
+This file is used for the map shown on the 'Transbasin Diversions' page.
 
-## municipal-population-2006-2016.csv ##
-This file contains municipal historical population data for the years 2006 and 2016 and the percent change in population between those years. The 
-data were processed with the [county-municipal-population-dola.R](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/analysis/county-municipal-population-dola.R) script. 
-See the `analysis` folder for processing steps and data inputs.  
-
-While this file is not directly used in visualizations, it is contained within the repository because it is essentially a copy of 
-municipal-population-2006-2016.geojson but is in a format that may be more readily viewed and used by others. 
-
-## municipal-population-2006-2016.geojson ##
-This file is a merging of the [municipal-population-2006-2016.csv](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/site/data/municipal-population-2006-2016.csv) and 
-[Colorado-Municipalities-SouthPlatte-Metro.csv](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/analysis/Colorado-Municipalities-SouthPlatte-Metro.csv) files,
-so that the dataset has spatial data associated with it.  Colorado-Municipalities-SouthPlatte-Metro.csv was obtained from OWF's [owf-data-co-municipalities](https://github.com/OpenWaterFoundation/owf-data-co-municipalities) 
-repository, which is a repository that contains identifiers and other data about Colorado municipalities.
-
-This file is used in page 5 of the Water Entities story (Municipalities), in which municipalities are color-coded by 2016 population 
-and sized by the percent change in population since 2006. 
-
-## municipal-population-historical-change.csv ##
-This file contains municipal historical population data for the years 1980 to 2016 and the percent change in population since 1980. The 
-data were processed with the [county-municipal-population-dola.R](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/analysis/county-municipal-population-dola.R) script. 
-See the `analysis` folder for processing steps and data inputs.  The data are sorted by year and have been linked to the 
-[Colorado-Municipalities-SouthPlatte-Metro.csv](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/analysis/Colorado-Municipalities-SouthPlatte-Metro.csv) file.  
+## statemod-node-network.csv ##
+This file contains information about nodes in the South Platte StateMod model, including locations.  Data were processed using the 
+[statemod-analyses.TSTool](https://github.com/OpenWaterFoundation/swsi-story-sp-hydrology/blob/master/analysis/statemod-analyses.TSTool) 
+command file.  See the README in the `analysis` folder for data processing steps. 
 
 While this file is not directly used in visualizations, it is contained within the repository because it is essentially a copy of 
-municipal-population-historical-change.geojson but is in a format that may be more readily viewed and used by others.
+statemod-node-network.geojson but is in a format that may be more readily viewed and used by others.
 
-## municipal-population-historical-change.geojson ##
-This file contains municipal historical population data for the years 1980 to 2016 and the percent change in population since 1980. The 
-data were processed with the [county-municipal-population-dola.R](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/analysis/county-municipal-population-dola.R) script. 
-See the `analysis` folder for processing steps and data inputs.  The data are sorted by year and have been linked to the 
-[Colorado-Municipalities-SouthPlatte-Metro.csv](https://github.com/OpenWaterFoundation/swsi-story-sp-entities/blob/master/analysis/Colorado-Municipalities-SouthPlatte-Metro.csv) file.  The 
-file was first saved in CSV format; it was then opened in QGIS and saved in GeoJSON format.
+## statemod-node-network.geojson ##
+This file contains information about nodes in the South Platte StateMod model, including locations.  Data were processed using the 
+[statemod-analyses.TSTool](https://github.com/OpenWaterFoundation/swsi-story-sp-hydrology/blob/master/analysis/statemod-analyses.TSTool) 
+command file.  See the README in the `analysis` folder for data processing steps.
 
-This file is used in page 6 of the Water Entities story (Municipal Population Data), in which municipalities are color-coded by 
-population and sized by the percent change in population since 1980.
+This file is used for the map shown on the 'Modeling Concepts - CDSS and StateMod' page.
 
-## SouthPlatteMetro-instreamflow-reaches-decreed-with-amounts.geojson ##
-This file contains instream flow data accessed from the Colorado Information Marketplace's [CWCB Instream Flow and Natural Lake Level Data](https://data.colorado.gov/Water/CWCB-Instream-Flow-and-Natural-Lake-Level-Data/kzsx-aqy6/data) 
-dataset.  Data were filtered to only include the South Platte basin and then exported to CSV format.  The "Flow Amounts" column was manually parsed within Excel to obtain decreed flow amounts 
-for each month.  The case number for each right was then linked to the "Instream Flow Reaches - Decreed and pending reaches" 
-zipped shapefile available from [CDSS](http://cdss.state.co.us/GIS/Pages/AllGISData.aspx) within QGIS to obtain spatial data (lines) for each right.
+## timeline.json ##
+This file is the basis for the page titled 'Timeline of Addressing Water Supply Issues in the South Platte Basin' page.  This page uses the 
+[TimelineJS](https://timeline.knightlab.com/) template developed by the Northwestern University Knight Lab.  TimelineJS, a JavaScript library, 
+is a chronological story-telling tool that points each slide of the story to a date on a timeline.  The timeline is configured through a JSON 
+file.  The basic components of each 'slide' of the file include a date, title, some text and an image, video or other type of medium.  Sources 
+for images used in the timeline are included in the captions below each image.
 
-This file is used in page 17 of the Water Entities story (Environmental Flow Protection), in which stream reaches are color-coded by monthly decreed flow amounts.
+## transbasin-diversions-average-annual-diverted.csv ##
+This file lists the average annual amount of water diverted by transbasin diversions that divert water into the South Platte Basin.  This file 
+comes from OWF's [transbasin diversions dataset](https://github.com/OpenWaterFoundation/owf-data-co-transbasin-diversions).  The file within the repository, 
+[Transbasin-Diversions-Average-Annual-Diverted.csv](https://github.com/OpenWaterFoundation/owf-data-co-transbasin-diversions/blob/master/data/Transbasin-Diversions-Average-Annual-Diverted.csv) 
+was directly copied into the Hydrology story repository.  Data-processing occurred in the 
+[Process-time-series-data.TSTool](https://github.com/OpenWaterFoundation/owf-data-co-transbasin-diversions/blob/master/analysis/Process-time-series-data.TSTool) 
+command file.
 
-## waterproviders-wedp-population-wateruse.geojson ##
-This file contains water use and population data for water providers that provide more than 2,000 acre-feet of water to their customers 
-annually, termed covered entities.  Data come from the CWCB's [Water Efficiency Data Portal (WEDP)](http://cowaterefficiency.com/unauthenticated_home). 
-OWF processed the data from the WEDP in [TSTool](https://sites.google.com/site/cdssstaging/tstool/download), an open-source data-processing 
-software and put the results in a separate repository, [owf-data-co-wedp](https://github.com/OpenWaterFoundation/owf-data-co-wedp).  *This repository 
-has not yet been completed.*
+This file is used for the table shown on the 'Transbasin Diversions' page.
 
-This file is used in page 10 of the Water Entities story (Municipal Water Use), in which municipal water providers are color-coded 
-by population served and sized by water use.
+
+
+
+
+
+
+
+
+
