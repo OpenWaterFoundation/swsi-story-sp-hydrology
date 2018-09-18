@@ -74,7 +74,7 @@ was converted to WGS 84 so that the map could be properly viewed in web applicat
 
 This file is used in most of the maps within the Hydrology story to indicate basin boundaries.
 
-## ditch-water-sources.csv ##
+## ditch-watersources.csv ##
 This file comes from the [Structures](https://dnrweb.state.co.us/cdss/Structures/) dataset from CDSS.  The R script, [agricultural-analyses.R](https://github.com/OpenWaterFoundation/swsi-story-sp-hydrology/blob/master/analysis/agricultural-analyses.R) 
 calculated the total number of ditches associated with each water source.  Those water sources with 10 or more ditches were saved in this file.  See the 
 README in the `analysis` folder for data processing steps.  
