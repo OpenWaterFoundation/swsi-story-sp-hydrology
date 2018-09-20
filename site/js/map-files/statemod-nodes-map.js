@@ -135,8 +135,8 @@ var statemod_nodes_map = (function(){
     var legend = L.control ({position: 'bottomright'});
     legend.onAdd = function (map) {
 	   var div = L.DomUtil.create('div', 'info legend'),
-	       categories = ['Diversion', 'Diversion and Well', 'InstreamFlow', 'Reservoir', 'StreamGage', 'Well', 'Other'],
-		   labels = ['Diversion', 'Diversion and Well', 'Instream Flow', 'Reservoir', 'Stream Gage', 'Well', 'Other'];
+	       categories = ['Diversion', 'Diversion and Well', 'InstreamFlow', 'Reservoir', 'StreamGage', 'Other'],
+		   labels = ['Diversion', 'Diversion and Well', 'Instream Flow', 'Reservoir', 'Stream Gage', 'Other'];
 
 	   div.innerHTML = "<h6>Node Type</h6>";
 	   for (var i = 0; i < categories.length; i++) {
