@@ -31,8 +31,10 @@ ManipulateTableString(TableID="Node-Types",ColumnIncludeFilters="Node_Name:*Bria
 ManipulateTableString(TableID="Node-Types",ColumnIncludeFilters="Node_Name:*Brian Canal*",InputColumn1="Node_Type",Operator="Prepend",InputValue2="Diversion",OutputColumn="Node_Type")
 #
 # Join Node-Types table to Node-Network table
-JoinTables(TableID="Node-Network-orig",TableToJoinID="Node-Types",JoinColumns="Node_ID2:Node_ID",JoinMethod=JoinIfInBoth)
-ManipulateTableString(TableID="Node-Network-orig",ColumnIncludeFilters="Type:Diversion and Well",InputColumn1="Node_Type",Operator="Replace",InputValue2="Well",InputValue3="Diversion and Well",OutputColumn="Node_Type")
+JoinTables(TableID="Node-Network-orig",TableToJoinID="Node-Types",JoinColumns="Node_ID2:Node_ID",JoinMethod=JoinIfInBoth,HandleMultipleJoinMatchesHow=NumberColumns)
+# Many records in the Node-Types table are duplicates in that the node is first listed as a diversion, then as a well.
+# Change the Node_Type column in the joined table to state "Diversion and Well" for these nodes.
+ManipulateTableString(TableID="Node-Network-orig",ColumnIncludeFilters="Node_Type:Diversion,Node_Type_2:Well",InputColumn1="Node_Type",Operator="Replace",InputValue2="Diversion",InputValue3="Diversion and Well",OutputColumn="Node_Type")
 CopyTable(TableID="Node-Network-orig",NewTableID="Node-Network",IncludeColumns="Node_ID2,Node_Name,Node_Type,Downstream_Node2",ColumnMap="Node_ID2:Node_ID,Downstream_Node2:Downstream_Node")
 # Insert a Node_Order column, starting with 0, that will ensure a way to determine the order, even if the dataset is sorted
 InsertTableColumn(TableID="Node-Network",InsertColumn="Node_Order",InsertBeforeColumn="Node_Type",ColumnType=Integer,InitialValue="0")

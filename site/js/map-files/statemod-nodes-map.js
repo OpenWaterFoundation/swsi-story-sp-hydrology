@@ -108,12 +108,12 @@ var statemod_nodes_map = (function(){
 	   return getnodecolor(point);
 	}
 	function getnodecolor(point){
-		if      (point === "Diversion")     colornode = "red";
-	    else if (point === "InstreamFlow") 	colornode = "purple";		
-	    else if (point === "Reservoir") 	colornode = "green";
-	    else if (point === "StreamGage")    colornode = "blue";
-	    else if (point === "Well")          colornode = "yellow";		   
-	    else                                colornode = "orange";
+		if      (point === "Diversion")     		colornode = "red";
+		else if (point === "Diversion and Well") 	colornode = "yellow";
+	    else if (point === "InstreamFlow") 			colornode = "purple";		
+	    else if (point === "Reservoir") 			colornode = "green";
+	    else if (point === "StreamGage")    		colornode = "blue";		   
+	    else                                		colornode = "orange";
 	    return colornode;
 	}
 	
@@ -135,8 +135,8 @@ var statemod_nodes_map = (function(){
     var legend = L.control ({position: 'bottomright'});
     legend.onAdd = function (map) {
 	   var div = L.DomUtil.create('div', 'info legend'),
-	       categories = ['Diversion', 'InstreamFlow', 'Reservoir', 'StreamGage', 'Well', 'Other'],
-		   labels = ['Diversion', 'Instream Flow', 'Reservoir', 'Stream Gage', 'Well', 'Other'];
+	       categories = ['Diversion', 'Diversion and Well', 'InstreamFlow', 'Reservoir', 'StreamGage', 'Well', 'Other'],
+		   labels = ['Diversion', 'Diversion and Well', 'Instream Flow', 'Reservoir', 'Stream Gage', 'Well', 'Other'];
 
 	   div.innerHTML = "<h6>Node Type</h6>";
 	   for (var i = 0; i < categories.length; i++) {
