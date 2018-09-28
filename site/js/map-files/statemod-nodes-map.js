@@ -153,7 +153,7 @@ var statemod_nodes_map = (function(){
 	scrollbutton.onAdd = function (map) {
 		var div = L.DomUtil.create('div', 'scrollbutton');
 		div.innerHTML = "<image id='scrollbutton' src='images/mouse.svg' class='scrollbutton-tooltip'" +
-						" style='width:20px; cursor:pointer;' onclick='water_providers_southplatte_metro_map.scrollButtonClickFunction()'></image>";
+						" style='width:20px; cursor:pointer;' onclick='statemod_nodes_map.scrollButtonClickFunction()'></image>";
 		return div;
 	};
 	scrollbutton.addTo(map);		

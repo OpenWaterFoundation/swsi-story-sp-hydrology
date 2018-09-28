@@ -118,7 +118,7 @@ map.attributionControl.addAttribution('Data &copy; <a href="https://www.colorado
 	scrollbutton.onAdd = function (map) {
 		var div = L.DomUtil.create('div', 'scrollbutton');
 		div.innerHTML = "<image id='scrollbutton' src='images/mouse.svg' class='scrollbutton-tooltip'" +
-						" style='width:20px; cursor:pointer;' onclick='ditches_map.scrollButtonClickFunction()'></image>";
+						" style='width:20px; cursor:pointer;' onclick='swrf_map.scrollButtonClickFunction()'></image>";
 		return div;
 	};
 	scrollbutton.addTo(map);		
