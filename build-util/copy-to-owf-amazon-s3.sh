@@ -97,11 +97,13 @@ swrfMapJsOrig="swrf-map.js"
 swrfMapJsWithVersion="swrf-map.${version}.js"
 transbasinDiversionsMapJsOrig="transbasin-diversions-map.js"
 transbasinDiversionsMapJsWithVersion="transbasin-diversions-map.${version}.js"
+watershedMapJsOrig="watershed-map.js"
+watershedMapJsWithVersion="watershed-map.${version}.js"
 # List alphabetically to simplify insertions
 #
 # Replace references in index.html with files that have versions
 echo "Update index.html with versioned references"
-cat ../site/index.html | sed -e "s/${cdssActiveStreamgagesMapJsOrig}/${cdssActiveStreamgagesMapJsWithVersion}/g" | sed -e "s/${cdssDitchesMapJsOrig}/${cdssDitchesMapJsWithVersion}/g" | sed -e "s/${customLeafletStyleCssOrig}/${customLeafletStyleCssWithVersion}/g" | sed -e "s/${fileParserJsOrig}/${fileParserJsWithVersion}/g" | sed -e "s/${mapCssOrig}/${mapCssWithVersion}/g" | sed -e "s/${owfStyleCssOrig}/${owfStyleCssWithVersion}/g" | sed -e "s/${statemodNodesMapJsOrig}/${statemodNodesMapJsWithVersion}/g" | sed -e "s/${transbasinDiversionsMapJsOrig}/${transbasinDiversionsMapJsWithVersion}/g" > ${tmpBuildFolder}/index.html
+cat ../site/index.html | sed -e "s/${cdssActiveStreamgagesMapJsOrig}/${cdssActiveStreamgagesMapJsWithVersion}/g" | sed -e "s/${cdssDitchesMapJsOrig}/${cdssDitchesMapJsWithVersion}/g" | sed -e "s/${customLeafletStyleCssOrig}/${customLeafletStyleCssWithVersion}/g" | sed -e "s/${fileParserJsOrig}/${fileParserJsWithVersion}/g" | sed -e "s/${mapCssOrig}/${mapCssWithVersion}/g" | sed -e "s/${owfStyleCssOrig}/${owfStyleCssWithVersion}/g" | sed -e "s/${statemodNodesMapJsOrig}/${statemodNodesMapJsWithVersion}/g" | sed -e "s/${transbasinDiversionsMapJsOrig}/${transbasinDiversionsMapJsWithVersion}/g" | sed -e "s/${watershedMapJsOrig}/${watershedMapJsWithVersion}/g" > ${tmpBuildFolder}/index.html
 
 # Copy the original files and add version to the filename
 echo "Copy versioned files to ${tmpBuildFolder}"
@@ -117,6 +119,7 @@ cp ../site/js/map-files/${cdssDitchesMapJsOrig} ${tmpBuildFolder}/js/map-files/$
 cp ../site/js/map-files/${statemodNodesMapJsOrig} ${tmpBuildFolder}/js/map-files/${statemodNodesMapJsWithVersion} 
 cp ../site/js/map-files/${swrfMapJsOrig} ${tmpBuildFolder}/js/map-files/${swrfMapJsWithVersion} 
 cp ../site/js/map-files/${transbasinDiversionsMapJsOrig} ${tmpBuildFolder}/js/map-files/${transbasinDiversionsMapJsWithVersion} 
+cp ../site/js/map-files/${watershedMapJsOrig} ${tmpBuildFolder}/js/map-files/${watershedMapJsWithVersion} 
 
 # Create zip folder if runMode = prepUpload
 if [ "$runMode" == "prepUpload" ]
