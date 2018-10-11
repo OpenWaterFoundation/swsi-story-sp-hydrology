@@ -155,11 +155,11 @@
 	
 <div id="fullpage">
 <!-- Title Page -->  
-    <div class="section">
+    <div class="section" style="background-image:url('images/autumn-clouds-conifers-247474.jpg'); height:100vh!important;">>
 	  <div class="row">
           <div class="col-lg-12">
 		    <div class="container text-center text-image-overlay" style="margin-top:5vh; background-color:rgba(70,70,70,0.5);">
-            <h1 style="margin-top:5vh; float:top;"> (**Draft**) South Platte and Metro Basin Hydrology (**Draft**)</h1>
+            <h1 style="margin-top:5vh; float:top;">South Platte and Metro Basin Hydrology</h1>
               <p style="font-size:22px;">This story provides a summary of South Platte and Metro Basin hydrology in order to provide background for 
 			  understanding water resources issues in the basin.</p>
 			  <p style="font-size:18px;"><i>See the <a href="#instructions">Instructions</a> page for how to view this story.</i>
@@ -192,9 +192,6 @@
 			  (aquifers) to be stored or it may flow to wells or springs or back to streams by seepage. The cycle for water may be short or it may take millions 
 			  of years.</p>
 			  <p><i>~ From the <a href="https://water.usgs.gov/edu/hydrology.html" target="_blank">USGS Water Science School</a>.</i></p>
-			  <p>Hydraulics, a related field, is the study of the conveyance of water or other liquids through pipes or channels.  Hydraulic 
-			  concepts include pipe flow, dam design, turbines, hydropower, flow measurement and river channel erosion.  Free surface hydraulics is the branch 
-			  of hydraulics dealing with flows that occur in rivers, canals and lakes (<a href="https://en.wikipedia.org/wiki/Hydraulics" target="_blank">Wikipedia</a>).</p>
               </div>			
 		    <div class="col-lg-8 side-content">
               <img src="images/watercycle-usgs-screen.jpg" frameborder="0"></img>
@@ -287,30 +284,32 @@
 			  <p>A watershed is an area of land that drains all the streams and rainfall to a common outlet, such as the outflow of a reservoir or any point 
 			  along a stream channel. A watershed can also be referred to as a drainage basin or catchment; it is also possible to think of a watershed as a 
 			  precipitation collector.  Ridges and hills that separate two watersheds are called the drainage divide.  In Colorado, the Continental Divide is 
-			  an example of a drainage divide at the largest scale.  Here, water that falls west of the Divide will eventually make its way to the Pacific Ocean 
+			  an example of a drainage divide at the largest scale.  Water that falls west of the Divide will eventually make its way to the Pacific Ocean 
 			  via rivers like the Colorado River.  Water that falls east of the Divide will eventually make its way to the Atlantic Ocean via rivers like the 
-			  South Platte and Arkansas.</p>
+			  South Platte and Arkansas.  Natural drainage features may be modified by human impacts such as dams, tunnels, pumping, canals and other 
+			  infrastructure.</p>
 			  <p>A watershed consists of surface water--lakes, streams, reservoirs and wetlands--and all the underlying groundwater. Larger watersheds consist of 
 			  many smaller watersheds. The size of the watershed depends on the outflow point:  all of the land that drains water to the outflow point is the watershed for 
 			  that outflow point (<a href="https://water.usgs.gov/edu/watershed.html" target="_blank">USGS Water Science School<img src="images/baseline_launch_black_18dp.png" 
-			  width="12px"/></a>).</p>
+			  width="12px"/></a>).  It is helpful to locate streamgages at the outflow point of important water supply watersheds or stream confluences.</p>
 			  <p>There are a number of watershed datasets.  A common one is the 
 			  <a href="https://www.usgs.gov/core-science-systems/ngp/national-hydrography/watershed-boundary-dataset?qt-science_support_page_related_con=4#qt-science_support_page_related_con" 
 			  target="_blank">Watershed Boundary Dataset (WBD)<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> from the U.S. Geological Survey, 
 			  which is a nationwide dataset.  Here, watersheds are called hydrologic units and form a standardized system for organizing, collecting, managing 
 			  and reporting hydrologic information. Hydrologic units are arranged in a nested, hierarchical system with each unit in the system identified using 
 			  a unique code.  Hydrologic unit codes (HUC) are developed using a progressive two-digit system where each successively smaller areal unit is 
-			  identified by adding two digits to the identifying code the smaller unit is nested within.  An example of this hierarchy is shown below.</p>
+			  identified by adding two digits to the identifying code of the parent basin.  An example of this hierarchy is shown below.</p>
 			  <p><img class="image-centered" src="images/huc-hierarchy.png" frameborder="0"></img></p>
 			  <p>Source: <a href="https://www.usgs.gov/core-science-systems/ngp/national-hydrography/watershed-boundary-dataset?qt-science_support_page_related_con=4#qt-science_support_page_related_con" 
 			  target="_blank">Watershed Boundary Dataset<img src="images/baseline_launch_black_18dp.png" width="12px"/></a></p> 
 			  <p>The WBD contains eight levels of progressive hydrologic units identified by unique 2- to 16-digit codes. The dataset is complete for the United 
 			  States to the 12-digit hydrologic unit.  The map at right shows HUC10 watersheds in the South Platte Basin.</p>
-			  <p>The State of Colorado classifies watersheds into divisions (the South Platte Basin is Division 01) and districts.  These represent hydrologic 
-			  basins associated with water administration.  Data in the State's HydroBase database of water data are often assigned a "Water District Identifier" 
-			  or WDID; the first two digits of the WDID are the water district number.  On the map at right, click on the second Layers icon in the upper left 
+			  <p>The State of Colorado classifies watersheds into divisions (the South Platte Basin is Division 01) and districts, which correspond to 
+			  basins associated with water administration.  Water-related data in the State's HydroBase database, such as diversion records and water rights, are 
+			  assigned a "Water District Identifier" or WDID; the first two digits of the WDID are the water district number and the remaining digits indicate a 
+			  structure such as a diversion headgate or reservoir.  On the map at right, click on the second Layers icon in the upper left 
 			  corner to toggle to a map of the water districts in the Basin.  Note that the Republican River and Laramie River basins are sometimes considered 
-			  with the South Platte Basin but that each has its own water resources issues.</p>
+			  with the South Platte Basin but that each has unique water resources issues.</p>
           </div>			
 		  <div class="col-lg-8">
             <div id="mapbox6" class="map-right"></div>
@@ -325,15 +324,21 @@
         <div class="row">
           <div class="col-lg-4 text-left-custom custom-scroll">
               <h2>Hydrology Concepts - Streams</h2>	
-			  <p>From a technical perspective, streams are the surface water conveyance features within a watershed.  There are a number of stream datasets, including:</p>
+			  <p>Streams are the surface water conveyance features within a watershed.  There are a number of stream datasets, including:</p>
 			  <ul>
 			    <li><a href="https://nhd.usgs.gov/NHD_High_Resolution.html" target="_blank">National Hydrography Dataset (NHD)<img src="images/baseline_launch_black_18dp.png" 
 			  width="12px"/></a> - from the U.S. Geological Survey.</li>
 			    <li>Source Water Route Framework (SWRF) - developed by the Division of Water Resources and derived from the NHD.  The SWRF represents 
-				most streams in Colorado, in particular those with water rights or other important features.</li>
+				most streams in Colorado, in particular those with water rights or other important features.  However, SWRF may not include minor streams 
+				or features that do not have a nexus with water administration.</li>
+				<li><a href="https://www.colorado.gov/pacific/cdphe/clean-water-gis-maps" target="_blank">Colorado Department of Public Health and Environment's 
+				water quality stream segmentation<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> dataset - classifies stream segments based 
+			    on level of impairment and the reasons for impairment (E. coli, sediment, temperature, etc.).</li>
 			  </ul>
 			  <p>Similar to NHD, the SWRF uses a Geographic Names Information System (GNIS) ID, an 8-digit identifier used to uniquely identify most streams in the 
-			  state, rather than using the stream's common name (there are 13 streams named Dry Creek in the South Platte basin alone).</p>
+			  state, rather than using the stream's common name (there are 13 streams named Dry Creek in the South Platte basin alone).  SWRF provides 
+			  a more simple dataset than NHD: in the SWRF each line represents a stream or river, whereas NHD provides many individual line segments for each 
+			  stream or river.  It is important when using these datasets to indicate the version because government agencies do periodically adjust the data.</p>
 			  <p>By using the NHD linked to the SWRF, it is possible to link federal and State datasets.  Datasets such as 
 			  stream gages, diversion structures and instream flow rights (discussed in subsequent pages in this story) can be "referenced" to the SWRF to 
 			  provide a common framework for analysis; such data work is ongoing in order to leverage the SWRF dataset.</p>
@@ -441,10 +446,10 @@
 			  technology issues and degradation of the infrastructure, such as settling, cracking and vegetation growth.  <a href="http://www.dwr.state.co.us/SurfaceWater/data/division.aspx?div=1" 
 			  target="_blank">Diversion records<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> maintained by DWR indicate how much water was 
 			  measured (or estimated) to have been diverted at a structure.</p>
-			  <p>This map shows ditch diversion structures in the Basin, of which there are over 3,500 (note these are just ditch diversions and not diversions for 
-			  other structure types, such as wells).  Structures are color-coded based on water source:  the 10 streams with the most diversions are colored and listed 
-			  in order (i.e., the South Platte River has the most ditch diversions, followed by the Cache la Poudre River); diversions from all other streams are shown 
-			  in black.</p>
+			  <p>This map shows ditch diversion structures in the Basin, of which there are over 3,500 (note these include active, inactive and historical diversions; 
+			  also note these are just ditch diversions and not diversions for other structure types, such as wells).  Structures are color-coded based on water source:  
+			  the 10 streams with the most diversions are colored and listed in order (i.e., the South Platte River has the most ditch diversions, followed by the Cache 
+			  la Poudre River); diversions from all other streams are shown in black.</p>
 			  <p>The table below lists the number of ditch diversions on each stream in the Basin for those streams that have 10 or more ditch diversion structures.</p>
 				<div id='clusterize1' class='clusterize' style="width: 100%; height: 380px;"></div>
 				  <script>
@@ -573,7 +578,9 @@
 			  target="_blank">South Platte River Compact<img src="images/baseline_launch_black_18dp.png" width="12px"/></a>.</p>
 			  <p>Analyses of water supplies and the effects of climate change on streamflow are a couple of ways where it may be necessary to estimate 
 			  natural flows.  Estimation of natural flows and understanding conditions in a system typically require utilizing models. Two examples are point flow 
-			  models and the CDSS StateMod model, which will be discussed in the next section.</p>
+			  models and the CDSS StateMod model, which will be discussed in the next section.  Additionally, the USGS's <a href="https://water.usgs.gov/osw/streamstats/index.html" 
+			  target="_blank">StreamStats<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> application provides estimates of streamflow statistics 
+			  for ungaged (natural) sites.</p>
               </div>			
 		    <div class="col-lg-8 side-content">
 			  <iframe style="width:90%; height:53%" src="visualizations/natural-regulated-available-flows-06696000.html" frameborder="0" ></iframe>	
@@ -594,17 +601,22 @@
 			  ignored.  The streamflow at every stream gage in the basin is represented in the analysis for a specific point in time.</p>
 			  <p>Point flow models are usually constructed as a system, or network, of nodes and links.  The inputs throughout the basin are used to add and subtract 
 			  flows to perform a water balance.  The data outputs from one timestep are then used as inputs across the basin for the next timestep.</p>
-			  <p>Point flow models will typically result in errors because of externalities such as unmeasured inflows and outflows, timing issues and data input errors, 
-			  which can generally be represented as gains and losses between measured streamgage nodes.  The errors can be distributed between nodes in a reach, where 
-			  a reach is bounded by streamgages.  The distribution of errors can be based on stream mile or other mechanism.  For example, if the point flow calculations 
-			  between two streamgages indicate that flow at the lower gage is 100 cfs higher than calculated, the 100 cfs error can be distributed across the stream reach 
-			  between gages, indicating that return flows are occurring.  Such return flows vary depending on season and are themselves lagged in time from the original 
-			  use of the water.  Point flow models therefore provide a useful conceptualization of a system without having to model complex interactions.</p>
+			  <p>The flows calculated from an upstream gage and the diversions and inflows below that gage will typically be different from the measured flows at a 
+			  downstream gage.  The difference between measured and calculated flows indicates measurement error and unaccounted-for inflows and outflows in the stream 
+			  reach.  This difference can be distributed throughout the reach to account for gains and losses between the bounding streamgages.  The distribution of gains/losses 
+			  can be based on stream mile or other mechanism.  For example, if the point flow calculations between two streamgages indicate that flow at the lower gage 
+			  is 100 cfs higher than calculated, the 100 cfs can be distributed across the stream reach between gages, indicating that return flows are occurring.  Such 
+			  return flows vary depending on season and are themselves lagged in time from the original use of the water.  Point flow models therefore provide a useful 
+			  conceptualization of a system without having to model complex interactions.</p>
 			  <p>This <a href="https://www.lspwcd.org/index_files/PointFlow.htm" target="_blank">visualization</a> is a point flow model for the South Platte River 
 			  from Kersey to Julesburg, developed by the <a href="https://www.lspwcd.org/index_files/Page1056.htm" target="_blank">Lower South Platte Water Conservancy 
 			  District</a>.</p>
 			  <p>The <a href="http://www.northernwater.org/sf/home" target="_blank">Northern Colorado Water Conservancy District (Northern Water)</a> also maintains a 
 			  daily point flow model for the Cache la Poudre River and other rivers, but it is currently not publicly available.</p>
+			  
+			  Change the language from "result in errors" to something like "The flows calculated from upstream reach gage, and diversions and inflows below that gage will 
+			  typically be different from the measured flows at a lower gage. The difference between measured and calculated flows indicates measurement error and unaccounted-for 
+			  inflows and outflows in the stream reach. This difference can be distributed throughout the reach to account for gains and losses between the bounding gages."
             </div>			
 		    <div class="col-lg-9 side-content">
 				<iframe style="max-width:90%" data-src="https://www.lspwcd.org/index_files/PointFlow.htm" scrolling="no" frameborder="0"></iframe>
@@ -784,7 +796,8 @@
 			  <p>The protection of these varied environmental and recreational attributes corresponds to the protection of flows that meet these attributes' needs.  For 
 			  example, many fish species require a range of flows to thrive.  Flushing (high) flows move sediment downstream, create new habitat and can be cues to spawn.  
 			  The life stage of the species (larval, juvenile or adult) can also determine the necessary flows.  All species need some minimum flow that will ensure they 
-			  have adequate habitat to survive.  Species can survive low flows and variation in flows but can be severely impacted by conditions in which the magnitude,
+			  have adequate habitat to survive.  Minimum flows are the smallest amounts of flow that will maintain hydraulic parameters for fish habitat, such as specific 
+			  velocities and water depths.  Species can survive low flows and variation in flows but can be severely impacted by conditions in which the magnitude,
 			  timing, and/or persistence of flows are outside of biologically-tuned ranges.  It is a challenge to quantify required flows for each species and therefore 
 			  indicator species and/or habitats are often used to monitor and evaluate habitats.</p>
 			  <p>For a given stream reach, the flows necessary to protect environmental and recreational uses can be highly varied and also vary within a year.  This interactive 			  
@@ -812,7 +825,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-4 text-left-custom custom-scroll">
-              <h2>Water Demands - Administering and Managing Demands</h2>
+              <h2>Meeting Demands through Water Management and Administration</h2>
 			  <p>Since numerous demands are placed on Colorado's water resources, it is necessary to have a process by which water is administered, 
 			  managed and regulated.  A legal framework called the prior appropriation doctrine regulates the use of surface water in Colorado, as
 			  well as tributary groundwater that is connected to streams.  This doctrine is also referred to by the phrase "first in time, first in 
@@ -870,11 +883,14 @@
       <div class="section">
         <div class="row">
           <div class="col-lg-4 text-left-custom custom-scroll">
-              <h2>Storage - Snowpack and SNOTEL Stations</h2>
-			  <p>As mentioned previously, approximately 80% of river runoff comes from snowmelt.  Snowpack is essentially a one-year storage 
+              <h2>Storage - Snowpack and SNOTEL Stations</h2>			  
+			  <p>Colorado's snowpack is impacted by annual weather conditions which, in turn, impacts streamflow runoff and groundwater recharge.  
+			  As mentioned previously, approximately 80% of river runoff comes from snowmelt.  Snowpack is essentially a one-year storage 
 			  reservoir and has the benefit of being a natural, high-elevation and generally high-quality supply.  The amount of water that is 
 			  generated by the melting of the snowpack is vital for water managers to understand because they must predict yearly water supplies
-			  for homes, businesses, farms, etc.  Snowpack is measured by the NRCS’s National Water and Climate Center and a network of Snow Telemetry 
+			  for homes, businesses, farms, etc.  There is great concern that climate change will affect the amount, timing and spatial extent of snowpack 
+			  (see the <a href="#climatechange">Climate Change</a> page).</p> 
+			  <p>Snowpack is measured by the NRCS’s National Water and Climate Center and a network of Snow Telemetry 
 			  <a href="https://www.wcc.nrcs.usda.gov/snow/" target="_blank">(SNOTEL)<img src="images/baseline_launch_black_18dp.png" width="12px"/></a> 
 			  stations.  Automated remote sensing equipment at these stations (which are located throughout the western U.S.) measure real-time snow 
 			  and climate data, in particular snow water equivalent (SWE), which is the depth of liquid water contained within the snowpack at a 
@@ -1240,8 +1256,8 @@
                      <p><a href="http://cwcb.state.co.us/water-management/basin-roundtables/Pages/MetroRoundtable.aspx" target="_blank">Metro Basin Roundtable</a></p>			 
         			 <p><a href="http://cwcb.state.co.us/water-management/water-supply-planning/Pages/main.aspx" target="_blank">Colorado Water 
         			  Conservation Board Water Supply Planning Section</a></p>
-        			 <p>Questions or feedback?  Contact xxxx@xxxx.com (placeholder for Basin Roundtable member) </p>
-        			 <p>Last update:  September 27, 2018</p>
+        			 <p>Questions or feedback?  Contact Lacey Williams, lacey@coloradowater.org</p>
+        			 <p>Last update:  October 11, 2018</p>
               </div>
             </div>
           </div>
@@ -1252,7 +1268,8 @@
         <div class="container text-center blue-bkgd-text">
               <h2>Sources</h2>
 			  <p>Water cycle image available from the <a href="https://water.usgs.gov/edu/watercycle.html" target="_blank">U.S. Geological Survey</a>.</p>
-			  <p>Lake Haiyaha in Rocky Mountain National Park available from <a href="https://pixabay.com/" target="_blank">Pixabay</a>.</p>			  
+			  <p>Lake Haiyaha in Rocky Mountain National Park available from <a href="https://pixabay.com/" target="_blank">Pixabay</a>.</p>
+			  <p>River with fall colors image available from <a href="https://www.pexels.com/" target="_blank">Pexels</a>.</p>
         </div>	
       </div>
 <!-- Instructions Page -->		  

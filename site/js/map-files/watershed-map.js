@@ -64,14 +64,14 @@ var watershed_map = (function(){
 	// Method used to update the control based on feature properties passed
 	info.update = function (props) {
 	  if(props && props.HUC10){		
-		this._div.innerHTML = '<h5>HUC10 Watersheds</h5>' +  (props ?
+		this._div.innerHTML = '<h5>HUC10 Watersheds and Water Districts</h5>' +  (props ?
 			'<b>Watershed Name: </b>' + (props.NAME) + '<br/>' + 
 			'<b>HUC10 Code: </b>' + (props.HUC10) + '<br />' + 
 			'<b>Area (square km): </b>' + (props.AREASQKM)
 			: 'Hover on a polygon for more information');
 	  }
 	  else {
-		this._div.innerHTML = '<h5>Water Districts</h5>' +  (props ?
+		this._div.innerHTML = '<h5>HUC10 Watersheds and Water Districts</h5>' +  (props ?
 			'<b>District Name: </b>' + (props.NAME) + '<br/>' + 
 			'<b>District Number: </b>' + (props.DISTRICT)
 			: 'Hover on a polygon for more information');
